@@ -1,9 +1,9 @@
-module Mux_SrcB(A, B, C, D, out, SrcB, out);
-  input wire A, B, C, D, E, F, SrcB[3:0];
+module Mux_SrcB(A, B, C, D, out, sel1, sel2, sel3, out);
+  input wire A, B, C, D, E, F, sel1, sel2, sel3;
   output reg out;
   
-    always @(SrcB)begin
-      case({SrcB})
+    always @(sel1, sel2, sel3)begin
+      case({sel1, sel2, sel3})
             0: out = A;
             1: out = B;
             2: out = C;

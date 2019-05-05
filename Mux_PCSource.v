@@ -1,9 +1,9 @@
-module Mux_PCSource(A, B, C, D, E, F, out, PCSource);
-  input wire A, B, C, D, E, F, PCSource[3:0];
+module Mux_PCSource(A, B, C, D, E, F, out, sel1, sel2, sel3);
+  input wire A, B, C, D, E, F, sel1, sel2, sel3;
   output reg out;
   
-    always @(PCSource)begin
-      case({PCSource})
+    always @(sel1, sel2, sel3)begin
+      case({sel1, sel2, sel3})
             0: out = A;
             1: out = B;
             2: out = C;

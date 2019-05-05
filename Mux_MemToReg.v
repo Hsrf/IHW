@@ -1,9 +1,9 @@
-module Mux_MemToReg(A, B, C, D, E, F, G, H, I, MemToReg, out);
-  input wire A, B, C, D, E, F, G, H, I, MemToReg[4:0];
+module Mux_MemToReg(A, B, C, D, E, F, G, H, I, sel1, sel2, sel3, sel4, out);
+  input wire A, B, C, D, E, F, G, H, I, sel1, sel2, sel3, sel4;
   output reg out;
   
-    always @(MemToReg)begin
-      case({MemToReg})
+    always @(sel1, sel2)begin
+      case({sel1, sel2})
             0: out = A;
             1: out = B;
             2: out = C;
