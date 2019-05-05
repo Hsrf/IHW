@@ -45,15 +45,19 @@ set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE A.v
+set_global_assignment -name VERILOG_FILE ALUOut.v
+set_global_assignment -name VERILOG_FILE B.v
 set_global_assignment -name VHDL_FILE Banco_reg.vhd
+set_global_assignment -name VERILOG_FILE ControlUnit.v
 set_global_assignment -name VHDL_FILE Instr_Reg.vhd
 set_global_assignment -name VHDL_FILE Memoria.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_Iord.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_MemToReg.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_PCSource.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_RegDst.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_SrcA.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux_SrcB.sv
+set_global_assignment -name VERILOG_FILE Mux_Iord.v
+set_global_assignment -name VERILOG_FILE Mux_MemToReg.v
+set_global_assignment -name VERILOG_FILE Mux_PCSource.v
+set_global_assignment -name VERILOG_FILE Mux_RegDst.v
+set_global_assignment -name VERILOG_FILE Mux_SrcA.v
+set_global_assignment -name VERILOG_FILE Mux_SrcB.v
 set_global_assignment -name VHDL_FILE RegDesloc.vhd
 set_global_assignment -name VHDL_FILE Registrador.vhd
 set_global_assignment -name VHDL_FILE ula32.vhd
