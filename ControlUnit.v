@@ -125,6 +125,7 @@ module ControlUnit(
                             cont = 4;
                         end
                     endcase
+				end
             endcase
         end else if (count == 4) begin
             // escrita
@@ -155,6 +156,7 @@ module ControlUnit(
                             count = 0;
                         end
                     endcase
+				end
             endcase
         end
     end
