@@ -1,9 +1,9 @@
-module Mux_Iord(PC, A, B, C, D, E, out, sel1, sel2, sel3);
-  input wire PC, A, B, C, D, E, sel1, sel2, sel3;
+module Mux_Iord(PC, A, B, C, D, E, out, Iord);
+  input wire PC, A, B, C, D, E, Iord[3:0];
   output reg out;
   
-    always @(sel1, sel2, sel3)begin
-      case({sel1, sel2, sel3})
+    always @(Iord)begin
+      case({Iord})
             0: out = PC;
             1: out = A;
             2: out = B;
