@@ -1,4 +1,6 @@
 module A(
+	input clock,
+	input reset,
 	input wire [31:0]data1,
 	input wire writeRegA,
 	output wire [31:0]valueA

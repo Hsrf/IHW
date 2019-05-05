@@ -8,6 +8,6 @@ always @(posedge clock or negedge reset)
 begin
  if(clock)
 	if(ALUOutControl == 1)
-		ALUOutResult <= ALUOutControl
+		ALUOutResult <= ALUOutControl;
 end
 endmodule

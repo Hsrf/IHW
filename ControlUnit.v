@@ -1,5 +1,6 @@
 module ControlUnit(
 	input clock,
+	input reset,
 	input wire opcode [5:0],
 	input wire funct [5:0],
 	output wire pcWriteCond [1:0],
@@ -37,8 +38,8 @@ module ControlUnit(
 
 	reg [3:0] count = 0;
 
-    always @(posedge clock or posedge Reset) begin
-        if (Reset) begin
+    always @(posedge clock or posedge reset) begin
+        if (reset) begin
             // reset				
             pcWriteCond = 1'b0;
             pcWrite = 1'b0;			
