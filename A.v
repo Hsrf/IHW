@@ -8,7 +8,7 @@ always @(posedge clock or negedge reset)
 begin
  if(clock)
 	if(writeRegA == 1)
-		valueA = data1
+		valueA <= data1
 end
 endmodule
 	
