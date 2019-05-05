@@ -7,7 +7,7 @@ module ALUOut(
 always @(posedge clock or negedge reset)
 begin
  if(clock)
-	if(writeRegA == 1)
-		valueA = data1
+	if(ALUOutControl == 1)
+		ALUOutResult <= ALUOutControl
 end
 endmodule
