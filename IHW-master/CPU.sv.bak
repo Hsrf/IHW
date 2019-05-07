@@ -1,0 +1,14 @@
+module CPU(
+	input clock,
+	input reset
+);
+
+Registrador pc(
+	.Clk(clock),
+	.MuxPCSource(Mux_PCSource),
+	.PCControlUnit(ControlUnit)
+);
+
+
+
+endmodule;
