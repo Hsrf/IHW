@@ -1,0 +1,5 @@
+
+State Machine - |CPU|ControlUnit:ControlUnit|state
+Name state.Start 
+state.Reset 0 
+state.Start 1 
