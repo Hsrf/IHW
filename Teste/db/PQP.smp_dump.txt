@@ -1,5 +1,12 @@
 
 State Machine - |CPU|ControlUnit:ControlUnit|state
-Name state.Start 
-state.Reset 0 
-state.Start 1 
+Name state.Wait3 state.ADD4 state.ADD3 state.ADD2 state.ADD1 state.Wait2 state.Wait1 state.Start state.Reset 
+state.Reset 0 0 0 0 0 0 0 0 0 
+state.Start 0 0 0 0 0 0 0 1 1 
+state.Wait1 0 0 0 0 0 0 1 0 1 
+state.Wait2 0 0 0 0 0 1 0 0 1 
+state.ADD1 0 0 0 0 1 0 0 0 1 
+state.ADD2 0 0 0 1 0 0 0 0 1 
+state.ADD3 0 0 1 0 0 0 0 0 1 
+state.ADD4 0 1 0 0 0 0 0 0 1 
+state.Wait3 1 0 0 0 0 0 0 0 1 
