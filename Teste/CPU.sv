@@ -13,9 +13,13 @@ logic ALUSrcA [1:0];
 logic ALUSrcB [2:0];
 logic MuxALUSourceBOut [31:0];
 logic ALUResult[31:0];
-logic MuxPCSourceOut[31:0];
 logic PCSource[2:0];
-
+logic Overflow;
+logic Negativo;
+logic Zero;
+logic Igual;
+logic MaiorQue;
+logic MenorQue;
 
 
 Registrador PC(
@@ -33,7 +37,13 @@ ControlUnit ControlUnit(
 	.ALUSrcB(ALUSrcB),
 	.PCSource(PCSource),
 	.ALUOp(ALUOp),
-	.PCWrite(PCWrite)
+	.PCWrite(PCWrite),
+	.Overflow(Overflow),
+	.Negativo(Negativo),
+	.Zero(Zero),
+	.Igual(Igual),
+	.MaiorQue(MaiorQue),
+	.MenorQue(MenorQue)
 );
 
 MuxALUSrcA MuxALUSrcA(
@@ -65,6 +75,19 @@ MuxPCSource MuxPCSource(
 	.F(1'd0),
 	.out(MuxPCSourceOut),
 	.PCSource(PCSource)
+);
+
+ULA32 ULA(
+	.A(MuxALUSourceAOut),
+	.B(MuxALUSourceBOut),
+	.Seletor(ALUOp),
+	.S(ALUResult),
+	.Overflow(Overflow),
+	.Negativo(Negativo),
+	.z(Zero),
+	.Igual(Igual),
+	.Maior(MaiorQue),
+	.Menor(MenorQue)
 );
 
 
