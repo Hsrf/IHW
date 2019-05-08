@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Wed May 08 14:07:57 2019
+Wed May 08 14:14:37 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Failed - Wed May 08 14:07:57 2019            ;
+; Analysis & Synthesis Status   ; Failed - Wed May 08 14:14:37 2019            ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; PQP                                          ;
@@ -157,9 +157,15 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 14:07:56 2019
+    Info: Processing started: Wed May 08 14:14:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info: Found design unit 1: Registrador-behavioral_arch
+    Info: Found entity 1: Registrador
+Info: Found 2 design units, including 1 entities, in source file ula32.vhd
+    Info: Found design unit 1: Ula32-behavioral
+    Info: Found entity 1: Ula32
 Info: Found 1 design units, including 1 entities, in source file cpu.sv
     Info: Found entity 1: CPU
 Info: Found 1 design units, including 1 entities, in source file muxalusrca.sv
@@ -168,16 +174,14 @@ Info: Found 1 design units, including 1 entities, in source file muxalusrcb.sv
     Info: Found entity 1: MuxALUSrcB
 Info: Found 1 design units, including 1 entities, in source file muxpcsource.sv
     Info: Found entity 1: MuxPCSource
-Error (10170): Verilog HDL syntax error at Registrador.sv(1) near text "--";  expecting a description File: C:/Users/gvh/Desktop/Teste/Registrador.sv Line: 1
-Info: Found 0 design units, including 0 entities, in source file registrador.sv
-Error (10170): Verilog HDL syntax error at ULA32.sv(1) near text "--";  expecting a description File: C:/Users/gvh/Desktop/Teste/ULA32.sv Line: 1
-Info: Found 0 design units, including 0 entities, in source file ula32.sv
+Warning: Can't analyze file -- file Registrador.sv is missing
+Warning: Can't analyze file -- file ULA32.sv is missing
 Error (10170): Verilog HDL syntax error at ControlUnit.sv(24) near text "always_ff";  expecting an identifier ("always_ff" is a reserved keyword ) File: C:/Users/gvh/Desktop/Teste/ControlUnit.sv Line: 24
 Error (10112): Ignored design unit "ControlUnit" at ControlUnit.sv(1) due to previous errors File: C:/Users/gvh/Desktop/Teste/ControlUnit.sv Line: 1
 Info: Found 0 design units, including 0 entities, in source file controlunit.sv
-Error: Quartus II Analysis & Synthesis was unsuccessful. 4 errors, 0 warnings
-    Error: Peak virtual memory: 278 megabytes
-    Error: Processing ended: Wed May 08 14:07:57 2019
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
+    Error: Peak virtual memory: 296 megabytes
+    Error: Processing ended: Wed May 08 14:14:37 2019
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
