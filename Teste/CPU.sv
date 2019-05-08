@@ -29,11 +29,21 @@ logic Iord;
 logic [31:0] AluOutOut;
 logic [31:0] MemToRegOut;
 logic [3:0] MemToReg;
+logic [31:0] RegWriteOut1;
+logic [31:0] RegAOut;
+logic [31:0] RegWriteOut2;
+logic [31:0] RegBOut;
+logic WriteRegA;
+logic WriteRegB;
+logic ALUOutControl;
+logic [31:0] MuxRegDstOut;
+logic [1:0] RegDst;
+logic RegWrite;
 
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(Load),
+	.Load(PCWrite),
 	.Entrada(MuxPCSourceOut),
 	.Saida(PCOut)
 );
@@ -55,7 +65,12 @@ ControlUnit ControlUnit(
 	.MemWr(MemWr),
 	.IRWrite(IRWrite),
 	.Iord(Iord),
-	.MemToReg(MemToReg)
+	.MemToReg(MemToReg),
+	.WriteRegA(WriteRegA),
+	.WriteRegB(WriteRegB),
+	.ALUOutControl(ALUOutControl),
+	.RegDst(RegDst),
+	.RegWrite(RegWrite)
 );
 
 
@@ -144,6 +159,51 @@ MuxMemToReg MuxMemToReg(
 	.H(1'd0),
 	.out(MemToRegOut),
 	.MemToReg(MemToReg)
+);
+
+Registrador A(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteRegA),
+	.Entrada(RegWriteOut1),
+	.Saida(RegAOut)
+);
+
+Registrador B(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteRegB),
+	.Entrada(WriteRegOut2),
+	.Saida(RegBOut)
+);
+
+Registrador ALUOut(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(ALUOutControl),
+	.Entrada(ALUResult),
+	.Saida(ALUOutOut)
+);
+
+MuxRegDst MuxRegDst(
+	.A(MemOut[20:16]),
+	.B(1'd0),
+	.C(1'd0),
+	.D(1'd0),
+	.out(MuxRegDstOut),
+	.RegDst(RegDst)
+);
+
+Banco_reg BancoRegistradores(
+	.Clk(clock),
+	.Reset(reset),
+	.RegWrite(RegWrite),
+	.ReadReg1(MemOut[25:21]),
+	.ReadReg2(MemOut[20:16]),
+	.WriteReg(MuxRegDstOut),
+	.WriteData(MuxMemToRegOut),
+	.ReadData1(RegWriteOut1),
+	.ReadData2(RegWriteOut2)
 );
 
 

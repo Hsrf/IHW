@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Wed May 08 15:39:38 2019
+Wed May 08 16:47:29 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -24,13 +24,21 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  16. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
  17. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
  18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
- 19. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
- 20. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
- 21. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
- 22. Port Connectivity Checks: "ControlUnit:ControlUnit"
- 23. Port Connectivity Checks: "Registrador:PC"
- 24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
+ 19. Port Connectivity Checks: "Banco_reg:BancoRegistradores"
+ 20. Port Connectivity Checks: "MuxRegDst:MuxRegDst"
+ 21. Port Connectivity Checks: "Registrador:ALUOut"
+ 22. Port Connectivity Checks: "Registrador:B"
+ 23. Port Connectivity Checks: "Registrador:A"
+ 24. Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"
+ 25. Port Connectivity Checks: "MuxIord:MuxIord"
+ 26. Port Connectivity Checks: "Memoria:Memoria"
+ 27. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 28. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 29. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
+ 30. Port Connectivity Checks: "ControlUnit:ControlUnit"
+ 31. Port Connectivity Checks: "Registrador:PC"
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -56,7 +64,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Wed May 08 15:39:38 2019        ;
+; Analysis & Synthesis Status   ; Successful - Wed May 08 16:47:29 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -176,6 +184,8 @@ applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ;
 +----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Banco_reg.vhd                                       ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Instr_Reg.vhd                                       ;
 ; Memoria.vhd                      ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Memoria.vhd                                         ;
 ; Registrador.vhd                  ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Registrador.vhd                                     ;
 ; ula32.vhd                        ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/ula32.vhd                                           ;
@@ -184,6 +194,9 @@ applicable agreement for further details.
 ; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxALUSrcB.sv                                       ;
 ; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxPCSource.sv                                      ;
 ; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/ControlUnit.sv                                      ;
+; MuxIord.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxIord.sv                                          ;
+; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxMemToReg.sv                                      ;
+; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxRegDst.sv                                        ;
 ; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
 ; altram.tdf                       ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altram.tdf     ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altsyncram.tdf ;
@@ -248,20 +261,21 @@ Encoding Type:  One-Hot
 +-------------+--------------------------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; ControlUnit:ControlUnit|state.Start   ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~5       ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~6       ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~7       ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~8       ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~9       ; Lost fanout        ;
-; ControlUnit:ControlUnit|state~10      ; Lost fanout        ;
-; Total Number of Removed Registers = 7 ;                    ;
-+---------------------------------------+--------------------+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; Registrador:PC|Saida[0]               ; Stuck at GND due to stuck port clock_enable ;
+; ControlUnit:ControlUnit|state.Start   ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~5       ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~6       ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~7       ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~8       ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~9       ; Lost fanout                                 ;
+; ControlUnit:ControlUnit|state~10      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 8 ;                                             ;
++---------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -407,6 +421,103 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Banco_reg:BancoRegistradores"                                                                                        ;
++-----------+--------+------------------+---------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity         ; Details                                                                                                 ;
++-----------+--------+------------------+---------------------------------------------------------------------------------------------------------+
+; writereg  ; Input  ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
+; writedata ; Input  ; Critical Warning ; Types are incompatible                                                                                  ;
+; readdata2 ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                     ;
++-----------+--------+------------------+---------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxRegDst:MuxRegDst"                                                                                                                                                             ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; C    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; D    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Registrador:ALUOut"                                                                          ;
++-------+--------+------------------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity         ; Details                                                                             ;
++-------+--------+------------------+-------------------------------------------------------------------------------------+
+; saida ; Output ; Critical Warning ; Types are incompatible                                                              ;
+; saida ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+------------------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Registrador:B"                                                                                 ;
++---------+--------+------------------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity         ; Details                                                                             ;
++---------+--------+------------------+-------------------------------------------------------------------------------------+
+; entrada ; Input  ; Critical Warning ; Types are incompatible                                                              ;
+; saida   ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+------------------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Registrador:A"                                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; saida ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"                                                                                                                                                              ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; C       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; D       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; E       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; F       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; G       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; H       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
+; out[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxIord:MuxIord"                                                                                                                                                                   ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; C    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; D    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; E    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; F    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
+; Iord ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "Iord[2..1]" will be connected to GND.                                       ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memoria:Memoria"                                                                                                 ;
++--------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity         ; Details                                                                                                 ;
++--------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; datain ; Input ; Critical Warning ; Can't connect array with 1 elements in array dimension 1 to port with 32 elements in the same dimension ;
+; datain ; Input ; Info             ; Stuck at GND                                                                                            ;
++--------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "MuxPCSource:MuxPCSource"                                                                                                                                                           ;
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -451,17 +562,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ControlUnit:ControlUnit"                                                                                                                                                  ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUSrcA  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; ALUSrcB  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
-; PCSource ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
-; ALUOp    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
-; PCWrite  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlUnit:ControlUnit"                                                                                                                                                             ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALUSrcA  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
+; ALUSrcB  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
+; PCSource ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
+; ALUOp    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
+; MemToReg ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -479,9 +590,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 15:39:33 2019
+    Info: Processing started: Wed May 08 16:47:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
+    Info: Found design unit 1: Banco_reg-behavioral_arch
+    Info: Found entity 1: Banco_reg
 Info: Found 2 design units, including 1 entities, in source file instr_reg.vhd
     Info: Found design unit 1: Instr_Reg-behavioral_arch
     Info: Found entity 1: Instr_Reg
@@ -505,26 +619,35 @@ Info: Found 1 design units, including 1 entities, in source file muxpcsource.sv
     Info: Found entity 1: MuxPCSource
 Info: Found 1 design units, including 1 entities, in source file controlunit.sv
     Info: Found entity 1: ControlUnit
+Info: Found 1 design units, including 1 entities, in source file muxiord.sv
+    Info: Found entity 1: MuxIord
+Info: Found 1 design units, including 1 entities, in source file muxmemtoreg.sv
+    Info: Found entity 1: MuxMemToReg
+Info: Found 1 design units, including 1 entities, in source file muxregdst.sv
+    Info: Found entity 1: MuxRegDst
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(176): created implicit net for "WriteRegOut2"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(185): created implicit net for "ALUOutOut"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(204): created implicit net for "MuxMemToRegOut"
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(33): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(34): truncated value with size 3 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(35): truncated value with size 3 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(36): truncated value with size 3 to match size of target (1)
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(31): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "PCSource", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "PCWrite", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(31)
-Info (10041): Inferred latch for "PCWrite" at ControlUnit.sv(31)
-Info (10041): Inferred latch for "PCSource" at ControlUnit.sv(31)
-Info (10041): Inferred latch for "ALUOp" at ControlUnit.sv(31)
-Info (10041): Inferred latch for "ALUSrcB" at ControlUnit.sv(31)
-Info (10041): Inferred latch for "ALUSrcA" at ControlUnit.sv(31)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(40): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(41): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(42): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(43): truncated value with size 3 to match size of target (1)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(38): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "PCSource", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "PCWrite", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(38)
+Info (10041): Inferred latch for "PCWrite" at ControlUnit.sv(38)
+Info (10041): Inferred latch for "PCSource" at ControlUnit.sv(38)
+Info (10041): Inferred latch for "ALUOp" at ControlUnit.sv(38)
+Info (10041): Inferred latch for "ALUSrcB" at ControlUnit.sv(38)
+Info (10041): Inferred latch for "ALUSrcA" at ControlUnit.sv(38)
 Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -574,6 +697,449 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:InstructionRegister"
+Info: Elaborating entity "MuxIord" for hierarchy "MuxIord:MuxIord"
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(8): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(9): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(10): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(11): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(12): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(13): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxIord.sv(7): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxIord.sv(6): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out" at MuxIord.sv(6)
+Info: Elaborating entity "MuxMemToReg" for hierarchy "MuxMemToReg:MuxMemToReg"
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(11): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(12): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(13): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at MuxMemToReg.sv(14): truncated value with size 8 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(15): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(16): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxMemToReg.sv(17): variable "H" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxMemToReg.sv(8): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxMemToReg.sv(7): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out" at MuxMemToReg.sv(7)
+Info: Elaborating entity "MuxRegDst" for hierarchy "MuxRegDst:MuxRegDst"
+Warning (10235): Verilog HDL Always Construct warning at MuxRegDst.sv(8): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxRegDst.sv(9): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxRegDst.sv(10): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxRegDst.sv(11): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BancoRegistradores"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[30]" is missing source, defaulting to GND
@@ -606,6 +1172,68 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceAOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceAOut[30]" is missing source, defaulting to GND
@@ -669,6 +1297,68 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[1]" is missing source, defaulting to GND
@@ -739,6 +1429,81 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MemWr" is missing source, defaulting to GND
+    Warning (12110): Net "IRWrite" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "Iord" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[0]" is missing source, defaulting to GND
+    Warning (12110): Net "WriteRegA" is missing source, defaulting to GND
+    Warning (12110): Net "WriteRegB" is missing source, defaulting to GND
+    Warning (12110): Net "ALUOutControl" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDst[1]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDst[0]" is missing source, defaulting to GND
+    Warning (12110): Net "RegWrite" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[1]" is missing source, defaulting to GND
@@ -840,6 +1605,81 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MemWr" is missing source, defaulting to GND
+    Warning (12110): Net "IRWrite" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "Iord" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MemToReg[0]" is missing source, defaulting to GND
+    Warning (12110): Net "WriteRegA" is missing source, defaulting to GND
+    Warning (12110): Net "WriteRegB" is missing source, defaulting to GND
+    Warning (12110): Net "ALUOutControl" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDst[1]" is missing source, defaulting to GND
+    Warning (12110): Net "RegDst[0]" is missing source, defaulting to GND
+    Warning (12110): Net "RegWrite" is missing source, defaulting to GND
 Warning: Synthesized away the following node(s):
     Warning: Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
@@ -874,7 +1714,7 @@ Warning: Synthesized away the following node(s):
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
-Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
     Info: Register "ControlUnit:ControlUnit|state.Start" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~5" lost all its fanouts during netlist optimizations.
@@ -890,11 +1730,11 @@ Warning: Design contains 2 input pin(s) that do not drive logic
 Info: Implemented 2 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 0 output pins
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 336 warnings
-    Info: Peak virtual memory: 309 megabytes
-    Info: Processing ended: Wed May 08 15:39:38 2019
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1049 warnings
+    Info: Peak virtual memory: 315 megabytes
+    Info: Processing ended: Wed May 08 16:47:29 2019
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

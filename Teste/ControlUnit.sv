@@ -15,9 +15,12 @@ module ControlUnit(
 	input logic MemWr,
 	input logic IRWrite,
 	input logic Iord,
-	input logic MemToReg
-	//input logic [6:0] state,
-	//input logic [6:0] nextstate
+	input logic MemToReg,
+	input logic WriteRegA,
+	input logic WriteRegB,
+	input logic ALUOutControl,
+	input logic [1:0] RegDst,
+	input logic RegWrite
 );
 
 enum logic [6:0] {
