@@ -1,6 +1,6 @@
 set_global_assignment -name FAMILY "Stratix II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY PQP
+set_global_assignment -name TOP_LEVEL_ENTITY CPU
 
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
@@ -8,13 +8,16 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE ../PQP.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VHDL_FILE Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE Memoria.vhd
 set_global_assignment -name VHDL_FILE Registrador.vhd
 set_global_assignment -name VHDL_FILE ula32.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE CPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcA.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcB.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxPCSource.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Registrador.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ULA32.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ControlUnit.sv
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../PQP.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

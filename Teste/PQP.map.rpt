@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Wed May 08 14:14:37 2019
+Wed May 08 15:39:38 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,7 +10,27 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |CPU|ControlUnit:ControlUnit|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 12. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 13. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 14. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 15. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
+ 16. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
+ 17. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
+ 18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
+ 19. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 20. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 21. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
+ 22. Port Connectivity Checks: "ControlUnit:ControlUnit"
+ 23. Port Connectivity Checks: "Registrador:PC"
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -36,21 +56,21 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Failed - Wed May 08 14:14:37 2019            ;
+; Analysis & Synthesis Status   ; Successful - Wed May 08 15:39:38 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
-; Top-level Entity Name         ; PQP                                          ;
+; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
-; Logic utilization             ; N/A until Partition Merge                    ;
-;     Combinational ALUTs       ; N/A until Partition Merge                    ;
-;     Dedicated logic registers ; N/A until Partition Merge                    ;
-; Total registers               ; N/A until Partition Merge                    ;
-; Total pins                    ; N/A until Partition Merge                    ;
-; Total virtual pins            ; N/A until Partition Merge                    ;
-; Total block memory bits       ; N/A until Partition Merge                    ;
-; DSP block 9-bit elements      ; N/A until Partition Merge                    ;
-; Total PLLs                    ; N/A until Partition Merge                    ;
-; Total DLLs                    ; N/A until Partition Merge                    ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 0                                            ;
+;     Dedicated logic registers ; 0                                            ;
+; Total registers               ; 0                                            ;
+; Total pins                    ; 2                                            ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
 +-------------------------------+----------------------------------------------+
 
 
@@ -59,7 +79,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; PQP                ; PQP                ;
+; Top-level entity name                                                      ; CPU                ; PQP                ;
 ; Family name                                                                ; Stratix II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -151,15 +171,324 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+; Memoria.vhd                      ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Memoria.vhd                                         ;
+; Registrador.vhd                  ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/Registrador.vhd                                     ;
+; ula32.vhd                        ; yes             ; User VHDL File                         ; C:/Users/gvh/Desktop/Teste/ula32.vhd                                           ;
+; CPU.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/CPU.sv                                              ;
+; MuxALUSrcA.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxALUSrcA.sv                                       ;
+; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxALUSrcB.sv                                       ;
+; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/MuxPCSource.sv                                      ;
+; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/gvh/Desktop/Teste/ControlUnit.sv                                      ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/gvh/Desktop/Teste/db/altsyncram_g2a1.tdf                              ;
+; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/gvh/Desktop/Teste/instrucoes.mif                                      ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++----------------------------------------------+-------+
+; Resource                                     ; Usage ;
++----------------------------------------------+-------+
+; Estimated ALUTs Used                         ; 0     ;
+; Dedicated logic registers                    ; 0     ;
+;                                              ;       ;
+; Estimated ALUTs Unavailable                  ; 0     ;
+;                                              ;       ;
+; Total combinational functions                ; 0     ;
+; Combinational ALUT usage by number of inputs ;       ;
+;     -- 7 input functions                     ; 0     ;
+;     -- 6 input functions                     ; 0     ;
+;     -- 5 input functions                     ; 0     ;
+;     -- 4 input functions                     ; 0     ;
+;     -- <=3 input functions                   ; 0     ;
+;                                              ;       ;
+; Combinational ALUTs by mode                  ;       ;
+;     -- normal mode                           ; 0     ;
+;     -- extended LUT mode                     ; 0     ;
+;     -- arithmetic mode                       ; 0     ;
+;     -- shared arithmetic mode                ; 0     ;
+;                                              ;       ;
+; Estimated ALUT/register pairs used           ; 0     ;
+;                                              ;       ;
+; Total registers                              ; 0     ;
+;     -- Dedicated logic registers             ; 0     ;
+;     -- I/O registers                         ; 0     ;
+;                                              ;       ;
+;                                              ;       ;
+; I/O pins                                     ; 2     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |CPU                       ; 0 (0)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |CPU                ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------+
+; State Machine - |CPU|ControlUnit:ControlUnit|state ;
++-------------+--------------------------------------+
+; Name        ; state.Start                          ;
++-------------+--------------------------------------+
+; state.Reset ; 0                                    ;
+; state.Start ; 1                                    ;
++-------------+--------------------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; ControlUnit:ControlUnit|state.Start   ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~5       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~6       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~7       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~8       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~9       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~10      ; Lost fanout        ;
+; Total Number of Removed Registers = 7 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                               ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                               ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                  ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                    ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                    ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                    ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                           ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                           ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                           ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                           ;
+; USE_EAB                ; ON             ; Untyped                           ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                           ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                             ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                             ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                             ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                    ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                    ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                    ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                    ;
+; USE_EAB                ; ON             ; Untyped                                    ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                    ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                             ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                             ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                             ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                    ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                    ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                    ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                    ;
+; USE_EAB                ; ON             ; Untyped                                    ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                    ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                               ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                               ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                               ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                      ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                      ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                      ;
+; USE_EAB                ; ON             ; Untyped                                      ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxPCSource:MuxPCSource"                                                                                                                                                           ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; C    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; D    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; E    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; F    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"                                                                                                                                                            ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; B     ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; C     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; D     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; E     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; F     ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; out   ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.          ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"                                                                                                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; C    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; D    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlUnit:ControlUnit"                                                                                                                                                  ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALUSrcA  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALUSrcB  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; PCSource ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALUOp    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; PCWrite  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Registrador:PC"                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 14:14:36 2019
+    Info: Processing started: Wed May 08 15:39:33 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 2 design units, including 1 entities, in source file instr_reg.vhd
+    Info: Found design unit 1: Instr_Reg-behavioral_arch
+    Info: Found entity 1: Instr_Reg
+Info: Found 3 design units, including 1 entities, in source file memoria.vhd
+    Info: Found design unit 1: ram_constants
+    Info: Found design unit 2: Memoria-behavioral_arch
+    Info: Found entity 1: Memoria
 Info: Found 2 design units, including 1 entities, in source file registrador.vhd
     Info: Found design unit 1: Registrador-behavioral_arch
     Info: Found entity 1: Registrador
@@ -174,15 +503,403 @@ Info: Found 1 design units, including 1 entities, in source file muxalusrcb.sv
     Info: Found entity 1: MuxALUSrcB
 Info: Found 1 design units, including 1 entities, in source file muxpcsource.sv
     Info: Found entity 1: MuxPCSource
-Warning: Can't analyze file -- file Registrador.sv is missing
-Warning: Can't analyze file -- file ULA32.sv is missing
-Error (10170): Verilog HDL syntax error at ControlUnit.sv(24) near text "always_ff";  expecting an identifier ("always_ff" is a reserved keyword ) File: C:/Users/gvh/Desktop/Teste/ControlUnit.sv Line: 24
-Error (10112): Ignored design unit "ControlUnit" at ControlUnit.sv(1) due to previous errors File: C:/Users/gvh/Desktop/Teste/ControlUnit.sv Line: 1
-Info: Found 0 design units, including 0 entities, in source file controlunit.sv
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 296 megabytes
-    Error: Processing ended: Wed May 08 14:14:37 2019
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info: Found 1 design units, including 1 entities, in source file controlunit.sv
+    Info: Found entity 1: ControlUnit
+Info: Elaborating entity "CPU" for the top level hierarchy
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
+Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(33): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(34): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(35): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(36): truncated value with size 3 to match size of target (1)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(31): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "PCSource", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "PCWrite", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(31): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(31)
+Info (10041): Inferred latch for "PCWrite" at ControlUnit.sv(31)
+Info (10041): Inferred latch for "PCSource" at ControlUnit.sv(31)
+Info (10041): Inferred latch for "ALUOp" at ControlUnit.sv(31)
+Info (10041): Inferred latch for "ALUSrcB" at ControlUnit.sv(31)
+Info (10041): Inferred latch for "ALUSrcA" at ControlUnit.sv(31)
+Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(11): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(12): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "MuxALUSrcB" for hierarchy "MuxALUSrcB:MuxALUSrcB"
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(11): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(12): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(13): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(14): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxALUSrcB.sv(8): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxALUSrcB.sv(7): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out" at MuxALUSrcB.sv(7)
+Info: Elaborating entity "MuxPCSource" for hierarchy "MuxPCSource:MuxPCSource"
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(8): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(9): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(10): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(11): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(12): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(13): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxPCSource.sv(7): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxPCSource.sv(6): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out" at MuxPCSource.sv(6)
+Info: Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:Memoria"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:Memoria|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Stratix II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix II devices
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
+    Info: Found entity 1: altsyncram_g2a1
+Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcA[1]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB[2]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
+    Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxPCSourceOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceAOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcA[1]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB[2]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUSrcB[1]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[31]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[30]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[29]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[28]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[27]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[26]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[25]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[24]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[23]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[22]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[21]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[20]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[19]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[18]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[17]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[16]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[15]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[14]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[13]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[12]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[11]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[10]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[9]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[8]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[7]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[6]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[5]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[4]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[3]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[2]" is missing source, defaulting to GND
+    Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
+    Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
+    Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
+    Info: Register "ControlUnit:ControlUnit|state.Start" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~5" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~6" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~7" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~8" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/Users/gvh/Desktop/Teste/PQP.map.smsg
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock"
+    Warning (15610): No output dependent on input pin "reset"
+Info: Implemented 2 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 0 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 336 warnings
+    Info: Peak virtual memory: 309 megabytes
+    Info: Processing ended: Wed May 08 15:39:38 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/gvh/Desktop/Teste/PQP.map.smsg.
 
 

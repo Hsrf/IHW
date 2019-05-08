@@ -13,4 +13,4 @@ module MuxALUSrcB(A, B, C, D, E, F, out, SrcB);
             5: out = F;
         endcase
     end
-endmodule;
+endmodule

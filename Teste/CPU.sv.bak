@@ -1,39 +1,37 @@
 module CPU(
-	input clock,
-	input reset
+	input logic clock,
+	input logic reset
 );
 
-logic Mux_PCSource [31:0];
-logic PC_MuxPCSource [31:0];
-logic ALUOp [2:0];
+logic [2:0] ALUOp;
 logic PCWrite;
-logic MuxPCSourceOut [31:0];
-logic MuxALUSourceAOut [31:0];
-logic ALUSrcA [1:0];
-logic ALUSrcB [2:0];
-logic MuxALUSourceBOut [31:0];
-logic ALUResult[31:0];
-logic MuxPCSourceOut[31:0];
-logic PCSource[2:0];
+logic [31:0] MuxPCSourceOut;
+logic [31:0] MuxALUSourceAOut;
+logic [1:0] ALUSrcA;
+logic [2:0] ALUSrcB;
+logic [31:0] MuxALUSourceBOut;
+logic [31:0] ALUResult;
+logic [2:0] PCSource;
 logic Overflow;
 logic Negativo;
 logic Zero;
 logic Igual;
 logic MaiorQue;
 logic MenorQue;
-
+logic [31:0] PC_MuxALUSrcA;
+logic Load;
 
 Registrador PC(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(load),
-	.Entrada(Mux_PCSource),
-	.Saida(MuxPCSourceOut)
+	.Load(Load),
+	.Entrada(MuxPCSourceOut),
+	.Saida(PC_MuxALUSrcA)
 );
 
 ControlUnit ControlUnit(
-	.Clk(clock),
-	.Reset(reset),
+	.clock(clock),
+	.reset(reset),
 	.ALUSrcA(ALUSrcA),
 	.ALUSrcB(ALUSrcB),
 	.PCSource(PCSource),
@@ -47,8 +45,9 @@ ControlUnit ControlUnit(
 	.MenorQue(MenorQue)
 );
 
+
 MuxALUSrcA MuxALUSrcA(
-	.A(PC_MuxPCSource),
+	.A(PC_MuxALUSrcA),
 	.B(1'd0),
 	.C(1'd0),
 	.D(1'd0),
@@ -78,7 +77,7 @@ MuxPCSource MuxPCSource(
 	.PCSource(PCSource)
 );
 
-ULA32 ULA(
+ula32 ULA(
 	.A(MuxALUSourceAOut),
 	.B(MuxALUSourceBOut),
 	.Seletor(ALUOp),
