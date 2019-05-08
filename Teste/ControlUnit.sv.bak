@@ -11,7 +11,11 @@ module ControlUnit(
 	input logic Zero,
 	input logic Igual,
 	input logic MaiorQue,
-	input logic MenorQue
+	input logic MenorQue,
+	input logic MemWr,
+	input logic IRWrite,
+	input logic Iord,
+	input logic [3:0] MemToReg
 	//input logic [6:0] state,
 	//input logic [6:0] nextstate
 );
@@ -27,7 +31,7 @@ always_ff@(posedge clock, posedge reset) begin
 		//stateout = state;
 end
 
-always_comb begin
+always @* begin
 	case(state)
 		Start: begin
 			ALUSrcA = 2'd0;

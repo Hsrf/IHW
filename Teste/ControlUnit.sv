@@ -11,7 +11,11 @@ module ControlUnit(
 	input logic Zero,
 	input logic Igual,
 	input logic MaiorQue,
-	input logic MenorQue
+	input logic MenorQue,
+	input logic MemWr,
+	input logic IRWrite,
+	input logic Iord,
+	input logic MemToReg
 	//input logic [6:0] state,
 	//input logic [6:0] nextstate
 );

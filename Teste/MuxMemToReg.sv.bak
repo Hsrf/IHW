@@ -11,7 +11,7 @@ module MuxMemToReg(A, B, C, D, E, F, G, H, out, MemToReg);
             2: out = C;
             3: out = D;
             4: out = E;
-            5: out = 8'd227;
+            5: out = 8d'227;
             6: out = F;
             7: out = G;
             8: out = H;
