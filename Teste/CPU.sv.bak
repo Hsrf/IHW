@@ -20,12 +20,12 @@ logic MaiorQue;
 logic MenorQue;
 logic [31:0] PCOut;
 logic Load;
-logic [31:0] MuxIorOut;
+logic [31:0] MuxIordOut;
 logic MemWr;
 logic [31:0] MemOut;
 logic IRWrite;
 logic [31:0] MuxIordOut;
-logic Iord;
+logic [2:0] Iord;
 logic [31:0] AluOutOut;
 logic [31:0] MemToRegOut;
 logic [3:0] MemToReg;
@@ -200,10 +200,10 @@ Banco_reg BancoRegistradores(
 	.RegWrite(RegWrite),
 	.ReadReg1(MemOut[25:21]),
 	.ReadReg2(MemOut[20:16]),
-	.WriteReg(MuxRegDstOut)
-	WriteData 	: IN	STD_LOGIC_VECTOR (31 downto 0);	-- Indica o dado a ser escrito
-	ReadData1	: OUT	STD_LOGIC_VECTOR (31 downto 0);	-- Mostra a informaçao presente no registrador #1
-	ReadData2	: OUT	STD_LOGIC_VECTOR (31 downto 0)	-- Mostra a informação presente no registrador #2
+	.WriteReg(MuxRegDstOut),
+	.WriteData(MuxMemToRegOut),
+	.ReadData1(RegWriteOut1),
+	.ReadData2(RegWriteOut2)
 );
 
 

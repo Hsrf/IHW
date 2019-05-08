@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Wed May 08 16:47:29 2019
+Wed May 08 17:27:47 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Wed May 08 16:47:29 2019        ;
+; Analysis & Synthesis Status   ; Successful - Wed May 08 17:27:47 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -251,31 +251,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------+
-; State Machine - |CPU|ControlUnit:ControlUnit|state ;
-+-------------+--------------------------------------+
-; Name        ; state.Start                          ;
-+-------------+--------------------------------------+
-; state.Reset ; 0                                    ;
-; state.Start ; 1                                    ;
-+-------------+--------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CPU|ControlUnit:ControlUnit|state                                                                                    ;
++-------------+-------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+
+; Name        ; state.Wait3 ; state.ADD4 ; state.ADD3 ; state.ADD2 ; state.ADD1 ; state.Wait2 ; state.Wait1 ; state.Start ; state.Reset ;
++-------------+-------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+
+; state.Reset ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ;
+; state.Start ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 1           ; 1           ;
+; state.Wait1 ; 0           ; 0          ; 0          ; 0          ; 0          ; 0           ; 1           ; 0           ; 1           ;
+; state.Wait2 ; 0           ; 0          ; 0          ; 0          ; 0          ; 1           ; 0           ; 0           ; 1           ;
+; state.ADD1  ; 0           ; 0          ; 0          ; 0          ; 1          ; 0           ; 0           ; 0           ; 1           ;
+; state.ADD2  ; 0           ; 0          ; 0          ; 1          ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.ADD3  ; 0           ; 0          ; 1          ; 0          ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.ADD4  ; 0           ; 1          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.Wait3 ; 1           ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; Registrador:PC|Saida[0]               ; Stuck at GND due to stuck port clock_enable ;
-; ControlUnit:ControlUnit|state.Start   ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~5       ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~6       ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~7       ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~8       ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~9       ; Lost fanout                                 ;
-; ControlUnit:ControlUnit|state~10      ; Lost fanout                                 ;
-; Total Number of Removed Registers = 8 ;                                             ;
-+---------------------------------------+---------------------------------------------+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; Registrador:PC|Saida[0]                ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~4        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~5        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~6        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~7        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~8        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~9        ; Lost fanout        ;
+; ControlUnit:ControlUnit|state~10       ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.Reset    ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.Start    ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.Wait1    ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.Wait2    ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.ADD1     ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.ADD2     ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.ADD3     ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.ADD4     ; Lost fanout        ;
+; ControlUnit:ControlUnit|state.Wait3    ; Lost fanout        ;
+; Total Number of Removed Registers = 17 ;                    ;
++----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -504,7 +520,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; E    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
 ; F    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
 ; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Iord ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "Iord[2..1]" will be connected to GND.                                       ;
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -562,17 +577,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ControlUnit:ControlUnit"                                                                                                                                                             ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUSrcA  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
-; ALUSrcB  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
-; PCSource ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
-; ALUOp    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.            ;
-; MemToReg ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlUnit:ControlUnit"                                                                                                                                                  ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALUSrcA  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALUSrcB  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; PCSource ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALUOp    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; Iord     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; MemToReg ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (4 bits) it drives.  The 3 most-significant bit(s) in the port expression will be connected to GND. ;
+; RegDst   ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -590,7 +607,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 16:47:24 2019
+    Info: Processing started: Wed May 08 17:27:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
@@ -625,29 +642,75 @@ Info: Found 1 design units, including 1 entities, in source file muxmemtoreg.sv
     Info: Found entity 1: MuxMemToReg
 Info: Found 1 design units, including 1 entities, in source file muxregdst.sv
     Info: Found entity 1: MuxRegDst
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(176): created implicit net for "WriteRegOut2"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(185): created implicit net for "ALUOutOut"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(204): created implicit net for "MuxMemToRegOut"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(175): created implicit net for "WriteRegOut2"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(184): created implicit net for "ALUOutOut"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(203): created implicit net for "MuxMemToRegOut"
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(40): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(41): truncated value with size 3 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(42): truncated value with size 3 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(43): truncated value with size 3 to match size of target (1)
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(38): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "PCSource", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "PCWrite", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(38): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(38)
-Info (10041): Inferred latch for "PCWrite" at ControlUnit.sv(38)
-Info (10041): Inferred latch for "PCSource" at ControlUnit.sv(38)
-Info (10041): Inferred latch for "ALUOp" at ControlUnit.sv(38)
-Info (10041): Inferred latch for "ALUSrcB" at ControlUnit.sv(38)
-Info (10041): Inferred latch for "ALUSrcA" at ControlUnit.sv(38)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(47): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(48): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(49): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(50): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(54): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(55): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(59): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(64): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(65): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(66): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(67): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(71): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(72): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(76): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(81): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(82): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(83): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(84): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(88): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(89): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(93): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(98): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(99): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(100): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(101): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(105): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(106): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(110): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(115): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(116): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(117): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(118): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(122): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(123): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(127): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(132): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(133): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(134): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(135): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(139): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(140): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(144): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(149): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(150): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(151): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(152): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(156): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(157): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(161): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(166): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(167): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(168): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(169): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(173): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(174): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(178): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(183): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(184): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(185): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(186): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(190): truncated value with size 3 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(191): truncated value with size 4 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(195): truncated value with size 2 to match size of target (1)
 Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -1429,8 +1492,6 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
-    Warning (12110): Net "MemWr" is missing source, defaulting to GND
-    Warning (12110): Net "IRWrite" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
@@ -1462,14 +1523,11 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
-    Warning (12110): Net "Iord" is missing source, defaulting to GND
+    Warning (12110): Net "Iord[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Iord[1]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[3]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[2]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[1]" is missing source, defaulting to GND
-    Warning (12110): Net "MemToReg[0]" is missing source, defaulting to GND
-    Warning (12110): Net "WriteRegA" is missing source, defaulting to GND
-    Warning (12110): Net "WriteRegB" is missing source, defaulting to GND
-    Warning (12110): Net "ALUOutControl" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
@@ -1502,8 +1560,6 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "RegDst[1]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDst[0]" is missing source, defaulting to GND
-    Warning (12110): Net "RegWrite" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
     Warning (12110): Net "ALUOp[1]" is missing source, defaulting to GND
@@ -1605,8 +1661,6 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxALUSourceBOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[2]" is missing source, defaulting to GND
     Warning (12110): Net "PCSource[1]" is missing source, defaulting to GND
-    Warning (12110): Net "MemWr" is missing source, defaulting to GND
-    Warning (12110): Net "IRWrite" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[30]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[29]" is missing source, defaulting to GND
@@ -1638,14 +1692,11 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[3]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxIordOut[1]" is missing source, defaulting to GND
-    Warning (12110): Net "Iord" is missing source, defaulting to GND
+    Warning (12110): Net "Iord[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Iord[1]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[3]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[2]" is missing source, defaulting to GND
     Warning (12110): Net "MemToReg[1]" is missing source, defaulting to GND
-    Warning (12110): Net "MemToReg[0]" is missing source, defaulting to GND
-    Warning (12110): Net "WriteRegA" is missing source, defaulting to GND
-    Warning (12110): Net "WriteRegB" is missing source, defaulting to GND
-    Warning (12110): Net "ALUOutControl" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[31]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[30]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[29]" is missing source, defaulting to GND
@@ -1678,8 +1729,7 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[2]" is missing source, defaulting to GND
     Warning (12110): Net "MuxRegDstOut[1]" is missing source, defaulting to GND
     Warning (12110): Net "RegDst[1]" is missing source, defaulting to GND
-    Warning (12110): Net "RegDst[0]" is missing source, defaulting to GND
-    Warning (12110): Net "RegWrite" is missing source, defaulting to GND
+Warning: LATCH primitive "MuxPCSource:MuxPCSource|out" is permanently enabled
 Warning: Synthesized away the following node(s):
     Warning: Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[0]"
@@ -1715,14 +1765,24 @@ Warning: Synthesized away the following node(s):
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[6]"
         Warning (14320): Synthesized away node "Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|q_a[7]"
 Warning: 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
-    Info: Register "ControlUnit:ControlUnit|state.Start" lost all its fanouts during netlist optimizations.
+Info: 17 registers lost all their fanouts during netlist optimizations. The first 17 are displayed below.
+    Info: Register "Registrador:PC|Saida[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state~4" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~5" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~6" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~7" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.Reset" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.Start" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.Wait1" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.Wait2" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.ADD1" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.ADD2" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.ADD3" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.ADD4" lost all its fanouts during netlist optimizations.
+    Info: Register "ControlUnit:ControlUnit|state.Wait3" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/gvh/Desktop/Teste/PQP.map.smsg
 Warning: Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "clock"
@@ -1730,11 +1790,11 @@ Warning: Design contains 2 input pin(s) that do not drive logic
 Info: Implemented 2 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 0 output pins
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1049 warnings
-    Info: Peak virtual memory: 315 megabytes
-    Info: Processing ended: Wed May 08 16:47:29 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1088 warnings
+    Info: Peak virtual memory: 313 megabytes
+    Info: Processing ended: Wed May 08 17:27:47 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
