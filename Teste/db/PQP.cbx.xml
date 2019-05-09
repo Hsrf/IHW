@@ -1060,9 +1060,12 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux369" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux289" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegDst:MuxRegDst|lpm_mux:Mux0" CBX_FILE_NAME="mux_0oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegDst:MuxRegDst|lpm_mux:Mux1" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux610" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegDst:MuxRegDst|lpm_mux:Mux2" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux530" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux611" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegDst:MuxRegDst|lpm_mux:Mux3" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:ULA|lpm_mux:Mux0" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux450" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:BancoRegistradores|lpm_mux:Mux531" CBX_FILE_NAME="mux_kpc.tdf"/>
