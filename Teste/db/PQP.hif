@@ -50,116 +50,8 @@ Registrador:B
 Registrador:ALUOut
 }
 # lmf
-|programfiles|altera|quartus9|quartus|lmf|maxplus2.lmf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-MuxALUSrcA
-# storage
-db|PQP.(2).cnf
-db|PQP.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxalusrca.sv
-b62de848d3f97ebd8f377349ba4c9ffc
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxALUSrcA:MuxALUSrcA
-}
-# macro_sequence
-
-# end
-# entity
-MuxALUSrcB
-# storage
-db|PQP.(3).cnf
-db|PQP.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxalusrcb.sv
-6a786a6aaeff2e92742f307e2f0d77e
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxALUSrcB:MuxALUSrcB
-}
-# macro_sequence
-
-# end
-# entity
-MuxPCSource
-# storage
-db|PQP.(4).cnf
-db|PQP.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxpcsource.sv
-174cf7f2f5a69fb5ed19f71c528b3ab4
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxPCSource:MuxPCSource
-}
 # macro_sequence
 
 # end
@@ -191,7 +83,7 @@ ON
 Ula32:ULA
 }
 # lmf
-|programfiles|altera|quartus9|quartus|lmf|maxplus2.lmf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -224,7 +116,7 @@ ON
 Memoria:Memoria
 }
 # lmf
-|programfiles|altera|quartus9|quartus|lmf|maxplus2.lmf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
@@ -236,7 +128,7 @@ db|PQP.(8).cnf
 db|PQP.(8).cnf
 # case_insensitive
 # source_file
-|programfiles|altera|quartus9|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|libraries|megafunctions|lpm_ram_dq.tdf
 8cb8fb4e8f3e90656f489fc92aabb9
 7
 # user_parameter {
@@ -396,7 +288,7 @@ db|PQP.(9).cnf
 db|PQP.(9).cnf
 # case_insensitive
 # source_file
-|programfiles|altera|quartus9|quartus|libraries|megafunctions|altram.tdf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|libraries|megafunctions|altram.tdf
 c72d5dfba4da3c5a1457d7f3112cd3b
 7
 # user_parameter {
@@ -564,7 +456,7 @@ db|PQP.(10).cnf
 db|PQP.(10).cnf
 # case_insensitive
 # source_file
-|programfiles|altera|quartus9|quartus|libraries|megafunctions|altsyncram.tdf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|libraries|megafunctions|altsyncram.tdf
 67d9a3902c8a461c1d5750189e124f2
 7
 # user_parameter {
@@ -956,7 +848,7 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-259d9ceecfb64de34843f63b715ef2f
+ab5d9adc71218e5246db365fc849b8
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
@@ -995,8 +887,149 @@ ON
 Instr_Reg:InstructionRegister
 }
 # lmf
-|programfiles|altera|quartus9|quartus|lmf|maxplus2.lmf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Banco_reg
+# storage
+db|PQP.(16).cnf
+db|PQP.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+banco_reg.vhd
+58cae457eff58588dff3b9cebfe47d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Banco_reg:BancoRegistradores
+}
+# lmf
+|users|gabi|downloads|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+MuxALUSrcA
+# storage
+db|PQP.(2).cnf
+db|PQP.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxalusrca.sv
+7b7b54ab615e176b1bbbe4736174f5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxALUSrcA:MuxALUSrcA
+}
+# macro_sequence
+
+# end
+# entity
+MuxALUSrcB
+# storage
+db|PQP.(3).cnf
+db|PQP.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxalusrcb.sv
+f8af70a8668b91c47b17e6473278cd63
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxALUSrcB:MuxALUSrcB
+}
+# macro_sequence
+
+# end
+# entity
+MuxPCSource
+# storage
+db|PQP.(4).cnf
+db|PQP.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxpcsource.sv
+81e0c6a6b13213cb76aabc6ebdebef4
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxPCSource:MuxPCSource
+}
 # macro_sequence
 
 # end
@@ -1012,7 +1045,7 @@ ON
 # case_sensitive
 # source_file
 muxiord.sv
-b3c46b1788037383f7b24388841553
+8b44405ebe861e606018d137d79156f
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1048,7 +1081,7 @@ ON
 # case_sensitive
 # source_file
 muxmemtoreg.sv
-835e53812d1c1c232f462b5eddc32aa0
+2cf07f894869476b7cca52fe3908971
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1084,7 +1117,7 @@ ON
 # case_sensitive
 # source_file
 muxregdst.sv
-2f75573de9462856cc35bc9172b0de
+5fdb8d122450957d377a4dd13bf139ff
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1109,75 +1142,6 @@ MuxRegDst:MuxRegDst
 
 # end
 # entity
-Banco_reg
-# storage
-db|PQP.(16).cnf
-db|PQP.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-banco_reg.vhd
-2cadfcaf44a2386f30e8abc1e4fa4f58
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-Banco_reg:BancoRegistradores
-}
-# lmf
-|programfiles|altera|quartus9|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-CPU
-# storage
-db|PQP.(0).cnf
-db|PQP.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.sv
-8cae9ff0a9a8d2dcb83922ccde42bf
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 ControlUnit
 # storage
 db|PQP.(5).cnf
@@ -1189,7 +1153,7 @@ ON
 # case_sensitive
 # source_file
 controlunit.sv
-926ea6bd4681a96d5cb0fd549576848d
+a957a3664877317754971c3c3c924d5
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1209,6 +1173,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 ControlUnit:ControlUnit
+}
+# macro_sequence
+
+# end
+# entity
+CPU
+# storage
+db|PQP.(0).cnf
+db|PQP.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.sv
+97c7a9f888acd69f14d45774304e53b9
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
