@@ -142,7 +142,7 @@ always @* begin
 				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
-				ALUOutControl = 1'd0;
+				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
 				nextstate = ADD3;
@@ -159,7 +159,7 @@ always @* begin
 				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
-				ALUOutControl = 1'd1;
+				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
 				nextstate = ADD4;

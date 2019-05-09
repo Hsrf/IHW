@@ -1,21 +1,24 @@
 module CPU(
 	input logic clock,
 	input logic reset,
-	output logic [31:0] AluOutOut,
-	output logic [31:0] MuxPCSourceOut,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic [6:0] stateout,
 	output logic [4:0] Reg1,
 	output logic [4:0] Reg2,
-	output logic [31:0] RegAOut,
-	output logic [31:0] RegBOut,
 	output logic [31:0] RegWriteOut1,
 	output logic [31:0] RegWriteOut2,
 	output logic [31:0] MuxMemToRegOut,
-	output logic [31:0] ALUResult
+	output logic [31:0] ALUResult,
+	output logic [4:0] MuxRegDstOut,
+	output logic RegWrite,
+	output logic [15:0] Imediato
 );
 
+logic [31:0] AluOutOut;
+logic [31:0] MuxPCSourceOut;
+logic [31:0] RegAOut;
+logic [31:0] RegBOut;
 logic [31:0] PCOut;
 logic [2:0] ALUOp;
 logic PCWrite;
@@ -39,11 +42,9 @@ logic [3:0] MemToReg;
 logic WriteRegA;
 logic WriteRegB;
 logic ALUOutControl;
-logic [31:0] MuxRegDstOut;
 logic [1:0] RegDst;
-logic RegWrite;
 logic [5:0] OpCode;
-logic [15:0] Imeadiato;
+logic [4:0] rd;
 
 
 Registrador PC(
@@ -194,10 +195,10 @@ Registrador ALUOut(
 );
 
 MuxRegDst MuxRegDst(
-	.A(MemOut[20:16]),
+	.A(Reg2),
 	.B(1'd0),
 	.C(1'd0),
-	.D(1'd0),
+	.D(rd),
 	.out(MuxRegDstOut),
 	.RegDst(RegDst)
 );
@@ -214,5 +215,6 @@ Banco_reg BancoRegistradores(
 	.ReadData2(RegWriteOut2)
 );
 
+assign rd = Imediato [15:11];
 
 endmodule

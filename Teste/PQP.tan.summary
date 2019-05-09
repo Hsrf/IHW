@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 20.701 ns
+Actual Time    : 14.964 ns
 From           : ControlUnit:ControlUnit|state.ADD2
-To             : MuxPCSourceOut[31]
+To             : ALUResult[29]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 85.47 MHz ( period = 11.700 ns )
+Actual Time    : 112.71 MHz ( period = 8.872 ns )
 From           : ControlUnit:ControlUnit|state.ADD2
-To             : Registrador:PC|Saida[30]
+To             : Registrador:PC|Saida[31]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
