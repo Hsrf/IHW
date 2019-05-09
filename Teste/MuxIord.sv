@@ -1,7 +1,8 @@
 module MuxIord(A, B, C, D, E, F, out, Iord);
-  input logic A, B, C, D, E, F;
+  input logic B, C, D, E, F;
+  input logic [31:0] A;
   input logic [2:0] Iord;
-  output logic out;
+  output logic [31:0] out;
   
     always @(Iord)begin
       case(Iord)

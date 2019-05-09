@@ -1,8 +1,9 @@
 module MuxALUSrcB(A, B, C, D, E, F, out, SrcB);
  
-  input logic A, B, C, D, E, F;
+  input logic A, C, D, E, F;
+  input logic [2:0] B;
   input logic [2:0] SrcB;
-  output logic out;
+  output logic [31:0] out;
   
     always @(SrcB)begin
       case(SrcB)

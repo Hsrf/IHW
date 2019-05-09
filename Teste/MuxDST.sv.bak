@@ -1,7 +1,8 @@
 module MuxDST(A, B, C, D, out, DSTOut);
- input logic A, B, C, D;
- input logic [2:0] DSTOut;
-  output logic out;
+    input logic [3:0] A
+ input logic B, C, D;
+ input logic [1:0] DSTOut;
+  output logic [31:0] out;
   
     always @(DSTOut)begin
       case(DSTOut)

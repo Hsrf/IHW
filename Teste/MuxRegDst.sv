@@ -1,7 +1,8 @@
 module MuxRegDst(A, B, C, D, out, RegDst);
- input logic A, B, C, D;
+ input logic B, C, D;
+ input logic [3:0] A;
  input logic [1:0] RegDst;
-  output logic out;
+  output logic [31:0] out;
   
     always @(RegDst)begin
       case(RegDst)

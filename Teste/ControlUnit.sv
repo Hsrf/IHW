@@ -1,10 +1,11 @@
 module ControlUnit(
 	input logic clock,
 	input logic reset,
-	output logic ALUSrcA,
-	output logic ALUSrcB,
-	output logic PCSource,
-	output logic ALUOp,
+	input logic [5:0] OpCode,
+	output logic [1:0] ALUSrcA,
+	output logic [2:0] ALUSrcB,
+	output logic [2:0] PCSource,
+	output logic [2:0] ALUOp,
 	output logic PCWrite,
 	input logic Overflow,
 	input logic Negativo,
@@ -14,13 +15,14 @@ module ControlUnit(
 	input logic MenorQue,
 	output logic MemWr,
 	output logic IRWrite,
-	output logic Iord,
-	output logic MemToReg,
+	output logic [2:0] Iord,
+	output logic [3:0] MemToReg,
 	output logic WriteRegA,
 	output logic WriteRegB,
 	output logic ALUOutControl,
-	output logic RegDst,
-	output logic RegWrite
+	output logic [1:0] RegDst,
+	output logic RegWrite,
+	output logic [6:0] stateout
 );
 
 enum logic [6:0] {
@@ -38,7 +40,7 @@ enum logic [6:0] {
 always_ff@(posedge clock, posedge reset) begin
 		if(reset) state <= Reset;
 		else state <= nextstate;
-		//stateout = state;
+		stateout = state;
 end
 
 always @* begin

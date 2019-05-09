@@ -1,15 +1,24 @@
 module CPU(
 	input logic clock,
-	input logic reset
+	input logic reset,
+	output logic [31:0] AluOutOut,
+	output logic [31:0] PCOut,
+	output logic [31:0] MuxPCSourceOut,
+	output logic [31:0] MuxALUSourceAOut,
+	output logic [31:0] MuxALUSourceBOut,
+	output logic [6:0] stateout,
+	output logic [4:0] Reg1,
+	output logic [4:0] Reg2,
+	output logic [31:0] RegAOut,
+	output logic [31:0] RegBOut,
+	output logic [31:0] RegWriteOut1,
+	output logic [31:0] RegWriteOut2
 );
 
 logic [2:0] ALUOp;
 logic PCWrite;
-logic [31:0] MuxPCSourceOut;
-logic [31:0] MuxALUSourceAOut;
 logic [1:0] ALUSrcA;
 logic [2:0] ALUSrcB;
-logic [31:0] MuxALUSourceBOut;
 logic [31:0] ALUResult;
 logic [2:0] PCSource;
 logic Overflow;
@@ -18,26 +27,23 @@ logic Zero;
 logic Igual;
 logic MaiorQue;
 logic MenorQue;
-logic [31:0] PCOut;
 logic Load;
 logic [31:0] MuxIordOut;
 logic MemWr;
 logic [31:0] MemOut;
 logic IRWrite;
 logic [2:0] Iord;
-logic [31:0] AluOutOut;
 logic [31:0] MemToRegOut;
 logic [3:0] MemToReg;
-logic [31:0] RegWriteOut1;
-logic [31:0] RegAOut;
-logic [31:0] RegWriteOut2;
-logic [31:0] RegBOut;
 logic WriteRegA;
 logic WriteRegB;
 logic ALUOutControl;
 logic [31:0] MuxRegDstOut;
 logic [1:0] RegDst;
 logic RegWrite;
+logic [5:0] OpCode;
+logic [15:0] Imeadiato;
+
 
 Registrador PC(
 	.Clk(clock),
@@ -69,7 +75,9 @@ ControlUnit ControlUnit(
 	.WriteRegB(WriteRegB),
 	.ALUOutControl(ALUOutControl),
 	.RegDst(RegDst),
-	.RegWrite(RegWrite)
+	.RegWrite(RegWrite),
+	.stateout(stateout),
+	.OpCode(OpCode)
 );
 
 
@@ -130,10 +138,10 @@ Instr_Reg InstructionRegister(
 	.Reset(reset),
 	.Load_ir(IRWrite),
 	.Entrada(MemOut),
-	.Instr31_26(MemOut[31:26]),
-	.Instr25_21(MemOut[25:21]),
-	.Instr20_16(MemOut[20:16]),
-	.Instr15_0(MemOut[15:0])
+	.Instr31_26(OpCode),
+	.Instr25_21(Reg1),
+	.Instr20_16(Reg2),
+	.Instr15_0(Imediato)
 );
 
 MuxIord MuxIord(
@@ -197,8 +205,8 @@ Banco_reg BancoRegistradores(
 	.Clk(clock),
 	.Reset(reset),
 	.RegWrite(RegWrite),
-	.ReadReg1(MemOut[25:21]),
-	.ReadReg2(MemOut[20:16]),
+	.ReadReg1(Reg1),
+	.ReadReg2(Reg2),
 	.WriteReg(MuxRegDstOut),
 	.WriteData(MuxMemToRegOut),
 	.ReadData1(RegWriteOut1),

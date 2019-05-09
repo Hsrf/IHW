@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for PQP
-Wed May 08 17:27:56 2019
+Wed May 08 23:47:39 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -7,8 +7,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Parallel Compilation
-  3. Timing Analyzer Messages
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clock'
+  7. tco
+  8. Timing Analyzer Messages
 
 
 
@@ -31,21 +36,485 @@ applicable agreement for further details.
 
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   0.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                         ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------+--------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                ; To                       ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------+--------------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 15.430 ns                        ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[30]       ; clock      ; --       ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; 114.82 MHz ( period = 8.709 ns ) ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[31] ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                     ;                          ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------+--------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                ; To                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 114.82 MHz ( period = 8.709 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.525 ns                ;
+; N/A                                     ; 115.92 MHz ( period = 8.627 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.441 ns                ;
+; N/A                                     ; 116.01 MHz ( period = 8.620 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.438 ns                ;
+; N/A                                     ; 116.21 MHz ( period = 8.605 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.421 ns                ;
+; N/A                                     ; 116.75 MHz ( period = 8.565 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.381 ns                ;
+; N/A                                     ; 117.33 MHz ( period = 8.523 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.337 ns                ;
+; N/A                                     ; 117.43 MHz ( period = 8.516 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.334 ns                ;
+; N/A                                     ; 117.88 MHz ( period = 8.483 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.297 ns                ;
+; N/A                                     ; 117.98 MHz ( period = 8.476 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.294 ns                ;
+; N/A                                     ; 118.05 MHz ( period = 8.471 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.287 ns                ;
+; N/A                                     ; 118.36 MHz ( period = 8.449 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.263 ns                ;
+; N/A                                     ; 119.02 MHz ( period = 8.402 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.216 ns                ;
+; N/A                                     ; 119.20 MHz ( period = 8.389 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.203 ns                ;
+; N/A                                     ; 119.30 MHz ( period = 8.382 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.200 ns                ;
+; N/A                                     ; 119.52 MHz ( period = 8.367 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.179 ns                ;
+; N/A                                     ; 119.62 MHz ( period = 8.360 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.176 ns                ;
+; N/A                                     ; 120.19 MHz ( period = 8.320 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.132 ns                ;
+; N/A                                     ; 120.29 MHz ( period = 8.313 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.129 ns                ;
+; N/A                                     ; 120.37 MHz ( period = 8.308 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 8.109 ns                ;
+; N/A                                     ; 120.39 MHz ( period = 8.306 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 8.120 ns                ;
+; N/A                                     ; 121.60 MHz ( period = 8.224 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 8.036 ns                ;
+; N/A                                     ; 121.70 MHz ( period = 8.217 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 8.033 ns                ;
+; N/A                                     ; 121.89 MHz ( period = 8.204 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 8.005 ns                ;
+; N/A                                     ; 122.49 MHz ( period = 8.164 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.965 ns                ;
+; N/A                                     ; 122.96 MHz ( period = 8.133 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 7.949 ns                ;
+; N/A                                     ; 123.92 MHz ( period = 8.070 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.871 ns                ;
+; N/A                                     ; 124.21 MHz ( period = 8.051 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 7.865 ns                ;
+; N/A                                     ; 124.25 MHz ( period = 8.048 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.847 ns                ;
+; N/A                                     ; 124.32 MHz ( period = 8.044 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 7.862 ns                ;
+; N/A                                     ; 124.98 MHz ( period = 8.001 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.800 ns                ;
+; N/A                                     ; 126.06 MHz ( period = 7.933 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.734 ns                ;
+; N/A                                     ; 126.50 MHz ( period = 7.905 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.704 ns                ;
+; N/A                                     ; 127.15 MHz ( period = 7.865 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 7.681 ns                ;
+; N/A                                     ; 127.32 MHz ( period = 7.854 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 7.685 ns                ;
+; N/A                                     ; 127.73 MHz ( period = 7.829 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.630 ns                ;
+; N/A                                     ; 128.39 MHz ( period = 7.789 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.590 ns                ;
+; N/A                                     ; 128.49 MHz ( period = 7.783 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 7.597 ns                ;
+; N/A                                     ; 128.60 MHz ( period = 7.776 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 7.594 ns                ;
+; N/A                                     ; 128.67 MHz ( period = 7.772 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 7.601 ns                ;
+; N/A                                     ; 128.78 MHz ( period = 7.765 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 7.598 ns                ;
+; N/A                                     ; 129.33 MHz ( period = 7.732 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.533 ns                ;
+; N/A                                     ; 129.95 MHz ( period = 7.695 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.496 ns                ;
+; N/A                                     ; 130.33 MHz ( period = 7.673 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.472 ns                ;
+; N/A                                     ; 131.13 MHz ( period = 7.626 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.425 ns                ;
+; N/A                                     ; 132.15 MHz ( period = 7.567 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.388 ns                ;
+; N/A                                     ; 132.80 MHz ( period = 7.530 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.329 ns                ;
+; N/A                                     ; 133.67 MHz ( period = 7.481 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 7.297 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.265 ns                ;
+; N/A                                     ; 133.99 MHz ( period = 7.463 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.284 ns                ;
+; N/A                                     ; 134.17 MHz ( period = 7.453 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 7.269 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.244 ns                ;
+; N/A                                     ; 135.10 MHz ( period = 7.402 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 7.233 ns                ;
+; N/A                                     ; 135.15 MHz ( period = 7.399 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 7.213 ns                ;
+; N/A                                     ; 135.28 MHz ( period = 7.392 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 7.210 ns                ;
+; N/A                                     ; 135.46 MHz ( period = 7.382 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 7.203 ns                ;
+; N/A                                     ; 135.92 MHz ( period = 7.357 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 7.158 ns                ;
+; N/A                                     ; 136.44 MHz ( period = 7.329 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.150 ns                ;
+; N/A                                     ; 136.61 MHz ( period = 7.320 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 7.149 ns                ;
+; N/A                                     ; 136.74 MHz ( period = 7.313 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 7.146 ns                ;
+; N/A                                     ; 136.86 MHz ( period = 7.307 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.126 ns                ;
+; N/A                                     ; 137.40 MHz ( period = 7.278 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 7.099 ns                ;
+; N/A                                     ; 137.74 MHz ( period = 7.260 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 7.079 ns                ;
+; N/A                                     ; 138.16 MHz ( period = 7.238 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 7.059 ns                ;
+; N/A                                     ; 139.59 MHz ( period = 7.164 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.983 ns                ;
+; N/A                                     ; 139.82 MHz ( period = 7.152 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 6.983 ns                ;
+; N/A                                     ; 139.98 MHz ( period = 7.144 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.965 ns                ;
+; N/A                                     ; 140.41 MHz ( period = 7.122 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.941 ns                ;
+; N/A                                     ; 141.06 MHz ( period = 7.089 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 6.890 ns                ;
+; N/A                                     ; 141.24 MHz ( period = 7.080 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 6.881 ns                ;
+; N/A                                     ; 141.28 MHz ( period = 7.078 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 6.894 ns                ;
+; N/A                                     ; 141.34 MHz ( period = 7.075 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.894 ns                ;
+; N/A                                     ; 141.44 MHz ( period = 7.070 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 6.899 ns                ;
+; N/A                                     ; 141.58 MHz ( period = 7.063 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 6.896 ns                ;
+; N/A                                     ; 142.84 MHz ( period = 7.001 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 6.817 ns                ;
+; N/A                                     ; 143.04 MHz ( period = 6.991 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.812 ns                ;
+; N/A                                     ; 143.29 MHz ( period = 6.979 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.798 ns                ;
+; N/A                                     ; 144.93 MHz ( period = 6.900 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.721 ns                ;
+; N/A                                     ; 145.41 MHz ( period = 6.877 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 6.708 ns                ;
+; N/A                                     ; 146.93 MHz ( period = 6.806 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.627 ns                ;
+; N/A                                     ; 147.15 MHz ( period = 6.796 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.617 ns                ;
+; N/A                                     ; 147.17 MHz ( period = 6.795 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 6.624 ns                ;
+; N/A                                     ; 147.32 MHz ( period = 6.788 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 6.621 ns                ;
+; N/A                                     ; 148.02 MHz ( period = 6.756 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.577 ns                ;
+; N/A                                     ; 148.13 MHz ( period = 6.751 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 6.567 ns                ;
+; N/A                                     ; 148.74 MHz ( period = 6.723 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.544 ns                ;
+; N/A                                     ; 148.99 MHz ( period = 6.712 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.548 ns                ;
+; N/A                                     ; 149.14 MHz ( period = 6.705 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 6.506 ns                ;
+; N/A                                     ; 149.25 MHz ( period = 6.700 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.501 ns                ;
+; N/A                                     ; 150.11 MHz ( period = 6.662 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.483 ns                ;
+; N/A                                     ; 150.60 MHz ( period = 6.640 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 150.92 MHz ( period = 6.626 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 6.442 ns                ;
+; N/A                                     ; 151.61 MHz ( period = 6.596 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.397 ns                ;
+; N/A                                     ; 151.68 MHz ( period = 6.593 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.412 ns                ;
+; N/A                                     ; 152.53 MHz ( period = 6.556 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.357 ns                ;
+; N/A                                     ; 152.95 MHz ( period = 6.538 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.359 ns                ;
+; N/A                                     ; 153.21 MHz ( period = 6.527 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 6.363 ns                ;
+; N/A                                     ; 153.92 MHz ( period = 6.497 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.316 ns                ;
+; N/A                                     ; 154.42 MHz ( period = 6.476 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 6.292 ns                ;
+; N/A                                     ; 154.66 MHz ( period = 6.466 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 6.297 ns                ;
+; N/A                                     ; 154.75 MHz ( period = 6.462 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.263 ns                ;
+; N/A                                     ; 155.28 MHz ( period = 6.440 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.239 ns                ;
+; N/A                                     ; 156.42 MHz ( period = 6.393 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.192 ns                ;
+; N/A                                     ; 156.64 MHz ( period = 6.384 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 6.213 ns                ;
+; N/A                                     ; 156.81 MHz ( period = 6.377 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 6.210 ns                ;
+; N/A                                     ; 156.84 MHz ( period = 6.376 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 6.192 ns                ;
+; N/A                                     ; 157.75 MHz ( period = 6.339 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.160 ns                ;
+; N/A                                     ; 158.13 MHz ( period = 6.324 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 6.145 ns                ;
+; N/A                                     ; 158.81 MHz ( period = 6.297 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 6.096 ns                ;
+; N/A                                     ; 159.26 MHz ( period = 6.279 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 6.080 ns                ;
+; N/A                                     ; 159.74 MHz ( period = 6.260 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 6.096 ns                ;
+; N/A                                     ; 160.18 MHz ( period = 6.243 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 6.044 ns                ;
+; N/A                                     ; 161.94 MHz ( period = 6.175 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.976 ns                ;
+; N/A                                     ; 162.50 MHz ( period = 6.154 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 5.975 ns                ;
+; N/A                                     ; 162.89 MHz ( period = 6.139 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 163.00 MHz ( period = 6.135 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 163.29 MHz ( period = 6.124 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 5.925 ns                ;
+; N/A                                     ; 163.91 MHz ( period = 6.101 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.917 ns                ;
+; N/A                                     ; 163.96 MHz ( period = 6.099 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.900 ns                ;
+; N/A                                     ; 164.28 MHz ( period = 6.087 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.918 ns                ;
+; N/A                                     ; 164.61 MHz ( period = 6.075 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 5.911 ns                ;
+; N/A                                     ; 164.88 MHz ( period = 6.065 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.881 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 5.877 ns                ;
+; N/A                                     ; 165.43 MHz ( period = 6.045 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 5.881 ns                ;
+; N/A                                     ; 165.54 MHz ( period = 6.041 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.842 ns                ;
+; N/A                                     ; 166.14 MHz ( period = 6.019 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.818 ns                ;
+; N/A                                     ; 166.39 MHz ( period = 6.010 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 5.846 ns                ;
+; N/A                                     ; 166.53 MHz ( period = 6.005 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.806 ns                ;
+; N/A                                     ; 166.53 MHz ( period = 6.005 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.834 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.831 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.782 ns                ;
+; N/A                                     ; 167.45 MHz ( period = 5.972 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.771 ns                ;
+; N/A                                     ; 168.46 MHz ( period = 5.936 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.735 ns                ;
+; N/A                                     ; 170.18 MHz ( period = 5.876 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.675 ns                ;
+; N/A                                     ; 170.77 MHz ( period = 5.856 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 5.657 ns                ;
+; N/A                                     ; 171.09 MHz ( period = 5.845 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 5.661 ns                ;
+; N/A                                     ; 171.23 MHz ( period = 5.840 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.639 ns                ;
+; N/A                                     ; 171.67 MHz ( period = 5.825 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 5.661 ns                ;
+; N/A                                     ; 174.37 MHz ( period = 5.735 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 5.571 ns                ;
+; N/A                                     ; 174.98 MHz ( period = 5.715 ns )                    ; Registrador:PC|Saida[16]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.546 ns                ;
+; N/A                                     ; 175.35 MHz ( period = 5.703 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.504 ns                ;
+; N/A                                     ; 175.75 MHz ( period = 5.690 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.506 ns                ;
+; N/A                                     ; 175.87 MHz ( period = 5.686 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 176.30 MHz ( period = 5.672 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 5.493 ns                ;
+; N/A                                     ; 176.46 MHz ( period = 5.667 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.468 ns                ;
+; N/A                                     ; 177.53 MHz ( period = 5.633 ns )                    ; Registrador:PC|Saida[16]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.462 ns                ;
+; N/A                                     ; 177.75 MHz ( period = 5.626 ns )                    ; Registrador:PC|Saida[16]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.459 ns                ;
+; N/A                                     ; 178.22 MHz ( period = 5.611 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.412 ns                ;
+; N/A                                     ; 178.79 MHz ( period = 5.593 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 5.429 ns                ;
+; N/A                                     ; 180.18 MHz ( period = 5.550 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 5.386 ns                ;
+; N/A                                     ; 181.59 MHz ( period = 5.507 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.308 ns                ;
+; N/A                                     ; 182.75 MHz ( period = 5.472 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 5.273 ns                ;
+; N/A                                     ; 182.92 MHz ( period = 5.467 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.268 ns                ;
+; N/A                                     ; 182.92 MHz ( period = 5.467 ns )                    ; Registrador:PC|Saida[17]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 5.298 ns                ;
+; N/A                                     ; 183.99 MHz ( period = 5.435 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.236 ns                ;
+; N/A                                     ; 184.37 MHz ( period = 5.424 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 5.240 ns                ;
+; N/A                                     ; 185.22 MHz ( period = 5.399 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.200 ns                ;
+; N/A                                     ; 185.43 MHz ( period = 5.393 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 5.209 ns                ;
+; N/A                                     ; 185.60 MHz ( period = 5.388 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 5.204 ns                ;
+; N/A                                     ; 185.70 MHz ( period = 5.385 ns )                    ; Registrador:PC|Saida[17]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 5.214 ns                ;
+; N/A                                     ; 185.94 MHz ( period = 5.378 ns )                    ; Registrador:PC|Saida[17]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 5.211 ns                ;
+; N/A                                     ; 186.12 MHz ( period = 5.373 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.174 ns                ;
+; N/A                                     ; 186.88 MHz ( period = 5.351 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.150 ns                ;
+; N/A                                     ; 187.16 MHz ( period = 5.343 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 5.179 ns                ;
+; N/A                                     ; 187.83 MHz ( period = 5.324 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 5.160 ns                ;
+; N/A                                     ; 188.18 MHz ( period = 5.314 ns )                    ; Registrador:PC|Saida[16]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 5.130 ns                ;
+; N/A                                     ; 188.29 MHz ( period = 5.311 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 5.127 ns                ;
+; N/A                                     ; 188.54 MHz ( period = 5.304 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.103 ns                ;
+; N/A                                     ; 189.32 MHz ( period = 5.282 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 5.083 ns                ;
+; N/A                                     ; 192.01 MHz ( period = 5.208 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 5.007 ns                ;
+; N/A                                     ; 193.12 MHz ( period = 5.178 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.979 ns                ;
+; N/A                                     ; 193.76 MHz ( period = 5.161 ns )                    ; Registrador:PC|Saida[18]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.992 ns                ;
+; N/A                                     ; 194.44 MHz ( period = 5.143 ns )                    ; Registrador:PC|Saida[12]            ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.959 ns                ;
+; N/A                                     ; 194.59 MHz ( period = 5.139 ns )                    ; Registrador:PC|Saida[14]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.975 ns                ;
+; N/A                                     ; 194.63 MHz ( period = 5.138 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.939 ns                ;
+; N/A                                     ; 196.89 MHz ( period = 5.079 ns )                    ; Registrador:PC|Saida[18]            ; Registrador:PC|Saida[30] ; clock      ; clock    ; None                        ; None                      ; 4.908 ns                ;
+; N/A                                     ; 197.16 MHz ( period = 5.072 ns )                    ; Registrador:PC|Saida[18]            ; Registrador:PC|Saida[29] ; clock      ; clock    ; None                        ; None                      ; 4.905 ns                ;
+; N/A                                     ; 197.32 MHz ( period = 5.068 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[24] ; clock      ; clock    ; None                        ; None                      ; 4.904 ns                ;
+; N/A                                     ; 197.39 MHz ( period = 5.066 ns )                    ; Registrador:PC|Saida[17]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.882 ns                ;
+; N/A                                     ; 197.98 MHz ( period = 5.051 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.852 ns                ;
+; N/A                                     ; 198.26 MHz ( period = 5.044 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.845 ns                ;
+; N/A                                     ; 198.61 MHz ( period = 5.035 ns )                    ; Registrador:PC|Saida[7]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 4.836 ns                ;
+; N/A                                     ; 199.12 MHz ( period = 5.022 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.821 ns                ;
+; N/A                                     ; 199.40 MHz ( period = 5.015 ns )                    ; Registrador:PC|Saida[9]             ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 4.816 ns                ;
+; N/A                                     ; 200.08 MHz ( period = 4.998 ns )                    ; ControlUnit:ControlUnit|state.Start ; Registrador:PC|Saida[18] ; clock      ; clock    ; None                        ; None                      ; 4.799 ns                ;
+; N/A                                     ; 201.01 MHz ( period = 4.975 ns )                    ; Registrador:PC|Saida[5]~DUPLICATE   ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.774 ns                ;
+; N/A                                     ; 201.13 MHz ( period = 4.972 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[22] ; clock      ; clock    ; None                        ; None                      ; 4.788 ns                ;
+; N/A                                     ; 202.22 MHz ( period = 4.945 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[26] ; clock      ; clock    ; None                        ; None                      ; 4.781 ns                ;
+; N/A                                     ; 202.47 MHz ( period = 4.939 ns )                    ; Registrador:PC|Saida[16]            ; Registrador:PC|Saida[27] ; clock      ; clock    ; None                        ; None                      ; 4.755 ns                ;
+; N/A                                     ; 202.59 MHz ( period = 4.936 ns )                    ; Registrador:PC|Saida[11]            ; Registrador:PC|Saida[21] ; clock      ; clock    ; None                        ; None                      ; 4.752 ns                ;
+; N/A                                     ; 204.33 MHz ( period = 4.894 ns )                    ; ControlUnit:ControlUnit|state.ADD2  ; Registrador:PC|Saida[18] ; clock      ; clock    ; None                        ; None                      ; 4.695 ns                ;
+; N/A                                     ; 204.96 MHz ( period = 4.879 ns )                    ; Registrador:PC|Saida[3]             ; Registrador:PC|Saida[19] ; clock      ; clock    ; None                        ; None                      ; 4.678 ns                ;
+; N/A                                     ; 205.42 MHz ( period = 4.868 ns )                    ; Registrador:PC|Saida[13]            ; Registrador:PC|Saida[23] ; clock      ; clock    ; None                        ; None                      ; 4.684 ns                ;
+; N/A                                     ; 206.02 MHz ( period = 4.854 ns )                    ; Registrador:PC|Saida[2]             ; Registrador:PC|Saida[18] ; clock      ; clock    ; None                        ; None                      ; 4.655 ns                ;
+; N/A                                     ; 207.77 MHz ( period = 4.813 ns )                    ; Registrador:PC|Saida[19]            ; Registrador:PC|Saida[31] ; clock      ; clock    ; None                        ; None                      ; 4.644 ns                ;
+; N/A                                     ; 209.78 MHz ( period = 4.767 ns )                    ; Registrador:PC|Saida[8]             ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 4.568 ns                ;
+; N/A                                     ; 210.08 MHz ( period = 4.760 ns )                    ; Registrador:PC|Saida[4]             ; Registrador:PC|Saida[18] ; clock      ; clock    ; None                        ; None                      ; 4.561 ns                ;
+; N/A                                     ; 210.08 MHz ( period = 4.760 ns )                    ; Registrador:PC|Saida[15]            ; Registrador:PC|Saida[25] ; clock      ; clock    ; None                        ; None                      ; 4.596 ns                ;
+; N/A                                     ; 210.08 MHz ( period = 4.760 ns )                    ; Registrador:PC|Saida[18]            ; Registrador:PC|Saida[28] ; clock      ; clock    ; None                        ; None                      ; 4.576 ns                ;
+; N/A                                     ; 210.26 MHz ( period = 4.756 ns )                    ; Registrador:PC|Saida[10]            ; Registrador:PC|Saida[20] ; clock      ; clock    ; None                        ; None                      ; 4.572 ns                ;
+; N/A                                     ; 211.06 MHz ( period = 4.738 ns )                    ; Registrador:PC|Saida[6]             ; Registrador:PC|Saida[18] ; clock      ; clock    ; None                        ; None                      ; 4.537 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                     ;                          ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------------+--------------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                                ; To                 ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------------+--------------------+------------+
+; N/A                                     ; None                                                ; 15.430 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.326 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.286 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.192 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.170 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.123 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 15.027 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.854 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.586 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.575 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.400 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.372 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.305 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 14.303 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 14.296 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.268 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.256 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.228 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.202 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.201 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 14.199 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 14.162 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.161 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 14.159 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 14.140 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.134 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.123 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 14.112 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.093 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 14.067 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 14.065 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 14.065 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 14.045 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 14.043 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.998 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.997 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.996 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.969 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.933 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.902 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.900 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.873 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 13.829 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.824 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.796 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.789 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.729 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.727 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.695 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.673 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.626 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.598 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 13.556 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.545 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.530 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.528 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.517 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.461 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.459 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.450 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.448 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.357 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.279 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 13.187 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 13.175 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 13.172 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.144 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.135 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 13.093 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 13.089 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.078 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 13.077 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 13.075 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 13.065 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 13.041 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 13.019 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.998 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 12.996 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 12.972 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.876 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.843 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 12.815 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 12.808 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 12.748 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 12.746 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 12.705 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 12.703 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.626 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 12.568 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 12.565 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.540 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 12.473 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 12.471 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 12.461 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.436 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 12.435 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.424 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.421 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.376 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 12.327 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.305 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.296 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 12.258 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.192 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 12.188 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 12.184 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 12.163 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 12.162 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 12.157 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 12.152 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 12.129 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 12.101 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 12.080 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 12.062 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 12.060 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 12.059 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 12.058 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 12.051 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 12.040 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 12.036 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 12.019 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.989 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.989 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 11.972 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 11.946 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.925 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.924 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.903 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.893 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.882 ns  ; Registrador:PC|Saida[18]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 11.877 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.856 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.781 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.778 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 11.760 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.750 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 11.722 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 11.721 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 11.720 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.710 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 11.690 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 11.683 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 11.681 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 11.608 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.587 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.534 ns  ; Registrador:PC|Saida[19]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 11.480 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.452 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.447 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 11.443 ns  ; Registrador:PC|Saida[20]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 11.441 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.406 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 11.378 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 11.376 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.340 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.337 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 11.336 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.329 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 11.319 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.311 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 11.311 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 11.309 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 11.308 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 11.258 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 11.242 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.220 ns  ; Registrador:PC|Saida[6]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.173 ns  ; Registrador:PC|Saida[5]~DUPLICATE   ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.158 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 11.130 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 11.077 ns  ; Registrador:PC|Saida[3]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 11.068 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 11.063 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 11.061 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 11.036 ns  ; Registrador:PC|Saida[14]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 11.008 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 10.989 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 10.939 ns  ; Registrador:PC|Saida[16]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 10.935 ns  ; Registrador:PC|Saida[9]             ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 10.904 ns  ; Registrador:PC|Saida[7]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 10.899 ns  ; Registrador:PC|Saida[21]            ; MuxPCSourceOut[30] ; clock      ;
+; N/A                                     ; None                                                ; 10.877 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 10.856 ns  ; Registrador:PC|Saida[11]            ; MuxPCSourceOut[21] ; clock      ;
+; N/A                                     ; None                                                ; 10.852 ns  ; Registrador:PC|Saida[18]            ; MuxPCSourceOut[29] ; clock      ;
+; N/A                                     ; None                                                ; 10.849 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[19] ; clock      ;
+; N/A                                     ; None                                                ; 10.824 ns  ; Registrador:PC|Saida[18]            ; MuxPCSourceOut[28] ; clock      ;
+; N/A                                     ; None                                                ; 10.757 ns  ; Registrador:PC|Saida[18]            ; MuxPCSourceOut[31] ; clock      ;
+; N/A                                     ; None                                                ; 10.755 ns  ; Registrador:PC|Saida[18]            ; MuxPCSourceOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 10.745 ns  ; ControlUnit:ControlUnit|state.ADD2  ; MuxPCSourceOut[19] ; clock      ;
+; N/A                                     ; None                                                ; 10.739 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 10.733 ns  ; Registrador:PC|Saida[13]            ; MuxPCSourceOut[23] ; clock      ;
+; N/A                                     ; None                                                ; 10.705 ns  ; Registrador:PC|Saida[2]             ; MuxPCSourceOut[19] ; clock      ;
+; N/A                                     ; None                                                ; 10.691 ns  ; Registrador:PC|Saida[17]            ; MuxPCSourceOut[26] ; clock      ;
+; N/A                                     ; None                                                ; 10.657 ns  ; Registrador:PC|Saida[15]            ; MuxPCSourceOut[25] ; clock      ;
+; N/A                                     ; None                                                ; 10.639 ns  ; ControlUnit:ControlUnit|state.Start ; MuxPCSourceOut[18] ; clock      ;
+; N/A                                     ; None                                                ; 10.636 ns  ; Registrador:PC|Saida[8]             ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 10.627 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[22] ; clock      ;
+; N/A                                     ; None                                                ; 10.625 ns  ; Registrador:PC|Saida[10]            ; MuxPCSourceOut[20] ; clock      ;
+; N/A                                     ; None                                                ; 10.611 ns  ; Registrador:PC|Saida[4]             ; MuxPCSourceOut[19] ; clock      ;
+; N/A                                     ; None                                                ; 10.606 ns  ; Registrador:PC|Saida[12]            ; MuxPCSourceOut[21] ; clock      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                     ;                    ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-------------------------------------+--------------------+------------+
 
 
 +--------------------------+
@@ -54,13 +523,96 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 17:27:56 2019
+    Info: Processing started: Wed May 08 23:47:39 2019
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PQP -c PQP --timing_analysis_only
-Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 237 megabytes
-    Info: Processing ended: Wed May 08 17:27:56 2019
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Info: Clock "clock" has Internal fmax of 114.82 MHz between source register "ControlUnit:ControlUnit|state.Start" and destination register "Registrador:PC|Saida[31]" (period= 8.709 ns)
+    Info: + Longest register to register delay is 8.525 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y17_N3; Fanout = 90; REG Node = 'ControlUnit:ControlUnit|state.Start'
+        Info: 2: + IC(0.660 ns) + CELL(0.366 ns) = 1.026 ns; Loc. = LCCOMB_X22_Y17_N16; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[7]~1'
+        Info: 3: + IC(0.214 ns) + CELL(0.053 ns) = 1.293 ns; Loc. = LCCOMB_X22_Y17_N10; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[8]~2'
+        Info: 4: + IC(0.215 ns) + CELL(0.053 ns) = 1.561 ns; Loc. = LCCOMB_X22_Y17_N0; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[9]~3'
+        Info: 5: + IC(0.212 ns) + CELL(0.053 ns) = 1.826 ns; Loc. = LCCOMB_X22_Y17_N30; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[10]~4'
+        Info: 6: + IC(0.209 ns) + CELL(0.053 ns) = 2.088 ns; Loc. = LCCOMB_X22_Y17_N14; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[11]~5'
+        Info: 7: + IC(0.215 ns) + CELL(0.053 ns) = 2.356 ns; Loc. = LCCOMB_X22_Y17_N28; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[12]~6'
+        Info: 8: + IC(0.390 ns) + CELL(0.053 ns) = 2.799 ns; Loc. = LCCOMB_X22_Y17_N4; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[13]~7'
+        Info: 9: + IC(0.220 ns) + CELL(0.053 ns) = 3.072 ns; Loc. = LCCOMB_X22_Y17_N20; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[14]~8'
+        Info: 10: + IC(0.310 ns) + CELL(0.053 ns) = 3.435 ns; Loc. = LCCOMB_X21_Y17_N6; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[15]~9'
+        Info: 11: + IC(0.303 ns) + CELL(0.053 ns) = 3.791 ns; Loc. = LCCOMB_X21_Y17_N4; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[16]~10'
+        Info: 12: + IC(0.213 ns) + CELL(0.053 ns) = 4.057 ns; Loc. = LCCOMB_X21_Y17_N10; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[17]~11'
+        Info: 13: + IC(0.213 ns) + CELL(0.053 ns) = 4.323 ns; Loc. = LCCOMB_X21_Y17_N8; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[18]~12'
+        Info: 14: + IC(0.298 ns) + CELL(0.053 ns) = 4.674 ns; Loc. = LCCOMB_X21_Y17_N14; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[19]~13'
+        Info: 15: + IC(0.213 ns) + CELL(0.053 ns) = 4.940 ns; Loc. = LCCOMB_X21_Y17_N12; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[20]~14'
+        Info: 16: + IC(0.360 ns) + CELL(0.053 ns) = 5.353 ns; Loc. = LCCOMB_X21_Y17_N18; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[21]~15'
+        Info: 17: + IC(0.360 ns) + CELL(0.053 ns) = 5.766 ns; Loc. = LCCOMB_X21_Y17_N20; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[22]~16'
+        Info: 18: + IC(0.221 ns) + CELL(0.053 ns) = 6.040 ns; Loc. = LCCOMB_X21_Y17_N0; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[23]~17'
+        Info: 19: + IC(0.258 ns) + CELL(0.053 ns) = 6.351 ns; Loc. = LCCOMB_X21_Y17_N24; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[24]~18'
+        Info: 20: + IC(0.304 ns) + CELL(0.053 ns) = 6.708 ns; Loc. = LCCOMB_X21_Y17_N30; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[25]~19'
+        Info: 21: + IC(0.213 ns) + CELL(0.053 ns) = 6.974 ns; Loc. = LCCOMB_X21_Y17_N28; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[26]~20'
+        Info: 22: + IC(0.366 ns) + CELL(0.053 ns) = 7.393 ns; Loc. = LCCOMB_X21_Y17_N22; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[27]~21'
+        Info: 23: + IC(0.307 ns) + CELL(0.053 ns) = 7.753 ns; Loc. = LCCOMB_X21_Y17_N16; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[28]~22'
+        Info: 24: + IC(0.209 ns) + CELL(0.053 ns) = 8.015 ns; Loc. = LCCOMB_X21_Y17_N26; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[29]~23'
+        Info: 25: + IC(0.302 ns) + CELL(0.053 ns) = 8.370 ns; Loc. = LCCOMB_X22_Y17_N6; Fanout = 2; COMB Node = 'Ula32:ULA|Mux0~0'
+        Info: 26: + IC(0.000 ns) + CELL(0.155 ns) = 8.525 ns; Loc. = LCFF_X22_Y17_N7; Fanout = 3; REG Node = 'Registrador:PC|Saida[31]'
+        Info: Total cell delay = 1.740 ns ( 20.41 % )
+        Info: Total interconnect delay = 6.785 ns ( 79.59 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 2.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 97; COMB Node = 'clock~clkctrl'
+            Info: 3: + IC(0.656 ns) + CELL(0.618 ns) = 2.471 ns; Loc. = LCFF_X22_Y17_N7; Fanout = 3; REG Node = 'Registrador:PC|Saida[31]'
+            Info: Total cell delay = 1.472 ns ( 59.57 % )
+            Info: Total interconnect delay = 0.999 ns ( 40.43 % )
+        Info: - Longest clock path from clock "clock" to source register is 2.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 97; COMB Node = 'clock~clkctrl'
+            Info: 3: + IC(0.656 ns) + CELL(0.618 ns) = 2.471 ns; Loc. = LCFF_X22_Y17_N3; Fanout = 90; REG Node = 'ControlUnit:ControlUnit|state.Start'
+            Info: Total cell delay = 1.472 ns ( 59.57 % )
+            Info: Total interconnect delay = 0.999 ns ( 40.43 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Micro setup delay of destination is 0.090 ns
+Info: tco from clock "clock" to destination pin "MuxPCSourceOut[30]" through register "ControlUnit:ControlUnit|state.Start" is 15.430 ns
+    Info: + Longest clock path from clock "clock" to source register is 2.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 97; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.656 ns) + CELL(0.618 ns) = 2.471 ns; Loc. = LCFF_X22_Y17_N3; Fanout = 90; REG Node = 'ControlUnit:ControlUnit|state.Start'
+        Info: Total cell delay = 1.472 ns ( 59.57 % )
+        Info: Total interconnect delay = 0.999 ns ( 40.43 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 12.865 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X22_Y17_N3; Fanout = 90; REG Node = 'ControlUnit:ControlUnit|state.Start'
+        Info: 2: + IC(0.660 ns) + CELL(0.366 ns) = 1.026 ns; Loc. = LCCOMB_X22_Y17_N16; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[7]~1'
+        Info: 3: + IC(0.214 ns) + CELL(0.053 ns) = 1.293 ns; Loc. = LCCOMB_X22_Y17_N10; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[8]~2'
+        Info: 4: + IC(0.215 ns) + CELL(0.053 ns) = 1.561 ns; Loc. = LCCOMB_X22_Y17_N0; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[9]~3'
+        Info: 5: + IC(0.212 ns) + CELL(0.053 ns) = 1.826 ns; Loc. = LCCOMB_X22_Y17_N30; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[10]~4'
+        Info: 6: + IC(0.209 ns) + CELL(0.053 ns) = 2.088 ns; Loc. = LCCOMB_X22_Y17_N14; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[11]~5'
+        Info: 7: + IC(0.215 ns) + CELL(0.053 ns) = 2.356 ns; Loc. = LCCOMB_X22_Y17_N28; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[12]~6'
+        Info: 8: + IC(0.390 ns) + CELL(0.053 ns) = 2.799 ns; Loc. = LCCOMB_X22_Y17_N4; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[13]~7'
+        Info: 9: + IC(0.220 ns) + CELL(0.053 ns) = 3.072 ns; Loc. = LCCOMB_X22_Y17_N20; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[14]~8'
+        Info: 10: + IC(0.310 ns) + CELL(0.053 ns) = 3.435 ns; Loc. = LCCOMB_X21_Y17_N6; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[15]~9'
+        Info: 11: + IC(0.303 ns) + CELL(0.053 ns) = 3.791 ns; Loc. = LCCOMB_X21_Y17_N4; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[16]~10'
+        Info: 12: + IC(0.213 ns) + CELL(0.053 ns) = 4.057 ns; Loc. = LCCOMB_X21_Y17_N10; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[17]~11'
+        Info: 13: + IC(0.213 ns) + CELL(0.053 ns) = 4.323 ns; Loc. = LCCOMB_X21_Y17_N8; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[18]~12'
+        Info: 14: + IC(0.298 ns) + CELL(0.053 ns) = 4.674 ns; Loc. = LCCOMB_X21_Y17_N14; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[19]~13'
+        Info: 15: + IC(0.213 ns) + CELL(0.053 ns) = 4.940 ns; Loc. = LCCOMB_X21_Y17_N12; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[20]~14'
+        Info: 16: + IC(0.360 ns) + CELL(0.053 ns) = 5.353 ns; Loc. = LCCOMB_X21_Y17_N18; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[21]~15'
+        Info: 17: + IC(0.360 ns) + CELL(0.053 ns) = 5.766 ns; Loc. = LCCOMB_X21_Y17_N20; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[22]~16'
+        Info: 18: + IC(0.221 ns) + CELL(0.053 ns) = 6.040 ns; Loc. = LCCOMB_X21_Y17_N0; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[23]~17'
+        Info: 19: + IC(0.258 ns) + CELL(0.053 ns) = 6.351 ns; Loc. = LCCOMB_X21_Y17_N24; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[24]~18'
+        Info: 20: + IC(0.304 ns) + CELL(0.053 ns) = 6.708 ns; Loc. = LCCOMB_X21_Y17_N30; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[25]~19'
+        Info: 21: + IC(0.213 ns) + CELL(0.053 ns) = 6.974 ns; Loc. = LCCOMB_X21_Y17_N28; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[26]~20'
+        Info: 22: + IC(0.366 ns) + CELL(0.053 ns) = 7.393 ns; Loc. = LCCOMB_X21_Y17_N22; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[27]~21'
+        Info: 23: + IC(0.307 ns) + CELL(0.053 ns) = 7.753 ns; Loc. = LCCOMB_X21_Y17_N16; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[28]~22'
+        Info: 24: + IC(0.209 ns) + CELL(0.053 ns) = 8.015 ns; Loc. = LCCOMB_X21_Y17_N26; Fanout = 2; COMB Node = 'Ula32:ULA|carry_temp[29]~23'
+        Info: 25: + IC(0.218 ns) + CELL(0.053 ns) = 8.286 ns; Loc. = LCCOMB_X21_Y17_N2; Fanout = 2; COMB Node = 'Ula32:ULA|Mux1~0'
+        Info: 26: + IC(2.425 ns) + CELL(2.154 ns) = 12.865 ns; Loc. = PIN_R22; Fanout = 0; PIN Node = 'MuxPCSourceOut[30]'
+        Info: Total cell delay = 3.739 ns ( 29.06 % )
+        Info: Total interconnect delay = 9.126 ns ( 70.94 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 170 megabytes
+    Info: Processing ended: Wed May 08 23:47:39 2019
     Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,8 +1,9 @@
 module MuxMemToReg(A, B, C, D, E, F, G, H, out, MemToReg);
 
-  input logic A, B, C, D, E, F, G, H;
+  input logic B, C, D, E, F, G, H;
+  input logic [31:0] A;
   input logic [3:0] MemToReg;
-  output logic out;
+  output logic [31:0] out;
   
     always @(MemToReg)begin
       case(MemToReg)
