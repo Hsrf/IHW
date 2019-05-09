@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Wed May 08 23:47:30 2019
+Thu May 09 09:54:40 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -18,28 +18,27 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  10. Registers Removed During Synthesis
  11. Removed Registers Triggering Further Register Optimizations
  12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 15. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 16. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 17. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
- 19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
- 20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
- 21. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
- 22. Port Connectivity Checks: "Banco_reg:BancoRegistradores"
- 23. Port Connectivity Checks: "MuxRegDst:MuxRegDst"
- 24. Port Connectivity Checks: "Registrador:ALUOut"
- 25. Port Connectivity Checks: "Registrador:B"
- 26. Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"
- 27. Port Connectivity Checks: "MuxIord:MuxIord"
- 28. Port Connectivity Checks: "Instr_Reg:InstructionRegister"
- 29. Port Connectivity Checks: "Memoria:Memoria"
- 30. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
- 31. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
- 32. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+ 13. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 14. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 15. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 16. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 17. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
+ 18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
+ 19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
+ 20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
+ 21. Port Connectivity Checks: "Banco_reg:BancoRegistradores"
+ 22. Port Connectivity Checks: "MuxRegDst:MuxRegDst"
+ 23. Port Connectivity Checks: "Registrador:ALUOut"
+ 24. Port Connectivity Checks: "Registrador:B"
+ 25. Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"
+ 26. Port Connectivity Checks: "MuxIord:MuxIord"
+ 27. Port Connectivity Checks: "Instr_Reg:InstructionRegister"
+ 28. Port Connectivity Checks: "Memoria:Memoria"
+ 29. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 30. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 31. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -65,16 +64,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Wed May 08 23:47:30 2019        ;
+; Analysis & Synthesis Status   ; Successful - Thu May 09 09:54:40 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 96                                           ;
-;     Dedicated logic registers ; 53                                           ;
-; Total registers               ; 53                                           ;
-; Total pins                    ; 307                                          ;
+;     Combinational ALUTs       ; 94                                           ;
+;     Dedicated logic registers ; 52                                           ;
+; Total registers               ; 52                                           ;
+; Total pins                    ; 339                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 2,560                                        ;
 ; DSP block 9-bit elements      ; 0                                            ;
@@ -163,41 +162,47 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                      ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
-; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Banco_reg.vhd                                                         ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Instr_Reg.vhd                                                         ;
-; Memoria.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Memoria.vhd                                                           ;
-; Registrador.vhd                  ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Registrador.vhd                                                       ;
-; ula32.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/ula32.vhd                                                             ;
-; CPU.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/CPU.sv                                                                ;
-; MuxALUSrcA.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxALUSrcA.sv                                                         ;
-; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxALUSrcB.sv                                                         ;
-; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxPCSource.sv                                                        ;
-; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/ControlUnit.sv                                                        ;
-; MuxIord.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxIord.sv                                                            ;
-; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxMemToReg.sv                                                        ;
-; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxRegDst.sv                                                          ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
-; altram.tdf                       ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gabi/Desktop/Teste/db/altsyncram_g2a1.tdf                                                ;
-; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Gabi/Desktop/Teste/instrucoes.mif                                                        ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/hsrf/Downloads/IHW-master/Teste/Banco_reg.vhd                         ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/hsrf/Downloads/IHW-master/Teste/Instr_Reg.vhd                         ;
+; Memoria.vhd                      ; yes             ; User VHDL File                         ; C:/Users/hsrf/Downloads/IHW-master/Teste/Memoria.vhd                           ;
+; Registrador.vhd                  ; yes             ; User VHDL File                         ; C:/Users/hsrf/Downloads/IHW-master/Teste/Registrador.vhd                       ;
+; ula32.vhd                        ; yes             ; User VHDL File                         ; C:/Users/hsrf/Downloads/IHW-master/Teste/ula32.vhd                             ;
+; CPU.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/CPU.sv                                ;
+; MuxALUSrcA.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxALUSrcA.sv                         ;
+; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxALUSrcB.sv                         ;
+; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxPCSource.sv                        ;
+; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/ControlUnit.sv                        ;
+; MuxIord.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxIord.sv                            ;
+; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxMemToReg.sv                        ;
+; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/hsrf/Downloads/IHW-master/Teste/MuxRegDst.sv                          ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/programfiles/altera/quartus9/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/hsrf/Downloads/IHW-master/Teste/db/altsyncram_g2a1.tdf                ;
+; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/hsrf/Downloads/IHW-master/Teste/instrucoes.mif                        ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -205,39 +210,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------------------------+
 ; Resource                                      ; Usage                               ;
 +-----------------------------------------------+-------------------------------------+
-; Estimated ALUTs Used                          ; 96                                  ;
-; Dedicated logic registers                     ; 53                                  ;
+; Estimated ALUTs Used                          ; 94                                  ;
+; Dedicated logic registers                     ; 52                                  ;
 ;                                               ;                                     ;
 ; Estimated ALUTs Unavailable                   ; 0                                   ;
 ;                                               ;                                     ;
-; Total combinational functions                 ; 96                                  ;
+; Total combinational functions                 ; 94                                  ;
 ; Combinational ALUT usage by number of inputs  ;                                     ;
 ;     -- 7 input functions                      ; 0                                   ;
-;     -- 6 input functions                      ; 4                                   ;
-;     -- 5 input functions                      ; 7                                   ;
-;     -- 4 input functions                      ; 51                                  ;
+;     -- 6 input functions                      ; 2                                   ;
+;     -- 5 input functions                      ; 8                                   ;
+;     -- 4 input functions                      ; 50                                  ;
 ;     -- <=3 input functions                    ; 34                                  ;
 ;                                               ;                                     ;
 ; Combinational ALUTs by mode                   ;                                     ;
-;     -- normal mode                            ; 96                                  ;
+;     -- normal mode                            ; 94                                  ;
 ;     -- extended LUT mode                      ; 0                                   ;
 ;     -- arithmetic mode                        ; 0                                   ;
 ;     -- shared arithmetic mode                 ; 0                                   ;
 ;                                               ;                                     ;
-; Estimated ALUT/register pairs used            ; 105                                 ;
+; Estimated ALUT/register pairs used            ; 102                                 ;
 ;                                               ;                                     ;
-; Total registers                               ; 53                                  ;
-;     -- Dedicated logic registers              ; 53                                  ;
+; Total registers                               ; 52                                  ;
+;     -- Dedicated logic registers              ; 52                                  ;
 ;     -- I/O registers                          ; 0                                   ;
 ;                                               ;                                     ;
-; Estimated ALMs:  partially or completely used ; 53                                  ;
+; Estimated ALMs:  partially or completely used ; 51                                  ;
 ;                                               ;                                     ;
-; I/O pins                                      ; 307                                 ;
+; I/O pins                                      ; 339                                 ;
 ; Total block memory bits                       ; 2560                                ;
 ; Maximum fan-out node                          ; ControlUnit:ControlUnit|state.Start ;
 ; Maximum fan-out                               ; 88                                  ;
-; Total fan-out                                 ; 725                                 ;
-; Average fan-out                               ; 1.56                                ;
+; Total fan-out                                 ; 711                                 ;
+; Average fan-out                               ; 1.44                                ;
 +-----------------------------------------------+-------------------------------------+
 
 
@@ -246,8 +251,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 96 (1)            ; 53 (0)       ; 2560              ; 0            ; 0       ; 0         ; 0         ; 307  ; 0            ; |CPU                                                                                                           ; work         ;
-;    |Banco_reg:BancoRegistradores|               ; 6 (6)             ; 1 (1)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:BancoRegistradores                                                                              ;              ;
+; |CPU                                            ; 94 (1)            ; 52 (0)       ; 2560              ; 0            ; 0       ; 0         ; 0         ; 339  ; 0            ; |CPU                                                                                                           ; work         ;
+;    |Banco_reg:BancoRegistradores|               ; 4 (4)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:BancoRegistradores                                                                              ;              ;
 ;    |ControlUnit:ControlUnit|                    ; 5 (5)             ; 9 (9)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
 ;    |Instr_Reg:InstructionRegister|              ; 0 (0)             ; 10 (10)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegister                                                                             ;              ;
 ;    |Memoria:Memoria|                            ; 0 (0)             ; 0 (0)        ; 2560              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ;              ;
@@ -408,6 +413,7 @@ Encoding Type:  One-Hot
 ; Banco_reg:BancoRegistradores|Reg14[31]                                          ; Stuck at GND due to stuck port data_in             ;
 ; Banco_reg:BancoRegistradores|Reg15[31]                                          ; Stuck at GND due to stuck port data_in             ;
 ; Registrador:A|Saida[3..31]                                                      ; Stuck at GND due to stuck port data_in             ;
+; Banco_reg:BancoRegistradores|Reg15[1]                                           ; Stuck at VCC due to stuck port clock_enable        ;
 ; Registrador:PC|Saida[0..1]                                                      ; Stuck at GND due to stuck port data_in             ;
 ; ControlUnit:ControlUnit|state~4                                                 ; Lost fanout                                        ;
 ; ControlUnit:ControlUnit|state~5                                                 ; Lost fanout                                        ;
@@ -416,7 +422,7 @@ Encoding Type:  One-Hot
 ; ControlUnit:ControlUnit|state~8                                                 ; Lost fanout                                        ;
 ; ControlUnit:ControlUnit|state~9                                                 ; Lost fanout                                        ;
 ; ControlUnit:ControlUnit|state~10                                                ; Lost fanout                                        ;
-; Total Number of Removed Registers = 1093                                        ;                                                    ;
+; Total Number of Removed Registers = 1094                                        ;                                                    ;
 +---------------------------------------------------------------------------------+----------------------------------------------------+
 
 
@@ -443,24 +449,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 53    ;
+; Total registers                              ; 52    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 53    ;
+; Number of registers using Asynchronous Clear ; 52    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 43    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; Banco_reg:BancoRegistradores|Reg15[1]  ; 3       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -591,14 +587,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Banco_reg:BancoRegistradores"                                                                                       ;
-+-----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity         ; Details                                                                                                 ;
-+-----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; writereg  ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
-; writedata ; Input ; Critical Warning ; Types are incompatible                                                                                  ;
-+-----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Banco_reg:BancoRegistradores"                                                                                      ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity         ; Details                                                                                                 ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; writereg ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
++----------+-------+------------------+---------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -727,8 +722,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 08 23:47:26 2019
+    Info: Processing started: Thu May 09 09:54:35 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file muxdst.sv
     Info: Found entity 1: MuxDST
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
@@ -763,10 +759,9 @@ Info: Found 1 design units, including 1 entities, in source file muxmemtoreg.sv
     Info: Found entity 1: MuxMemToReg
 Info: Found 1 design units, including 1 entities, in source file muxregdst.sv
     Info: Found entity 1: MuxRegDst
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(144): created implicit net for "Imediato"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(183): created implicit net for "WriteRegOut2"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(192): created implicit net for "ALUOutOut"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(211): created implicit net for "MuxMemToRegOut"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(145): created implicit net for "Imediato"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(184): created implicit net for "WriteRegOut2"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(193): created implicit net for "ALUOutOut"
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
@@ -1072,8 +1067,6 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "AluOutOut[29]" is stuck at GND
     Warning (13410): Pin "AluOutOut[30]" is stuck at GND
     Warning (13410): Pin "AluOutOut[31]" is stuck at GND
-    Warning (13410): Pin "PCOut[0]" is stuck at GND
-    Warning (13410): Pin "PCOut[1]" is stuck at GND
     Warning (13410): Pin "MuxPCSourceOut[0]" is stuck at GND
     Warning (13410): Pin "MuxPCSourceOut[1]" is stuck at GND
     Warning (13410): Pin "MuxALUSourceAOut[0]" is stuck at GND
@@ -1231,7 +1224,40 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "RegWriteOut2[29]" is stuck at GND
     Warning (13410): Pin "RegWriteOut2[30]" is stuck at GND
     Warning (13410): Pin "RegWriteOut2[31]" is stuck at GND
-Info: Registers with preset signals will power-up high
+    Warning (13410): Pin "MuxMemToRegOut[0]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[1]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[2]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[3]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[4]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[5]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[6]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[7]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[8]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[9]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[10]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[11]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[12]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[13]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[14]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[15]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[16]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[17]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[18]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[19]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[20]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[21]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[22]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[23]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[24]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[25]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[26]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[27]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[28]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[29]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[30]" is stuck at GND
+    Warning (13410): Pin "MuxMemToRegOut[31]" is stuck at GND
+    Warning (13410): Pin "ALUResult[0]" is stuck at GND
+    Warning (13410): Pin "ALUResult[1]" is stuck at GND
 Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
     Info: Register "ControlUnit:ControlUnit|state~4" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~5" lost all its fanouts during netlist optimizations.
@@ -1240,22 +1266,22 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "ControlUnit:ControlUnit|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/Users/Gabi/Desktop/Teste/PQP.map.smsg
-Info: Implemented 464 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file C:/Users/hsrf/Downloads/IHW-master/Teste/PQP.map.smsg
+Info: Implemented 494 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 305 output pins
-    Info: Implemented 147 logic cells
+    Info: Implemented 337 output pins
+    Info: Implemented 145 logic cells
     Info: Implemented 10 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 306 warnings
-    Info: Peak virtual memory: 256 megabytes
-    Info: Processing ended: Wed May 08 23:47:30 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 337 warnings
+    Info: Peak virtual memory: 326 megabytes
+    Info: Processing ended: Thu May 09 09:54:40 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Gabi/Desktop/Teste/PQP.map.smsg.
+The suppressed messages can be found in C:/Users/hsrf/Downloads/IHW-master/Teste/PQP.map.smsg.
 
 

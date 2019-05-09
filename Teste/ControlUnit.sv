@@ -86,7 +86,7 @@ always @* begin
 				ALUOp = 3'd0;
 				PCWrite = 1'd0;
 				MemWr = 1'd0;
-				IRWrite = 1'd1;
+				IRWrite = 1'd0;
 				Iord = 3'd0;
 				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
@@ -103,14 +103,14 @@ always @* begin
 				ALUOp = 3'd0;
 				PCWrite = 1'd0;
 				MemWr = 1'd0;
-				IRWrite = 1'd0;
+				IRWrite = 1'd1;
 				Iord = 3'd0;
 				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
-				RegWrite = 1'd1;
+				RegWrite = 1'd0;
 				nextstate = ADD1;
 		end
 		ADD1: begin

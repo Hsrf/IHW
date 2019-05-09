@@ -2,24 +2,25 @@ module CPU(
 	input logic clock,
 	input logic reset,
 	output logic [31:0] AluOutOut,
-	output logic [31:0] PCOut,
 	output logic [31:0] MuxPCSourceOut,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic [6:0] stateout,
 	output logic [4:0] Reg1,
 	output logic [4:0] Reg2,
-	output logic [31:0] RegAOut,
-	output logic [31:0] RegBOut,
 	output logic [31:0] RegWriteOut1,
-	output logic [31:0] RegWriteOut2
+	output logic [31:0] RegWriteOut2,
+	output logic [31:0] MuxMemToRegOut,
+	output logic [31:0] ALUResult
 );
 
+logic [31:0] RegAOut;
+logic [31:0] RegBOut;
+logic [31:0] PCOut;
 logic [2:0] ALUOp;
 logic PCWrite;
 logic [1:0] ALUSrcA;
 logic [2:0] ALUSrcB;
-logic [31:0] ALUResult;
 logic [2:0] PCSource;
 logic Overflow;
 logic Negativo;

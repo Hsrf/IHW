@@ -9,22 +9,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
-set_global_assignment -name SYSTEMVERILOG_FILE MuxDST.sv
-set_global_assignment -name VHDL_FILE Banco_reg.vhd
-set_global_assignment -name VHDL_FILE Instr_Reg.vhd
-set_global_assignment -name VHDL_FILE Memoria.vhd
-set_global_assignment -name VHDL_FILE Registrador.vhd
-set_global_assignment -name VHDL_FILE ula32.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE CPU.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcA.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcB.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MuxPCSource.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ControlUnit.sv
-set_global_assignment -name VECTOR_WAVEFORM_FILE ../PQP.vwf
-set_global_assignment -name SYSTEMVERILOG_FILE MuxIord.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MuxMemToReg.sv
-set_global_assignment -name SYSTEMVERILOG_FILE MuxRegDst.sv
-set_global_assignment -name VECTOR_WAVEFORM_FILE CPU.vwf
 set_global_assignment -name CHECK_OUTPUTS OFF
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE CPU.vwf
 set_global_assignment -name SIMULATION_VECTOR_COMPARE_BEGIN_TIME "0 ns"
@@ -2155,4 +2139,19 @@ set_global_assignment -name SIMULATION_VECTOR_COMPARE_RULE_FOR_Z "Z,U,DC"
 set_global_assignment -name SIMULATION_VECTOR_COMPARE_RULE_FOR_U "X,W,Z,U,DC"
 set_global_assignment -name SIMULATION_VECTOR_COMPARE_RULE_FOR_DC "0,1,X,L,H,W,Z,U,DC"
 set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS ON
+set_global_assignment -name SYSTEMVERILOG_FILE MuxDST.sv
+set_global_assignment -name VHDL_FILE Banco_reg.vhd
+set_global_assignment -name VHDL_FILE Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE Memoria.vhd
+set_global_assignment -name VHDL_FILE Registrador.vhd
+set_global_assignment -name VHDL_FILE ula32.vhd
+set_global_assignment -name SYSTEMVERILOG_FILE CPU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcA.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxALUSrcB.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxPCSource.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ControlUnit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxIord.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxMemToReg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MuxRegDst.sv
+set_global_assignment -name VECTOR_WAVEFORM_FILE CPU.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
