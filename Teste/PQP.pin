@@ -68,7 +68,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 CHIP  "PQP"  ASSIGNED TO AN: EP2S15F484C3
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -77,42 +77,42 @@ GND                          : A1        : gnd    :                   :         
 TEMPDIODEp                   : A2        :        :                   :         :           :                
 VCCIO4                       : A3        : power  :                   : 3.3V    : 4         :                
 MSEL3                        : A4        :        :                   :         : 4         :                
-MuxMemToRegOut[1]            : A5        : output : 3.3-V LVTTL       :         : 4         : N              
-MuxALUSourceAOut[17]         : A6        : output : 3.3-V LVTTL       :         : 4         : N              
-MuxALUSourceAOut[9]          : A7        : output : 3.3-V LVTTL       :         : 4         : N              
-Imediato[8]                  : A8        : output : 3.3-V LVTTL       :         : 4         : N              
+ImediatoExtended[26]         : A5        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxMemToRegOut[15]           : A6        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut1[16]             : A7        : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : A8        :        :                   :         : 4         :                
 GND                          : A9        : gnd    :                   :         :           :                
-stateout[0]                  : A10       : output : 3.3-V LVTTL       :         : 9         : N              
+ALUResult[28]                : A10       : output : 3.3-V LVTTL       :         : 9         : N              
 VCCIO4                       : A11       : power  :                   : 3.3V    : 4         :                
 VCCIO3                       : A12       : power  :                   : 3.3V    : 3         :                
-MuxALUSourceAOut[4]          : A13       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[0]          : A13       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : A14       : gnd    :                   :         :           :                
-MuxALUSourceAOut[22]         : A15       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[20]         : A16       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[13]         : A17       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[25]         : A18       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[4]          : A19       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[21]           : A15       : output : 3.3-V LVTTL       :         : 3         : N              
+Imediato[9]                  : A16       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[4]          : A17       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[7]          : A18       : output : 3.3-V LVTTL       :         : 3         : N              
+RegWriteOut1[0]              : A19       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A20       : power  :                   : 3.3V    : 3         :                
 nCE                          : A21       :        :                   :         : 3         :                
 GND                          : A22       : gnd    :                   :         :           :                
 VCCIO6                       : AA1       : power  :                   : 3.3V    : 6         :                
 GND                          : AA2       : gnd    :                   :         :           :                
 nCEO                         : AA3       :        :                   :         : 7         :                
-GND*                         : AA4       :        :                   :         : 7         :                
+ImediatoExtended[24]         : AA4       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : AA5       :        :                   :         : 7         :                
-GND*                         : AA6       :        :                   :         : 7         :                
-RegWriteOut1[27]             : AA7       : output : 3.3-V LVTTL       :         : 7         : N              
-Imediato[15]                 : AA8       : output : 3.3-V LVTTL       :         : 7         : N              
-RegWriteOut1[14]             : AA9       : output : 3.3-V LVTTL       :         : 10        : N              
-RegWriteOut1[2]              : AA10      : output : 3.3-V LVTTL       :         : 10        : N              
-Imediato[14]                 : AA11      : output : 3.3-V LVTTL       :         : 7         : N              
-ALUResult[10]                : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
-ALUResult[7]                 : AA13      : output : 3.3-V LVTTL       :         : 8         : N              
+ALUResult[12]                : AA6       : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut2[19]             : AA7       : output : 3.3-V LVTTL       :         : 7         : N              
+MuxALUSourceAOut[17]         : AA8       : output : 3.3-V LVTTL       :         : 7         : N              
+ALUResult[9]                 : AA9       : output : 3.3-V LVTTL       :         : 10        : N              
+ALUResult[15]                : AA10      : output : 3.3-V LVTTL       :         : 10        : N              
+ALUResult[17]                : AA11      : output : 3.3-V LVTTL       :         : 7         : N              
+OpCode[3]                    : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
+Funct[0]                     : AA13      : output : 3.3-V LVTTL       :         : 8         : N              
 VREFB8                       : AA14      : power  :                   :         : 8         :                
-GND*                         : AA15      :        :                   :         : 8         :                
-ALUResult[25]                : AA16      : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : AA17      :        :                   :         : 8         :                
-GND*                         : AA18      :        :                   :         : 8         :                
+RegWriteOut2[23]             : AA15      : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[22]           : AA16      : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceBOut[10]         : AA17      : output : 3.3-V LVTTL       :         : 8         : N              
+ALUResult[21]                : AA18      : output : 3.3-V LVTTL       :         : 8         : N              
 TCK                          : AA19      : input  :                   :         : 8         :                
 TMS                          : AA20      : input  :                   :         : 8         :                
 GND                          : AA21      : gnd    :                   :         :           :                
@@ -121,20 +121,20 @@ GND                          : AB1       : gnd    :                   :         
 nIO_PULLUP                   : AB2       :        :                   :         : 7         :                
 VCCIO7                       : AB3       : power  :                   : 3.3V    : 7         :                
 GND                          : AB4       : gnd    :                   :         :           :                
-GND*                         : AB5       :        :                   :         : 7         :                
-MuxMemToRegOut[21]           : AB6       : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut1[13]             : AB5       : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AB6       :        :                   :         : 7         :                
 GND*                         : AB7       :        :                   :         : 7         :                
-RegWriteOut1[25]             : AB8       : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut2[14]             : AB8       : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : AB9       : gnd    :                   :         :           :                
-rd[4]                        : AB10      : output : 3.3-V LVTTL       :         : 10        : N              
+Reg1[0]                      : AB10      : output : 3.3-V LVTTL       :         : 10        : N              
 VCCIO7                       : AB11      : power  :                   : 3.3V    : 7         :                
 VCCIO8                       : AB12      : power  :                   : 3.3V    : 8         :                
-ALUResult[29]                : AB13      : output : 3.3-V LVTTL       :         : 8         : N              
+ALUResult[4]                 : AB13      : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : AB14      : gnd    :                   :         :           :                
-ALUResult[21]                : AB15      : output : 3.3-V LVTTL       :         : 8         : N              
-MuxALUSourceAOut[12]         : AB16      : output : 3.3-V LVTTL       :         : 8         : N              
-MuxMemToRegOut[23]           : AB17      : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : AB18      :        :                   :         : 8         :                
+RegWriteOut2[26]             : AB15      : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : AB16      :        :                   :         : 8         :                
+MuxRegDstOut[4]              : AB17      : output : 3.3-V LVTTL       :         : 8         : N              
+rd[4]                        : AB18      : output : 3.3-V LVTTL       :         : 8         : N              
 TRST                         : AB19      : input  :                   :         : 8         :                
 VCCIO8                       : AB20      : power  :                   : 3.3V    : 8         :                
 TDI                          : AB21      : input  :                   :         : 8         :                
@@ -143,221 +143,221 @@ VCCIO5                       : B1        : power  :                   : 3.3V    
 GND                          : B2        : gnd    :                   :         :           :                
 TDO                          : B3        : output :                   :         : 4         :                
 MSEL2                        : B4        :        :                   :         : 4         :                
-stateout[1]                  : B5        : output : 3.3-V LVTTL       :         : 4         : N              
-Imediato[7]                  : B6        : output : 3.3-V LVTTL       :         : 4         : N              
-rd[2]                        : B7        : output : 3.3-V LVTTL       :         : 4         : N              
-Imediato[1]                  : B8        : output : 3.3-V LVTTL       :         : 4         : N              
-RegWrite                     : B9        : output : 3.3-V LVTTL       :         : 9         : N              
-Imediato[6]                  : B10       : output : 3.3-V LVTTL       :         : 9         : N              
-RegWriteOut2[0]              : B11       : output : 3.3-V LVTTL       :         : 4         : N              
-RegWriteOut2[1]              : B12       : output : 3.3-V LVTTL       :         : 4         : N              
-ALUResult[5]                 : B13       : output : 3.3-V LVTTL       :         : 3         : N              
+stateout[4]                  : B5        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxMemToRegOut[9]            : B6        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut2[2]              : B7        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceAOut[18]         : B8        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceAOut[27]         : B9        : output : 3.3-V LVTTL       :         : 9         : N              
+MuxALUSourceAOut[7]          : B10       : output : 3.3-V LVTTL       :         : 9         : N              
+MuxALUSourceAOut[29]         : B11       : output : 3.3-V LVTTL       :         : 4         : N              
+ALUResult[5]                 : B12       : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceBOut[20]         : B13       : output : 3.3-V LVTTL       :         : 3         : N              
 VREFB3                       : B14       : power  :                   :         : 3         :                
-ALUResult[24]                : B15       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[7]          : B16       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[6]          : B17       : output : 3.3-V LVTTL       :         : 3         : N              
-RegWriteOut1[8]              : B18       : output : 3.3-V LVTTL       :         : 3         : N              
+Funct[2]                     : B15       : output : 3.3-V LVTTL       :         : 3         : N              
+RegWriteOut1[26]             : B16       : output : 3.3-V LVTTL       :         : 3         : N              
+Imediato[7]                  : B17       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[4]            : B18       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : B19       :        :                   :         : 3         :                
 nSTATUS                      : B20       :        :                   :         : 3         :                
 GND                          : B21       : gnd    :                   :         :           :                
 VCCIO2                       : B22       : power  :                   : 3.3V    : 2         :                
-MuxALUSourceBOut[1]          : C1        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut2[24]             : C2        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut2[8]              : C1        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[19]           : C2        : output : 3.3-V LVTTL       :         : 5         : N              
 TEMPDIODEn                   : C3        :        :                   :         :           :                
-GND*                         : C4        :        :                   :         : 4         :                
-Reg2[2]                      : C5        : output : 3.3-V LVTTL       :         : 4         : N              
-ALUResult[9]                 : C6        : output : 3.3-V LVTTL       :         : 4         : N              
-Reg2[4]                      : C7        : output : 3.3-V LVTTL       :         : 4         : N              
-Imediato[13]                 : C8        : output : 3.3-V LVTTL       :         : 4         : N              
-ALUResult[8]                 : C9        : output : 3.3-V LVTTL       :         : 9         : N              
-MuxALUSourceAOut[29]         : C10       : output : 3.3-V LVTTL       :         : 9         : N              
-MuxRegDstOut[4]              : C11       : output : 3.3-V LVTTL       :         : 4         : N              
-Reg1[0]                      : C12       : output : 3.3-V LVTTL       :         : 4         : N              
+ImediatoExtended[18]         : C4        : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : C5        :        :                   :         : 4         :                
+GND*                         : C6        :        :                   :         : 4         :                
+GND*                         : C7        :        :                   :         : 4         :                
+MuxALUSourceAOut[15]         : C8        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceBOut[13]         : C9        : output : 3.3-V LVTTL       :         : 9         : N              
+MuxALUSourceAOut[14]         : C10       : output : 3.3-V LVTTL       :         : 9         : N              
+MuxALUSourceAOut[4]          : C11       : output : 3.3-V LVTTL       :         : 4         : N              
+ALUResult[29]                : C12       : output : 3.3-V LVTTL       :         : 4         : N              
 MuxALUSourceAOut[2]          : C13       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : C14       :        :                   :         : 3         :                
-MuxALUSourceAOut[19]         : C15       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[24]         : C16       : output : 3.3-V LVTTL       :         : 3         : N              
-ALUResult[23]                : C17       : output : 3.3-V LVTTL       :         : 3         : N              
-ALUResult[20]                : C18       : output : 3.3-V LVTTL       :         : 3         : N              
-RegWriteOut1[11]             : C19       : output : 3.3-V LVTTL       :         : 3         : N              
+Reg1[3]                      : C14       : output : 3.3-V LVTTL       :         : 3         : N              
+Imediato[2]                  : C15       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[2]          : C16       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[5]            : C17       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[8]          : C18       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[6]            : C19       : output : 3.3-V LVTTL       :         : 3         : N              
 CONF_DONE                    : C20       :        :                   :         : 3         :                
-GND*                         : C21       :        :                   :         : 2         :                
-MuxALUSourceBOut[31]         : C22       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxMemToRegOut[12]           : D1        : output : 3.3-V LVTTL       :         : 5         : N              
-MuxALUSourceBOut[25]         : D2        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[7]            : C21       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[25]         : C22       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut1[9]              : D1        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[23]           : D2        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : D3        :        :                   :         : 4         :                
 MSEL1                        : D4        :        :                   :         : 4         :                
-MuxALUSourceBOut[28]         : D5        : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : D6        :        :                   :         : 4         :                
+RegWriteOut1[23]             : D5        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceBOut[26]         : D6        : output : 3.3-V LVTTL       :         : 4         : N              
 VREFB4                       : D7        : power  :                   :         : 4         :                
-GND*                         : D8        :        :                   :         : 4         :                
+RegWriteOut2[9]              : D8        : output : 3.3-V LVTTL       :         : 4         : N              
 VREFB4                       : D9        : power  :                   :         : 4         :                
-Imediato[10]                 : D10       : output : 3.3-V LVTTL       :         : 9         : N              
-ALUResult[19]                : D11       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[2]          : D12       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[28]         : D13       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[24]         : D14       : output : 3.3-V LVTTL       :         : 3         : N              
-RegWriteOut2[26]             : D15       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[0]          : D10       : output : 3.3-V LVTTL       :         : 9         : N              
+ImediatoExtended[3]          : D11       : output : 3.3-V LVTTL       :         : 3         : N              
+Funct[4]                     : D12       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceAOut[3]          : D13       : output : 3.3-V LVTTL       :         : 3         : N              
+RegWriteOut2[4]              : D14       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[28]           : D15       : output : 3.3-V LVTTL       :         : 3         : N              
 VREFB3                       : D16       : power  :                   :         : 3         :                
-RegWriteOut2[12]             : D17       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxMemToRegOut[16]           : D18       : output : 3.3-V LVTTL       :         : 3         : N              
+RegWriteOut1[30]             : D17       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : D18       :        :                   :         : 3         :                
 DCLK                         : D19       :        :                   :         : 3         :                
-GND*                         : D20       :        :                   :         : 3         :                
-RegWriteOut2[27]             : D21       : output : 3.3-V LVTTL       :         : 2         : N              
-RegWriteOut1[3]              : D22       : output : 3.3-V LVTTL       :         : 2         : N              
-Imediato[2]                  : E1        : output : 3.3-V LVTTL       :         : 5         : N              
-Reg2[1]                      : E2        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut1[12]             : D20       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : D21       :        :                   :         : 2         :                
+Funct[5]                     : D22       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[16]         : E1        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut1[3]              : E2        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : E3        :        :                   :         : 5         :                
-GND*                         : E4        :        :                   :         : 5         :                
+RegWriteOut2[13]             : E4        : output : 3.3-V LVTTL       :         : 5         : N              
 MSEL0                        : E5        :        :                   :         : 4         :                
 GND*                         : E6        :        :                   :         : 4         :                
 GND*                         : E7        :        :                   :         : 4         :                
-MuxALUSourceBOut[3]          : E8        : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : E9        :        :                   :         : 4         :                
-ALUResult[1]                 : E10       : output : 3.3-V LVTTL       :         : 4         : N              
-MuxMemToRegOut[4]            : E11       : output : 3.3-V LVTTL       :         : 3         : N              
-ALUResult[18]                : E12       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[9]          : E8        : output : 3.3-V LVTTL       :         : 4         : N              
+Imediato[0]                  : E9        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut1[27]             : E10       : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceAOut[24]         : E11       : output : 3.3-V LVTTL       :         : 3         : N              
+Imediato[4]                  : E12       : output : 3.3-V LVTTL       :         : 3         : N              
 ~DATA0~ / RESERVED_INPUT     : E13       : input  : 3.3-V LVTTL       :         : 3         : N              
-MuxMemToRegOut[22]           : E14       : output : 3.3-V LVTTL       :         : 3         : N              
-RegWriteOut1[7]              : E15       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : E16       :        :                   :         : 3         :                
+Funct[3]                     : E14       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[27]         : E15       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[17]         : E16       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : E17       :        :                   :         : 3         :                
-GND*                         : E18       :        :                   :         : 3         :                
+RegWriteOut1[25]             : E18       : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : E19       :        :                   :         : 2         :                
-MuxALUSourceAOut[26]         : E20       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[3]                 : E21       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxRegDstOut[1]              : E22       : output : 3.3-V LVTTL       :         : 2         : N              
-stateout[3]                  : F1        : output : 3.3-V LVTTL       :         : 5         : N              
-Reg1[2]                      : F2        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut1[22]             : E20       : output : 3.3-V LVTTL       :         : 2         : N              
+stateout[6]                  : E21       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxMemToRegOut[1]            : E22       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut1[1]              : F1        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut2[16]             : F2        : output : 3.3-V LVTTL       :         : 5         : N              
 VREFB5                       : F3        : power  :                   :         : 5         :                
-MuxMemToRegOut[2]            : F4        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[31]           : F4        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : F5        :        :                   :         : 5         :                
-MuxALUSourceBOut[21]         : F6        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceBOut[31]         : F6        : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : F7        :        :                   :         : 4         :                
-MuxALUSourceBOut[11]         : F8        : output : 3.3-V LVTTL       :         : 4         : N              
-RegWriteOut1[23]             : F9        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut1[8]              : F8        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut2[12]             : F9        : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL5                    : F10       : gnd    :                   :         :           :                
 GNDA_PLL5                    : F11       : gnd    :                   :         :           :                
 VCCA_PLL5                    : F12       : power  :                   : 1.2V    :           :                
-MuxALUSourceAOut[5]          : F13       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[22]         : F14       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxMemToRegOut[29]           : F15       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[8]          : F16       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[0]          : F17       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[9]          : F13       : output : 3.3-V LVTTL       :         : 3         : N              
+OpCode[2]                    : F14       : output : 3.3-V LVTTL       :         : 3         : N              
+ALUResult[1]                 : F15       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceAOut[10]         : F16       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[22]         : F17       : output : 3.3-V LVTTL       :         : 3         : N              
 VREFB2                       : F18       : power  :                   :         : 2         :                
-Imediato[9]                  : F19       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[15]                : F20       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceAOut[27]         : F21       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceAOut[21]         : F22       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[6]                 : G1        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut1[29]             : G2        : output : 3.3-V LVTTL       :         : 5         : N              
-Imediato[3]                  : G3        : output : 3.3-V LVTTL       :         : 5         : N              
-MuxALUSourceAOut[31]         : G4        : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : F19       :        :                   :         : 2         :                
+RegWriteOut1[19]             : F20       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxMemToRegOut[10]           : F21       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut2[6]              : F22       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[31]         : G1        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[11]         : G2        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[4]          : G3        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[14]           : G4        : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : G5        :        :                   :         : 5         :                
-GND*                         : G6        :        :                   :         : 5         :                
-MuxALUSourceBOut[20]         : G7        : output : 3.3-V LVTTL       :         : 4         : N              
-MuxALUSourceBOut[30]         : G8        : output : 3.3-V LVTTL       :         : 4         : N              
-RegWriteOut1[31]             : G9        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut1[17]             : G6        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[18]         : G7        : output : 3.3-V LVTTL       :         : 4         : N              
+MuxALUSourceBOut[1]          : G8        : output : 3.3-V LVTTL       :         : 4         : N              
+RegWriteOut2[3]              : G9        : output : 3.3-V LVTTL       :         : 4         : N              
 VCC_PLL5_OUT                 : G10       : power  :                   : 3.3V    : 9         :                
 VCCD_PLL5                    : G11       : power  :                   : 1.2V    :           :                
-ALUResult[11]                : G12       : output : 3.3-V LVTTL       :         : 3         : N              
-ALUResult[26]                : G13       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceBOut[7]          : G14       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : G15       :        :                   :         : 3         :                
-MuxALUSourceBOut[16]         : G16       : output : 3.3-V LVTTL       :         : 3         : N              
-Reg1[3]                      : G17       : output : 3.3-V LVTTL       :         : 2         : N              
-Imediato[5]                  : G18       : output : 3.3-V LVTTL       :         : 2         : N              
-RegWriteOut2[2]              : G19       : output : 3.3-V LVTTL       :         : 2         : N              
-Reg1[1]                      : G20       : output : 3.3-V LVTTL       :         : 2         : N              
-Reg2[3]                      : G21       : output : 3.3-V LVTTL       :         : 2         : N              
-Imediato[12]                 : G22       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxMemToRegOut[7]            : H1        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut1[6]              : H2        : output : 3.3-V LVTTL       :         : 5         : N              
-MuxRegDstOut[2]              : H3        : output : 3.3-V LVTTL       :         : 5         : N              
-ALUResult[28]                : H4        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut1[1]              : H5        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut1[0]              : H6        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut2[25]             : H7        : output : 3.3-V LVTTL       :         : 4         : N              
+stateout[0]                  : G12       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[27]           : G13       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[15]         : G14       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[5]          : G15       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxMemToRegOut[11]           : G16       : output : 3.3-V LVTTL       :         : 3         : N              
+ImediatoExtended[13]         : G17       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[30]         : G18       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : G19       :        :                   :         : 2         :                
+rd[0]                        : G20       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : G21       :        :                   :         : 2         :                
+MuxALUSourceBOut[7]          : G22       : output : 3.3-V LVTTL       :         : 2         : N              
+Funct[1]                     : H1        : output : 3.3-V LVTTL       :         : 5         : N              
+ALUResult[11]                : H2        : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : H3        :        :                   :         : 5         :                
+RegWriteOut1[4]              : H4        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[23]         : H5        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[25]         : H6        : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : H7        :        :                   :         : 4         :                
 VCCINT                       : H8        : power  :                   : 1.2V    :           :                
-MuxMemToRegOut[3]            : H9        : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : H9        :        :                   :         : 4         :                
 VCCPD4                       : H10       : power  :                   : 3.3V    : 4         :                
-ALUResult[13]                : H11       : output : 3.3-V LVTTL       :         : 3         : N              
-ALUResult[16]                : H12       : output : 3.3-V LVTTL       :         : 3         : N              
+Imediato[3]                  : H11       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceAOut[22]         : H12       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCPD3                       : H13       : power  :                   : 3.3V    : 3         :                
-MuxALUSourceAOut[18]         : H14       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxRegDstOut[2]              : H14       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : H15       : gnd    :                   :         :           :                
-RegWriteOut1[4]              : H16       : output : 3.3-V LVTTL       :         : 3         : N              
-MuxALUSourceAOut[14]         : H17       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[2]                 : H18       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxRegDstOut[3]              : H19       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceAOut[11]         : H20       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxRegDstOut[0]              : H21       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceAOut[15]         : H22       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut1[21]             : H16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : H17       :        :                   :         : 2         :                
+MuxALUSourceBOut[21]         : H18       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxMemToRegOut[16]           : H19       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut2[24]             : H20       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxALUSourceBOut[5]          : H21       : output : 3.3-V LVTTL       :         : 2         : N              
+rd[2]                        : H22       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : J1        : gnd    :                   :         :           :                
-MuxALUSourceBOut[13]         : J2        : output : 3.3-V LVTTL       :         : 5         : N              
-rd[0]                        : J3        : output : 3.3-V LVTTL       :         : 5         : N              
+Imediato[1]                  : J2        : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : J3        :        :                   :         : 5         :                
 VREFB5                       : J4        : power  :                   :         : 5         :                
-MuxALUSourceBOut[29]         : J5        : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : J6        :        :                   :         : 5         :                
-Imediato[4]                  : J7        : output : 3.3-V LVTTL       :         : 5         : N              
-ALUResult[27]                : J8        : output : 3.3-V LVTTL       :         : 5         : N              
+ImediatoExtended[1]          : J5        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxMemToRegOut[8]            : J6        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut1[11]             : J7        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut2[29]             : J8        : output : 3.3-V LVTTL       :         : 5         : N              
 VCCINT                       : J9        : power  :                   : 1.2V    :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 VCCINT                       : J11       : power  :                   : 1.2V    :           :                
 GND                          : J12       : gnd    :                   :         :           :                
 VCCINT                       : J13       : power  :                   : 1.2V    :           :                
 GND                          : J14       : gnd    :                   :         :           :                
-ALUResult[17]                : J15       : output : 3.3-V LVTTL       :         : 3         : N              
-rd[1]                        : J16       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[30]                : J17       : output : 3.3-V LVTTL       :         : 2         : N              
-RegWriteOut1[5]              : J18       : output : 3.3-V LVTTL       :         : 2         : N              
-ALUResult[22]                : J19       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxMemToRegOut[24]           : J20       : output : 3.3-V LVTTL       :         : 2         : N              
-RegWriteOut2[13]             : J21       : output : 3.3-V LVTTL       :         : 2         : N              
+RegWriteOut2[5]              : J15       : output : 3.3-V LVTTL       :         : 3         : N              
+MuxALUSourceBOut[16]         : J16       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[11]         : J17       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : J18       :        :                   :         : 2         :                
+ALUResult[3]                 : J19       : output : 3.3-V LVTTL       :         : 2         : N              
+Imediato[6]                  : J20       : output : 3.3-V LVTTL       :         : 2         : N              
+ImediatoExtended[19]         : J21       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : J22       : gnd    :                   :         :           :                
-MuxMemToRegOut[0]            : K1        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut2[20]             : K2        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut2[15]             : K3        : output : 3.3-V LVTTL       :         : 5         : N              
-Imediato[0]                  : K4        : output : 3.3-V LVTTL       :         : 5         : N              
-Imediato[11]                 : K5        : output : 3.3-V LVTTL       :         : 5         : N              
-MuxALUSourceBOut[10]         : K6        : output : 3.3-V LVTTL       :         : 5         : N              
-RegWriteOut1[13]             : K7        : output : 3.3-V LVTTL       :         : 5         : N              
-MuxALUSourceBOut[19]         : K8        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceAOut[6]          : K1        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceAOut[19]         : K2        : output : 3.3-V LVTTL       :         : 5         : N              
+RegWriteOut2[27]             : K3        : output : 3.3-V LVTTL       :         : 5         : N              
+ALUResult[30]                : K4        : output : 3.3-V LVTTL       :         : 5         : N              
+MuxALUSourceBOut[29]         : K5        : output : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : K6        :        :                   :         : 5         :                
+stateout[5]                  : K7        : output : 3.3-V LVTTL       :         : 5         : N              
+ALUResult[25]                : K8        : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : K9        : gnd    :                   :         :           :                
 VCCINT                       : K10       : power  :                   : 1.2V    :           :                
 GND                          : K11       : gnd    :                   :         :           :                
 VCCINT                       : K12       : power  :                   : 1.2V    :           :                
 GND                          : K13       : gnd    :                   :         :           :                
 VCCPD2                       : K14       : power  :                   : 3.3V    : 2         :                
-MuxMemToRegOut[5]            : K15       : output : 3.3-V LVTTL       :         : 2         : N              
-GND*                         : K16       :        :                   :         : 2         :                
-RegWriteOut2[14]             : K17       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceBOut[9]          : K18       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceAOut[0]          : K19       : output : 3.3-V LVTTL       :         : 2         : N              
-GND*                         : K20       :        :                   :         : 2         :                
-GND*                         : K21       :        :                   :         : 2         :                
-GND*                         : K22       :        :                   :         : 2         :                
+MuxALUSourceAOut[31]         : K15       : output : 3.3-V LVTTL       :         : 2         : N              
+Imediato[11]                 : K16       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : K17       :        :                   :         : 2         :                
+ImediatoExtended[6]          : K18       : output : 3.3-V LVTTL       :         : 2         : N              
+ALUResult[18]                : K19       : output : 3.3-V LVTTL       :         : 2         : N              
+Imediato[5]                  : K20       : output : 3.3-V LVTTL       :         : 2         : N              
+Reg2[2]                      : K21       : output : 3.3-V LVTTL       :         : 2         : N              
+ALUResult[16]                : K22       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO5                       : L1        : power  :                   : 3.3V    : 5         :                
-MuxALUSourceBOut[15]         : L2        : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : L3        :        :                   :         : 5         :                
+MuxALUSourceAOut[26]         : L2        : output : 3.3-V LVTTL       :         : 5         : N              
+ALUResult[13]                : L3        : output : 3.3-V LVTTL       :         : 5         : N              
 GNDA_PLL4                    : L4        : gnd    :                   :         :           :                
 GNDA_PLL4                    : L5        : gnd    :                   :         :           :                
 VCCD_PLL4                    : L6        : power  :                   : 1.2V    :           :                
-MuxALUSourceAOut[1]          : L7        : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : L8        :        :                   :         : 5         :                
+ALUResult[26]                : L7        : output : 3.3-V LVTTL       :         : 5         : N              
+OpCode[5]                    : L8        : output : 3.3-V LVTTL       :         : 5         : N              
 VCCPD5                       : L9        : power  :                   : 3.3V    : 5         :                
 GND                          : L10       : gnd    :                   :         :           :                
 VCCINT                       : L11       : power  :                   : 1.2V    :           :                
 GND                          : L12       : gnd    :                   :         :           :                
 VCCINT                       : L13       : power  :                   : 1.2V    :           :                
 GND                          : L14       : gnd    :                   :         :           :                
-GND*                         : L15       :        :                   :         : 2         :                
-GND*                         : L16       :        :                   :         : 2         :                
+Reg2[4]                      : L15       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxALUSourceAOut[16]         : L16       : output : 3.3-V LVTTL       :         : 2         : N              
 GNDA_PLL1                    : L17       : gnd    :                   :         :           :                
 GNDA_PLL1                    : L18       : gnd    :                   :         :           :                
 VREFB2                       : L19       : power  :                   :         : 2         :                
-RegWriteOut2[8]              : L20       : output : 3.3-V LVTTL       :         : 2         : N              
-MuxALUSourceBOut[26]         : L21       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxALUSourceAOut[25]         : L20       : output : 3.3-V LVTTL       :         : 2         : N              
+MuxALUSourceBOut[2]          : L21       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : L22       : power  :                   : 3.3V    : 2         :                
 VCCIO6                       : M1        : power  :                   : 3.3V    : 6         :                
 GND+                         : M2        :        :                   :         : 5         :                
@@ -381,36 +381,36 @@ VCCA_PLL2                    : M19       : power  :                   : 1.2V    
 GND+                         : M20       :        :                   :         : 2         :                
 reset                        : M21       : input  : 3.3-V LVTTL       :         : 2         : N              
 VCCIO1                       : M22       : power  :                   : 3.3V    : 1         :                
-GND*                         : N1        :        :                   :         : 6         :                
-MuxMemToRegOut[8]            : N2        : output : 3.3-V LVTTL       :         : 6         : N              
+ALUResult[22]                : N1        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceAOut[28]         : N2        : output : 3.3-V LVTTL       :         : 6         : N              
 GND+                         : N3        :        :                   :         : 6         :                
 GND+                         : N4        :        :                   :         : 6         :                
 GNDA_PLL3                    : N5        : gnd    :                   :         :           :                
 GNDA_PLL3                    : N6        : gnd    :                   :         :           :                
-GND*                         : N7        :        :                   :         : 6         :                
-GND*                         : N8        :        :                   :         : 6         :                
+ALUResult[8]                 : N7        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceBOut[22]         : N8        : output : 3.3-V LVTTL       :         : 6         : N              
 VCCPD6                       : N9        : power  :                   : 3.3V    : 6         :                
 GND                          : N10       : gnd    :                   :         :           :                
 VCCINT                       : N11       : power  :                   : 1.2V    :           :                
 GND                          : N12       : gnd    :                   :         :           :                
 VCCINT                       : N13       : power  :                   : 1.2V    :           :                
 GND                          : N14       : gnd    :                   :         :           :                
-GND*                         : N15       :        :                   :         : 1         :                
-MuxMemToRegOut[6]            : N16       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxRegDstOut[3]              : N15       : output : 3.3-V LVTTL       :         : 1         : N              
+ALUResult[23]                : N16       : output : 3.3-V LVTTL       :         : 1         : N              
 GNDA_PLL2                    : N17       : gnd    :                   :         :           :                
 GNDA_PLL2                    : N18       : gnd    :                   :         :           :                
 GND+                         : N19       :        :                   :         : 1         :                
 clock                        : N20       : input  : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : N21       :        :                   :         : 1         :                
-RegWriteOut1[12]             : N22       : output : 3.3-V LVTTL       :         : 1         : N              
+stateout[3]                  : N21       : output : 3.3-V LVTTL       :         : 1         : N              
+Reg2[3]                      : N22       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : P1        : gnd    :                   :         :           :                
-MuxMemToRegOut[19]           : P2        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut1[18]             : P3        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceAOut[9]          : P2        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWrite                     : P3        : output : 3.3-V LVTTL       :         : 6         : N              
 VREFB6                       : P4        : power  :                   :         : 6         :                
-MuxALUSourceBOut[17]         : P5        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut1[19]             : P6        : output : 3.3-V LVTTL       :         : 6         : N              
-stateout[2]                  : P7        : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : P8        :        :                   :         : 6         :                
+MuxALUSourceAOut[20]         : P5        : output : 3.3-V LVTTL       :         : 6         : N              
+ALUResult[24]                : P6        : output : 3.3-V LVTTL       :         : 6         : N              
+ALUResult[20]                : P7        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut2[21]             : P8        : output : 3.3-V LVTTL       :         : 6         : N              
 VCCINT                       : P9        : power  :                   : 1.2V    :           :                
 VCCPD7                       : P10       : power  :                   : 3.3V    : 7         :                
 GND                          : P11       : gnd    :                   :         :           :                
@@ -418,142 +418,142 @@ VCCINT                       : P12       : power  :                   : 1.2V    
 GND                          : P13       : gnd    :                   :         :           :                
 VCCINT                       : P14       : power  :                   : 1.2V    :           :                
 VCCPD1                       : P15       : power  :                   : 3.3V    : 1         :                
-GND*                         : P16       :        :                   :         : 1         :                
-GND*                         : P17       :        :                   :         : 1         :                
-GND*                         : P18       :        :                   :         : 1         :                
-RegWriteOut2[28]             : P19       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : P20       :        :                   :         : 1         :                
-MuxMemToRegOut[9]            : P21       : output : 3.3-V LVTTL       :         : 1         : N              
+Reg2[1]                      : P16       : output : 3.3-V LVTTL       :         : 1         : N              
+RegWriteOut1[29]             : P17       : output : 3.3-V LVTTL       :         : 1         : N              
+Reg1[1]                      : P18       : output : 3.3-V LVTTL       :         : 1         : N              
+Reg1[4]                      : P19       : output : 3.3-V LVTTL       :         : 1         : N              
+stateout[2]                  : P20       : output : 3.3-V LVTTL       :         : 1         : N              
+ALUResult[10]                : P21       : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : P22       : gnd    :                   :         :           :                
-RegWriteOut2[9]              : R1        : output : 3.3-V LVTTL       :         : 6         : N              
-MuxMemToRegOut[26]           : R2        : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : R3        :        :                   :         : 6         :                
-MuxALUSourceBOut[18]         : R4        : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : R1        :        :                   :         : 6         :                
+OpCode[1]                    : R2        : output : 3.3-V LVTTL       :         : 6         : N              
+Imediato[8]                  : R3        : output : 3.3-V LVTTL       :         : 6         : N              
+ImediatoExtended[8]          : R4        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : R5        :        :                   :         : 6         :                
-RegWriteOut2[18]             : R6        : output : 3.3-V LVTTL       :         : 6         : N              
-MuxMemToRegOut[15]           : R7        : output : 3.3-V LVTTL       :         : 6         : N              
+Imediato[10]                 : R6        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxMemToRegOut[13]           : R7        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : R8        :        :                   :         : 6         :                
-RegWriteOut2[22]             : R9        : output : 3.3-V LVTTL       :         : 7         : N              
+MuxMemToRegOut[17]           : R9        : output : 3.3-V LVTTL       :         : 7         : N              
 GND                          : R10       : gnd    :                   :         :           :                
 VCC_PLL6_OUT                 : R11       : power  :                   : 3.3V    : 10        :                
 VCCA_PLL6                    : R12       : power  :                   : 1.2V    :           :                
 VCCPD8                       : R13       : power  :                   : 3.3V    : 8         :                
-stateout[5]                  : R14       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxMemToRegOut[28]           : R15       : output : 3.3-V LVTTL       :         : 8         : N              
+RegWriteOut2[22]             : R14       : output : 3.3-V LVTTL       :         : 8         : N              
+RegWriteOut1[14]             : R15       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : R16       :        :                   :         : 1         :                
 GND*                         : R17       :        :                   :         : 1         :                
-stateout[6]                  : R18       : output : 3.3-V LVTTL       :         : 1         : N              
-RegWriteOut1[20]             : R19       : output : 3.3-V LVTTL       :         : 1         : N              
+ImediatoExtended[17]         : R18       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : R19       :        :                   :         : 1         :                
 VREFB1                       : R20       : power  :                   :         : 1         :                
-GND*                         : R21       :        :                   :         : 1         :                
-RegWriteOut1[21]             : R22       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : T1        :        :                   :         : 6         :                
-RegWriteOut1[10]             : T2        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut2[10]             : T3        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut2[17]             : T4        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut2[19]             : T5        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut2[4]              : T6        : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : T7        :        :                   :         : 7         :                
-MuxALUSourceBOut[27]         : T8        : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : T9        :        :                   :         : 7         :                
-RegWriteOut1[15]             : T10       : output : 3.3-V LVTTL       :         : 7         : N              
+ALUResult[7]                 : R21       : output : 3.3-V LVTTL       :         : 1         : N              
+stateout[1]                  : R22       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxMemToRegOut[0]            : T1        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceAOut[0]          : T2        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxMemToRegOut[2]            : T3        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut1[10]             : T4        : output : 3.3-V LVTTL       :         : 6         : N              
+ImediatoExtended[10]         : T5        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut2[28]             : T6        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceBOut[3]          : T7        : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : T8        :        :                   :         : 7         :                
+RegWriteOut2[10]             : T9        : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut2[1]              : T10       : output : 3.3-V LVTTL       :         : 7         : N              
 GNDA_PLL6                    : T11       : gnd    :                   :         :           :                
 GNDA_PLL6                    : T12       : gnd    :                   :         :           :                
-GND*                         : T13       :        :                   :         : 8         :                
-GND*                         : T14       :        :                   :         : 8         :                
-MuxALUSourceBOut[14]         : T15       : output : 3.3-V LVTTL       :         : 8         : N              
-stateout[4]                  : T16       : output : 3.3-V LVTTL       :         : 8         : N              
-RegWriteOut1[17]             : T17       : output : 3.3-V LVTTL       :         : 1         : N              
-RegWriteOut1[16]             : T18       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : T19       :        :                   :         : 1         :                
-GND*                         : T20       :        :                   :         : 1         :                
-GND*                         : T21       :        :                   :         : 1         :                
-GND*                         : T22       :        :                   :         : 1         :                
+ImediatoExtended[15]         : T13       : output : 3.3-V LVTTL       :         : 8         : N              
+Imediato[14]                 : T14       : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : T15       :        :                   :         : 8         :                
+ImediatoExtended[28]         : T16       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceAOut[1]          : T17       : output : 3.3-V LVTTL       :         : 1         : N              
+Imediato[12]                 : T18       : output : 3.3-V LVTTL       :         : 1         : N              
+RegWriteOut2[11]             : T19       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxALUSourceAOut[23]         : T20       : output : 3.3-V LVTTL       :         : 1         : N              
+ImediatoExtended[23]         : T21       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxALUSourceAOut[30]         : T22       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : U1        :        :                   :         : 6         :                
-RegWriteOut2[6]              : U2        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut2[30]             : U2        : output : 3.3-V LVTTL       :         : 6         : N              
 VREFB6                       : U3        : power  :                   :         : 6         :                
-RegWriteOut2[3]              : U4        : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : U5        :        :                   :         : 6         :                
+RegWriteOut2[7]              : U4        : output : 3.3-V LVTTL       :         : 6         : N              
+ImediatoExtended[29]         : U5        : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : U6        :        :                   :         : 7         :                
-RegWriteOut2[16]             : U7        : output : 3.3-V LVTTL       :         : 7         : N              
-RegWriteOut1[22]             : U8        : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : U9        :        :                   :         : 7         :                
-RegWriteOut2[5]              : U10       : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut1[2]              : U7        : output : 3.3-V LVTTL       :         : 7         : N              
+MuxMemToRegOut[18]           : U8        : output : 3.3-V LVTTL       :         : 7         : N              
+ImediatoExtended[21]         : U9        : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : U10       :        :                   :         : 7         :                
 VCCD_PLL6                    : U11       : power  :                   : 1.2V    :           :                
-MuxALUSourceAOut[16]         : U12       : output : 3.3-V LVTTL       :         : 8         : N              
-RegWriteOut1[26]             : U13       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxMemToRegOut[18]           : U14       : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : U15       :        :                   :         : 8         :                
-MuxALUSourceBOut[8]          : U16       : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : U17       :        :                   :         : 1         :                
-MuxMemToRegOut[30]           : U18       : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : U19       :        :                   :         : 1         :                
-ALUResult[0]                 : U20       : output : 3.3-V LVTTL       :         : 1         : N              
-MuxMemToRegOut[13]           : U21       : output : 3.3-V LVTTL       :         : 1         : N              
-MuxALUSourceBOut[12]         : U22       : output : 3.3-V LVTTL       :         : 1         : N              
-MuxMemToRegOut[11]           : V1        : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : U12       :        :                   :         : 8         :                
+OpCode[4]                    : U13       : output : 3.3-V LVTTL       :         : 8         : N              
+RegWriteOut1[28]             : U14       : output : 3.3-V LVTTL       :         : 8         : N              
+RegWriteOut1[15]             : U15       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[29]           : U16       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceBOut[19]         : U17       : output : 3.3-V LVTTL       :         : 1         : N              
+ALUResult[2]                 : U18       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxALUSourceBOut[24]         : U19       : output : 3.3-V LVTTL       :         : 1         : N              
+Reg1[2]                      : U20       : output : 3.3-V LVTTL       :         : 1         : N              
+rd[1]                        : U21       : output : 3.3-V LVTTL       :         : 1         : N              
+ImediatoExtended[12]         : U22       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : V1        :        :                   :         : 6         :                
 GND*                         : V2        :        :                   :         : 6         :                
-GND*                         : V3        :        :                   :         : 6         :                
-MuxMemToRegOut[31]           : V4        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut1[24]             : V3        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxALUSourceBOut[28]         : V4        : output : 3.3-V LVTTL       :         : 6         : N              
 PORSEL                       : V5        :        :                   :         : 7         :                
-RegWriteOut1[28]             : V6        : output : 3.3-V LVTTL       :         : 7         : N              
-MuxMemToRegOut[14]           : V7        : output : 3.3-V LVTTL       :         : 7         : N              
-RegWriteOut2[7]              : V8        : output : 3.3-V LVTTL       :         : 7         : N              
-MuxMemToRegOut[20]           : V9        : output : 3.3-V LVTTL       :         : 10        : N              
-GND*                         : V10       :        :                   :         : 7         :                
+RegWriteOut2[17]             : V6        : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut1[18]             : V7        : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut2[31]             : V8        : output : 3.3-V LVTTL       :         : 7         : N              
+ALUResult[14]                : V9        : output : 3.3-V LVTTL       :         : 10        : N              
+RegWriteOut2[15]             : V10       : output : 3.3-V LVTTL       :         : 7         : N              
 ALUResult[31]                : V11       : output : 3.3-V LVTTL       :         : 8         : N              
-ALUResult[4]                 : V12       : output : 3.3-V LVTTL       :         : 8         : N              
-RegWriteOut2[23]             : V13       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxALUSourceBOut[6]          : V14       : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : V15       :        :                   :         : 8         :                
+RegWriteOut2[25]             : V12       : output : 3.3-V LVTTL       :         : 8         : N              
+OpCode[0]                    : V13       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceBOut[30]         : V14       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceBOut[6]          : V15       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : V16       :        :                   :         : 8         :                
 VCCSEL                       : V17       :        :                   :         : 8         :                
 GND*                         : V18       :        :                   :         : 1         :                
-GND*                         : V19       :        :                   :         : 1         :                
+RegWriteOut1[5]              : V19       : output : 3.3-V LVTTL       :         : 1         : N              
 VREFB1                       : V20       : power  :                   :         : 1         :                
-GND*                         : V21       :        :                   :         : 1         :                
-RegWriteOut1[30]             : V22       : output : 3.3-V LVTTL       :         : 1         : N              
-RegWriteOut1[9]              : W1        : output : 3.3-V LVTTL       :         : 6         : N              
-RegWriteOut2[11]             : W2        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxRegDstOut[1]              : V21       : output : 3.3-V LVTTL       :         : 1         : N              
+RegWriteOut2[20]             : V22       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxALUSourceBOut[27]         : W1        : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : W2        :        :                   :         : 6         :                
 GND*                         : W3        :        :                   :         : 6         :                
-GND*                         : W4        :        :                   :         : 6         :                
-GND*                         : W5        :        :                   :         : 7         :                
+RegWriteOut1[31]             : W4        : output : 3.3-V LVTTL       :         : 6         : N              
+RegWriteOut2[0]              : W5        : output : 3.3-V LVTTL       :         : 7         : N              
 VREFB7                       : W6        : power  :                   :         : 7         :                
-MuxALUSourceBOut[5]          : W7        : output : 3.3-V LVTTL       :         : 7         : N              
+MuxALUSourceBOut[12]         : W7        : output : 3.3-V LVTTL       :         : 7         : N              
 VREFB7                       : W8        : power  :                   :         : 7         :                
-GND*                         : W9        :        :                   :         : 10        :                
-Reg1[4]                      : W10       : output : 3.3-V LVTTL       :         : 7         : N              
-MuxALUSourceAOut[30]         : W11       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxALUSourceAOut[3]          : W12       : output : 3.3-V LVTTL       :         : 8         : N              
-ALUResult[14]                : W13       : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : W14       :        :                   :         : 8         :                
-GND*                         : W15       :        :                   :         : 8         :                
+MuxALUSourceAOut[8]          : W9        : output : 3.3-V LVTTL       :         : 10        : N              
+MuxALUSourceAOut[12]         : W10       : output : 3.3-V LVTTL       :         : 7         : N              
+ALUResult[27]                : W11       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxALUSourceAOut[21]         : W12       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[24]           : W13       : output : 3.3-V LVTTL       :         : 8         : N              
+rd[3]                        : W14       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxRegDstOut[0]              : W15       : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : W16       :        :                   :         : 8         :                
-MuxMemToRegOut[10]           : W17       : output : 3.3-V LVTTL       :         : 8         : N              
+RegWriteOut1[6]              : W17       : output : 3.3-V LVTTL       :         : 8         : N              
 nCONFIG                      : W18       :        :                   :         : 8         :                
-GND*                         : W19       :        :                   :         : 1         :                
-GND*                         : W20       :        :                   :         : 1         :                
-GND*                         : W21       :        :                   :         : 1         :                
-MuxMemToRegOut[25]           : W22       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxALUSourceAOut[5]          : W19       : output : 3.3-V LVTTL       :         : 1         : N              
+Imediato[13]                 : W20       : output : 3.3-V LVTTL       :         : 1         : N              
+RegWriteOut2[18]             : W21       : output : 3.3-V LVTTL       :         : 1         : N              
+MuxMemToRegOut[20]           : W22       : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : Y1        :        :                   :         : 6         :                
-RegWriteOut2[31]             : Y2        : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : Y3        :        :                   :         : 7         :                
+RegWriteOut1[20]             : Y2        : output : 3.3-V LVTTL       :         : 6         : N              
+MuxMemToRegOut[3]            : Y3        : output : 3.3-V LVTTL       :         : 7         : N              
 PLL_ENA                      : Y4        :        :                   :         : 7         :                
-GND*                         : Y5        :        :                   :         : 7         :                
-RegWriteOut2[30]             : Y6        : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : Y7        :        :                   :         : 7         :                
-GND*                         : Y8        :        :                   :         : 7         :                
-GND*                         : Y9        :        :                   :         : 10        :                
-rd[3]                        : Y10       : output : 3.3-V LVTTL       :         : 7         : N              
-Reg2[0]                      : Y11       : output : 3.3-V LVTTL       :         : 7         : N              
-MuxALUSourceAOut[10]         : Y12       : output : 3.3-V LVTTL       :         : 8         : N              
-ALUResult[12]                : Y13       : output : 3.3-V LVTTL       :         : 8         : N              
-RegWriteOut2[21]             : Y14       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxALUSourceAOut[23]         : Y15       : output : 3.3-V LVTTL       :         : 8         : N              
-MuxMemToRegOut[17]           : Y16       : output : 3.3-V LVTTL       :         : 8         : N              
-GND*                         : Y17       :        :                   :         : 8         :                
-MuxMemToRegOut[27]           : Y18       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[30]           : Y5        : output : 3.3-V LVTTL       :         : 7         : N              
+RegWriteOut1[7]              : Y6        : output : 3.3-V LVTTL       :         : 7         : N              
+ImediatoExtended[20]         : Y7        : output : 3.3-V LVTTL       :         : 7         : N              
+MuxALUSourceBOut[14]         : Y8        : output : 3.3-V LVTTL       :         : 7         : N              
+MuxALUSourceAOut[13]         : Y9        : output : 3.3-V LVTTL       :         : 10        : N              
+ALUResult[0]                 : Y10       : output : 3.3-V LVTTL       :         : 7         : N              
+MuxALUSourceAOut[11]         : Y11       : output : 3.3-V LVTTL       :         : 7         : N              
+ALUResult[6]                 : Y12       : output : 3.3-V LVTTL       :         : 8         : N              
+ALUResult[19]                : Y13       : output : 3.3-V LVTTL       :         : 8         : N              
+Reg2[0]                      : Y14       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[26]           : Y15       : output : 3.3-V LVTTL       :         : 8         : N              
+MuxMemToRegOut[12]           : Y16       : output : 3.3-V LVTTL       :         : 8         : N              
+Imediato[15]                 : Y17       : output : 3.3-V LVTTL       :         : 8         : N              
+ImediatoExtended[14]         : Y18       : output : 3.3-V LVTTL       :         : 8         : N              
 VREFB8                       : Y19       : power  :                   :         : 8         :                
-MuxALUSourceBOut[23]         : Y20       : output : 3.3-V LVTTL       :         : 8         : N              
-RegWriteOut1[24]             : Y21       : output : 3.3-V LVTTL       :         : 1         : N              
-RegWriteOut2[29]             : Y22       : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : Y20       :        :                   :         : 8         :                
+GND*                         : Y21       :        :                   :         : 1         :                
+MuxMemToRegOut[25]           : Y22       : output : 3.3-V LVTTL       :         : 1         : N              

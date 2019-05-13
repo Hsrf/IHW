@@ -4452,6 +4452,476 @@ SIGNAL("rd[0]")
 	PARENT = "rd";
 }
 
+SIGNAL("ImediatoExtended")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ImediatoExtended[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("ImediatoExtended[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ImediatoExtended";
+}
+
+SIGNAL("Funct")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 6;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Funct[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("Funct[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("Funct[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("Funct[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("Funct[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("Funct[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "Funct";
+}
+
+SIGNAL("OpCode")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 6;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("OpCode[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
+SIGNAL("OpCode[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
+SIGNAL("OpCode[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
+SIGNAL("OpCode[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
+SIGNAL("OpCode[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
+SIGNAL("OpCode[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "OpCode";
+}
+
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -8274,6 +8744,402 @@ TRANSITION_LIST("rd[1]")
 }
 
 TRANSITION_LIST("rd[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ImediatoExtended[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Funct[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OpCode[0]")
 {
 	NODE
 	{
@@ -12473,7 +13339,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 419;
 	TREE_LEVEL = 0;
 	CHILDREN = 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435;
@@ -12483,7 +13349,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[15]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 420;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12493,7 +13359,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[14]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 421;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12503,7 +13369,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[13]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 422;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12513,7 +13379,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[12]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 423;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12523,7 +13389,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[11]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 424;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12533,7 +13399,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[10]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 425;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12543,7 +13409,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[9]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 426;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12553,7 +13419,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[8]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 427;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12563,7 +13429,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 428;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12573,7 +13439,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 429;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12583,7 +13449,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 430;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12593,7 +13459,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 431;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12603,7 +13469,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 432;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12613,7 +13479,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 433;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12623,7 +13489,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 434;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12633,7 +13499,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "Imediato[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 435;
 	TREE_LEVEL = 1;
 	PARENT = 419;
@@ -12697,6 +13563,476 @@ DISPLAY_LINE
 	TREE_INDEX = 441;
 	TREE_LEVEL = 1;
 	PARENT = 436;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 442;
+	TREE_LEVEL = 0;
+	CHILDREN = 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 443;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 444;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 445;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 446;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 447;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 448;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 449;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 450;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 451;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 452;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 453;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 454;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 455;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 456;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 457;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 458;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 459;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 460;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 461;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 462;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 463;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 464;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 465;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 466;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 467;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 468;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 469;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 470;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 471;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 472;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 473;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ImediatoExtended[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 474;
+	TREE_LEVEL = 1;
+	PARENT = 442;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 475;
+	TREE_LEVEL = 0;
+	CHILDREN = 476, 477, 478, 479, 480, 481;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 476;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 477;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 478;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 479;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 480;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Funct[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 481;
+	TREE_LEVEL = 1;
+	PARENT = 475;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 482;
+	TREE_LEVEL = 0;
+	CHILDREN = 483, 484, 485, 486, 487, 488;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 483;
+	TREE_LEVEL = 1;
+	PARENT = 482;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 484;
+	TREE_LEVEL = 1;
+	PARENT = 482;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 485;
+	TREE_LEVEL = 1;
+	PARENT = 482;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 486;
+	TREE_LEVEL = 1;
+	PARENT = 482;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 487;
+	TREE_LEVEL = 1;
+	PARENT = 482;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OpCode[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 488;
+	TREE_LEVEL = 1;
+	PARENT = 482;
 }
 
 TIME_BAR

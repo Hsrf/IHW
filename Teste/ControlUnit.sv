@@ -2,6 +2,7 @@ module ControlUnit(
 	input logic clock,
 	input logic reset,
 	input logic [5:0] OpCode,
+	input logic [5:0] Funct,
 	output logic [1:0] ALUSrcA,
 	output logic [2:0] ALUSrcB,
 	output logic [2:0] PCSource,
@@ -28,13 +29,13 @@ module ControlUnit(
 enum logic [6:0] {
 	Reset = 7'd1,
 	Start = 7'd2,
-	Wait1 = 7'd3,
-	Wait2 = 7'd4,
-	ADD1 = 7'd5,
-	ADD2 = 7'd6,
-	ADD3 = 7'd7,
-	ADD4 = 7'd8,
-	Wait3 = 7'd9
+	WaitMemRead = 7'd3,
+	Decode = 7'd4,
+	Add = 7'd5,
+	WriteInRegAdd = 7'd6,
+	Wait = 7'd7,
+	Addi = 7'd8,
+	WriteInRegAddi = 7'd9
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -77,9 +78,9 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				nextstate = Wait1;
+				nextstate = WaitMemRead;
 		end	
-		Wait1: begin
+		WaitMemRead: begin
 				ALUSrcA = 2'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -94,9 +95,9 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				nextstate = Wait2;
+				nextstate = Decode;
 		end
-		Wait2: begin
+		Decode: begin
 				ALUSrcA = 2'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -106,31 +107,25 @@ always @* begin
 				IRWrite = 1'd1;
 				Iord = 3'd0;
 				MemToReg = 4'd0;
-				WriteRegA = 1'd0;
-				WriteRegB = 1'd0;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				nextstate = ADD1;
-		end
-		ADD1: begin
-				ALUSrcA = 2'd0 ;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
 				WriteRegA = 1'd1;
 				WriteRegB = 1'd1;
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				nextstate = ADD2;
+				case(OpCode)
+					6'h8: begin
+						nextstate = Addi;
+					end
+					6'h0: begin //sem nextstate
+						case(Funct)
+							6'h20: begin
+								nextstate = Add;
+							end
+						endcase
+					end
+				endcase
 		end
-		ADD2: begin
+		Add: begin
 				ALUSrcA = 2'd2 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -145,9 +140,26 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				nextstate = ADD3;
+				nextstate = WriteInRegAdd;
 		end
-		ADD3: begin
+		Addi: begin
+				ALUSrcA = 2'd2;
+				ALUSrcB = 3'd2;
+				PCSource = 3'd0;
+				ALUOp = 3'd1;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				nextstate = WriteInRegAddi;
+		end
+		WriteInRegAddi: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -161,10 +173,10 @@ always @* begin
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				nextstate = ADD4;
+				RegWrite = 1'd1;
+				nextstate = Wait;
 		end
-		ADD4: begin
+		WriteInRegAdd: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -179,9 +191,9 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd3;
 				RegWrite = 1'd1;
-				nextstate = Wait3;
+				nextstate = Wait;
 		end
-		Wait3: begin
+		Wait: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -200,30 +212,5 @@ always @* begin
 		end
 	endcase
 end
-
-/*
-ALUSrcA = 2'd0 ;
-ALUSrcB = 3'd0;
-PCSource = 3'd0;
-ALUOp = 3'd0;
-PCWrite = 1'd0;
-Overflow = 1'd0;
-Negativo = 1'd0;
-Zero = 1'd0;
-Igual = 1'd0;
-MaiorQue = 1'd0;
-MenorQue = 1'd0;
-MemWr = 1'd0;
-IRWrite = 1'd0;
-Iord = 3'd0;
-MemToReg = 4'd0;
-WriteRegA = 1'd0;
-WriteRegB = 1'd0;
-ALUOutControl = 1'd0;
-RegDst = 2'd0;
-RegWrite = 1'd0;
-nextstate = ;
-*/
-
 
 endmodule
