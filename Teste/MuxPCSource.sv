@@ -1,7 +1,7 @@
 module MuxPCSource(A, B, C, D, E, F, out, PCSource);
 
-	input logic [31:0] A, D;
-	input logic B, C, E, F;
+	input logic [31:0] A, D, E;
+	input logic B, C, F;
 	input logic [2:0] PCSource;
 	output logic [31:0] out;
   

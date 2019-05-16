@@ -120,7 +120,7 @@ MuxPCSource MuxPCSource(
 	.B(1'd0),
 	.C(1'd0),
 	.D(EPCOut),
-	.E(1'd0),
+	.E(RegAOut),
 	.F(1'd0),
 	.out(MuxPCSourceOut),
 	.PCSource(PCSource)
