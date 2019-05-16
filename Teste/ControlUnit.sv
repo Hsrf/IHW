@@ -32,11 +32,13 @@ enum logic [6:0] {
 	WaitMemRead = 7'd3,
 	Decode = 7'd4,
 	Add = 7'd5,
-	WriteInRegAdd = 7'd6,
+	WriteInReg = 7'd6,
 	Wait = 7'd7,
 	Addi = 7'd8,
 	WriteInRegAddi = 7'd9,
-	WaitMemRead2 = 7'd10
+	WaitMemRead2 = 7'd10,
+	And = 7'd11,
+	Sub = 7'd12
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -135,11 +137,14 @@ always @* begin
 				end else if(OpCode == 0)begin
 					case(Funct)
 						6'h20: nextstate = Add;
+						6'h24: nextstate = And;
+						6'h22: nextstate = Sub;
 					endcase
 				end
 				
 					
 		end
+		// R INSTRUCTIONS
 		Add: begin
 				ALUSrcA = 2'd2 ;
 				ALUSrcB = 3'd0;
@@ -155,8 +160,43 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				nextstate = WriteInRegAdd;
+				nextstate = WriteInReg;
 		end
+		And: begin
+				ALUSrcA = 2'd2 ;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd3;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				nextstate = WriteInReg;
+		end
+		Sub: begin
+				ALUSrcA = 2'd2 ;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd2;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				nextstate = WriteInReg;
+		end
+		// I INSTRUCTIONS
 		Addi: begin
 				ALUSrcA = 2'd2;
 				ALUSrcB = 3'd2;
@@ -174,6 +214,7 @@ always @* begin
 				RegWrite = 1'd0;
 				nextstate = WriteInRegAddi;
 		end
+		// WRITE AND WAITS
 		WriteInRegAddi: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
@@ -191,7 +232,7 @@ always @* begin
 				RegWrite = 1'd1;
 				nextstate = Wait;
 		end
-		WriteInRegAdd: begin
+		WriteInReg: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;

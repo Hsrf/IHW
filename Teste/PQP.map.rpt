@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Thu May 16 15:59:20 2019
+Thu May 16 16:10:30 2019
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -61,15 +61,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu May 16 15:59:20 2019         ;
+; Analysis & Synthesis Status   ; Successful - Thu May 16 16:10:30 2019         ;
 ; Quartus II 64-Bit Version     ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                 ; PQP                                           ;
 ; Top-level Entity Name         ; CPU                                           ;
 ; Family                        ; Stratix II                                    ;
 ; Logic utilization             ; N/A                                           ;
-;     Combinational ALUTs       ; 916                                           ;
-;     Dedicated logic registers ; 1,194                                         ;
-; Total registers               ; 1194                                          ;
+;     Combinational ALUTs       ; 980                                           ;
+;     Dedicated logic registers ; 1,196                                         ;
+; Total registers               ; 1196                                          ;
 ; Total pins                    ; 315                                           ;
 ; Total virtual pins            ; 0                                             ;
 ; Total block memory bits       ; 8,192                                         ;
@@ -207,38 +207,38 @@ applicable agreement for further details.
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 916   ;
-; Dedicated logic registers                     ; 1194  ;
+; Estimated ALUTs Used                          ; 980   ;
+; Dedicated logic registers                     ; 1196  ;
 ;                                               ;       ;
 ; Estimated ALUTs Unavailable                   ; 0     ;
 ;                                               ;       ;
-; Total combinational functions                 ; 916   ;
+; Total combinational functions                 ; 980   ;
 ; Combinational ALUT usage by number of inputs  ;       ;
 ;     -- 7 input functions                      ; 0     ;
-;     -- 6 input functions                      ; 702   ;
-;     -- 5 input functions                      ; 14    ;
-;     -- 4 input functions                      ; 79    ;
-;     -- <=3 input functions                    ; 121   ;
+;     -- 6 input functions                      ; 716   ;
+;     -- 5 input functions                      ; 45    ;
+;     -- 4 input functions                      ; 61    ;
+;     -- <=3 input functions                    ; 158   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 893   ;
+;     -- normal mode                            ; 957   ;
 ;     -- extended LUT mode                      ; 0     ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 1931  ;
+; Estimated ALUT/register pairs used            ; 1974  ;
 ;                                               ;       ;
-; Total registers                               ; 1194  ;
-;     -- Dedicated logic registers              ; 1194  ;
+; Total registers                               ; 1196  ;
+;     -- Dedicated logic registers              ; 1196  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 966   ;
+; Estimated ALMs:  partially or completely used ; 987   ;
 ;                                               ;       ;
 ; I/O pins                                      ; 315   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1226  ;
-; Total fan-out                                 ; 10307 ;
+; Maximum fan-out                               ; 1228  ;
+; Total fan-out                                 ; 10573 ;
 ; Average fan-out                               ; 4.19  ;
 +-----------------------------------------------+-------+
 
@@ -248,9 +248,9 @@ applicable agreement for further details.
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 916 (1)           ; 1194 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 315  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 980 (1)           ; 1196 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 315  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:BancoRegistradores|               ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:BancoRegistradores                                                                              ;              ;
-;    |ControlUnit:ControlUnit|                    ; 24 (24)           ; 10 (10)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
+;    |ControlUnit:ControlUnit|                    ; 31 (31)           ; 12 (12)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
 ;    |Instr_Reg:InstructionRegister|              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegister                                                                             ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ;              ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
@@ -276,7 +276,7 @@ applicable agreement for further details.
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ;              ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ;              ;
-;    |Ula32:ULA|                                  ; 63 (63)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
+;    |Ula32:ULA|                                  ; 120 (120)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -294,22 +294,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |CPU|ControlUnit:ControlUnit|state                                                                                                                                          ;
-+----------------------+--------------------+----------------------+------------+------------+---------------------+-----------+--------------+-------------------+-------------+-------------+
-; Name                 ; state.WaitMemRead2 ; state.WriteInRegAddi ; state.Addi ; state.Wait ; state.WriteInRegAdd ; state.Add ; state.Decode ; state.WaitMemRead ; state.Start ; state.Reset ;
-+----------------------+--------------------+----------------------+------------+------------+---------------------+-----------+--------------+-------------------+-------------+-------------+
-; state.Reset          ; 0                  ; 0                    ; 0          ; 0          ; 0                   ; 0         ; 0            ; 0                 ; 0           ; 0           ;
-; state.Start          ; 0                  ; 0                    ; 0          ; 0          ; 0                   ; 0         ; 0            ; 0                 ; 1           ; 1           ;
-; state.WaitMemRead    ; 0                  ; 0                    ; 0          ; 0          ; 0                   ; 0         ; 0            ; 1                 ; 0           ; 1           ;
-; state.Decode         ; 0                  ; 0                    ; 0          ; 0          ; 0                   ; 0         ; 1            ; 0                 ; 0           ; 1           ;
-; state.Add            ; 0                  ; 0                    ; 0          ; 0          ; 0                   ; 1         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WriteInRegAdd  ; 0                  ; 0                    ; 0          ; 0          ; 1                   ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Wait           ; 0                  ; 0                    ; 0          ; 1          ; 0                   ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Addi           ; 0                  ; 0                    ; 1          ; 0          ; 0                   ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WriteInRegAddi ; 0                  ; 1                    ; 0          ; 0          ; 0                   ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WaitMemRead2   ; 1                  ; 0                    ; 0          ; 0          ; 0                   ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-+----------------------+--------------------+----------------------+------------+------------+---------------------+-----------+--------------+-------------------+-------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CPU|ControlUnit:ControlUnit|state                                                                                                                                                               ;
++----------------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
+; Name                 ; state.Sub ; state.And ; state.WaitMemRead2 ; state.WriteInRegAddi ; state.Addi ; state.Wait ; state.WriteInReg ; state.Add ; state.Decode ; state.WaitMemRead ; state.Start ; state.Reset ;
++----------------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
+; state.Reset          ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 0           ;
+; state.Start          ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 1           ; 1           ;
+; state.WaitMemRead    ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 1                 ; 0           ; 1           ;
+; state.Decode         ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 1            ; 0                 ; 0           ; 1           ;
+; state.Add            ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 1         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WriteInReg     ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 1                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Wait           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 1          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Addi           ; 0         ; 0         ; 0                  ; 0                    ; 1          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WriteInRegAddi ; 0         ; 0         ; 0                  ; 1                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WaitMemRead2   ; 0         ; 0         ; 1                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.And            ; 0         ; 1         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Sub            ; 1         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
++----------------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -317,16 +319,18 @@ Encoding Type:  One-Hot
 +------------------------------------------------------+--------------------------------------------------+------------------------+
 ; Latch Name                                           ; Latch Enable Signal                              ; Free of Timing Hazards ;
 +------------------------------------------------------+--------------------------------------------------+------------------------+
-; ControlUnit:ControlUnit|nextstate.Add_261            ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Addi_226           ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Start_300          ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead_287    ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Wait_239           ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_217 ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Decode_274         ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAdd_252  ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead2_204   ; ControlUnit:ControlUnit|Selector13               ; yes                    ;
-; Number of user-specified and inferred latches = 9    ;                                                  ;                        ;
+; ControlUnit:ControlUnit|nextstate.Add_335            ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Addi_298           ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.And_263            ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sub_252            ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Start_374          ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead_361    ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Wait_311           ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_289 ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Decode_348         ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInReg_324     ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead2_276   ; ControlUnit:ControlUnit|Selector19               ; yes                    ;
+; Number of user-specified and inferred latches = 11   ;                                                  ;                        ;
 +------------------------------------------------------+--------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -352,10 +356,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1194  ;
+; Total registers                              ; 1196  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1194  ;
+; Number of registers using Asynchronous Clear ; 1196  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1184  ;
 ; Number of registers using Preset             ; 0     ;
@@ -367,10 +371,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux0           ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux13        ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux25 ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux48 ;
+; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux3           ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux14        ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|Ula32:ULA|Mux1                     ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux9  ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux35 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -594,7 +599,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Thu May 16 15:59:13 2019
+    Info: Processing started: Thu May 16 16:10:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file muxdst.sv
@@ -634,17 +639,19 @@ Info: Found 1 design units, including 1 entities, in source file muxregdst.sv
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(136): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(49): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "nextstate.WaitMemRead2" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.WriteInRegAddi" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.Addi" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.Wait" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.WriteInRegAdd" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.Add" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.Decode" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.WaitMemRead" at ControlUnit.sv(49)
-Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(49)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(138): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(51): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "nextstate.Sub" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.And" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.WaitMemRead2" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.WriteInRegAddi" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.Addi" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.Wait" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.WriteInReg" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.Add" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.Decode" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.WaitMemRead" at ControlUnit.sv(51)
+Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(51)
 Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(11): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -756,6 +763,7 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Critical Warning: Memory depth (256) in the design file differs from memory depth (20) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:InstructionRegister"
 Info: Elaborating entity "MuxIord" for hierarchy "MuxIord:MuxIord"
 Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -984,10 +992,17 @@ Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[29]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[30]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[31]" is permanently enabled
 Warning: 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Latch ControlUnit:ControlUnit|nextstate.Add_261 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Add_335 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
     Warning: Ports ENA and CLR on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_226 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_298 has unsafe behavior
     Warning: Ports ENA and PRE on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.And_263 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_252 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "stateout[4]" is stuck at GND
     Warning (13410): Pin "stateout[5]" is stuck at GND
@@ -1017,14 +1032,14 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file D:/Users/gvh/Desktop/Teste/PQP.map.smsg
-Info: Implemented 2457 device resources after synthesis - the final resource count might be different
+Info: Implemented 2523 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 313 output pins
-    Info: Implemented 2110 logic cells
+    Info: Implemented 2176 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 206 warnings
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Thu May 16 15:59:20 2019
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 214 warnings
+    Info: Peak virtual memory: 446 megabytes
+    Info: Processing ended: Thu May 16 16:10:30 2019
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:11
 
