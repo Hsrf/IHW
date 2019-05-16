@@ -23,7 +23,8 @@ module ControlUnit(
 	output logic ALUOutControl,
 	output logic [1:0] RegDst,
 	output logic RegWrite,
-	output logic [6:0] stateout
+	output logic [6:0] stateout,
+	output logic EPCWrite
 );
 
 enum logic [6:0] {
@@ -38,7 +39,10 @@ enum logic [6:0] {
 	WriteInRegAddi = 7'd9,
 	WaitMemRead2 = 7'd10,
 	And = 7'd11,
-	Sub = 7'd12
+	Sub = 7'd12,
+	Break = 7'd13,
+	WriteInPC = 7'd14,
+	Rte = 7'd15
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -64,6 +68,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd1;
 				RegWrite = 1'd1;
+				EPCWrite = 1'd1;
 				nextstate = Start;
 		end
 		Start: begin
@@ -81,6 +86,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WaitMemRead;
 		end	
 		WaitMemRead: begin
@@ -98,6 +104,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WaitMemRead2;
 		end
 		WaitMemRead2: begin
@@ -115,6 +122,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = Decode;
 		end
 		Decode: begin
@@ -132,6 +140,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				if(OpCode == 8)begin
 					nextstate = Addi;
 				end else if(OpCode == 0)begin
@@ -139,6 +148,8 @@ always @* begin
 						6'h20: nextstate = Add;
 						6'h24: nextstate = And;
 						6'h22: nextstate = Sub;
+						6'hd: nextstate = Break;
+						6'hd13: nextstate = Rte;
 					endcase
 				end
 				
@@ -160,6 +171,7 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WriteInReg;
 		end
 		And: begin
@@ -177,6 +189,7 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WriteInReg;
 		end
 		Sub: begin
@@ -194,7 +207,44 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WriteInReg;
+		end
+		Break: begin
+				ALUSrcA = 2'd0 ;
+				ALUSrcB = 3'd1;
+				PCSource = 3'd0;
+				ALUOp = 3'd2;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				nextstate = WriteInPC;
+		end
+		Rte: begin
+				ALUSrcA = 2'd0 ;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd3;
+				ALUOp = 3'd0;
+				PCWrite = 1'd1;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd1;
+				nextstate = Wait;
 		end
 		// I INSTRUCTIONS
 		Addi: begin
@@ -212,6 +262,7 @@ always @* begin
 				ALUOutControl = 1'd1;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = WriteInRegAddi;
 		end
 		// WRITE AND WAITS
@@ -230,6 +281,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd1;
+				EPCWrite = 1'd0;
 				nextstate = Wait;
 		end
 		WriteInReg: begin
@@ -247,6 +299,25 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd3;
 				RegWrite = 1'd1;
+				EPCWrite = 1'd0;
+				nextstate = Wait;
+		end
+		WriteInPC: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd1;
+				ALUOp = 3'd0;
+				PCWrite = 1'd1;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = Wait;
 		end
 		Wait: begin
@@ -264,6 +335,7 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
 				nextstate = Start;
 		end
 	endcase

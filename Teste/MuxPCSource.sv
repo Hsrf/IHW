@@ -1,8 +1,9 @@
 module MuxPCSource(A, B, C, D, E, F, out, PCSource);
-    input logic [31:0] A;
- input logic B, C, D, E, F;
- input logic [2:0] PCSource;
-  output logic [31:0] out;
+
+	input logic [31:0] A, D;
+	input logic B, C, E, F;
+	input logic [2:0] PCSource;
+	output logic [31:0] out;
   
     always @(PCSource)begin
       case(PCSource)

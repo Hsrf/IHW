@@ -18,13 +18,14 @@ module CPU(
 	output logic [5:0] OpCode,
 	output logic [5:0] Funct,
 	output logic [31:0] ALUOutOut,
-	output logic ALUOutControl
+	output logic ALUOutControl,
+	output logic [31:0] PCOut,
+	output logic [31:0] EPCOut
 );
 
 logic [31:0] MuxPCSourceOut;
 logic [31:0] RegAOut;
 logic [31:0] RegBOut;
-logic [31:0] PCOut;
 logic [2:0] ALUOp;
 logic PCWrite;
 logic [1:0] ALUSrcA;
@@ -46,6 +47,7 @@ logic [3:0] MemToReg;
 logic WriteRegA;
 logic WriteRegB;
 logic [1:0] RegDst;
+logic EPCWrite;
 
 Registrador PC(
 	.Clk(clock),
@@ -53,6 +55,14 @@ Registrador PC(
 	.Load(PCWrite),
 	.Entrada(MuxPCSourceOut),
 	.Saida(PCOut)
+);
+
+Registrador EPC(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(EPCWrite),
+	.Entrada(PCOut),
+	.Saida(EPCOut)
 );
 
 ControlUnit ControlUnit(
@@ -80,7 +90,8 @@ ControlUnit ControlUnit(
 	.RegWrite(RegWrite),
 	.stateout(stateout),
 	.OpCode(OpCode),
-	.Funct(Funct)
+	.Funct(Funct),
+	.EPCWrite(EPCWrite)
 );
 
 
@@ -108,7 +119,7 @@ MuxPCSource MuxPCSource(
 	.A(ALUResult),
 	.B(1'd0),
 	.C(1'd0),
-	.D(1'd0),
+	.D(EPCOut),
 	.E(1'd0),
 	.F(1'd0),
 	.out(MuxPCSourceOut),
@@ -197,7 +208,7 @@ Registrador ALUOut(
 
 MuxRegDst MuxRegDst(
 	.A(Reg2),
-	.B(1'd0),
+	.B(1'd29),
 	.C(1'd0),
 	.D(rd),
 	.out(MuxRegDstOut),
