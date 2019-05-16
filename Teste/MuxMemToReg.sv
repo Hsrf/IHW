@@ -1,7 +1,7 @@
 module MuxMemToReg(A, B, C, D, E, F, G, H, out, MemToReg);
 
-  input logic B, C, D, E, F, G, H;
-  input logic [31:0] A;
+  input logic B, C, D, F, G, H;
+  input logic [31:0] A, E;
   input logic [3:0] MemToReg;
   output logic [31:0] out;
   

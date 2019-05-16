@@ -1,5 +1,5 @@
 Flow report for PQP
-Thu May 16 18:00:07 2019
+Thu May 16 20:12:48 2019
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -38,23 +38,23 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +-------------------------------+-----------------------------------------------+
-; Flow Status                   ; Successful - Thu May 16 18:00:07 2019         ;
+; Flow Status                   ; Successful - Thu May 16 20:12:48 2019         ;
 ; Quartus II 64-Bit Version     ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                 ; PQP                                           ;
 ; Top-level Entity Name         ; CPU                                           ;
 ; Family                        ; Stratix II                                    ;
 ; Met timing requirements       ; No                                            ;
-; Logic utilization             ; 7 %                                           ;
-;     Combinational ALUTs       ; 1,059 / 27,104 ( 4 % )                        ;
-;     Dedicated logic registers ; 1,232 / 27,104 ( 5 % )                        ;
-; Total registers               ; 1232                                          ;
-; Total pins                    ; 379 / 501 ( 76 % )                            ;
+; Logic utilization             ; 4 %                                           ;
+;     Combinational ALUTs       ; 1,349 / 48,352 ( 3 % )                        ;
+;     Dedicated logic registers ; 1,266 / 48,352 ( 3 % )                        ;
+; Total registers               ; 1266                                          ;
+; Total pins                    ; 493 / 719 ( 69 % )                            ;
 ; Total virtual pins            ; 0                                             ;
-; Total block memory bits       ; 8,192 / 1,369,728 ( < 1 % )                   ;
-; DSP block 9-bit elements      ; 0 / 128 ( 0 % )                               ;
-; Total PLLs                    ; 0 / 6 ( 0 % )                                 ;
+; Total block memory bits       ; 8,192 / 2,544,192 ( < 1 % )                   ;
+; DSP block 9-bit elements      ; 0 / 288 ( 0 % )                               ;
+; Total PLLs                    ; 0 / 12 ( 0 % )                                ;
 ; Total DLLs                    ; 0 / 2 ( 0 % )                                 ;
-; Device                        ; EP2S30F672C3                                  ;
+; Device                        ; EP2S60F1020C3                                 ;
 ; Timing Models                 ; Final                                         ;
 +-------------------------------+-----------------------------------------------+
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/16/2019 17:59:45 ;
+; Start date & time ; 05/16/2019 20:12:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PQP                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 229335799398850.155804038530060 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 229335799398850.155804833419444 ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; CPU         ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; CPU         ; Top            ;
 ; TOP_LEVEL_ENTITY                   ; CPU                             ; PQP           ; --          ; --             ;
@@ -88,11 +88,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:07     ; 1.0                     ; 448 MB              ; 00:00:12                           ;
-; Fitter                  ; 00:00:09     ; 2.8                     ; 575 MB              ; 00:00:14                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 403 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 295 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:20     ; --                      ; --                  ; 00:00:29                           ;
+; Analysis & Synthesis    ; 00:00:13     ; 1.0                     ; 451 MB              ; 00:00:21                           ;
+; Fitter                  ; 00:00:13     ; 2.7                     ; 632 MB              ; 00:00:19                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 488 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 305 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:31     ; --                      ; --                  ; 00:00:45                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

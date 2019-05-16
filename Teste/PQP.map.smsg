@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at ControlUnit.sv(49): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at ControlUnit.sv(54): always construct contains both blocking and non-blocking assignments
 Info (10281): Verilog HDL Declaration information at ControlUnit.sv(3): object "reset" differs only in case from object "Reset" in the same scope

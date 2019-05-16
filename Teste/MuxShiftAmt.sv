@@ -1,9 +1,8 @@
 module MuxShiftAmt(A, B, out, ShiftAmt);
 	
-	input logic [31:0] A;
-	input logic [5:0] B;
+	input logic [4:0] A, B;
 	input logic ShiftAmt;
-	output logic [31:0] out;
+	output logic [4:0] out;
   
     always @(ShiftAmt)begin
       case(ShiftAmt)

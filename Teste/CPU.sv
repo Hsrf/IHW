@@ -20,12 +20,18 @@ module CPU(
 	output logic [31:0] ALUOutOut,
 	output logic ALUOutControl,
 	output logic [31:0] PCOut,
-	output logic [31:0] EPCOut
+	output logic [31:0] EPCOut,
+	output logic [4:0] MuxShiftAmtOut,
+	output logic [31:0] MuxShiftSrcOut,
+	output logic [31:0] RegDeslocResult,
+	output logic [4:0] RegBOut5Bit,
+	output logic [4:0] Shamt,
+	output logic [31:0] RegBOut,
+	output logic [2:0] ShiftControl
 );
 
 logic [31:0] MuxPCSourceOut;
 logic [31:0] RegAOut;
-logic [31:0] RegBOut;
 logic [2:0] ALUOp;
 logic PCWrite;
 logic [1:0] ALUSrcA;
@@ -48,6 +54,8 @@ logic WriteRegA;
 logic WriteRegB;
 logic [1:0] RegDst;
 logic EPCWrite;
+logic ShiftSrc;
+logic ShiftAmt;
 
 Registrador PC(
 	.Clk(clock),
@@ -91,7 +99,10 @@ ControlUnit ControlUnit(
 	.stateout(stateout),
 	.OpCode(OpCode),
 	.Funct(Funct),
-	.EPCWrite(EPCWrite)
+	.EPCWrite(EPCWrite),
+	.ShiftControl(ShiftControl),
+	.ShiftSrc(ShiftSrc),
+	.ShiftAmt(ShiftAmt)
 );
 
 
@@ -174,7 +185,7 @@ MuxMemToReg MuxMemToReg(
 	.B(1'd0),
 	.C(1'd0),
 	.D(1'd0),
-	.E(1'd0),
+	.E(RegDeslocResult),
 	.F(1'd0),
 	.G(1'd0),
 	.H(1'd0),
@@ -227,6 +238,31 @@ Banco_reg BancoRegistradores(
 	.ReadData2(RegWriteOut2)
 );
 
+RegDesloc RegDesloc(
+	.Clk(clock),
+	.Reset(reset),
+	.Shift(ShiftControl),
+	.N(MuxShiftAmtOut),
+	.Entrada(MuxShiftSrcOut),
+	.Saida(RegDeslocResult)
+);
+
+MuxShiftSrc MuxShiftSrc(
+	.A(RegAOut), 
+	.B(RegBOut), 
+	.out(MuxShiftSrcOut), 
+	.ShiftSrc(ShiftSrc)
+);
+
+MuxShiftAmt MuxShiftAmt(
+	.A(RegBOut5Bit), 
+	.B(Shamt), 
+	.out(MuxShiftAmtOut), 
+	.ShiftAmt(ShiftAmt)
+);
+
+assign Shamt = Imediato[10:6];
+assign RegBOut5Bit = RegBOut[4:0];
 assign rd = Imediato [15:11];
 assign Funct = Imediato [5:0];
 assign ImediatoExtended = Imediato;
