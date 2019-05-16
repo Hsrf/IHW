@@ -1,6 +1,6 @@
 Analysis & Synthesis report for PQP
-Mon May 13 09:57:35 2019
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Thu May 16 13:44:43 2019
+Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
 ---------------------
@@ -61,25 +61,25 @@ applicable agreement for further details.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Mon May 13 09:57:34 2019        ;
-; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
-; Revision Name                 ; PQP                                          ;
-; Top-level Entity Name         ; CPU                                          ;
-; Family                        ; Stratix II                                   ;
-; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 140                                          ;
-;     Dedicated logic registers ; 72                                           ;
-; Total registers               ; 72                                           ;
-; Total pins                    ; 282                                          ;
-; Total virtual pins            ; 0                                            ;
-; Total block memory bits       ; 8,192                                        ;
-; DSP block 9-bit elements      ; 0                                            ;
-; Total PLLs                    ; 0                                            ;
-; Total DLLs                    ; 0                                            ;
-+-------------------------------+----------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Thu May 16 13:44:43 2019         ;
+; Quartus II 64-Bit Version     ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Revision Name                 ; PQP                                           ;
+; Top-level Entity Name         ; CPU                                           ;
+; Family                        ; Stratix II                                    ;
+; Logic utilization             ; N/A                                           ;
+;     Combinational ALUTs       ; 175                                           ;
+;     Dedicated logic registers ; 73                                            ;
+; Total registers               ; 73                                            ;
+; Total pins                    ; 282                                           ;
+; Total virtual pins            ; 0                                             ;
+; Total block memory bits       ; 8,192                                         ;
+; DSP block 9-bit elements      ; 0                                             ;
+; Total PLLs                    ; 0                                             ;
+; Total DLLs                    ; 0                                             ;
++-------------------------------+-----------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -162,41 +162,47 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                      ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
-; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Banco_reg.vhd                                                         ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Instr_Reg.vhd                                                         ;
-; Memoria.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Memoria.vhd                                                           ;
-; Registrador.vhd                  ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/Registrador.vhd                                                       ;
-; ula32.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Gabi/Desktop/Teste/ula32.vhd                                                             ;
-; CPU.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/CPU.sv                                                                ;
-; MuxALUSrcA.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxALUSrcA.sv                                                         ;
-; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxALUSrcB.sv                                                         ;
-; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxPCSource.sv                                                        ;
-; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/ControlUnit.sv                                                        ;
-; MuxIord.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxIord.sv                                                            ;
-; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxMemToReg.sv                                                        ;
-; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/Gabi/Desktop/Teste/MuxRegDst.sv                                                          ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
-; altram.tdf                       ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf     ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/gabi/downloads/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf ;
-; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gabi/Desktop/Teste/db/altsyncram_g2a1.tdf                                                ;
-; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Gabi/Desktop/Teste/instrucoes.mif                                                        ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                    ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
+; Banco_reg.vhd                    ; yes             ; User VHDL File                         ; D:/Users/gvh/Desktop/Teste/Banco_reg.vhd                                        ;
+; Instr_Reg.vhd                    ; yes             ; User VHDL File                         ; D:/Users/gvh/Desktop/Teste/Instr_Reg.vhd                                        ;
+; Memoria.vhd                      ; yes             ; User VHDL File                         ; D:/Users/gvh/Desktop/Teste/Memoria.vhd                                          ;
+; Registrador.vhd                  ; yes             ; User VHDL File                         ; D:/Users/gvh/Desktop/Teste/Registrador.vhd                                      ;
+; ula32.vhd                        ; yes             ; User VHDL File                         ; D:/Users/gvh/Desktop/Teste/ula32.vhd                                            ;
+; CPU.sv                           ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/CPU.sv                                               ;
+; MuxALUSrcA.sv                    ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxALUSrcA.sv                                        ;
+; MuxALUSrcB.sv                    ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxALUSrcB.sv                                        ;
+; MuxPCSource.sv                   ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxPCSource.sv                                       ;
+; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/ControlUnit.sv                                       ;
+; MuxIord.sv                       ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxIord.sv                                           ;
+; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxMemToReg.sv                                       ;
+; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File            ; D:/Users/gvh/Desktop/Teste/MuxRegDst.sv                                         ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                           ; d:/programfiles/quartus/quartus9/quartus/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.tdf                       ; yes             ; Megafunction                           ; d:/programfiles/quartus/quartus9/quartus/libraries/megafunctions/altram.tdf     ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/programfiles/quartus/quartus9/quartus/libraries/megafunctions/altsyncram.tdf ;
+; db/altsyncram_g2a1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/Users/gvh/Desktop/Teste/db/altsyncram_g2a1.tdf                               ;
+; instrucoes.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/Users/gvh/Desktop/Teste/instrucoes.mif                                       ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -204,39 +210,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 140   ;
-; Dedicated logic registers                     ; 72    ;
+; Estimated ALUTs Used                          ; 175   ;
+; Dedicated logic registers                     ; 73    ;
 ;                                               ;       ;
 ; Estimated ALUTs Unavailable                   ; 0     ;
 ;                                               ;       ;
-; Total combinational functions                 ; 140   ;
+; Total combinational functions                 ; 175   ;
 ; Combinational ALUT usage by number of inputs  ;       ;
 ;     -- 7 input functions                      ; 0     ;
-;     -- 6 input functions                      ; 2     ;
-;     -- 5 input functions                      ; 7     ;
-;     -- 4 input functions                      ; 62    ;
-;     -- <=3 input functions                    ; 69    ;
+;     -- 6 input functions                      ; 4     ;
+;     -- 5 input functions                      ; 18    ;
+;     -- 4 input functions                      ; 65    ;
+;     -- <=3 input functions                    ; 88    ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 117   ;
+;     -- normal mode                            ; 152   ;
 ;     -- extended LUT mode                      ; 0     ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 153   ;
+; Estimated ALUT/register pairs used            ; 189   ;
 ;                                               ;       ;
-; Total registers                               ; 72    ;
-;     -- Dedicated logic registers              ; 72    ;
+; Total registers                               ; 73    ;
+;     -- Dedicated logic registers              ; 73    ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 77    ;
+; Estimated ALMs:  partially or completely used ; 95    ;
 ;                                               ;       ;
 ; I/O pins                                      ; 282   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 104   ;
-; Total fan-out                                 ; 1186  ;
-; Average fan-out                               ; 2.25  ;
+; Maximum fan-out                               ; 105   ;
+; Total fan-out                                 ; 1338  ;
+; Average fan-out                               ; 2.38  ;
 +-----------------------------------------------+-------+
 
 
@@ -245,8 +251,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 140 (1)           ; 72 (0)       ; 8192              ; 0            ; 0       ; 0         ; 0         ; 282  ; 0            ; |CPU                                                                                                           ; work         ;
-;    |ControlUnit:ControlUnit|                    ; 20 (20)           ; 9 (9)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
+; |CPU                                            ; 175 (1)           ; 73 (0)       ; 8192              ; 0            ; 0       ; 0         ; 0         ; 282  ; 0            ; |CPU                                                                                                           ; work         ;
+;    |ControlUnit:ControlUnit|                    ; 21 (21)           ; 9 (9)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
 ;    |Instr_Reg:InstructionRegister|              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegister                                                                             ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ;              ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
@@ -265,11 +271,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ;              ;
-;    |MuxALUSrcA:MuxALUSrcA|                      ; 31 (31)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ;              ;
-;    |MuxALUSrcB:MuxALUSrcB|                      ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
+;    |MuxALUSrcA:MuxALUSrcA|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ;              ;
+;    |MuxALUSrcB:MuxALUSrcB|                      ; 16 (16)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
 ;    |MuxRegDst:MuxRegDst|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDst:MuxRegDst                                                                                       ;              ;
-;    |Registrador:PC|                             ; 0 (0)             ; 31 (31)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ;              ;
-;    |Ula32:ULA|                                  ; 59 (59)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
+;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ;              ;
+;    |Ula32:ULA|                                  ; 77 (77)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -304,21 +310,21 @@ Encoding Type:  One-Hot
 +----------------------+----------------------+------------+------------+---------------------+-----------+--------------+-------------------+-------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                ;
-+------------------------------------------------------+------------------------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal                ; Free of Timing Hazards ;
-+------------------------------------------------------+------------------------------------+------------------------+
-; ControlUnit:ControlUnit|nextstate.Add_209            ; ControlUnit:ControlUnit|Selector2  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Addi_177           ; ControlUnit:ControlUnit|Selector2  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Start_245          ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Decode_221         ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAdd_201  ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead_233    ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Wait_189           ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_169 ; ControlUnit:ControlUnit|Selector15 ; yes                    ;
-; Number of user-specified and inferred latches = 8    ;                                    ;                        ;
-+------------------------------------------------------+------------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                    ;
++------------------------------------------------------+----------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                    ; Free of Timing Hazards ;
++------------------------------------------------------+----------------------------------------+------------------------+
+; ControlUnit:ControlUnit|nextstate.Add_244            ; ControlUnit:ControlUnit|nextstate.Wait ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Addi_209           ; ControlUnit:ControlUnit|nextstate.Wait ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Start_283          ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Decode_257         ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAdd_235  ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead_270    ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Wait_222           ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_200 ; ControlUnit:ControlUnit|Selector11     ; yes                    ;
+; Number of user-specified and inferred latches = 8    ;                                        ;                        ;
++------------------------------------------------------+----------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -564,19 +570,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ControlUnit:ControlUnit|state~8                                              ; Lost fanout                                        ;
 ; ControlUnit:ControlUnit|state~9                                              ; Lost fanout                                        ;
 ; ControlUnit:ControlUnit|state~10                                             ; Lost fanout                                        ;
-; Registrador:PC|Saida[1]                                                      ; Stuck at GND due to stuck port data_in             ;
-; Total Number of Removed Registers = 1034                                     ;                                                    ;
+; Total Number of Removed Registers = 1033                                     ;                                                    ;
 +------------------------------------------------------------------------------+----------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                         ;
-+---------------------------------------+---------------------------+-------------------------------------------------+
-; Register name                         ; Reason for Removal        ; Registers Removed due to This Register          ;
-+---------------------------------------+---------------------------+-------------------------------------------------+
-; Banco_reg:BancoRegistradores|Reg0[31] ; Stuck at GND              ; Registrador:A|Saida[0], Registrador:PC|Saida[1] ;
-;                                       ; due to stuck port data_in ;                                                 ;
-+---------------------------------------+---------------------------+-------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                ;
++---------------------------------------+---------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------------------+---------------------------+----------------------------------------+
+; Banco_reg:BancoRegistradores|Reg0[31] ; Stuck at GND              ; Registrador:A|Saida[0]                 ;
+;                                       ; due to stuck port data_in ;                                        ;
++---------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -584,12 +589,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 72    ;
+; Total registers                              ; 73    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 72    ;
+; Number of registers using Asynchronous Clear ; 73    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 63    ;
+; Number of registers using Clock Enable       ; 64    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -814,19 +819,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"                                                                                                                                                               ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; A       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; B[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; B[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; C       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; D       ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; E       ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; F       ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"                                                                                                                                                                ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; B[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; B[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; C       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; D       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; E       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; F       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -844,10 +849,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II Analysis & Synthesis
-    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 13 09:57:31 2019
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Thu May 16 13:44:40 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file muxdst.sv
     Info: Found entity 1: MuxDST
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
@@ -887,8 +893,6 @@ Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(196): created implic
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(120): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(115): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(48): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "nextstate.WriteInRegAddi" at ControlUnit.sv(48)
 Info (10041): Inferred latch for "nextstate.Addi" at ControlUnit.sv(48)
@@ -904,46 +908,46 @@ Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(11): vari
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(12): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(13): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info: Elaborating entity "MuxALUSrcB" for hierarchy "MuxALUSrcB:MuxALUSrcB"
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(10): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(11): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(12): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(13): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(14): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(15): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at MuxALUSrcB.sv(9): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at MuxALUSrcB.sv(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[1]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[2]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[3]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[4]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[5]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[6]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[7]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[8]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[9]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[10]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[11]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[12]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[13]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[14]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[15]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[16]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[17]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[18]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[19]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[20]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[21]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[22]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[23]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[24]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[25]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[26]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[27]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[28]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[29]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[30]" at MuxALUSrcB.sv(8)
-Info (10041): Inferred latch for "out[31]" at MuxALUSrcB.sv(8)
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(11): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(12): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(13): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(14): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(15): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(16): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxALUSrcB.sv(10): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxALUSrcB.sv(9): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[1]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[2]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[3]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[4]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[5]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[6]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[7]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[8]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[9]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[10]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[11]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[12]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[13]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[14]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[15]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[16]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[17]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[18]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[19]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[20]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[21]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[22]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[23]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[24]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[25]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[26]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[27]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[28]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[29]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[30]" at MuxALUSrcB.sv(9)
+Info (10041): Inferred latch for "out[31]" at MuxALUSrcB.sv(9)
 Info: Elaborating entity "MuxPCSource" for hierarchy "MuxPCSource:MuxPCSource"
 Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxPCSource.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -1140,31 +1144,44 @@ Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[28]" is permanently enable
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[29]" is permanently enabled
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[30]" is permanently enabled
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[31]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[1]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[2]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[0]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[3]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[4]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[5]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[6]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[7]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[8]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[9]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[10]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[11]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[12]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[13]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[14]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[15]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[0]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[1]" is permanently enabled
 Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[2]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[3]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[4]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[5]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[6]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[7]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[8]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[9]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[10]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[11]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[12]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[13]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[14]" is permanently enabled
+Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[15]" is permanently enabled
 Warning: 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Latch ControlUnit:ControlUnit|nextstate.Add_209 has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_177 has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.Add_244 has unsafe behavior
+    Warning: Ports ENA and CLR on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_209 has unsafe behavior
+    Warning: Ports ENA and PRE on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "MuxALUSourceAOut[1]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[1]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[3]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[4]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[5]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[6]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[7]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[8]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[9]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[10]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[11]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[12]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[13]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[14]" is stuck at GND
-    Warning (13410): Pin "MuxALUSourceBOut[15]" is stuck at GND
     Warning (13410): Pin "MuxALUSourceBOut[16]" is stuck at GND
     Warning (13410): Pin "MuxALUSourceBOut[17]" is stuck at GND
     Warning (13410): Pin "MuxALUSourceBOut[18]" is stuck at GND
@@ -1280,7 +1297,6 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "MuxMemToRegOut[29]" is stuck at GND
     Warning (13410): Pin "MuxMemToRegOut[30]" is stuck at GND
     Warning (13410): Pin "MuxMemToRegOut[31]" is stuck at GND
-    Warning (13410): Pin "ALUResult[1]" is stuck at GND
     Warning (13410): Pin "ImediatoExtended[16]" is stuck at GND
     Warning (13410): Pin "ImediatoExtended[17]" is stuck at GND
     Warning (13410): Pin "ImediatoExtended[18]" is stuck at GND
@@ -1305,22 +1321,22 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "ControlUnit:ControlUnit|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/Users/Gabi/Desktop/Teste/PQP.map.smsg
-Info: Implemented 526 device resources after synthesis - the final resource count might be different
+Info: Generated suppressed messages file D:/Users/gvh/Desktop/Teste/PQP.map.smsg
+Info: Implemented 562 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 280 output pins
-    Info: Implemented 212 logic cells
+    Info: Implemented 248 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 245 warnings
-    Info: Peak virtual memory: 261 megabytes
-    Info: Processing ended: Mon May 13 09:57:35 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 255 warnings
+    Info: Peak virtual memory: 442 megabytes
+    Info: Processing ended: Thu May 16 13:44:43 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Gabi/Desktop/Teste/PQP.map.smsg.
+The suppressed messages can be found in D:/Users/gvh/Desktop/Teste/PQP.map.smsg.
 
 

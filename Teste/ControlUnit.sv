@@ -112,18 +112,15 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
-				case(OpCode)
-					6'h8: begin
-						nextstate = Addi;
+				if(OpCode == 8)begin
+					nextstate = Addi;
+				end else if(OpCode == 0)begin
+					if(Funct == 6'h20)begin
+						nextstate = Add;
 					end
-					6'h0: begin //sem nextstate
-						case(Funct)
-							6'h20: begin
-								nextstate = Add;
-							end
-						endcase
-					end
-				endcase
+				end
+				
+					
 		end
 		Add: begin
 				ALUSrcA = 2'd2 ;

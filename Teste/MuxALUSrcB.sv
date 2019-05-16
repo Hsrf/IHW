@@ -1,6 +1,7 @@
 module MuxALUSrcB(A, B, C, D, E, F, out, SrcB);
  
-  input logic A, C, D, E, F;
+  input logic A, D, E, F;
+  input logic [15:0] C;
   input logic [2:0] B;
   input logic [2:0] SrcB;
   output logic [31:0] out;
