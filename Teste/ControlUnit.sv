@@ -35,7 +35,8 @@ enum logic [6:0] {
 	WriteInRegAdd = 7'd6,
 	Wait = 7'd7,
 	Addi = 7'd8,
-	WriteInRegAddi = 7'd9
+	WriteInRegAddi = 7'd9,
+	AddiWait = 7'd10
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -55,7 +56,7 @@ always @* begin
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
 				Iord = 3'd0;
-				MemToReg = 4'd5;
+				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;

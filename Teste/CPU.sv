@@ -16,10 +16,11 @@ module CPU(
 	output logic [4:0] rd,
 	output logic [31:0] ImediatoExtended,
 	output logic [5:0] OpCode,
-	output logic [5:0] Funct
+	output logic [5:0] Funct,
+	output logic [31:0] ALUOutOut,
+	output logic ALUOutControl
 );
 
-logic [31:0] AluOutOut;
 logic [31:0] MuxPCSourceOut;
 logic [31:0] RegAOut;
 logic [31:0] RegBOut;
@@ -41,11 +42,9 @@ logic MemWr;
 logic [31:0] MemOut;
 logic IRWrite;
 logic [2:0] Iord;
-logic [31:0] MemToRegOut;
 logic [3:0] MemToReg;
 logic WriteRegA;
 logic WriteRegB;
-logic ALUOutControl;
 logic [1:0] RegDst;
 
 Registrador PC(
@@ -160,7 +159,7 @@ MuxIord MuxIord(
 );
 
 MuxMemToReg MuxMemToReg(
-	.A(AluOutOut),
+	.A(ALUOutOut),
 	.B(1'd0),
 	.C(1'd0),
 	.D(1'd0),
@@ -168,7 +167,7 @@ MuxMemToReg MuxMemToReg(
 	.F(1'd0),
 	.G(1'd0),
 	.H(1'd0),
-	.out(MemToRegOut),
+	.out(MuxMemToRegOut),
 	.MemToReg(MemToReg)
 );
 
