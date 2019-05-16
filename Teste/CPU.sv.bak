@@ -167,7 +167,7 @@ MuxMemToReg MuxMemToReg(
 	.F(1'd0),
 	.G(1'd0),
 	.H(1'd0),
-	.out(MemToRegOut),
+	.out(MuxMemToRegOut),
 	.MemToReg(MemToReg)
 );
 

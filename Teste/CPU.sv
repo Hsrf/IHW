@@ -183,7 +183,7 @@ Registrador B(
 	.Clk(clock),
 	.Reset(reset),
 	.Load(WriteRegB),
-	.Entrada(WriteRegOut2),
+	.Entrada(RegWriteOut2),
 	.Saida(RegBOut)
 );
 
