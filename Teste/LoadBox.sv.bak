@@ -6,8 +6,8 @@ module LoadBox(A, out, IsControl);
     always @(IsControl)begin
       case(IsControl)
             0: out = A;
-            1: out = {0000000000000000, A[15:0]};
-            2: out = {000000000000000000000000, A[7:0]};
+            1: out = {16'd0, A[15:0]};
+            2: out = {24'd0, A[7:0]};
         endcase
     end
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Fri May 17 14:32:52 2019
+Fri May 17 19:18:11 2019
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -27,16 +27,17 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
  19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
  20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
  21. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
- 22. Port Connectivity Checks: "MuxRegDst:MuxRegDst"
- 23. Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"
- 24. Port Connectivity Checks: "MuxIord:MuxIord"
- 25. Port Connectivity Checks: "Memoria:Memoria"
- 26. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
- 27. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
- 28. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
- 29. Port Connectivity Checks: "ControlUnit:ControlUnit"
- 30. Analysis & Synthesis Messages
- 31. Analysis & Synthesis Suppressed Messages
+ 22. Port Connectivity Checks: "StoreBox:StoreBox"
+ 23. Port Connectivity Checks: "MuxRegDst:MuxRegDst"
+ 24. Port Connectivity Checks: "MuxMemToReg:MuxMemToReg"
+ 25. Port Connectivity Checks: "MuxIord:MuxIord"
+ 26. Port Connectivity Checks: "Memoria:Memoria"
+ 27. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 28. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 29. Port Connectivity Checks: "MuxALUSrcA:MuxALUSrcA"
+ 30. Port Connectivity Checks: "ControlUnit:ControlUnit"
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -62,16 +63,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                            ;
 +-------------------------------+-----------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri May 17 14:32:52 2019   ;
+; Analysis & Synthesis Status   ; Successful - Fri May 17 19:18:11 2019   ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                 ; PQP                                     ;
 ; Top-level Entity Name         ; CPU                                     ;
 ; Family                        ; Stratix II                              ;
 ; Logic utilization             ; N/A                                     ;
-;     Combinational ALUTs       ; 1,428                                   ;
-;     Dedicated logic registers ; 1,275                                   ;
-; Total registers               ; 1275                                    ;
-; Total pins                    ; 349                                     ;
+;     Combinational ALUTs       ; 1,465                                   ;
+;     Dedicated logic registers ; 1,281                                   ;
+; Total registers               ; 1281                                    ;
+; Total pins                    ; 354                                     ;
 ; Total virtual pins            ; 0                                       ;
 ; Total block memory bits       ; 8,192                                   ;
 ; DSP block 9-bit elements      ; 0                                       ;
@@ -194,6 +195,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; MuxMemToReg.sv                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/MuxMemToReg.sv         ;
 ; MuxRegDst.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/MuxRegDst.sv           ;
 ; LoadBox.sv                       ; yes             ; User SystemVerilog HDL File      ; C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/LoadBox.sv             ;
+; StoreBox.sv                      ; yes             ; User SystemVerilog HDL File      ; C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/StoreBox.sv            ;
 ; lpm_ram_dq.tdf                   ; yes             ; Megafunction                     ; c:/program files/altera/91/quartus/libraries/megafunctions/lpm_ram_dq.tdf  ;
 ; altram.tdf                       ; yes             ; Megafunction                     ; c:/program files/altera/91/quartus/libraries/megafunctions/altram.tdf      ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/program files/altera/91/quartus/libraries/megafunctions/altsyncram.tdf  ;
@@ -206,39 +208,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1428  ;
-; Dedicated logic registers                     ; 1275  ;
+; Estimated ALUTs Used                          ; 1465  ;
+; Dedicated logic registers                     ; 1281  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 149   ;
+; Estimated ALUTs Unavailable                   ; 135   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1428  ;
+; Total combinational functions                 ; 1465  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 6     ;
-;     -- 6 input functions                      ; 847   ;
-;     -- 5 input functions                      ; 102   ;
-;     -- 4 input functions                      ; 220   ;
-;     -- <=3 input functions                    ; 253   ;
+;     -- 7 input functions                      ; 2     ;
+;     -- 6 input functions                      ; 837   ;
+;     -- 5 input functions                      ; 114   ;
+;     -- 4 input functions                      ; 199   ;
+;     -- <=3 input functions                    ; 313   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1399  ;
-;     -- extended LUT mode                      ; 6     ;
+;     -- normal mode                            ; 1440  ;
+;     -- extended LUT mode                      ; 2     ;
 ;     -- arithmetic mode                        ; 23    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2410  ;
+; Estimated ALUT/register pairs used            ; 2422  ;
 ;                                               ;       ;
-; Total registers                               ; 1275  ;
-;     -- Dedicated logic registers              ; 1275  ;
+; Total registers                               ; 1281  ;
+;     -- Dedicated logic registers              ; 1281  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,205 ;
+; Estimated ALMs:  partially or completely used ; 1,211 ;
 ;                                               ;       ;
-; I/O pins                                      ; 349   ;
+; I/O pins                                      ; 354   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1307  ;
-; Total fan-out                                 ; 13944 ;
-; Average fan-out                               ; 4.52  ;
+; Maximum fan-out                               ; 1313  ;
+; Total fan-out                                 ; 14036 ;
+; Average fan-out                               ; 4.48  ;
 +-----------------------------------------------+-------+
 
 
@@ -247,9 +249,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 1428 (1)          ; 1275 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 349  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 1465 (1)          ; 1281 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 354  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:BancoRegistradores|               ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:BancoRegistradores                                                                              ;              ;
-;    |ControlUnit:ControlUnit|                    ; 88 (88)           ; 27 (27)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
+;    |ControlUnit:ControlUnit|                    ; 124 (124)         ; 33 (33)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
 ;    |Instr_Reg:InstructionRegister|              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegister                                                                             ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ;              ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
@@ -269,20 +271,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ;              ;
 ;    |MuxALUSrcA:MuxALUSrcA|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ;              ;
-;    |MuxALUSrcB:MuxALUSrcB|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
+;    |MuxALUSrcB:MuxALUSrcB|                      ; 35 (35)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
 ;    |MuxIord:MuxIord|                            ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxIord:MuxIord                                                                                           ;              ;
 ;    |MuxMemToReg:MuxMemToReg|                    ; 64 (64)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxMemToReg:MuxMemToReg                                                                                   ;              ;
 ;    |MuxPCSource:MuxPCSource|                    ; 46 (46)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ;              ;
 ;    |MuxRegDst:MuxRegDst|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDst:MuxRegDst                                                                                       ;              ;
 ;    |MuxShiftAmt:MuxShiftAmt|                    ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftAmt:MuxShiftAmt                                                                                   ;              ;
 ;    |MuxShiftSrc:MuxShiftSrc|                    ; 10 (10)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftSrc:MuxShiftSrc                                                                                   ;              ;
-;    |RegDesloc:RegDesloc|                        ; 232 (232)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:RegDesloc                                                                                       ;              ;
+;    |RegDesloc:RegDesloc|                        ; 239 (239)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:RegDesloc                                                                                       ;              ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ;              ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ;              ;
 ;    |Registrador:EPC|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:EPC                                                                                           ;              ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ;              ;
-;    |Ula32:ULA|                                  ; 146 (146)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
+;    |Ula32:ULA|                                  ; 137 (137)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -300,39 +302,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |CPU|ControlUnit:ControlUnit|state                                                                                                                                                                                                                                                                                                                                                                                     ;
-+----------------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
-; Name                 ; state.Lui2 ; state.Lui ; state.LSaveb ; state.LSaveh ; state.LSave ; state.LGet ; state.Lw ; state.SllvWriteReg ; state.Sllv ; state.SllWriteReg ; state.Sll ; state.Jr ; state.Rte ; state.WriteInPC ; state.Break ; state.Sub ; state.And ; state.WaitMemRead2 ; state.WriteInRegAddi ; state.Addi ; state.Wait ; state.WriteInReg ; state.Add ; state.Decode ; state.WaitMemRead ; state.Start ; state.Reset ;
-+----------------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
-; state.Reset          ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 0           ;
-; state.Start          ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 1           ; 1           ;
-; state.WaitMemRead    ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 1                 ; 0           ; 1           ;
-; state.Decode         ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 1            ; 0                 ; 0           ; 1           ;
-; state.Add            ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 1         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WriteInReg     ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 1                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Wait           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 1          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Addi           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 1          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WriteInRegAddi ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 1                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WaitMemRead2   ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 1                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.And            ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 1         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Sub            ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 1         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Break          ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 1           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.WriteInPC      ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 1               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Rte            ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 1         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Jr             ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 1        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Sll            ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 1         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.SllWriteReg    ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 1                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Sllv           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 1          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.SllvWriteReg   ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 1                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Lw             ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 1        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.LGet           ; 0          ; 0         ; 0            ; 0            ; 0           ; 1          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.LSave          ; 0          ; 0         ; 0            ; 0            ; 1           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.LSaveh         ; 0          ; 0         ; 0            ; 1            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.LSaveb         ; 0          ; 0         ; 1            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Lui            ; 0          ; 1         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-; state.Lui2           ; 1          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
-+----------------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CPU|ControlUnit:ControlUnit|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++----------------------+------------------+------------------+-----------------+-----------------+----------------+-------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
+; Name                 ; state.StoreSaveh ; state.StoreSaveb ; state.StoreSave ; state.StoreData ; state.StoreGet ; state.Store ; state.Lui2 ; state.Lui ; state.LSaveb ; state.LSaveh ; state.LSave ; state.LGet ; state.Lw ; state.SllvWriteReg ; state.Sllv ; state.SllWriteReg ; state.Sll ; state.Jr ; state.Rte ; state.WriteInPC ; state.Break ; state.Sub ; state.And ; state.WaitMemRead2 ; state.WriteInRegAddi ; state.Addi ; state.Wait ; state.WriteInReg ; state.Add ; state.Decode ; state.WaitMemRead ; state.Start ; state.Reset ;
++----------------------+------------------+------------------+-----------------+-----------------+----------------+-------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
+; state.Reset          ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 0           ;
+; state.Start          ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 1           ; 1           ;
+; state.WaitMemRead    ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 1                 ; 0           ; 1           ;
+; state.Decode         ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 1            ; 0                 ; 0           ; 1           ;
+; state.Add            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 1         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WriteInReg     ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 1                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Wait           ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 1          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Addi           ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 1          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WriteInRegAddi ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 1                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WaitMemRead2   ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 1                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.And            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 1         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Sub            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 1         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Break          ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 1           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.WriteInPC      ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 1               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Rte            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 1         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Jr             ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 1        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Sll            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 1         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.SllWriteReg    ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 1                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Sllv           ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 1          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.SllvWriteReg   ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 1                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Lw             ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 1        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.LGet           ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 1          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.LSave          ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 1           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.LSaveh         ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 1            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.LSaveb         ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 1            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Lui            ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 1         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Lui2           ; 0                ; 0                ; 0               ; 0               ; 0              ; 0           ; 1          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.Store          ; 0                ; 0                ; 0               ; 0               ; 0              ; 1           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.StoreGet       ; 0                ; 0                ; 0               ; 0               ; 1              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.StoreData      ; 0                ; 0                ; 0               ; 1               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.StoreSave      ; 0                ; 0                ; 1               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.StoreSaveb     ; 0                ; 1                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
+; state.StoreSaveh     ; 1                ; 0                ; 0               ; 0               ; 0              ; 0           ; 0          ; 0         ; 0            ; 0            ; 0           ; 0          ; 0        ; 0                  ; 0          ; 0                 ; 0         ; 0        ; 0         ; 0               ; 0           ; 0         ; 0         ; 0                  ; 0                    ; 0          ; 0          ; 0                ; 0         ; 0            ; 0                 ; 0           ; 1           ;
++----------------------+------------------+------------------+-----------------+-----------------+----------------+-------------+------------+-----------+--------------+--------------+-------------+------------+----------+--------------------+------------+-------------------+-----------+----------+-----------+-----------------+-------------+-----------+-----------+--------------------+----------------------+------------+------------+------------------+-----------+--------------+-------------------+-------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -340,33 +348,39 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------+------------------------------------+------------------------+
 ; Latch Name                                            ; Latch Enable Signal                ; Free of Timing Hazards ;
 +-------------------------------------------------------+------------------------------------+------------------------+
-; ControlUnit:ControlUnit|nextstate.Add_1119            ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Addi_1066           ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.And_1015            ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sub_996             ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lw_831              ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lui_740             ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Start_1170          ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Break_977           ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Decode_1136         ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInReg_1100     ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead2_1032   ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInPC_958       ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Jr_922              ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllWriteReg_884     ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllvWriteReg_848    ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LGet_814            ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSaveh_778          ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_1049 ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sll_903             ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSaveb_759          ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Wait_1083           ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Rte_941             ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSave_797           ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lui2_723            ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sllv_867            ; ControlUnit:ControlUnit|Selector65 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead_1153    ; ControlUnit:ControlUnit|Selector71 ; yes                    ;
-; Number of user-specified and inferred latches = 26    ;                                    ;                        ;
+; ControlUnit:ControlUnit|nextstate.Add_1629            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Addi_1567           ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.And_1507            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sub_1485            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lw_1293             ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Store_1147          ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lui_1187            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Start_1689          ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Break_1463          ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Decode_1649         ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInReg_1607     ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead2_1527   ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInPC_1441      ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Jr_1399             ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SllWriteReg_1355    ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SllvWriteReg_1313   ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LGet_1273           ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSaveh_1231         ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreData_1107      ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSaveb_1065     ; ControlUnit:ControlUnit|Selector43 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead_1669    ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Wait_1587           ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Rte_1421            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sllv_1335           ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSave_1253          ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lui2_1167           ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSave_1087      ; ControlUnit:ControlUnit|Selector43 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreGet_1127       ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_1547 ; ControlUnit:ControlUnit|Selector88 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSaveb_1209         ; ControlUnit:ControlUnit|Selector23 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sll_1377            ; ControlUnit:ControlUnit|Selector85 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSaveh_1043     ; ControlUnit:ControlUnit|Selector43 ; yes                    ;
+; Number of user-specified and inferred latches = 32    ;                                    ;                        ;
 +-------------------------------------------------------+------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -393,40 +407,40 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1275  ;
+; Total registers                              ; 1281  ;
 ; Number of registers using Synchronous Clear  ; 1024  ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1275  ;
+; Number of registers using Asynchronous Clear ; 1281  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1238  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[14]          ;
-; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[19]          ;
-; 9:1                ; 3 bits    ; 18 ALUTs      ; 15 ALUTs             ; 3 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[5]           ;
-; 9:1                ; 3 bits    ; 18 ALUTs      ; 15 ALUTs             ; 3 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[27]          ;
-; 10:1               ; 2 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[2]           ;
-; 10:1               ; 2 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[29]          ;
-; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux0            ;
-; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|Ula32:ULA|Mux12                       ;
-; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux4              ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux15           ;
-; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemToReg:MuxMemToReg|Mux28         ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.Rte ;
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.Lw  ;
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:RegDesloc|Mux55             ;
-; 6:1                ; 32 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux9          ;
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|Selector23    ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux1     ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux48    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[11]            ;
+; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[22]            ;
+; 9:1                ; 3 bits    ; 18 ALUTs      ; 15 ALUTs             ; 3 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[4]             ;
+; 9:1                ; 3 bits    ; 18 ALUTs      ; 15 ALUTs             ; 3 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[25]            ;
+; 10:1               ; 2 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[3]             ;
+; 10:1               ; 2 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[29]            ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux27             ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|Ula32:ULA|Mux8                          ;
+; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux0                ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux12             ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemToReg:MuxMemToReg|Mux22           ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.And   ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:RegDesloc|Mux55               ;
+; 6:1                ; 32 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux11           ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.Store ;
+; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|Selector23      ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux14      ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:BancoRegistradores|Mux61      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -557,6 +571,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "StoreBox:StoreBox"                                                                                                                                   ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                          ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; SControl ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "SControl[1..1]" will be connected to GND. ;
+; out      ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[31..1]" have no fanouts                         ;
+; out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                              ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "MuxRegDst:MuxRegDst"                                                                                                                      ;
 +------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -626,7 +651,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; C       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; D       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
 ; E       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; F       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; F       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
 +---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -647,6 +672,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; IsControl  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
 ; MemDataReg ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; SControl   ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "SControl[1..1]" have no fanouts                                           ;
 +------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -656,7 +682,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
-    Info: Processing started: Fri May 17 14:32:35 2019
+    Info: Processing started: Fri May 17 19:17:54 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Found 1 design units, including 1 entities, in source file muxlocontrol.sv
     Info: Found entity 1: MuxLOControl
@@ -706,65 +732,82 @@ Info: Found 1 design units, including 1 entities, in source file muxregdst.sv
     Info: Found entity 1: MuxRegDst
 Info: Found 1 design units, including 1 entities, in source file loadbox.sv
     Info: Found entity 1: LoadBox
+Info: Found 1 design units, including 1 entities, in source file storebox.sv
+    Info: Found entity 1: StoreBox
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(112): created implicit net for "SControl"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(289): created implicit net for "StoreBoxOut"
 Info: Elaborating entity "CPU" for the top level hierarchy
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(93): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(116): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(139): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(162): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(185): truncated value with size 2 to match size of target (1)
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(190): incomplete case statement has no default case item
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(227): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(250): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(273): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(296): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(319): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(342): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(365): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(388): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(411): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(434): truncated value with size 2 to match size of target (1)
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(436): incomplete case statement has no default case item
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(461): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(99): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(123): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(147): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(171): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(195): truncated value with size 2 to match size of target (1)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(201): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(240): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(264): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(288): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(312): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(336): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(360): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(384): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(408): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(432): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(456): truncated value with size 2 to match size of target (1)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(458): incomplete case statement has no default case item
 Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(484): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(507): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(530): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(553): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(576): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(599): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(623): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(647): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(670): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(693): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(716): truncated value with size 2 to match size of target (1)
-Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(73): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "nextstate.Lui2" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Lui" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.LSaveb" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.LSaveh" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.LSave" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.LGet" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Lw" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.SllvWriteReg" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Sllv" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.SllWriteReg" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Sll" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Jr" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Rte" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.WriteInPC" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Break" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Sub" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.And" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.WaitMemRead2" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.WriteInRegAddi" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Addi" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Wait" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.WriteInReg" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Add" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Decode" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.WaitMemRead" at ControlUnit.sv(73)
-Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(73)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(508): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(532): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(556): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(580): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(604): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(628): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(652): truncated value with size 2 to match size of target (1)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(655): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(680): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(704): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(728): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(752): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(776): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(801): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(826): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(850): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(874): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(898): truncated value with size 2 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(79): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "nextstate.StoreSaveh" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.StoreSaveb" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.StoreSave" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.StoreData" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.StoreGet" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Store" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Lui2" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Lui" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.LSaveb" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.LSaveh" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.LSave" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.LGet" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Lw" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.SllvWriteReg" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Sllv" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.SllWriteReg" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Sll" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Jr" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Rte" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.WriteInPC" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Break" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Sub" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.And" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.WaitMemRead2" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.WriteInRegAddi" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Addi" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Wait" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.WriteInReg" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Add" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Decode" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.WaitMemRead" at ControlUnit.sv(79)
+Info (10041): Inferred latch for "nextstate.Start" at ControlUnit.sv(79)
 Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(11): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -876,7 +919,7 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
-Critical Warning: Memory depth (256) in the design file differs from memory depth (4) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
+Critical Warning: Memory depth (256) in the design file differs from memory depth (12) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:InstructionRegister"
 Info: Elaborating entity "MuxIord" for hierarchy "MuxIord:MuxIord"
 Warning (10235): Verilog HDL Always Construct warning at MuxIord.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -1014,6 +1057,46 @@ Info (10041): Inferred latch for "out[28]" at LoadBox.sv(6)
 Info (10041): Inferred latch for "out[29]" at LoadBox.sv(6)
 Info (10041): Inferred latch for "out[30]" at LoadBox.sv(6)
 Info (10041): Inferred latch for "out[31]" at LoadBox.sv(6)
+Info: Elaborating entity "StoreBox" for hierarchy "StoreBox:StoreBox"
+Warning (10235): Verilog HDL Always Construct warning at StoreBox.sv(8): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at StoreBox.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at StoreBox.sv(9): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at StoreBox.sv(10): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at StoreBox.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at StoreBox.sv(7): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at StoreBox.sv(6): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[1]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[2]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[3]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[4]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[5]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[6]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[7]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[8]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[9]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[10]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[11]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[12]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[13]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[14]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[15]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[16]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[17]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[18]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[19]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[20]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[21]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[22]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[23]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[24]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[25]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[26]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[27]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[28]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[29]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[30]" at StoreBox.sv(6)
+Info (10041): Inferred latch for "out[31]" at StoreBox.sv(6)
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "IsControl[1]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
@@ -1203,54 +1286,45 @@ Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[28]" is permanently enable
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[29]" is permanently enabled
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[30]" is permanently enabled
 Warning: LATCH primitive "MuxPCSource:MuxPCSource|out[31]" is permanently enabled
-Warning: 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Latch ControlUnit:ControlUnit|nextstate.Add_1119 has unsafe behavior
+Warning: 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch ControlUnit:ControlUnit|nextstate.Add_1629 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_1066 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_1567 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.And_1015 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.And_1507 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_996 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_1485 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_831 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_1293 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_740 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Store_1147 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Break_977 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_1187 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
+Warning: Latch ControlUnit:ControlUnit|nextstate.Break_1463 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_922 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_1399 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_778 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_1231 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_903 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveb_1065 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData
+Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_1421 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_759 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_1335 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_1253 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet
-Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_941 has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_797 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSave_1087 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_1209 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_867 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_1377 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveh_1043 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "stateout[5]" is stuck at GND
     Warning (13410): Pin "stateout[6]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[16]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[17]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[18]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[19]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[20]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[21]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[22]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[23]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[24]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[25]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[26]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[27]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[28]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[29]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[30]" is stuck at GND
-    Warning (13410): Pin "ImediatoExtended[31]" is stuck at GND
     Warning (13410): Pin "IsControl[1]" is stuck at GND
     Warning (13410): Pin "LoadBoxOut[0]" is stuck at GND
     Warning (13410): Pin "LoadBoxOut[1]" is stuck at GND
@@ -1284,6 +1358,38 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "LoadBoxOut[29]" is stuck at GND
     Warning (13410): Pin "LoadBoxOut[30]" is stuck at GND
     Warning (13410): Pin "LoadBoxOut[31]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[0]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[1]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[2]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[3]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[4]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[5]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[6]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[7]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[8]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[9]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[10]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[11]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[12]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[13]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[14]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[15]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[16]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[17]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[18]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[19]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[20]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[21]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[22]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[23]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[24]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[25]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[26]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[27]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[28]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[29]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[30]" is stuck at GND
+    Warning (13410): Pin "MemDataRegOut[31]" is stuck at GND
 Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
     Info: Register "ControlUnit:ControlUnit|state~4" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~5" lost all its fanouts during netlist optimizations.
@@ -1293,16 +1399,16 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/PQP.map.smsg
-Info: Implemented 3020 device resources after synthesis - the final resource count might be different
+Info: Implemented 3068 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 347 output pins
-    Info: Implemented 2639 logic cells
+    Info: Implemented 352 output pins
+    Info: Implemented 2682 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 355 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 394 warnings
     Info: Peak virtual memory: 279 megabytes
-    Info: Processing ended: Fri May 17 14:32:52 2019
+    Info: Processing ended: Fri May 17 19:18:11 2019
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+

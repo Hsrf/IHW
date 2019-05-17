@@ -1,5 +1,5 @@
 Flow report for PQP
-Fri May 17 14:33:19 2019
+Fri May 17 19:18:34 2019
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Flow Summary                                                            ;
 +-------------------------------+-----------------------------------------+
-; Flow Status                   ; Successful - Fri May 17 14:33:19 2019   ;
+; Flow Status                   ; Successful - Fri May 17 19:18:34 2019   ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
 ; Revision Name                 ; PQP                                     ;
 ; Top-level Entity Name         ; CPU                                     ;
 ; Family                        ; Stratix II                              ;
 ; Met timing requirements       ; No                                      ;
 ; Logic utilization             ; 19 %                                    ;
-;     Combinational ALUTs       ; 1,429 / 12,480 ( 11 % )                 ;
-;     Dedicated logic registers ; 1,275 / 12,480 ( 10 % )                 ;
-; Total registers               ; 1275                                    ;
-; Total pins                    ; 349 / 367 ( 95 % )                      ;
+;     Combinational ALUTs       ; 1,470 / 12,480 ( 12 % )                 ;
+;     Dedicated logic registers ; 1,281 / 12,480 ( 10 % )                 ;
+; Total registers               ; 1281                                    ;
+; Total pins                    ; 354 / 367 ( 96 % )                      ;
 ; Total virtual pins            ; 0                                       ;
 ; Total block memory bits       ; 8,192 / 419,328 ( 2 % )                 ;
 ; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                          ;
@@ -64,23 +64,24 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/17/2019 14:32:36 ;
+; Start date & time ; 05/17/2019 19:17:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PQP                 ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 128534996671385.155811435507900 ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                        ; --            ; CPU         ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; CPU         ; Top            ;
-; TOP_LEVEL_ENTITY                   ; CPU                             ; PQP           ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                ;
++------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                                                       ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 128534996671385.155813147405796                             ; --            ; --          ; --             ;
+; MISC_FILE                          ; C:/Users/João Pedro Jordão/Desktop/IHW-master/Teste/PQP.dpf ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                                                    ; --            ; CPU         ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                                                      ; --            ; CPU         ; Top            ;
+; TOP_LEVEL_ENTITY                   ; CPU                                                         ; PQP           ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                                         ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -88,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:17     ; 1.0                     ; 279 MB              ; 00:00:23                           ;
-; Fitter                  ; 00:00:14     ; 1.0                     ; 277 MB              ; 00:00:20                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 240 MB              ; 00:00:03                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 182 MB              ; 00:00:02                           ;
-; Total                   ; 00:00:35     ; --                      ; --                  ; 00:00:48                           ;
+; Analysis & Synthesis    ; 00:00:16     ; 1.0                     ; 279 MB              ; 00:00:23                           ;
+; Fitter                  ; 00:00:13     ; 1.0                     ; 277 MB              ; 00:00:19                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 241 MB              ; 00:00:03                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 183 MB              ; 00:00:02                           ;
+; Total                   ; 00:00:33     ; --                      ; --                  ; 00:00:47                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
