@@ -22,9 +22,9 @@ TIPO I
 - bne
 - bgt
 - ble
-- lb (teoricamente)
-- lh (teoricamente)
-- lw (teoricamente)
+- lb
+- lh
+- lw
 - lui
 
 TIPO J
