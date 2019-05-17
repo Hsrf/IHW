@@ -8,5 +8,6 @@ Programming a MIPS CPU in verilog.
 - rte
 - jr
 - sll
+- sllv
 
 - addi
