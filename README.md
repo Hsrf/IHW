@@ -1,6 +1,7 @@
 # IHW
 Programming a MIPS CPU in verilog.
 
+TIPO R
 - add
 - and
 - sub
@@ -11,5 +12,9 @@ Programming a MIPS CPU in verilog.
 - sllv
 - sra
 - srav
+- srl
 
+TIPO I
 - addi
+
+TIPO J
