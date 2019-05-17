@@ -62,7 +62,9 @@ enum logic [6:0] {
 	Srl = 7'd29,
 	SrlOp = 7'd30,
 	SrlWriteReg = 7'd31,
-	Slt = 7'd32
+	Slt = 7'd32,
+	OverflowExc = 7'd33,
+	Addiu = 7'd34
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -178,6 +180,8 @@ always @* begin
 				ShiftAmt = 1'd0;
 				if(OpCode == 8)begin
 					nextstate = Addi;
+				end else if (OpCode == 6'h9) begin
+					nextstate = Addiu;
 				end else if(OpCode == 0)begin
 					case(Funct)
 						6'h20: nextstate = Add;
@@ -680,7 +684,10 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
-				nextstate = WriteInRegAddi;
+				case(Overflow)
+					1'd0: nextstate = WriteInRegAddi;
+					1'd1: nextstate = OverflowExc;
+				endcase
 		end
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
@@ -704,6 +711,27 @@ always @* begin
 				ShiftAmt = 1'd0;
 				nextstate = Wait;
 		end
+		Addiu: begin
+				ALUSrcA = 2'd2;
+				ALUSrcB = 3'd2;
+				PCSource = 3'd0;
+				ALUOp = 3'd1;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = WriteInRegAddi;
+		end
 		WriteInReg: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
@@ -724,7 +752,7 @@ always @* begin
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
 				nextstate = Wait;
-		end
+		end 
 		WriteInPC: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
@@ -741,6 +769,27 @@ always @* begin
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
 				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = Wait;
+		end
+		OverflowExc: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd3;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd1;
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;

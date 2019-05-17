@@ -21,7 +21,8 @@ module CPU(
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic Igual,
-	output logic MaiorQue
+	output logic MaiorQue,
+	output logic Overflow
 );
 
 logic [4:0] Reg1;
@@ -41,7 +42,6 @@ logic PCWrite;
 logic [1:0] ALUSrcA;
 logic [2:0] ALUSrcB;
 logic [2:0] PCSource;
-logic Overflow;
 logic Negativo;
 logic Zero;
 logic Load;
@@ -174,7 +174,7 @@ MuxIord MuxIord(
 	.A(PCOut),
 	.B(1'd0),
 	.C(1'd0),
-	.D(1'd0),
+	.D(8'd254),
 	.E(1'd0),
 	.F(1'd0),
 	.out(MuxIordOut),
@@ -261,6 +261,7 @@ MuxShiftAmt MuxShiftAmt(
 	.out(MuxShiftAmtOut), 
 	.ShiftAmt(ShiftAmt)
 );
+
 
 assign MenorQueExtended = MenorQue;
 assign Shamt = Imediato[10:6];
