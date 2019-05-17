@@ -17,5 +17,6 @@ TIPO R
 
 TIPO I
 - addi
+- addiu
 
 TIPO J
