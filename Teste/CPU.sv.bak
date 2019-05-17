@@ -64,7 +64,7 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
-logic MemDataReg;
+logic MemDataRegControl;
 
 Registrador PC(
 	.Clk(clock),
@@ -113,7 +113,7 @@ ControlUnit ControlUnit(
 	.ShiftSrc(ShiftSrc),
 	.ShiftAmt(ShiftAmt),
 	.IsControl(IsControl),
-	.MemDataReg(MemDataReg)
+	.MemDataReg(MemDataRegControl)
 );
 
 
@@ -275,7 +275,7 @@ MuxShiftAmt MuxShiftAmt(
 Registrador MemDataReg(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(MemDataReg),
+	.Load(MemDataRegControl),
 	.Entrada(MemOut),
 	.Saida(MemDataRegOut)
 );

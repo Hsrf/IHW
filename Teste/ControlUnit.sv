@@ -28,7 +28,7 @@ module ControlUnit(
 	output logic [2:0] ShiftControl,
 	output logic ShiftSrc,
 	output logic ShiftAmt,
-	output logic IsControl,
+	output logic [1:0] IsControl,
 	output logic MemDataReg
 );
 
@@ -85,6 +85,7 @@ enum logic [6:0] {
 	Lui = 7'd48,
 	Lui2 = 7'd49,
 	LGet2 = 7'd53,
+	LGet3 = 7'd54,
 	// JUMPS
 	Jump = 7'd50,
 	Jal = 7'd51,
@@ -1073,7 +1074,30 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
-				IsControl = 2'd1;
+				IsControl = 2'd0;
+				MemDataReg = 1'd0;
+				nextstate = LGet3;
+		end
+		LGet3: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				IsControl = 2'd0;
 				MemDataReg = 1'd1;
 				case(OpCode)
 					6'h20: nextstate = LSaveb;

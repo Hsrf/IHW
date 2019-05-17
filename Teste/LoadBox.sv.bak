@@ -7,7 +7,7 @@ module LoadBox(A, out, IsControl);
       case(IsControl)
             0: out = A;
             1: out = {16'd0, A[15:0]};
-            2'd2: out = {24'd0, A[7:0]};
+            2: out = {24'd0, A[7:0]};
         endcase
     end
 endmodule 

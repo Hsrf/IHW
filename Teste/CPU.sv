@@ -12,7 +12,8 @@ module CPU(
 	output logic [31:0] ALUOutOut,
 	output logic [31:0] MemOut,
 	output logic [31:0] MuxIordOut,
-	output logic [31:0]MemDataRegOut
+	output logic [31:0]MemDataRegOut,
+	output logic [1:0] IsControl
 );
 
 logic [27:0] ExtendLeftImediato2;
@@ -24,7 +25,6 @@ logic [4:0] rd;
 logic [31:0] ImediatoExtended;
 logic [5:0] Funct;
 logic [31:0] MenorQueExtended;
-logic [1:0] IsControl;
 logic [31:0] LoadBoxOut;
 logic [4:0] MuxShiftAmtOut;
 logic [31:0] MuxShiftSrcOut;
