@@ -64,7 +64,16 @@ enum logic [6:0] {
 	SrlWriteReg = 7'd31,
 	Slt = 7'd32,
 	OverflowExc = 7'd33,
-	Addiu = 7'd34
+	Addiu = 7'd34,
+	// Desvios
+	Beq = 7'd35,
+	BeqCompare = 7'd36,
+	Bne = 7'd37,
+	BneCompare = 7'd38,
+	Bgt = 7'd39,
+	BgtCompare = 7'd40,
+	Ble = 7'd41,
+	BleCompare = 7'd42
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -182,6 +191,14 @@ always @* begin
 					nextstate = Addi;
 				end else if (OpCode == 6'h9) begin
 					nextstate = Addiu;
+				end else if (OpCode == 4) begin
+					nextstate = Beq;
+				end else if (OpCode == 5) begin
+					nextstate = Bne;
+				end else if (OpCode == 6) begin
+					nextstate = Ble;
+				end else if (OpCode == 7) begin
+					nextstate = Bgt;
 				end else if(OpCode == 0)begin
 					case(Funct)
 						6'h20: nextstate = Add;
@@ -197,9 +214,7 @@ always @* begin
 						6'h2: nextstate = Srl;
 						6'h2a: nextstate = Slt;
 					endcase
-				end
-				
-					
+				end	
 		end
 		// R INSTRUCTIONS
 		Add: begin
@@ -689,6 +704,213 @@ always @* begin
 					1'd1: nextstate = OverflowExc;
 				endcase
 		end
+		Addiu: begin
+				ALUSrcA = 2'd2;
+				ALUSrcB = 3'd2;
+				PCSource = 3'd0;
+				ALUOp = 3'd1;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = WriteInRegAddi;
+		end
+				// BEQ
+		Beq: begin
+			ALUSrcA = 2 'd0;
+			ALUSrcB = 3'd3;
+			PCSource = 3'd0;
+			ALUOp = 3'd1;
+			PCWrite = 1'd0;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd0;
+			WriteRegB = 1'd0;
+			ALUOutControl = 1'd1;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = BeqCompare;
+		end
+		BeqCompare: begin
+			ALUSrcA = 2 'd2;
+			ALUSrcB = 3'd0;
+			PCSource = 3'd1;
+			ALUOp = 3'd7;
+			PCWrite = 1'd1;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd1;
+			WriteRegB = 1'd1;
+			ALUOutControl = 1'd0;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			if (Igual == 1) begin
+				PCWrite = 1'd1;
+			end else begin
+				PCWrite = 1'd0;
+			end
+			nextstate = Wait;
+		end
+		Bne: begin
+			ALUSrcA = 2 'd0;
+			ALUSrcB = 3'd3;
+			PCSource = 3'd0;
+			ALUOp = 3'd1;
+			PCWrite = 1'd0;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd0;
+			WriteRegB = 1'd0;
+			ALUOutControl = 1'd1;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = BneCompare;
+		end
+		BneCompare: begin
+			ALUSrcA = 2 'd2;
+			ALUSrcB = 3'd0;
+			PCSource = 3'd1;
+			ALUOp = 3'd7;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd1;
+			WriteRegB = 1'd1;
+			ALUOutControl = 1'd0;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = Wait;
+			if (Igual == 0) begin
+				PCWrite = 1'd1;
+			end else begin
+				PCWrite = 1'd0;
+			end
+		end
+		Bgt: begin
+			ALUSrcA = 2 'd0;
+			ALUSrcB = 3'd3;
+			PCSource = 3'd0;
+			ALUOp = 3'd1;
+			PCWrite = 1'd0;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd0;
+			WriteRegB = 1'd0;
+			ALUOutControl = 1'd1;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = BgtCompare;
+		end
+		BgtCompare: begin
+			ALUSrcA = 2 'd2;
+			ALUSrcB = 3'd0;
+			PCSource = 3'd1;
+			ALUOp = 3'd7;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd1;
+			WriteRegB = 1'd1;
+			ALUOutControl = 1'd0;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = Wait;
+			if (MenorQue == 1) begin
+				PCWrite = 1'd1;
+			end else begin
+				PCWrite = 1'd0;
+			end
+		end
+		Ble: begin
+			ALUSrcA = 2 'd0;
+			ALUSrcB = 3'd3;
+			PCSource = 3'd0;
+			ALUOp = 3'd1;
+			PCWrite = 1'd0;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd0;
+			WriteRegB = 1'd0;
+			ALUOutControl = 1'd1;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = BleCompare;
+		end
+		BleCompare: begin
+			ALUSrcA = 2 'd2;
+			ALUSrcB = 3'd0;
+			PCSource = 3'd1;
+			ALUOp = 3'd7;
+			MemWr = 1'd0;
+			IRWrite = 1'd0;
+			Iord = 3'd0;
+			MemToReg = 4'd0;
+			WriteRegA = 1'd1;
+			WriteRegB = 1'd1;
+			ALUOutControl = 1'd0;
+			RegDst = 2'd0;
+			RegWrite = 1'd0;
+			EPCWrite = 1'd0;
+			ShiftControl = 3'd0;
+			ShiftSrc = 1'd0;
+			ShiftAmt = 1'd0;
+			nextstate = Wait;
+			if (MenorQue == 0) begin
+				PCWrite = 1'd1;
+			end else begin
+				PCWrite = 1'd0;
+			end
+		end
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
 				ALUSrcA = 2'd0;
@@ -710,27 +932,6 @@ always @* begin
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
 				nextstate = Wait;
-		end
-		Addiu: begin
-				ALUSrcA = 2'd2;
-				ALUSrcB = 3'd2;
-				PCSource = 3'd0;
-				ALUOp = 3'd1;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
-				WriteRegA = 1'd0;
-				WriteRegB = 1'd0;
-				ALUOutControl = 1'd1;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd0;
-				ShiftSrc = 1'd0;
-				ShiftAmt = 1'd0;
-				nextstate = WriteInRegAddi;
 		end
 		WriteInReg: begin
 				ALUSrcA = 2'd0;
@@ -793,7 +994,7 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
-				nextstate = ExcExecute;
+				nextstate = Wait;
 		end
 		Wait: begin
 				ALUSrcA = 2'd0;

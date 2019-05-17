@@ -14,16 +14,19 @@ module CPU(
 	output logic [4:0] RegBOut5Bit,
 	output logic [4:0] Shamt,
 	output logic [31:0] RegBOut,
-	output logic [2:0] ShiftControl,
 	output logic [31:0] RegAOut,
 	output logic [31:0] MenorQueExtended,
-	output logic MenorQue,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
-	output logic Igual,
-	output logic MaiorQue
+	output logic [31:0] ExtendLeft2,
+	output logic [31:0] PCOut
 );
 
+logic [2:0] ShiftControl;
+logic MenorQue;
+logic Igual;
+logic MaiorQue;
+logic Overflow;
 logic [4:0] Reg1;
 logic [4:0] Reg2;
 logic [31:0] RegWriteOut1;
@@ -33,7 +36,6 @@ logic RegWrite;
 logic [15:0] Imediato;
 logic [31:0] ALUOutOut;
 logic ALUOutControl;
-logic [31:0] PCOut;
 logic [31:0] EPCOut;
 logic [31:0] MuxPCSourceOut;
 logic [2:0] ALUOp;
@@ -41,7 +43,6 @@ logic PCWrite;
 logic [1:0] ALUSrcA;
 logic [2:0] ALUSrcB;
 logic [2:0] PCSource;
-logic Overflow;
 logic Negativo;
 logic Zero;
 logic Load;
@@ -120,7 +121,7 @@ MuxALUSrcB MuxALUSrcB(
 	.A(RegBOut),
 	.B(3'd4),
 	.C(ImediatoExtended),
-	.D(1'd0),
+	.D(ExtendLeft2),
 	.E(1'd0),
 	.F(1'd0),
 	.out(MuxALUSourceBOut),
@@ -129,7 +130,7 @@ MuxALUSrcB MuxALUSrcB(
 
 MuxPCSource MuxPCSource(
 	.A(ALUResult),
-	.B(1'd0),
+	.B(ALUOutOut),
 	.C(1'd0),
 	.D(EPCOut),
 	.E(RegAOut),
@@ -262,12 +263,12 @@ MuxShiftAmt MuxShiftAmt(
 	.ShiftAmt(ShiftAmt)
 );
 
-
 assign MenorQueExtended = MenorQue;
 assign Shamt = Imediato[10:6];
 assign RegBOut5Bit = RegBOut[4:0];
 assign rd = Imediato [15:11];
 assign Funct = Imediato [5:0];
 assign ImediatoExtended = Imediato;
+assign ExtendLeft2[31:2] = ImediatoExtended[29:0];
 
 endmodule
