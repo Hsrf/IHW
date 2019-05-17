@@ -33,6 +33,8 @@ module ControlUnit(
 	output logic MultControl
 );
 
+logic [5:0]contador;
+
 enum logic [6:0] {
 	Reset = 7'd1,
 	Start = 7'd2,
@@ -265,7 +267,7 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
-				MultControl =1'd0;
+				MultControl = 1'd0;
 				nextstate = WriteInReg;
 		end
 		And: begin
@@ -1228,8 +1230,13 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
-				MultControl =1'd1;
-				nextstate = Wait;
+				MultControl = 1'd1;
+				if (contador != 32) begin
+					contador = contador + 1;
+					nextstate = Mult;
+				end else begin
+					nextstate = Wait;
+				end
 		end
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
@@ -1349,7 +1356,7 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
-				MultControl =1'd0;
+				MultControl = 1'd0;
 				nextstate = Start;
 		end
 	endcase

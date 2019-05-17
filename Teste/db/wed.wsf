@@ -2653,8 +2653,8 @@ VECTOR("C:/Users/Gabi/Desktop/Teste/db/PQP.sim.cvwf")
 VECTOR("C:/Users/dmc5/Desktop/IHW/Teste/db/PQP.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 55129;
+		ZBEGIN = 944871;
+		ZEND = 1000000;
 		NUMERATOR = 885;
 		DENOMINATOR = 51684;
 		TOP_INDEX = 0;
