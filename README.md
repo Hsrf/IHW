@@ -18,5 +18,9 @@ TIPO R
 TIPO I
 - addi
 - addiu
+- beq
+- bne
+- bgt
+- ble
 
 TIPO J
