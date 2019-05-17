@@ -28,3 +28,5 @@ TIPO I
 - lui
 
 TIPO J
+- j
+- jal
