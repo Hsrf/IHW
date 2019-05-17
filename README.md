@@ -13,6 +13,7 @@ TIPO R
 - sra
 - srav
 - srl
+- slt
 
 TIPO I
 - addi
