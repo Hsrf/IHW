@@ -9,5 +9,7 @@ Programming a MIPS CPU in verilog.
 - jr
 - sll
 - sllv
+- sra
+- srav
 
 - addi
