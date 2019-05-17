@@ -15,11 +15,15 @@ module CPU(
 	output logic [4:0] Shamt,
 	output logic [31:0] RegBOut,
 	output logic [2:0] ShiftControl,
-	output logic [31:0] RegAOut
+	output logic [31:0] RegAOut,
+	output logic [31:0] MenorQueExtended,
+	output logic MenorQue,
+	output logic [31:0] MuxALUSourceAOut,
+	output logic [31:0] MuxALUSourceBOut,
+	output logic Igual,
+	output logic MaiorQue
 );
 
-logic [31:0] MuxALUSourceAOut;
-logic [31:0] MuxALUSourceBOut;
 logic [4:0] Reg1;
 logic [4:0] Reg2;
 logic [31:0] RegWriteOut1;
@@ -40,9 +44,6 @@ logic [2:0] PCSource;
 logic Overflow;
 logic Negativo;
 logic Zero;
-logic Igual;
-logic MaiorQue;
-logic MenorQue;
 logic Load;
 logic [31:0] MuxIordOut;
 logic MemWr;
@@ -188,7 +189,7 @@ MuxMemToReg MuxMemToReg(
 	.E(RegDeslocResult),
 	.F(1'd0),
 	.G(1'd0),
-	.H(1'd0),
+	.H(MenorQueExtended),
 	.out(MuxMemToRegOut),
 	.MemToReg(MemToReg)
 );
@@ -261,6 +262,7 @@ MuxShiftAmt MuxShiftAmt(
 	.ShiftAmt(ShiftAmt)
 );
 
+assign MenorQueExtended = MenorQue;
 assign Shamt = Imediato[10:6];
 assign RegBOut5Bit = RegBOut[4:0];
 assign rd = Imediato [15:11];

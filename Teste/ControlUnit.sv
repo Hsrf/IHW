@@ -61,7 +61,8 @@ enum logic [6:0] {
 	SravWriteReg = 7'd28,
 	Srl = 7'd29,
 	SrlOp = 7'd30,
-	SrlWriteReg = 7'd31
+	SrlWriteReg = 7'd31,
+	Slt = 7'd32
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -190,6 +191,7 @@ always @* begin
 						6'h3: nextstate = Sra;
 						6'h7: nextstate = Srav;
 						6'h2: nextstate = Srl;
+						6'h2a: nextstate = Slt;
 					endcase
 				end
 				
@@ -274,6 +276,27 @@ always @* begin
 				ALUOutControl = 1'd0;
 				RegDst = 2'd0;
 				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = Wait;
+		end
+		Slt: begin
+				ALUSrcA = 2'd2 ;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd7;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd8;
+				WriteRegA = 1'd1;
+				WriteRegB = 1'd1;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd3;
+				RegWrite = 1'd1;
 				EPCWrite = 1'd0;
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
