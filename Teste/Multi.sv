@@ -1,4 +1,5 @@
-module Multi(MultA, MultB, Hi, Lo, MultiControl, Clk, Reset);
+module Multi(MultA, MultB, Hi, Lo, MultControl, Clk, Reset);
+	input logic Clk, Reset;
 	input logic [31:0] MultA, MultB;
 	input logic MultControl;
 	output logic [31:0] Hi, Lo;
@@ -8,10 +9,10 @@ module Multi(MultA, MultB, Hi, Lo, MultiControl, Clk, Reset);
 	logic [63:0] result;
 	logic resultHiLo;
 	
-    always @(posedge clk or posedge Reset)begin
+    always @(posedge Clk or posedge Reset)begin
 		if (Reset) begin
-			HI <= 32'b0;
-			LO <= 32'b0;
+			Hi <= 32'b0;
+			Lo <= 32'b0;
 			A <= 65'b0;
 			S <= 65'b0;
 			P <= 65'b0;
@@ -21,7 +22,7 @@ module Multi(MultA, MultB, Hi, Lo, MultiControl, Clk, Reset);
 			A = {MultA[31:0], 33'b0};
 			S = -A;
 			P = {32'b0, MultB[31:0], 1'b0};
-			for(int i = 0; iteracao < 32; i++) begin
+			for(int i = 0; i < 32; i++) begin
 				finalP = P[1:0];
 				case (finalP)
 					2'b01: P = P + A;
