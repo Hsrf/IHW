@@ -2139,6 +2139,7 @@ set_global_assignment -name SIMULATION_VECTOR_COMPARE_RULE_FOR_U "X,W,Z,U,DC"
 set_global_assignment -name SIMULATION_VECTOR_COMPARE_RULE_FOR_DC "0,1,X,L,H,W,Z,U,DC"
 set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS ON
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE CPU.vwf
+set_global_assignment -name MISC_FILE "C:/Users/gvh/Desktop/Teste/PQP.dpf"
 set_global_assignment -name MIF_FILE instrucoes.mif
 set_global_assignment -name SYSTEMVERILOG_FILE MuxLOControl.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxMem.sv

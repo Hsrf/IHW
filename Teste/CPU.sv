@@ -5,17 +5,21 @@ module CPU(
 	output logic [31:0] MuxMemToRegOut,
 	output logic [4:0] MuxRegDstOut,
 	output logic [5:0] OpCode,
-	output logic [31:0] RegBOut,
-	output logic [31:0] RegAOut,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic [31:0] ExtendLeft2,
 	output logic [31:0] PCOut,
-	output logic [27:0] ExtendLeftImediato2,
-	output logic [25:0] Imediato2,
-	output logic [31:0] ExtendLeftImediato2PC
+	output logic [31:0] ALUOutOut,
+	output logic [31:0] MemOut,
+	output logic [31:0] MuxIordOut,
+	output logic [31:0]MemDataRegOut
 );
 
+logic [27:0] ExtendLeftImediato2;
+logic [25:0] Imediato2;
+logic [31:0] ExtendLeftImediato2PC;
+logic [31:0] RegBOut;
+logic [31:0] RegAOut;
 logic [4:0] rd;
 logic [31:0] ImediatoExtended;
 logic [5:0] Funct;
@@ -39,7 +43,6 @@ logic [31:0] RegWriteOut2;
 logic [31:0] ALUResult;
 logic RegWrite;
 logic [15:0] Imediato;
-logic [31:0] ALUOutOut;
 logic ALUOutControl;
 logic [31:0] EPCOut;
 logic [31:0] MuxPCSourceOut;
@@ -51,9 +54,7 @@ logic [2:0] PCSource;
 logic Negativo;
 logic Zero;
 logic Load;
-logic [31:0] MuxIordOut;
 logic MemWr;
-logic [31:0] MemOut;
 logic IRWrite;
 logic [2:0] Iord;
 logic [3:0] MemToReg;
@@ -63,7 +64,6 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
-logic [31:0]MemDataRegOut;
 logic MemDataRegControl;
 
 Registrador PC(
@@ -113,7 +113,7 @@ ControlUnit ControlUnit(
 	.ShiftSrc(ShiftSrc),
 	.ShiftAmt(ShiftAmt),
 	.IsControl(IsControl),
-	.MemDataReg(MemDataReg)
+	.MemDataReg(MemDataRegControl)
 );
 
 

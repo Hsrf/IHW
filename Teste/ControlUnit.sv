@@ -84,6 +84,7 @@ enum logic [6:0] {
 	LSaveb = 7'd47,
 	Lui = 7'd48,
 	Lui2 = 7'd49,
+	LGet2 = 7'd53,
 	// JUMPS
 	Jump = 7'd50,
 	Jal = 7'd51,
@@ -1011,7 +1012,7 @@ always @* begin
 				ALUSrcA = 2'd2;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
-				ALUOp = 3'd0;
+				ALUOp = 3'd1;
 				PCWrite = 1'd0;
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
@@ -1039,6 +1040,29 @@ always @* begin
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
 				Iord = 3'd1;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				IsControl = 2'd0;
+				MemDataReg = 1'd0;
+				nextstate = LGet2;
+		end
+		LGet2: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
 				MemToReg = 4'd0;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
