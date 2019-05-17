@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 15.123 ns
-From           : ControlUnit:ControlUnit|state.BgtCompare
-To             : MuxMemToRegOut[0]
+Actual Time    : 20.776 ns
+From           : ControlUnit:ControlUnit|state.And
+To             : ALUResult[31]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 78.09 MHz ( period = 12.806 ns )
-From           : ControlUnit:ControlUnit|state.BgtCompare
-To             : ControlUnit:ControlUnit|nextstate.WriteInRegAddi_1907
+Actual Time    : 59.28 MHz ( period = 16.868 ns )
+From           : ControlUnit:ControlUnit|nextstate.Lui_740
+To             : ControlUnit:ControlUnit|state.Lui
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -26,11 +26,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : ControlUnit:ControlUnit|state.Start
-To             : ControlUnit:ControlUnit|nextstate.WaitMemRead_2039
+From           : Instr_Reg:InstructionRegister|Instr31_26[0]
+To             : ControlUnit:ControlUnit|nextstate.LSaveh_778
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 276
+Failed Paths   : 170
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +40,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 276
+Failed Paths   : 170
 
 --------------------------------------------------------------------------------------
 
