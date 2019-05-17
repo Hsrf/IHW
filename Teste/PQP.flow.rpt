@@ -1,5 +1,5 @@
 Flow report for PQP
-Fri May 17 17:03:28 2019
+Fri May 17 17:58:04 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,23 +38,23 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Fri May 17 17:03:28 2019        ;
+; Flow Status                   ; Successful - Fri May 17 17:58:03 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Met timing requirements       ; No                                           ;
-; Logic utilization             ; 21 %                                         ;
-;     Combinational ALUTs       ; 1,581 / 12,480 ( 13 % )                      ;
-;     Dedicated logic registers ; 1,300 / 12,480 ( 10 % )                      ;
-; Total registers               ; 1300                                         ;
-; Total pins                    ; 353 / 367 ( 96 % )                           ;
+; Logic utilization             ; 37 %                                         ;
+;     Combinational ALUTs       ; 3,502 / 12,480 ( 28 % )                      ;
+;     Dedicated logic registers ; 1,433 / 12,480 ( 11 % )                      ;
+; Total registers               ; 1433                                         ;
+; Total pins                    ; 287 / 343 ( 84 % )                           ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192 / 419,328 ( 2 % )                      ;
 ; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                               ;
 ; Total PLLs                    ; 0 / 6 ( 0 % )                                ;
 ; Total DLLs                    ; 0 / 2 ( 0 % )                                ;
-; Device                        ; EP2S15F672C5                                 ;
+; Device                        ; EP2S15F484C3                                 ;
 ; Timing Models                 ; Final                                        ;
 +-------------------------------+----------------------------------------------+
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/17/2019 17:02:42 ;
+; Start date & time ; 05/17/2019 17:56:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PQP                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 10995770589202.155812336212580 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 10995770589202.155812658913440 ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                       ; --            ; CPU         ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --            ; CPU         ; Top            ;
 ; TOP_LEVEL_ENTITY                   ; CPU                            ; PQP           ; --          ; --             ;
@@ -88,11 +88,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:25     ; 1.0                     ; 337 MB              ; 00:00:26                           ;
-; Fitter                  ; 00:00:12     ; 2.8                     ; 423 MB              ; 00:00:17                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 299 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 241 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:41     ; --                      ; --                  ; 00:00:46                           ;
+; Analysis & Synthesis    ; 00:01:04     ; 1.0                     ; 339 MB              ; 00:01:08                           ;
+; Fitter                  ; 00:00:20     ; 3.2                     ; 434 MB              ; 00:00:32                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 302 MB              ; 00:00:03                           ;
+; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 258 MB              ; 00:00:03                           ;
+; Total                   ; 00:01:29     ; --                      ; --                  ; 00:01:46                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

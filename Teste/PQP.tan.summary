@@ -2,22 +2,42 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.637 ns
+From           : reset
+To             : Multi:Multi|result[8]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 20.545 ns
-From           : ControlUnit:ControlUnit|state.Slt
+Actual Time    : 23.829 ns
+From           : ControlUnit:ControlUnit|state.Lw
 To             : MuxMemToRegOut[0]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
 
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -4.632 ns
+From           : reset
+To             : Multi:Multi|result[20]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 53.77 MHz ( period = 18.598 ns )
-From           : ControlUnit:ControlUnit|nextstate.SllWriteReg_2619
-To             : ControlUnit:ControlUnit|state.SllWriteReg
+Actual Time    : 23.33 MHz ( period = 42.858 ns )
+From           : Registrador:B|Saida[0]
+To             : Multi:Multi|result[62]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -26,11 +46,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : ControlUnit:ControlUnit|state.SllOp
-To             : ControlUnit:ControlUnit|nextstate.SllWriteReg_2619
+From           : ControlUnit:ControlUnit|state.WaitMemRead
+To             : ControlUnit:ControlUnit|nextstate.WaitMemRead2_2928
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 477
+Failed Paths   : 388
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 477
+Failed Paths   : 388
 
 --------------------------------------------------------------------------------------
 

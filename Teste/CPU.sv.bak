@@ -5,20 +5,24 @@ module CPU(
 	output logic [31:0] MuxMemToRegOut,
 	output logic [4:0] MuxRegDstOut,
 	output logic [4:0] rd,
-	output logic [31:0] ImediatoExtended,
 	output logic [5:0] OpCode,
 	output logic [5:0] Funct,
 	output logic [31:0] RegBOut,
 	output logic [31:0] RegAOut,
-	output logic [31:0] MenorQueExtended,
-	output logic [31:0] MuxALUSourceAOut,
-	output logic [31:0] MuxALUSourceBOut,
-	output logic [31:0] ExtendLeft2,
 	output logic [31:0] PCOut,
-	output logic [1:0] IsControl,
-	output logic [31:0] LoadBoxOut
+	output logic [31:0] MultHi,
+	output logic [31:0] MultLo,
+	output logic [31:0] MultA,
+	output logic [31:0] MultB
 );
 
+logic [31:0] MuxALUSourceAOut;
+logic [31:0] MuxALUSourceBOut;
+logic [31:0] ExtendLeft2;
+logic [31:0] ImediatoExtended;
+logic [31:0] MenorQueExtended;
+logic [1:0] IsControl;
+logic [31:0] LoadBoxOut;
 logic [4:0] MuxShiftAmtOut;
 logic [31:0] MuxShiftSrcOut;
 logic [31:0] RegDeslocResult;
@@ -62,6 +66,8 @@ logic ShiftSrc;
 logic ShiftAmt;
 logic [31:0]MemDataRegOut;
 logic MemDataRegControl;
+//Mult
+logic MultControl;
 
 Registrador PC(
 	.Clk(clock),
@@ -110,7 +116,8 @@ ControlUnit ControlUnit(
 	.ShiftSrc(ShiftSrc),
 	.ShiftAmt(ShiftAmt),
 	.IsControl(IsControl),
-	.MemDataReg(MemDataReg)
+	.MemDataReg(MemDataReg),
+	.MultControl(MultControl)
 );
 
 
@@ -287,10 +294,10 @@ Multi Multi(
 	.Clk(clock),
 	.Reset(reset),
 	.MultControl(MultControl),
-	.MultA(A),
-	.MultB(B),
-	.Hi(),
-	.Lo()
+	.MultA(MultA),
+	.MultB(MultB),
+	.Hi(MultHi),
+	.Lo(MultLo)
 );
 
 assign MenorQueExtended = MenorQue;
