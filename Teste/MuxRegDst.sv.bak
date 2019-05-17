@@ -1,5 +1,5 @@
 module MuxRegDst(A, B, C, D, out, RegDst);
- input logic B, C;
+ input logic C;
  input logic [4:0] A;
  input logic [4:0] B, D;
  input logic [1:0] RegDst;

@@ -4,21 +4,24 @@ module CPU(
 	output logic [6:0] stateout,
 	output logic [31:0] MuxMemToRegOut,
 	output logic [4:0] MuxRegDstOut,
-	output logic [4:0] rd,
-	output logic [31:0] ImediatoExtended,
 	output logic [5:0] OpCode,
-	output logic [5:0] Funct,
 	output logic [31:0] RegBOut,
 	output logic [31:0] RegAOut,
-	output logic [31:0] MenorQueExtended,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic [31:0] ExtendLeft2,
 	output logic [31:0] PCOut,
-	output logic [1:0] IsControl,
-	output logic [31:0] LoadBoxOut
+	output logic [27:0] ExtendLeftImediato2,
+	output logic [25:0] Imediato2,
+	output logic [31:0] ExtendLeftImediato2PC
 );
 
+logic [4:0] rd;
+logic [31:0] ImediatoExtended;
+logic [5:0] Funct;
+logic [31:0] MenorQueExtended;
+logic [1:0] IsControl;
+logic [31:0] LoadBoxOut;
 logic [4:0] MuxShiftAmtOut;
 logic [31:0] MuxShiftSrcOut;
 logic [31:0] RegDeslocResult;
@@ -137,7 +140,7 @@ MuxALUSrcB MuxALUSrcB(
 MuxPCSource MuxPCSource(
 	.A(ALUResult),
 	.B(ALUOutOut),
-	.C(1'd0),
+	.C(ExtendLeftImediato2PC),
 	.D(EPCOut),
 	.E(RegAOut),
 	.F(1'd0),
@@ -227,8 +230,8 @@ Registrador ALUOut(
 
 MuxRegDst MuxRegDst(
 	.A(Reg2),
-	.B(1'd29),
-	.C(1'd0),
+	.B(5'd29),
+	.C(5'd31),
 	.D(rd),
 	.out(MuxRegDstOut),
 	.RegDst(RegDst)
@@ -290,5 +293,8 @@ assign rd = Imediato [15:11];
 assign Funct = Imediato [5:0];
 assign ImediatoExtended = Imediato;
 assign ExtendLeft2[31:2] = ImediatoExtended[29:0];
+assign Imediato2 = {Reg1, Reg2, Imediato};
+assign ExtendLeftImediato2[27:2] = Imediato2[25:0];
+assign ExtendLeftImediato2PC = {PCOut[31:28], ExtendLeftImediato2};
 
 endmodule

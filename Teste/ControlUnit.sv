@@ -67,7 +67,7 @@ enum logic [6:0] {
 	Slt = 7'd32,
 	OverflowExc = 7'd33,
 	Addiu = 7'd34,
-	// Desvios
+	// DESVIOS
 	Beq = 7'd35,
 	BeqCompare = 7'd36,
 	Bne = 7'd37,
@@ -76,13 +76,18 @@ enum logic [6:0] {
 	BgtCompare = 7'd40,
 	Ble = 7'd41,
 	BleCompare = 7'd42,
+	// LOADS
 	Lw = 7'd43,
 	LGet = 7'd44,
 	LSave = 7'd45,
 	LSaveh = 7'd46,
 	LSaveb = 7'd47,
 	Lui = 7'd48,
-	Lui2 = 7'd49
+	Lui2 = 7'd49,
+	// JUMPS
+	Jump = 7'd50,
+	Jal = 7'd51,
+	WriteJal = 7'd52
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -222,6 +227,10 @@ always @* begin
 					nextstate = Lui;
 				end else if (OpCode == 6'h23 || OpCode == 6'h20 || OpCode == 6'h21) begin
 					nextstate = Lw;
+				end else if (OpCode == 2) begin
+					nextstate = Jump;
+				end else if (OpCode == 3) begin
+					nextstate = Jal;
 				end else if(OpCode == 0)begin
 					case(Funct)
 						6'h20: nextstate = Add;
@@ -1162,6 +1171,70 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				nextstate = Wait;
+		end
+		// J INSTRUCTIONS
+		Jump: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd2;
+				ALUOp = 3'd0;
+				PCWrite = 1'd1;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = Wait;
+		end
+		Jal: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = WriteJal;
+		end
+		WriteJal: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd2;
+				RegWrite = 1'd1;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				nextstate = Jump;
 		end
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
