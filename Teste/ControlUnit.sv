@@ -58,7 +58,10 @@ enum logic [6:0] {
 	SllOp = 7'd25,
 	Srav = 7'd26,
 	SravOp = 7'd27,
-	SravWriteReg = 7'd28
+	SravWriteReg = 7'd28,
+	Srl = 7'd29,
+	SrlOp = 7'd30,
+	SrlWriteReg = 7'd31
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -186,6 +189,7 @@ always @* begin
 						6'h4: nextstate = Sllv;
 						6'h3: nextstate = Sra;
 						6'h7: nextstate = Srav;
+						6'h2: nextstate = Srl;
 					endcase
 				end
 				
@@ -319,6 +323,69 @@ always @* begin
 				nextstate = SllWriteReg;
 		end
 		SllWriteReg: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd4;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd3;
+				RegWrite = 1'd1;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd2;
+				ShiftSrc = 1'd1;
+				ShiftAmt = 1'd1;
+				nextstate = Wait;
+		end
+		Srl: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd1;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd1;
+				ShiftSrc = 1'd1;
+				ShiftAmt = 1'd1;
+				nextstate = SrlOp;
+		end
+		SrlOp: begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd3;
+				ShiftSrc = 1'd1;
+				ShiftAmt = 1'd1;
+				nextstate = SrlWriteReg;
+		end
+		SrlWriteReg: begin
 				ALUSrcA = 2'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
