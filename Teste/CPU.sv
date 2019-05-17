@@ -14,7 +14,9 @@ module CPU(
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
 	output logic [31:0] ExtendLeft2,
-	output logic [31:0] PCOut
+	output logic [31:0] PCOut,
+	output logic [1:0] IsControl,
+	output logic [31:0] LoadBoxOut
 );
 
 logic [4:0] MuxShiftAmtOut;
@@ -58,6 +60,8 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
+logic [31:0]MemDataRegOut;
+logic MemDataRegControl;
 
 Registrador PC(
 	.Clk(clock),
@@ -104,7 +108,9 @@ ControlUnit ControlUnit(
 	.EPCWrite(EPCWrite),
 	.ShiftControl(ShiftControl),
 	.ShiftSrc(ShiftSrc),
-	.ShiftAmt(ShiftAmt)
+	.ShiftAmt(ShiftAmt),
+	.IsControl(IsControl),
+	.MemDataReg(MemDataReg)
 );
 
 
@@ -173,7 +179,7 @@ Instr_Reg InstructionRegister(
 
 MuxIord MuxIord(
 	.A(PCOut),
-	.B(1'd0),
+	.B(ALUOutOut),
 	.C(1'd0),
 	.D(8'd254),
 	.E(1'd0),
@@ -186,7 +192,7 @@ MuxMemToReg MuxMemToReg(
 	.A(ALUOutOut),
 	.B(1'd0),
 	.C(1'd0),
-	.D(1'd0),
+	.D(LoadBoxOut),
 	.E(RegDeslocResult),
 	.F(1'd0),
 	.G(1'd0),
@@ -261,6 +267,20 @@ MuxShiftAmt MuxShiftAmt(
 	.B(Shamt), 
 	.out(MuxShiftAmtOut), 
 	.ShiftAmt(ShiftAmt)
+);
+
+Registrador MemDataReg(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(MemDataRegControl),
+	.Entrada(MemOut),
+	.Saida(MemDataRegOut)
+);
+
+ LoadBox LoadBox(
+	.A(MemDataRegOut),
+	.IsControl(IsControl),
+	.out(LoadBoxOut)
 );
 
 assign MenorQueExtended = MenorQue;
