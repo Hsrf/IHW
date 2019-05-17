@@ -1,26 +1,13 @@
 module CPU(
 	input logic clock,
 	input logic reset,
-	output logic [31:0] MuxALUSourceAOut,
-	output logic [31:0] MuxALUSourceBOut,
 	output logic [6:0] stateout,
-	output logic [4:0] Reg1,
-	output logic [4:0] Reg2,
-	output logic [31:0] RegWriteOut1,
-	output logic [31:0] RegWriteOut2,
 	output logic [31:0] MuxMemToRegOut,
-	output logic [31:0] ALUResult,
 	output logic [4:0] MuxRegDstOut,
-	output logic RegWrite,
-	output logic [15:0] Imediato,
 	output logic [4:0] rd,
 	output logic [31:0] ImediatoExtended,
 	output logic [5:0] OpCode,
 	output logic [5:0] Funct,
-	output logic [31:0] ALUOutOut,
-	output logic ALUOutControl,
-	output logic [31:0] PCOut,
-	output logic [31:0] EPCOut,
 	output logic [4:0] MuxShiftAmtOut,
 	output logic [31:0] MuxShiftSrcOut,
 	output logic [31:0] RegDeslocResult,
@@ -30,6 +17,19 @@ module CPU(
 	output logic [2:0] ShiftControl
 );
 
+logic [31:0] MuxALUSourceAOut;
+logic [31:0] MuxALUSourceBOut;
+logic [4:0] Reg1;
+logic [4:0] Reg2;
+logic [31:0] RegWriteOut1;
+logic [31:0] RegWriteOut2;
+logic [31:0] ALUResult;
+logic RegWrite;
+logic [15:0] Imediato;
+logic [31:0] ALUOutOut;
+logic ALUOutControl;
+logic [31:0] PCOut;
+logic [31:0] EPCOut;
 logic [31:0] MuxPCSourceOut;
 logic [31:0] RegAOut;
 logic [2:0] ALUOp;
@@ -102,8 +102,7 @@ ControlUnit ControlUnit(
 	.EPCWrite(EPCWrite),
 	.ShiftControl(ShiftControl),
 	.ShiftSrc(ShiftSrc),
-	.ShiftAmt(ShiftAmt),
-	.WriteRegDeslocOut(WriteRegDeslocOut)
+	.ShiftAmt(ShiftAmt)
 );
 
 
