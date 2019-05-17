@@ -62,6 +62,11 @@ logic ShiftSrc;
 logic ShiftAmt;
 logic [31:0]MemDataRegOut;
 logic MemDataRegControl;
+logic MultControl;
+logic [31:0] MultA;
+logic [31:0] MultB;
+logic [31:0] MultHi;
+logic [31:0] MultLo;
 
 Registrador PC(
 	.Clk(clock),
@@ -281,6 +286,16 @@ Registrador MemDataReg(
 	.A(MemDataRegOut),
 	.IsControl(IsControl),
 	.out(LoadBoxOut)
+);
+
+Multi Multi(
+	.Clk(clock),
+	.Reset(reset),
+	.MultControl(MultControl),
+	.MultA(MultA),
+	.MultB(MultB),
+	.Hi(MultHi),
+	.Lo(MultLo)
 );
 
 assign MenorQueExtended = MenorQue;

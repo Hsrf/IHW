@@ -269,6 +269,30 @@ MuxShiftAmt MuxShiftAmt(
 	.ShiftAmt(ShiftAmt)
 );
 
+Registrador MemDataReg(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(MemDataRegControl),
+	.Entrada(MemOut),
+	.Saida(MemDataRegOut)
+);
+
+ LoadBox LoadBox(
+	.A(MemDataRegOut),
+	.IsControl(IsControl),
+	.out(LoadBoxOut)
+);
+
+Multi Multi(
+	.Clk(clock),
+	.Reset(reset),
+	.MultControl(MultControl),
+	.MultA(A),
+	.MultB(B),
+	.Hi(),
+	.Lo()
+);
+
 assign MenorQueExtended = MenorQue;
 assign Shamt = Imediato[10:6];
 assign RegBOut5Bit = RegBOut[4:0];
