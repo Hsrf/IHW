@@ -1,8 +1,7 @@
-module MuxALUSrcA(A, B, C, D, out, SrcA);
+module MuxALUSrcA(A, B, C, D, E, out, SrcA);
 
-	input logic [31:0] A, C;
-  input logic B, D;
-  input logic [1:0] SrcA;
+	input logic [31:0] A, B, C, D, E;
+  input logic [2:0] SrcA;
   output logic [31:0] out;
   
     always @(SrcA)begin
@@ -11,6 +10,7 @@ module MuxALUSrcA(A, B, C, D, out, SrcA);
             1: out = B;
             2: out = C;
             3: out = D;
+            4: out = E;
         endcase
     end
 endmodule

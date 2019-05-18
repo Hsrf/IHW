@@ -2,26 +2,36 @@ module CPU(
 	input logic clock,
 	input logic reset,
 	output logic [6:0] stateout,
-	output logic [31:0] MuxMemToRegOut,
-	output logic [4:0] MuxRegDstOut,
-	output logic [4:0] rd,
 	output logic [5:0] OpCode,
-	output logic [5:0] Funct,
-	output logic [31:0] RegBOut,
-	output logic [31:0] RegAOut,
-	output logic [31:0] PCOut,
-	output logic [31:0] MultHi,
-	output logic [31:0] MultLo,
-	output logic [31:0] MultA,
-	output logic [31:0] MultB
+	output logic [31:0] MuxALUSourceAOut,
+	output logic [31:0] MuxALUSourceBOut,
+	output logic [31:0] ALUOutOut,
+	output logic [31:0] MemOut,
+	output logic [31:0] MuxIordOut,
+	output logic [31:0] MemDataRegOut,
+	output logic [1:0] SControl,
+	output logic [31:0] MultA;
+	output logic [31:0] MultB;
+	output logic [31:0] MultHi;
+	output logic [31:0] MultLo;
+	output logic MultStop;
 );
 
-logic [31:0] MuxALUSourceAOut;
-logic [31:0] MuxALUSourceBOut;
+logic MuxWriteMemControl;
+logic [31:0] PCOut;
+logic [31:0] MuxMemToRegOut;
+logic [4:0] MuxRegDstOut;
+logic MemWr;
 logic [31:0] ExtendLeft2;
-logic [31:0] ImediatoExtended;
-logic [31:0] MenorQueExtended;
 logic [1:0] IsControl;
+logic [27:0] ExtendLeftImediato2;
+logic [25:0] Imediato2;
+logic [31:0] ExtendLeftImediato2PC;
+logic [31:0] RegAOut;
+logic [4:0] rd;
+logic [31:0] ImediatoExtended;
+logic [5:0] Funct;
+logic [31:0] MenorQueExtended;
 logic [31:0] LoadBoxOut;
 logic [4:0] MuxShiftAmtOut;
 logic [31:0] MuxShiftSrcOut;
@@ -40,21 +50,17 @@ logic [31:0] RegWriteOut2;
 logic [31:0] ALUResult;
 logic RegWrite;
 logic [15:0] Imediato;
-logic [31:0] ALUOutOut;
 logic ALUOutControl;
 logic [31:0] EPCOut;
 logic [31:0] MuxPCSourceOut;
 logic [2:0] ALUOp;
 logic PCWrite;
-logic [1:0] ALUSrcA;
+logic [2:0] ALUSrcA;
 logic [2:0] ALUSrcB;
 logic [2:0] PCSource;
 logic Negativo;
 logic Zero;
 logic Load;
-logic [31:0] MuxIordOut;
-logic MemWr;
-logic [31:0] MemOut;
 logic IRWrite;
 logic [2:0] Iord;
 logic [3:0] MemToReg;
@@ -64,10 +70,20 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
-logic [31:0]MemDataRegOut;
 logic MemDataRegControl;
-//Mult
 logic MultControl;
+logic [31:0] MuxHIOut;
+logic [31:0] MuxLOOut;
+logic [31:0] HIOut;
+logic [31:0] LOOut;
+logic WriteHI;
+logic WriteLO;
+logic HIControl;
+logic LOControl;
+logic [31:0] StoreBoxOut;
+logic [31:0] RegBOut;
+logic [31:0] ExtendImediato2to32bit;
+logic [31:0] MuxWriteMemOut;
 
 Registrador PC(
 	.Clk(clock),
@@ -116,16 +132,24 @@ ControlUnit ControlUnit(
 	.ShiftSrc(ShiftSrc),
 	.ShiftAmt(ShiftAmt),
 	.IsControl(IsControl),
-	.MemDataReg(MemDataReg),
-	.MultControl(MultControl)
+	.MemDataReg(MemDataRegControl),
+	.MultControl(MultControl),
+	.SControl(SControl),
+	.MuxWriteMemControl(MuxWriteMemControl),
+	.WriteHI(WriteHI),
+	.WriteLO(WriteLO),
+	.HIControl(HIControl),
+	.LOControl(LOControl),
+	.MultOut(MultStop)
 );
 
 
 MuxALUSrcA MuxALUSrcA(
 	.A(PCOut),
-	.B(1'd0),
+	.B(32'd0),
 	.C(RegAOut),
-	.D(1'd0),
+	.D(32'd1),
+	.E(MemDataRegOut),
 	.out(MuxALUSourceAOut),
 	.SrcA(ALUSrcA)
 );
@@ -136,7 +160,8 @@ MuxALUSrcB MuxALUSrcB(
 	.C(ImediatoExtended),
 	.D(ExtendLeft2),
 	.E(1'd0),
-	.F(1'd0),
+	.F(MemDataRegOut),
+	.G(32'd1),
 	.out(MuxALUSourceBOut),
 	.SrcB(ALUSrcB)
 );
@@ -144,10 +169,10 @@ MuxALUSrcB MuxALUSrcB(
 MuxPCSource MuxPCSource(
 	.A(ALUResult),
 	.B(ALUOutOut),
-	.C(1'd0),
+	.C(ExtendLeftImediato2PC),
 	.D(EPCOut),
 	.E(RegAOut),
-	.F(1'd0),
+	.F(ExtendImediato2to32bit),
 	.out(MuxPCSourceOut),
 	.PCSource(PCSource)
 );
@@ -169,7 +194,7 @@ Memoria Memoria(
 	.Address(MuxIordOut),
 	.Clock(clock),
 	.Wr(MemWr),
-	.Datain(1'd0),
+	.Datain(MuxWriteMemOut),
 	.Dataout(MemOut)
 );
 
@@ -187,18 +212,18 @@ Instr_Reg InstructionRegister(
 MuxIord MuxIord(
 	.A(PCOut),
 	.B(ALUOutOut),
-	.C(1'd0),
-	.D(8'd254),
-	.E(1'd0),
-	.F(1'd0),
+	.C(32'd253),
+	.D(32'd254),
+	.E(32'd255),
+	.F(MuxPCSourceOut),
 	.out(MuxIordOut),
 	.Iord(Iord)
 );
 
 MuxMemToReg MuxMemToReg(
 	.A(ALUOutOut),
-	.B(1'd0),
-	.C(1'd0),
+	.B(HIOut),
+	.C(LOOut),
 	.D(LoadBoxOut),
 	.E(RegDeslocResult),
 	.F(1'd0),
@@ -234,8 +259,8 @@ Registrador ALUOut(
 
 MuxRegDst MuxRegDst(
 	.A(Reg2),
-	.B(1'd29),
-	.C(1'd0),
+	.B(5'd29),
+	.C(5'd31),
 	.D(rd),
 	.out(MuxRegDstOut),
 	.RegDst(RegDst)
@@ -297,7 +322,52 @@ Multi Multi(
 	.MultA(RegAOut),
 	.MultB(RegBOut),
 	.Hi(MultHi),
-	.Lo(MultLo)
+	.Lo(MultLo),
+	.out(MultStop)
+);
+
+StoreBox StoreBox(
+	.A(MemDataRegOut),
+	.B(RegBOut),
+	.SControl(SControl),
+	.out(StoreBoxOut)
+);
+
+MuxWriteMem MuxWriteMem(
+	.A(StoreBoxOut),
+	.B(ALUOutOut),
+	.MuxWriteMemControl(MuxWriteMemControl),
+	.out(MuxWriteMemOut)
+);
+
+Registrador HI(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteHI),
+	.Entrada(MuxHIOut),
+	.Saida(HIOut)
+);
+
+Registrador LO(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteLO),
+	.Entrada(MuxLOOut),
+	.Saida(LOOut)
+);
+
+MuxHI MuxHI(
+	.A(MultHI), 
+	.B(32'd0), 
+	.out(MuxHIOut), 
+	.HIControl(HIControl)
+);
+
+ MuxLO MuxLO(
+	.A(MultLO), 
+	.B(32'd0), 
+	.out(MuxLOOut), 
+	.LOControl(LOControl)
 );
 
 assign MenorQueExtended = MenorQue;
@@ -307,5 +377,9 @@ assign rd = Imediato [15:11];
 assign Funct = Imediato [5:0];
 assign ImediatoExtended = Imediato;
 assign ExtendLeft2[31:2] = ImediatoExtended[29:0];
+assign Imediato2 = {Reg1, Reg2, Imediato};
+assign ExtendLeftImediato2[27:2] = Imediato2[25:0];
+assign ExtendImediato2to32bit = Imediato2;
+assign ExtendLeftImediato2PC = {PCOut[31:28], ExtendLeftImediato2};
 
 endmodule

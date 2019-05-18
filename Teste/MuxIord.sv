@@ -1,6 +1,6 @@
 module MuxIord(A, B, C, D, E, F, out, Iord);
-  input logic C, D, E, F;
-  input logic [31:0] A, B;
+ 
+  input logic [31:0] A, B, C, D, E, F;
   input logic [2:0] Iord;
   output logic [31:0] out;
   
