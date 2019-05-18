@@ -26,6 +26,9 @@ TIPO I
 - lh
 - lw
 - lui
+- sw
+- sh
+- sb
 
 TIPO J
 - j
