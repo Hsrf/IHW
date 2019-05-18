@@ -2,22 +2,25 @@ module CPU(
 	input logic clock,
 	input logic reset,
 	output logic [6:0] stateout,
-	output logic [31:0] MuxMemToRegOut,
-	output logic [4:0] MuxRegDstOut,
 	output logic [5:0] OpCode,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
-	output logic [31:0] PCOut,
 	output logic [31:0] ALUOutOut,
 	output logic [31:0] MemOut,
 	output logic [31:0] MuxIordOut,
-	output logic [31:0]MemDataRegOut,
+	output logic [31:0] MemDataRegOut,
 	output logic [1:0] SControl,
 	output logic [31:0] StoreBoxOut,
 	output logic [31:0] RegBOut,
-	output logic MemWr
+	output logic [31:0] ExtendImediato2to32bit,
+	output logic [31:0] MuxWriteMemOut
 );
 
+logic MuxWriteMemControl;
+logic [31:0] PCOut;
+logic [31:0] MuxMemToRegOut;
+logic [4:0] MuxRegDstOut;
+logic MemWr;
 logic [31:0] ExtendLeft2;
 logic [1:0] IsControl;
 logic [27:0] ExtendLeftImediato2;
@@ -122,15 +125,16 @@ ControlUnit ControlUnit(
 	.IsControl(IsControl),
 	.MemDataReg(MemDataRegControl),
 	.MultControl(MultControl),
-	.SControl(SControl)
+	.SControl(SControl),
+	.MuxWriteMemControl(MuxWriteMemControl)
 );
 
 
 MuxALUSrcA MuxALUSrcA(
 	.A(PCOut),
-	.B(1'd0),
+	.B(32'd0),
 	.C(RegAOut),
-	.D(1'd0),
+	.D(32'd1),
 	.out(MuxALUSourceAOut),
 	.SrcA(ALUSrcA)
 );
@@ -152,7 +156,7 @@ MuxPCSource MuxPCSource(
 	.C(ExtendLeftImediato2PC),
 	.D(EPCOut),
 	.E(RegAOut),
-	.F(1'd0),
+	.F(ExtendImediato2to32bit),
 	.out(MuxPCSourceOut),
 	.PCSource(PCSource)
 );
@@ -174,7 +178,7 @@ Memoria Memoria(
 	.Address(MuxIordOut),
 	.Clock(clock),
 	.Wr(MemWr),
-	.Datain(StoreBoxOut),
+	.Datain(MuxWriteMemOut),
 	.Dataout(MemOut)
 );
 
@@ -192,10 +196,10 @@ Instr_Reg InstructionRegister(
 MuxIord MuxIord(
 	.A(PCOut),
 	.B(ALUOutOut),
-	.C(1'd0),
-	.D(8'd254),
-	.E(1'd0),
-	.F(1'd0),
+	.C(32'd253),
+	.D(32'd254),
+	.E(32'd255),
+	.F(MuxPCSourceOut),
 	.out(MuxIordOut),
 	.Iord(Iord)
 );
@@ -312,6 +316,13 @@ StoreBox StoreBox(
 	.out(StoreBoxOut)
 );
 
+MuxWriteMem MuxWriteMem(
+	.A(StoreBoxOut),
+	.B(ALUOutOut),
+	.MuxWriteMemControl(MuxWriteMemControl),
+	.out(MuxWriteMemOut)
+);
+
 assign MenorQueExtended = MenorQue;
 assign Shamt = Imediato[10:6];
 assign RegBOut5Bit = RegBOut[4:0];
@@ -321,6 +332,7 @@ assign ImediatoExtended = Imediato;
 assign ExtendLeft2[31:2] = ImediatoExtended[29:0];
 assign Imediato2 = {Reg1, Reg2, Imediato};
 assign ExtendLeftImediato2[27:2] = Imediato2[25:0];
+assign ExtendImediato2to32bit = Imediato2;
 assign ExtendLeftImediato2PC = {PCOut[31:28], ExtendLeftImediato2};
 
 endmodule

@@ -32382,6 +32382,666 @@ SIGNAL("MemWr")
 	PARENT = "";
 }
 
+SIGNAL("ExtendImediato2to32bit")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ExtendImediato2to32bit[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("ExtendImediato2to32bit[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "ExtendImediato2to32bit";
+}
+
+SIGNAL("MuxWriteMemOut")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 32;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("MuxWriteMemOut[31]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[30]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[29]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[28]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[27]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[26]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[25]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[24]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[23]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[22]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[21]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[20]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[19]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[18]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[17]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[16]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[15]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
+SIGNAL("MuxWriteMemOut[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "MuxWriteMemOut";
+}
+
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -60800,6 +61460,582 @@ TRANSITION_LIST("MemWr")
 	}
 }
 
+TRANSITION_LIST("ExtendImediato2to32bit[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ExtendImediato2to32bit[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[31]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[30]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[29]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[28]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[27]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[26]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[25]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[24]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[23]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[22]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[21]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[20]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[19]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[18]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[17]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[16]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("MuxWriteMemOut[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -62802,7 +64038,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 200;
 	TREE_LEVEL = 0;
 	CHILDREN = 201, 202, 203, 204, 205, 206, 207;
@@ -62812,7 +64048,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 201;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62822,7 +64058,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 202;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62832,7 +64068,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 203;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62842,7 +64078,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 204;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62852,7 +64088,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 205;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62862,7 +64098,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 206;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -62872,7 +64108,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "stateout[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Signed;
+	RADIX = Unsigned;
 	TREE_INDEX = 207;
 	TREE_LEVEL = 1;
 	PARENT = 200;
@@ -92052,6 +93288,666 @@ DISPLAY_LINE
 	RADIX = Signed;
 	TREE_INDEX = 3234;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3235;
+	TREE_LEVEL = 0;
+	CHILDREN = 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3249, 3250, 3251, 3252, 3253, 3254, 3255, 3256, 3257, 3258, 3259, 3260, 3261, 3262, 3263, 3264, 3265, 3266, 3267;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3236;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3237;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3238;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3239;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3240;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3241;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3242;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3243;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3244;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3245;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3246;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3247;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3248;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3249;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3250;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3251;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3252;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3253;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3254;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3255;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3256;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3257;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3258;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3259;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3260;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3261;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3262;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3263;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3264;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3265;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3266;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ExtendImediato2to32bit[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3267;
+	TREE_LEVEL = 1;
+	PARENT = 3235;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3268;
+	TREE_LEVEL = 0;
+	CHILDREN = 3269, 3270, 3271, 3272, 3273, 3274, 3275, 3276, 3277, 3278, 3279, 3280, 3281, 3282, 3283, 3284, 3285, 3286, 3287, 3288, 3289, 3290, 3291, 3292, 3293, 3294, 3295, 3296, 3297, 3298, 3299, 3300;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[31]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3269;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[30]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3270;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[29]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3271;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[28]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3272;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[27]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3273;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[26]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3274;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[25]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3275;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[24]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3276;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[23]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3277;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[22]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3278;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[21]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3279;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[20]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3280;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[19]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3281;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[18]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3282;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[17]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3283;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[16]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3284;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[15]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3285;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[14]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3286;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[13]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3287;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[12]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3288;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[11]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3289;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[10]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3290;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3291;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3292;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3293;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3294;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3295;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3296;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3297;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3298;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3299;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "MuxWriteMemOut[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 3300;
+	TREE_LEVEL = 1;
+	PARENT = 3268;
 }
 
 TIME_BAR
