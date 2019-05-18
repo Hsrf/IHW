@@ -1,5 +1,5 @@
 Flow report for PQP
-Sat May 18 01:37:30 2019
+Sat May 18 02:01:49 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Sat May 18 01:37:30 2019        ;
+; Flow Status                   ; Successful - Sat May 18 02:01:48 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/18/2019 01:36:40 ;
+; Start date & time ; 05/18/2019 02:01:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PQP                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                              ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 10995770589202.155815420015888     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 10995770589202.155815566017668     ; --            ; --          ; --             ;
 ; MISC_FILE                          ; C:/Users/gvh/Desktop/Teste/PQP.dpf ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                           ; --            ; CPU         ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                             ; --            ; CPU         ; Top            ;
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:25     ; 1.0                     ; 339 MB              ; 00:00:35                           ;
-; Fitter                  ; 00:00:15     ; 3.1                     ; 426 MB              ; 00:00:20                           ;
-; Assembler               ; 00:00:04     ; 1.0                     ; 300 MB              ; 00:00:02                           ;
+; Analysis & Synthesis    ; 00:00:25     ; 1.0                     ; 339 MB              ; 00:00:36                           ;
+; Fitter                  ; 00:00:15     ; 2.7                     ; 426 MB              ; 00:00:20                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 300 MB              ; 00:00:03                           ;
 ; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 244 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:45     ; --                      ; --                  ; 00:00:58                           ;
+; Total                   ; 00:00:44     ; --                      ; --                  ; 00:01:00                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

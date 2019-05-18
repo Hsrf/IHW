@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Sat May 18 01:37:04 2019
+Sat May 18 02:01:25 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sat May 18 01:37:04 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat May 18 02:01:25 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
@@ -467,38 +467,38 @@ Encoding Type:  One-Hot
 ; ControlUnit:ControlUnit|ALUOp[0]                      ; ControlUnit:ControlUnit|Selector151 ; yes                    ;
 ; ControlUnit:ControlUnit|ALUOp[2]                      ; ControlUnit:ControlUnit|Selector151 ; yes                    ;
 ; ControlUnit:ControlUnit|MuxWriteMemControl            ; ControlUnit:ControlUnit|WideOr53    ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead_6159    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Add_6081            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Wait_6001           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5923 ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.And_5845            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Break_5763          ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Rte_5683            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sll_5601            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sllv_5521           ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sra_5441            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SraWriteReg_5361    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllOp_5283          ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SravOp_5203         ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Srl_5125            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SrlWriteReg_5045    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.OverflowExc_4965    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Beq_4887            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Bne_4809            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Bgt_4731            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Ble_4653            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lw_4575             ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSave_4497          ; ControlUnit:ControlUnit|Selector13  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSaveb_4415         ; ControlUnit:ControlUnit|Selector13  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lui2_4335           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Jal_4257            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LGet2_4179          ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Mult_4101           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreGet_4021       ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreSave_3943      ; ControlUnit:ControlUnit|Selector53  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreSaveh_3861     ; ControlUnit:ControlUnit|Selector53  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Slti_3781           ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.IncWait_3703        ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead_6163    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Add_6085            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Wait_6005           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5927 ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.And_5849            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Break_5767          ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Rte_5687            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sll_5605            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sllv_5525           ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sra_5445            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SraWriteReg_5365    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SllOp_5287          ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SravOp_5207         ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Srl_5129            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SrlWriteReg_5049    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.OverflowExc_4969    ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Beq_4891            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Bne_4813            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Bgt_4735            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Ble_4657            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lw_4579             ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSave_4501          ; ControlUnit:ControlUnit|Selector13  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSaveb_4419         ; ControlUnit:ControlUnit|Selector13  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lui2_4339           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Jal_4261            ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LGet2_4183          ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Mult_4105           ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreGet_4025       ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSave_3947      ; ControlUnit:ControlUnit|Selector53  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSaveh_3865     ; ControlUnit:ControlUnit|Selector53  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Slti_3785           ; ControlUnit:ControlUnit|Selector78  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.IncWait_3707        ; ControlUnit:ControlUnit|Selector134 ; yes                    ;
 ; Number of user-specified and inferred latches = 184   ;                                     ;                        ;
 +-------------------------------------------------------+-------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -808,7 +808,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 18 01:36:39 2019
+    Info: Processing started: Sat May 18 02:00:59 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file muxlocontrol.sv
@@ -874,11 +874,11 @@ Info: Elaborating entity "CPU" for the top level hierarchy
 Warning (10030): Net "ExtendLeftImediato2[1..0]" at CPU.sv(26) has no driver or initial value, using a default initial value '0'
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:PC"
 Info: Elaborating entity "ControlUnit" for hierarchy "ControlUnit:ControlUnit"
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(286): incomplete case statement has no default case item
-Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(955): truncated value with size 32 to match size of target (6)
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1371): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1606): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1841): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(306): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(1075): truncated value with size 32 to match size of target (6)
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1551): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1822): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(2093): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
@@ -888,10 +888,6 @@ Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): in
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "MuxWriteMemControl", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(130): inferring latch(es) for variable "contador", which holds its previous value in one or more paths through the always construct
-Warning (10034): Output port "WriteHI" at ControlUnit.sv(36) has no driver
-Warning (10034): Output port "WriteLO" at ControlUnit.sv(37) has no driver
-Warning (10034): Output port "HIControl" at ControlUnit.sv(38) has no driver
-Warning (10034): Output port "LOControl" at ControlUnit.sv(40) has no driver
 Info (10041): Inferred latch for "contador[0]" at ControlUnit.sv(130)
 Info (10041): Inferred latch for "contador[1]" at ControlUnit.sv(130)
 Info (10041): Inferred latch for "contador[2]" at ControlUnit.sv(130)
@@ -1578,73 +1574,73 @@ Warning: Latch ControlUnit:ControlUnit|ALUOp[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
 Warning: Latch ControlUnit:ControlUnit|ALUOp[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
-Warning: Latch ControlUnit:ControlUnit|nextstate.Add_6081 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Add_6085 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.And_5845 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.And_5849 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Break_5763 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Break_5767 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[2]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_5683 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_5687 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_5601 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_5605 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_5521 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_5525 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sra_5441 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sra_5445 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Srl_5125 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Srl_5129 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Beq_4887 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Beq_4891 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Bne_4809 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Bne_4813 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Bgt_4731 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Bgt_4735 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Ble_4653 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Ble_4657 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_4575 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_4579 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_4497 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_4501 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_4415 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_4419 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jal_4257 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jal_4261 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Mult_4101 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Mult_4105 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSave_3943 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSave_3947 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveh_3861 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveh_3865 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.Slti_3781 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Slti_3785 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Mfhi_3547 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Mfhi_3551 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_5962 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_5966 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_5804 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_5808 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_5642 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_5646 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Slt_5006 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Slt_5010 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[3]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_4374 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_4378 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Store_4060 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Store_4064 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveb_3902 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveb_3906 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.Inc_3742 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Inc_3746 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Srav_5244 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Srav_5248 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[2]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addiu_4926 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addiu_4930 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jump_4296 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jump_4300 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_4456 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_4460 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.Mflo_3506 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Mflo_3510 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[4]
 Warning: Latch ControlUnit:ControlUnit|ALUSrcA[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
@@ -1725,11 +1721,11 @@ Info: Implemented 3513 device resources after synthesis - the final resource cou
     Info: Implemented 335 output pins
     Info: Implemented 3144 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 487 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 483 warnings
     Info: Peak virtual memory: 339 megabytes
-    Info: Processing ended: Sat May 18 01:37:04 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Processing ended: Sat May 18 02:01:25 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:37
 
 
 +------------------------------------------+

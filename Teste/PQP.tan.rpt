@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for PQP
-Sat May 18 01:37:30 2019
+Sat May 18 02:01:49 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -354,45 +354,45 @@ applicable agreement for further details.
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[11]         ; MuxALUSrcB:MuxALUSrcB|out[13]                         ; clock      ; clock    ; None                       ; None                       ; 1.662 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[7]                     ; MuxALUSrcB:MuxALUSrcB|out[7]                          ; clock      ; clock    ; None                       ; None                       ; 1.677 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[11]         ; MuxALUSrcB:MuxALUSrcB|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 1.647 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Srl                   ; ControlUnit:ControlUnit|nextstate.SrlOp_5084          ; clock      ; clock    ; None                       ; None                       ; 0.618 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SrlOp                 ; ControlUnit:ControlUnit|nextstate.SrlWriteReg_5045    ; clock      ; clock    ; None                       ; None                       ; 0.622 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Srl                   ; ControlUnit:ControlUnit|nextstate.SrlOp_5088          ; clock      ; clock    ; None                       ; None                       ; 0.618 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SrlOp                 ; ControlUnit:ControlUnit|nextstate.SrlWriteReg_5049    ; clock      ; clock    ; None                       ; None                       ; 0.622 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[10]         ; MuxALUSrcB:MuxALUSrcB|out[12]                         ; clock      ; clock    ; None                       ; None                       ; 1.713 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Break                 ; ControlUnit:ControlUnit|nextstate.WriteInPC_5722      ; clock      ; clock    ; None                       ; None                       ; 0.946 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Break                 ; ControlUnit:ControlUnit|nextstate.WriteInPC_5726      ; clock      ; clock    ; None                       ; None                       ; 0.946 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[17]                             ; MuxALUSrcB:MuxALUSrcB|out[17]                         ; clock      ; clock    ; None                       ; None                       ; 1.748 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.LGet                  ; ControlUnit:ControlUnit|nextstate.LGet2_4179          ; clock      ; clock    ; None                       ; None                       ; 1.011 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.LGet                  ; ControlUnit:ControlUnit|nextstate.LGet2_4183          ; clock      ; clock    ; None                       ; None                       ; 1.011 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[9]                     ; MuxALUSrcB:MuxALUSrcB|out[9]                          ; clock      ; clock    ; None                       ; None                       ; 1.799 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[12]         ; MuxALUSrcB:MuxALUSrcB|out[14]                         ; clock      ; clock    ; None                       ; None                       ; 1.797 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[2]                     ; LoadBox:LoadBox|out[2]                                ; clock      ; clock    ; None                       ; None                       ; 0.731 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[8]          ; MuxALUSrcB:MuxALUSrcB|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 1.825 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SravOp                ; ControlUnit:ControlUnit|nextstate.SravWriteReg_5164   ; clock      ; clock    ; None                       ; None                       ; 0.810 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SraOp                 ; ControlUnit:ControlUnit|nextstate.SraWriteReg_5361    ; clock      ; clock    ; None                       ; None                       ; 0.957 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SravOp                ; ControlUnit:ControlUnit|nextstate.SravWriteReg_5168   ; clock      ; clock    ; None                       ; None                       ; 0.810 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SraOp                 ; ControlUnit:ControlUnit|nextstate.SraWriteReg_5365    ; clock      ; clock    ; None                       ; None                       ; 0.957 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[6]          ; MuxALUSrcB:MuxALUSrcB|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 1.874 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Mult_4101           ; clock      ; clock    ; None                       ; None                       ; 1.045 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WaitMemRead           ; ControlUnit:ControlUnit|nextstate.WaitMemRead2_5884   ; clock      ; clock    ; None                       ; None                       ; 0.957 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Mult_4105           ; clock      ; clock    ; None                       ; None                       ; 1.045 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WaitMemRead           ; ControlUnit:ControlUnit|nextstate.WaitMemRead2_5888   ; clock      ; clock    ; None                       ; None                       ; 0.957 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[27]                             ; MuxALUSrcB:MuxALUSrcB|out[27]                         ; clock      ; clock    ; None                       ; None                       ; 1.988 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.StoreData             ; ControlUnit:ControlUnit|nextstate.StoreData2_3820     ; clock      ; clock    ; None                       ; None                       ; 0.993 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Start                 ; ControlUnit:ControlUnit|nextstate.WaitMemRead_6159    ; clock      ; clock    ; None                       ; None                       ; 0.984 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Bgt                   ; ControlUnit:ControlUnit|nextstate.BgtCompare_4692     ; clock      ; clock    ; None                       ; None                       ; 0.984 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.StoreData             ; ControlUnit:ControlUnit|nextstate.StoreData2_3824     ; clock      ; clock    ; None                       ; None                       ; 0.993 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Start                 ; ControlUnit:ControlUnit|nextstate.WaitMemRead_6163    ; clock      ; clock    ; None                       ; None                       ; 0.984 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Bgt                   ; ControlUnit:ControlUnit|nextstate.BgtCompare_4696     ; clock      ; clock    ; None                       ; None                       ; 0.984 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[11]                    ; MuxALUSrcB:MuxALUSrcB|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 2.019 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[14]         ; MuxALUSrcB:MuxALUSrcB|out[14]                         ; clock      ; clock    ; None                       ; None                       ; 2.039 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Store                 ; ControlUnit:ControlUnit|nextstate.StoreGet_4021       ; clock      ; clock    ; None                       ; None                       ; 0.998 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Lw                    ; ControlUnit:ControlUnit|nextstate.LGet_4536           ; clock      ; clock    ; None                       ; None                       ; 1.035 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.LGet2                 ; ControlUnit:ControlUnit|nextstate.LGet3_4140          ; clock      ; clock    ; None                       ; None                       ; 1.047 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Store                 ; ControlUnit:ControlUnit|nextstate.StoreGet_4025       ; clock      ; clock    ; None                       ; None                       ; 0.998 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Lw                    ; ControlUnit:ControlUnit|nextstate.LGet_4540           ; clock      ; clock    ; None                       ; None                       ; 1.035 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.LGet2                 ; ControlUnit:ControlUnit|nextstate.LGet3_4144          ; clock      ; clock    ; None                       ; None                       ; 1.047 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[17]                    ; MuxALUSrcB:MuxALUSrcB|out[17]                         ; clock      ; clock    ; None                       ; None                       ; 2.056 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Inc                   ; ControlUnit:ControlUnit|nextstate.IncWait_3703        ; clock      ; clock    ; None                       ; None                       ; 1.040 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Srav                  ; ControlUnit:ControlUnit|nextstate.SravOp_5203         ; clock      ; clock    ; None                       ; None                       ; 1.183 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Inc                   ; ControlUnit:ControlUnit|nextstate.IncWait_3707        ; clock      ; clock    ; None                       ; None                       ; 1.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Srav                  ; ControlUnit:ControlUnit|nextstate.SravOp_5207         ; clock      ; clock    ; None                       ; None                       ; 1.183 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[12]         ; MuxALUSrcB:MuxALUSrcB|out[12]                         ; clock      ; clock    ; None                       ; None                       ; 2.134 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncOp                 ; ControlUnit:ControlUnit|nextstate.IncWrite_3586       ; clock      ; clock    ; None                       ; None                       ; 0.983 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncGetData            ; ControlUnit:ControlUnit|nextstate.IncOp_3625          ; clock      ; clock    ; None                       ; None                       ; 1.268 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncOp                 ; ControlUnit:ControlUnit|nextstate.IncWrite_3590       ; clock      ; clock    ; None                       ; None                       ; 0.983 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncGetData            ; ControlUnit:ControlUnit|nextstate.IncOp_3629          ; clock      ; clock    ; None                       ; None                       ; 1.268 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[31]                            ; MuxALUSrcA:MuxALUSrcA|out[31]                         ; clock      ; clock    ; None                       ; None                       ; 0.959 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[8]                     ; MuxALUSrcB:MuxALUSrcB|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 2.229 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[29]                            ; MuxALUSrcA:MuxALUSrcA|out[29]                         ; clock      ; clock    ; None                       ; None                       ; 0.977 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncWait               ; ControlUnit:ControlUnit|nextstate.IncGetData_3664     ; clock      ; clock    ; None                       ; None                       ; 1.234 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addiu                 ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5923 ; clock      ; clock    ; None                       ; None                       ; 1.539 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Beq                   ; ControlUnit:ControlUnit|nextstate.BeqCompare_4848     ; clock      ; clock    ; None                       ; None                       ; 1.286 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sll                   ; ControlUnit:ControlUnit|nextstate.SllOp_5283          ; clock      ; clock    ; None                       ; None                       ; 1.281 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.IncWait               ; ControlUnit:ControlUnit|nextstate.IncGetData_3668     ; clock      ; clock    ; None                       ; None                       ; 1.234 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addiu                 ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5927 ; clock      ; clock    ; None                       ; None                       ; 1.539 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Beq                   ; ControlUnit:ControlUnit|nextstate.BeqCompare_4852     ; clock      ; clock    ; None                       ; None                       ; 1.286 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sll                   ; ControlUnit:ControlUnit|nextstate.SllOp_5287          ; clock      ; clock    ; None                       ; None                       ; 1.281 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[0]                             ; MuxALUSrcA:MuxALUSrcA|out[0]                          ; clock      ; clock    ; None                       ; None                       ; 1.107 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SllOp                 ; ControlUnit:ControlUnit|nextstate.SllWriteReg_5560    ; clock      ; clock    ; None                       ; None                       ; 1.307 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SllOp                 ; ControlUnit:ControlUnit|nextstate.SllWriteReg_5564    ; clock      ; clock    ; None                       ; None                       ; 1.307 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[8]                             ; MuxALUSrcA:MuxALUSrcA|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 1.227 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[12]                    ; MuxALUSrcB:MuxALUSrcB|out[12]                         ; clock      ; clock    ; None                       ; None                       ; 2.484 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[16]                             ; MuxALUSrcB:MuxALUSrcB|out[16]                         ; clock      ; clock    ; None                       ; None                       ; 2.456 ns                 ;
@@ -400,11 +400,11 @@ applicable agreement for further details.
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[12]                             ; MuxALUSrcB:MuxALUSrcB|out[12]                         ; clock      ; clock    ; None                       ; None                       ; 2.517 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[8]          ; MuxALUSrcB:MuxALUSrcB|out[10]                         ; clock      ; clock    ; None                       ; None                       ; 2.539 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[10]         ; MuxALUSrcB:MuxALUSrcB|out[10]                         ; clock      ; clock    ; None                       ; None                       ; 2.536 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sra                   ; ControlUnit:ControlUnit|nextstate.SraOp_5400          ; clock      ; clock    ; None                       ; None                       ; 1.493 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sra                   ; ControlUnit:ControlUnit|nextstate.SraOp_5404          ; clock      ; clock    ; None                       ; None                       ; 1.493 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[27]                            ; MuxALUSrcA:MuxALUSrcA|out[27]                         ; clock      ; clock    ; None                       ; None                       ; 1.294 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[15]         ; MuxALUSrcB:MuxALUSrcB|out[17]                         ; clock      ; clock    ; None                       ; None                       ; 2.543 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[24]                            ; MuxALUSrcA:MuxALUSrcA|out[24]                         ; clock      ; clock    ; None                       ; None                       ; 1.320 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SllvOp                ; ControlUnit:ControlUnit|nextstate.SllvWriteReg_5480   ; clock      ; clock    ; None                       ; None                       ; 1.643 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.SllvOp                ; ControlUnit:ControlUnit|nextstate.SllvWriteReg_5484   ; clock      ; clock    ; None                       ; None                       ; 1.643 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[29]                    ; MuxALUSrcB:MuxALUSrcB|out[29]                         ; clock      ; clock    ; None                       ; None                       ; 2.605 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[9]                              ; MuxALUSrcB:MuxALUSrcB|out[9]                          ; clock      ; clock    ; None                       ; None                       ; 2.653 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[0]                     ; MuxALUSrcB:MuxALUSrcB|out[0]                          ; clock      ; clock    ; None                       ; None                       ; 2.637 ns                 ;
@@ -414,9 +414,9 @@ applicable agreement for further details.
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[30]                    ; MuxALUSrcB:MuxALUSrcB|out[30]                         ; clock      ; clock    ; None                       ; None                       ; 2.715 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[14]         ; MuxALUSrcB:MuxALUSrcB|out[16]                         ; clock      ; clock    ; None                       ; None                       ; 2.693 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[30]                            ; MuxALUSrcA:MuxALUSrcA|out[30]                         ; clock      ; clock    ; None                       ; None                       ; 1.483 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Slt_5006            ; clock      ; clock    ; None                       ; None                       ; 1.711 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sub                   ; ControlUnit:ControlUnit|nextstate.WriteInReg_6040     ; clock      ; clock    ; None                       ; None                       ; 1.682 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sllv                  ; ControlUnit:ControlUnit|nextstate.SllvOp_5322         ; clock      ; clock    ; None                       ; None                       ; 1.687 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Slt_5010            ; clock      ; clock    ; None                       ; None                       ; 1.711 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sub                   ; ControlUnit:ControlUnit|nextstate.WriteInReg_6044     ; clock      ; clock    ; None                       ; None                       ; 1.682 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Sllv                  ; ControlUnit:ControlUnit|nextstate.SllvOp_5326         ; clock      ; clock    ; None                       ; None                       ; 1.687 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[10]                    ; MuxALUSrcB:MuxALUSrcB|out[10]                         ; clock      ; clock    ; None                       ; None                       ; 2.769 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[31]                    ; LoadBox:LoadBox|out[31]                               ; clock      ; clock    ; None                       ; None                       ; 1.678 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[13]                    ; MuxALUSrcB:MuxALUSrcB|out[13]                         ; clock      ; clock    ; None                       ; None                       ; 2.806 ns                 ;
@@ -432,36 +432,36 @@ applicable agreement for further details.
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[20]                            ; MuxALUSrcA:MuxALUSrcA|out[20]                         ; clock      ; clock    ; None                       ; None                       ; 1.664 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[5]                     ; MuxALUSrcB:MuxALUSrcB|out[5]                          ; clock      ; clock    ; None                       ; None                       ; 2.929 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[30]                             ; MuxALUSrcB:MuxALUSrcB|out[30]                         ; clock      ; clock    ; None                       ; None                       ; 2.934 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Reset                 ; ControlUnit:ControlUnit|nextstate.Start_6198          ; clock      ; clock    ; None                       ; None                       ; 1.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Reset                 ; ControlUnit:ControlUnit|nextstate.Start_6202          ; clock      ; clock    ; None                       ; None                       ; 1.888 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[7]                              ; MuxALUSrcB:MuxALUSrcB|out[7]                          ; clock      ; clock    ; None                       ; None                       ; 2.995 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[1]         ; ControlUnit:ControlUnit|nextstate.Bne_4809            ; clock      ; clock    ; None                       ; None                       ; 1.412 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[1]         ; ControlUnit:ControlUnit|nextstate.Bne_4813            ; clock      ; clock    ; None                       ; None                       ; 1.412 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[11]                             ; MuxALUSrcB:MuxALUSrcB|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 2.941 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[9]          ; MuxALUSrcB:MuxALUSrcB|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 2.905 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Sllv_5521           ; clock      ; clock    ; None                       ; None                       ; 1.486 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Sllv_5525           ; clock      ; clock    ; None                       ; None                       ; 1.486 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[3]                     ; MuxALUSrcB:MuxALUSrcB|out[3]                          ; clock      ; clock    ; None                       ; None                       ; 2.974 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Srav_5244           ; clock      ; clock    ; None                       ; None                       ; 1.519 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addi                  ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5923 ; clock      ; clock    ; None                       ; None                       ; 2.231 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Srav_5248           ; clock      ; clock    ; None                       ; None                       ; 1.519 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addi                  ; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5927 ; clock      ; clock    ; None                       ; None                       ; 2.231 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[15]                            ; MuxALUSrcA:MuxALUSrcA|out[15]                         ; clock      ; clock    ; None                       ; None                       ; 1.813 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[28]                    ; LoadBox:LoadBox|out[28]                               ; clock      ; clock    ; None                       ; None                       ; 1.935 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[4]          ; ControlUnit:ControlUnit|nextstate.Sra_5441            ; clock      ; clock    ; None                       ; None                       ; 1.503 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Break_5763          ; clock      ; clock    ; None                       ; None                       ; 1.573 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mfhi                  ; ControlUnit:ControlUnit|nextstate.Wait_6001           ; clock      ; clock    ; None                       ; None                       ; 1.969 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[4]          ; ControlUnit:ControlUnit|nextstate.Sra_5445            ; clock      ; clock    ; None                       ; None                       ; 1.503 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Break_5767          ; clock      ; clock    ; None                       ; None                       ; 1.573 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mfhi                  ; ControlUnit:ControlUnit|nextstate.Wait_6005           ; clock      ; clock    ; None                       ; None                       ; 1.969 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[28]                             ; MuxALUSrcA:MuxALUSrcA|out[28]                         ; clock      ; clock    ; None                       ; None                       ; 1.820 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Bne                   ; ControlUnit:ControlUnit|nextstate.BneCompare_4770     ; clock      ; clock    ; None                       ; None                       ; 1.975 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Lui                   ; ControlUnit:ControlUnit|nextstate.Lui2_4335           ; clock      ; clock    ; None                       ; None                       ; 2.023 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WaitMemRead2          ; ControlUnit:ControlUnit|nextstate.Decode_6120         ; clock      ; clock    ; None                       ; None                       ; 2.007 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Bne                   ; ControlUnit:ControlUnit|nextstate.BneCompare_4774     ; clock      ; clock    ; None                       ; None                       ; 1.975 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Lui                   ; ControlUnit:ControlUnit|nextstate.Lui2_4339           ; clock      ; clock    ; None                       ; None                       ; 2.023 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WaitMemRead2          ; ControlUnit:ControlUnit|nextstate.Decode_6124         ; clock      ; clock    ; None                       ; None                       ; 2.007 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[26]                            ; MuxALUSrcA:MuxALUSrcA|out[26]                         ; clock      ; clock    ; None                       ; None                       ; 1.843 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[5]                     ; LoadBox:LoadBox|out[5]                                ; clock      ; clock    ; None                       ; None                       ; 2.009 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[6]                     ; LoadBox:LoadBox|out[6]                                ; clock      ; clock    ; None                       ; None                       ; 2.006 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.StoreGet              ; ControlUnit:ControlUnit|nextstate.StoreData_3982      ; clock      ; clock    ; None                       ; None                       ; 2.055 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.StoreGet              ; ControlUnit:ControlUnit|nextstate.StoreData_3986      ; clock      ; clock    ; None                       ; None                       ; 2.055 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[16]                            ; MuxALUSrcA:MuxALUSrcA|out[16]                         ; clock      ; clock    ; None                       ; None                       ; 1.876 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[10]                             ; MuxALUSrcB:MuxALUSrcB|out[10]                         ; clock      ; clock    ; None                       ; None                       ; 3.097 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Wait                  ; ControlUnit:ControlUnit|nextstate.Start_6198          ; clock      ; clock    ; None                       ; None                       ; 1.671 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Wait                  ; ControlUnit:ControlUnit|nextstate.Start_6202          ; clock      ; clock    ; None                       ; None                       ; 1.671 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[29]                             ; MuxALUSrcB:MuxALUSrcB|out[29]                         ; clock      ; clock    ; None                       ; None                       ; 3.135 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[11]                             ; MuxALUSrcA:MuxALUSrcA|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 1.897 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[5]                              ; MuxALUSrcB:MuxALUSrcB|out[5]                          ; clock      ; clock    ; None                       ; None                       ; 3.145 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[18]                            ; MuxALUSrcA:MuxALUSrcA|out[18]                         ; clock      ; clock    ; None                       ; None                       ; 1.903 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Add_6081            ; clock      ; clock    ; None                       ; None                       ; 1.678 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Add_6085            ; clock      ; clock    ; None                       ; None                       ; 1.678 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[8]                              ; MuxALUSrcA:MuxALUSrcA|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 1.951 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[25]                             ; MuxALUSrcA:MuxALUSrcA|out[25]                         ; clock      ; clock    ; None                       ; None                       ; 1.924 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; MuxALUSrcB:MuxALUSrcB|out[4]                          ; clock      ; clock    ; None                       ; None                       ; 3.016 ns                 ;
@@ -470,57 +470,57 @@ applicable agreement for further details.
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; MuxALUSrcB:MuxALUSrcB|out[7]                          ; clock      ; clock    ; None                       ; None                       ; 3.098 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[8]                              ; MuxALUSrcB:MuxALUSrcB|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 3.230 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; MuxALUSrcB:MuxALUSrcB|out[0]                          ; clock      ; clock    ; None                       ; None                       ; 3.076 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Srav_5244           ; clock      ; clock    ; None                       ; None                       ; 1.776 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Break_5763          ; clock      ; clock    ; None                       ; None                       ; 1.784 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Srav_5248           ; clock      ; clock    ; None                       ; None                       ; 1.776 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Break_5767          ; clock      ; clock    ; None                       ; None                       ; 1.784 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[11]                            ; MuxALUSrcA:MuxALUSrcA|out[11]                         ; clock      ; clock    ; None                       ; None                       ; 2.032 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[3]                             ; MuxALUSrcA:MuxALUSrcA|out[3]                          ; clock      ; clock    ; None                       ; None                       ; 2.036 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[7]                              ; MuxALUSrcA:MuxALUSrcA|out[7]                          ; clock      ; clock    ; None                       ; None                       ; 2.080 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[20]                    ; MuxALUSrcB:MuxALUSrcB|out[20]                         ; clock      ; clock    ; None                       ; None                       ; 3.280 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[31]                    ; MuxALUSrcA:MuxALUSrcA|out[31]                         ; clock      ; clock    ; None                       ; None                       ; 2.017 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mflo                  ; ControlUnit:ControlUnit|nextstate.Wait_6001           ; clock      ; clock    ; None                       ; None                       ; 2.224 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mflo                  ; ControlUnit:ControlUnit|nextstate.Wait_6005           ; clock      ; clock    ; None                       ; None                       ; 2.224 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[8]                     ; LoadBox:LoadBox|out[8]                                ; clock      ; clock    ; None                       ; None                       ; 2.181 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[5]                             ; MuxALUSrcA:MuxALUSrcA|out[5]                          ; clock      ; clock    ; None                       ; None                       ; 2.086 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[19]                            ; MuxALUSrcA:MuxALUSrcA|out[19]                         ; clock      ; clock    ; None                       ; None                       ; 2.064 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[16]                    ; LoadBox:LoadBox|out[16]                               ; clock      ; clock    ; None                       ; None                       ; 2.214 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[0]                              ; MuxALUSrcB:MuxALUSrcB|out[0]                          ; clock      ; clock    ; None                       ; None                       ; 3.355 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[6]                             ; MuxALUSrcA:MuxALUSrcA|out[6]                          ; clock      ; clock    ; None                       ; None                       ; 2.132 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.And                   ; ControlUnit:ControlUnit|nextstate.WriteInReg_6040     ; clock      ; clock    ; None                       ; None                       ; 2.313 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Jal                   ; ControlUnit:ControlUnit|nextstate.WriteJal_4218       ; clock      ; clock    ; None                       ; None                       ; 1.687 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.And                   ; ControlUnit:ControlUnit|nextstate.WriteInReg_6044     ; clock      ; clock    ; None                       ; None                       ; 2.313 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Jal                   ; ControlUnit:ControlUnit|nextstate.WriteJal_4222       ; clock      ; clock    ; None                       ; None                       ; 1.687 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[8]                     ; MuxALUSrcA:MuxALUSrcA|out[8]                          ; clock      ; clock    ; None                       ; None                       ; 2.180 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[1]                     ; MuxALUSrcA:MuxALUSrcA|out[1]                          ; clock      ; clock    ; None                       ; None                       ; 2.136 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Sllv_5521           ; clock      ; clock    ; None                       ; None                       ; 1.927 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Sllv_5525           ; clock      ; clock    ; None                       ; None                       ; 1.927 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[14]                    ; LoadBox:LoadBox|out[14]                               ; clock      ; clock    ; None                       ; None                       ; 2.284 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[10]                    ; MuxALUSrcA:MuxALUSrcA|out[10]                         ; clock      ; clock    ; None                       ; None                       ; 2.189 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Sra_5441            ; clock      ; clock    ; None                       ; None                       ; 1.883 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Sra_5445            ; clock      ; clock    ; None                       ; None                       ; 1.883 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[29]                    ; LoadBox:LoadBox|out[29]                               ; clock      ; clock    ; None                       ; None                       ; 2.308 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mult                  ; ControlUnit:ControlUnit|nextstate.Wait_6001           ; clock      ; clock    ; None                       ; None                       ; 2.558 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Srav_5244           ; clock      ; clock    ; None                       ; None                       ; 1.938 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mult                  ; ControlUnit:ControlUnit|nextstate.Wait_6005           ; clock      ; clock    ; None                       ; None                       ; 2.558 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Srav_5248           ; clock      ; clock    ; None                       ; None                       ; 1.938 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[24]                    ; LoadBox:LoadBox|out[24]                               ; clock      ; clock    ; None                       ; None                       ; 2.344 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mult                  ; ControlUnit:ControlUnit|nextstate.Mult_4101           ; clock      ; clock    ; None                       ; None                       ; 2.547 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Mult                  ; ControlUnit:ControlUnit|nextstate.Mult_4105           ; clock      ; clock    ; None                       ; None                       ; 2.547 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[21]                    ; LoadBox:LoadBox|out[21]                               ; clock      ; clock    ; None                       ; None                       ; 2.340 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[1]                     ; LoadBox:LoadBox|out[1]                                ; clock      ; clock    ; None                       ; None                       ; 2.306 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[22]                            ; MuxALUSrcA:MuxALUSrcA|out[22]                         ; clock      ; clock    ; None                       ; None                       ; 2.193 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[3]         ; ControlUnit:ControlUnit|nextstate.Jal_4257            ; clock      ; clock    ; None                       ; None                       ; 2.178 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Break_5763          ; clock      ; clock    ; None                       ; None                       ; 1.989 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Sllv_5521           ; clock      ; clock    ; None                       ; None                       ; 1.989 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[3]         ; ControlUnit:ControlUnit|nextstate.Jal_4261            ; clock      ; clock    ; None                       ; None                       ; 2.178 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[0]          ; ControlUnit:ControlUnit|nextstate.Break_5767          ; clock      ; clock    ; None                       ; None                       ; 1.989 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[2]          ; ControlUnit:ControlUnit|nextstate.Sllv_5525           ; clock      ; clock    ; None                       ; None                       ; 1.989 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[20]                    ; LoadBox:LoadBox|out[20]                               ; clock      ; clock    ; None                       ; None                       ; 2.356 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Sub_5804            ; clock      ; clock    ; None                       ; None                       ; 2.437 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Sub_5804            ; clock      ; clock    ; None                       ; None                       ; 2.087 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[3]          ; ControlUnit:ControlUnit|nextstate.Sub_5808            ; clock      ; clock    ; None                       ; None                       ; 2.437 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Sub_5808            ; clock      ; clock    ; None                       ; None                       ; 2.087 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[13]                    ; LoadBox:LoadBox|out[13]                               ; clock      ; clock    ; None                       ; None                       ; 2.384 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:A|Saida[9]                              ; MuxALUSrcA:MuxALUSrcA|out[9]                          ; clock      ; clock    ; None                       ; None                       ; 2.279 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[4]          ; ControlUnit:ControlUnit|nextstate.Mult_4101           ; clock      ; clock    ; None                       ; None                       ; 2.242 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Slt_5006            ; clock      ; clock    ; None                       ; None                       ; 2.107 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WriteJal              ; ControlUnit:ControlUnit|nextstate.Jump_4296           ; clock      ; clock    ; None                       ; None                       ; 2.040 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Srl_5125            ; clock      ; clock    ; None                       ; None                       ; 2.129 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Jr                    ; ControlUnit:ControlUnit|nextstate.Wait_6001           ; clock      ; clock    ; None                       ; None                       ; 2.443 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[4]          ; ControlUnit:ControlUnit|nextstate.Mult_4105           ; clock      ; clock    ; None                       ; None                       ; 2.242 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[1]          ; ControlUnit:ControlUnit|nextstate.Slt_5010            ; clock      ; clock    ; None                       ; None                       ; 2.107 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.WriteJal              ; ControlUnit:ControlUnit|nextstate.Jump_4300           ; clock      ; clock    ; None                       ; None                       ; 2.040 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Srl_5129            ; clock      ; clock    ; None                       ; None                       ; 2.129 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Jr                    ; ControlUnit:ControlUnit|nextstate.Wait_6005           ; clock      ; clock    ; None                       ; None                       ; 2.443 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[24]                    ; MuxALUSrcA:MuxALUSrcA|out[24]                         ; clock      ; clock    ; None                       ; None                       ; 2.290 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[2]         ; ControlUnit:ControlUnit|nextstate.Jal_4257            ; clock      ; clock    ; None                       ; None                       ; 2.284 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[0]         ; ControlUnit:ControlUnit|nextstate.Addiu_4926          ; clock      ; clock    ; None                       ; None                       ; 2.053 ns                 ;
-; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Add_6081            ; clock      ; clock    ; None                       ; None                       ; 2.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[2]         ; ControlUnit:ControlUnit|nextstate.Jal_4261            ; clock      ; clock    ; None                       ; None                       ; 2.284 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr31_26[0]         ; ControlUnit:ControlUnit|nextstate.Addiu_4930          ; clock      ; clock    ; None                       ; None                       ; 2.053 ns                 ;
+; Not operational: Clock Skew > Data Delay ; Instr_Reg:InstructionRegister|Instr15_0[5]          ; ControlUnit:ControlUnit|nextstate.Add_6085            ; clock      ; clock    ; None                       ; None                       ; 2.100 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:B|Saida[13]                             ; MuxALUSrcB:MuxALUSrcB|out[13]                         ; clock      ; clock    ; None                       ; None                       ; 3.588 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:PC|Saida[1]                             ; MuxALUSrcA:MuxALUSrcA|out[1]                          ; clock      ; clock    ; None                       ; None                       ; 2.329 ns                 ;
 ; Not operational: Clock Skew > Data Delay ; Registrador:MemDataReg|Saida[30]                    ; LoadBox:LoadBox|out[30]                               ; clock      ; clock    ; None                       ; None                       ; 2.489 ns                 ;
-; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addi                  ; ControlUnit:ControlUnit|nextstate.OverflowExc_4965    ; clock      ; clock    ; None                       ; None                       ; 2.538 ns                 ;
+; Not operational: Clock Skew > Data Delay ; ControlUnit:ControlUnit|state.Addi                  ; ControlUnit:ControlUnit|nextstate.OverflowExc_4969    ; clock      ; clock    ; None                       ; None                       ; 2.538 ns                 ;
 ; Timing analysis restricted to 200 rows.  ; To change the limit use Settings (Assignments menu) ;                                                       ;            ;          ;                            ;                            ;                          ;
 +------------------------------------------+-----------------------------------------------------+-------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
 
@@ -740,25 +740,25 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 18 01:37:29 2019
+    Info: Processing started: Sat May 18 02:01:48 2019
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PQP -c PQP --timing_analysis_only
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "ControlUnit:ControlUnit|MuxWriteMemControl" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSave_3943" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.IncWrite_3586" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSaveb_3902" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSaveh_3861" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.OverflowExc_4965" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSave_3947" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.IncWrite_3590" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSaveb_3906" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreSaveh_3865" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.OverflowExc_4969" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUOp[2]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[0]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUOp[0]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[0]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUOp[1]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Inc_3742" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.IncWait_3703" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreGet_4021" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet_4536" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Inc_3746" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.IncWait_3707" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreGet_4025" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet_4540" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[1]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[1]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[2]" is a latch
@@ -770,69 +770,69 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[5]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[6]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[6]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.IncOp_3625" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInPC_5722" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5923" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInReg_6040" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Wait_6001" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Jal_4257" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Addi_5962" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Add_6081" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Jump_4296" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Start_6198" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Jr_5642" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Rte_5683" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WaitMemRead2_5884" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.IncOp_3629" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInPC_5726" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5927" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteInReg_6044" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Wait_6005" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Jal_4261" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Addi_5966" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Add_6085" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Jump_4300" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Start_6202" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Jr_5646" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Rte_5687" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WaitMemRead2_5888" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[5]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[7]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[7]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreData2_3820" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreData2_3824" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcA[1]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcA[2]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcA[0]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcB[1]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcB[0]" is a latch
     Warning: Node "ControlUnit:ControlUnit|ALUSrcB[2]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Addiu_4926" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Store_4060" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Lui_4374" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Lw_4575" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.And_5845" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Break_5763" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Sub_5804" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Srav_5244" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SllvOp_5322" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SravOp_5203" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Sllv_5521" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Decode_6120" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SllvWriteReg_5480" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SravWriteReg_5164" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Sll_5601" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Srl_5125" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Sra_5441" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.BgtCompare_4692" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.BleCompare_4614" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.BneCompare_4770" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.BeqCompare_4848" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Addiu_4930" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Store_4064" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Lui_4378" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Lw_4579" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.And_5849" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Break_5767" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Sub_5808" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Srav_5248" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SllvOp_5326" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SravOp_5207" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Sllv_5525" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Decode_6124" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SllvWriteReg_5484" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SravWriteReg_5168" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Sll_5605" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Srl_5129" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Sra_5445" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.BgtCompare_4696" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.BleCompare_4618" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.BneCompare_4774" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.BeqCompare_4852" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[30]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[31]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.IncGetData_3664" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.IncGetData_3668" is a latch
     Warning: Node "ControlUnit:ControlUnit|MemDataReg" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Ble_4653" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Beq_4887" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Bne_4809" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Bgt_4731" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Slti_3781" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Slt_5006" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Ble_4657" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Beq_4891" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Bne_4813" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Bgt_4735" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Slti_3785" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Slt_5010" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[30]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[31]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[29]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[28]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WaitMemRead_6159" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreData_3982" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet3_4140" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WaitMemRead_6163" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.StoreData_3986" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet3_4144" is a latch
     Warning: Node "ControlUnit:ControlUnit|contador[1]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteJal_4218" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.WriteJal_4222" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[29]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[28]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[27]" is a latch
@@ -849,9 +849,9 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "ControlUnit:ControlUnit|contador[4]" is a latch
     Warning: Node "ControlUnit:ControlUnit|contador[5]" is a latch
     Warning: Node "ControlUnit:ControlUnit|contador[3]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Mult_4101" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Mflo_3506" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Mfhi_3547" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Mult_4105" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Mflo_3510" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Mfhi_3551" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[16]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[16]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[18]" is a latch
@@ -866,14 +866,14 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[25]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[23]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[21]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet2_4179" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.Lui2_4335" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LSaveb_4415" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LSave_4497" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.LSaveh_4456" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SraWriteReg_5361" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SllWriteReg_5560" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SrlWriteReg_5045" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LGet2_4183" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.Lui2_4339" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LSaveb_4419" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LSave_4501" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.LSaveh_4460" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SraWriteReg_5365" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SllWriteReg_5564" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SrlWriteReg_5049" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[15]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[14]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[17]" is a latch
@@ -890,9 +890,9 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[13]" is a latch
     Warning: Node "ControlUnit:ControlUnit|IsControl[1]" is a latch
     Warning: Node "ControlUnit:ControlUnit|IsControl[0]" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SraOp_5400" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SllOp_5283" is a latch
-    Warning: Node "ControlUnit:ControlUnit|nextstate.SrlOp_5084" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SraOp_5404" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SllOp_5287" is a latch
+    Warning: Node "ControlUnit:ControlUnit|nextstate.SrlOp_5088" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[12]" is a latch
     Warning: Node "MuxALUSrcB:MuxALUSrcB|out[13]" is a latch
     Warning: Node "MuxALUSrcA:MuxALUSrcA|out[10]" is a latch
@@ -1117,7 +1117,7 @@ Info: tco from clock "clock" to destination pin "MuxIordOut[29]" through registe
         Info: Total interconnect delay = 13.562 ns ( 72.44 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 190 warnings
     Info: Peak virtual memory: 256 megabytes
-    Info: Processing ended: Sat May 18 01:37:30 2019
+    Info: Processing ended: Sat May 18 02:01:49 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
