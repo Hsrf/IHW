@@ -56,9 +56,13 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
-logic MemDataRegControl;
-logic MuxStore;
-logic [2:0] SControl;
+logic [31:0] MuxHIControlOut;
+logic [31:0] MuxLOControlOut;
+logic [31:0] HIOut;
+logic [31:0] LOOut;
+logic WriteHI;
+logic WriteLO;
+
 
 Registrador PC(
 	.Clk(clock),
@@ -264,34 +268,34 @@ MuxShiftAmt MuxShiftAmt(
 	.ShiftAmt(ShiftAmt)
 );
 
-MuxMem MuxMem(
-//NAO TA PRONTO, FALTA TERMINAR
-	.A(),
-	.B(),
-	.out(),
-	.MuxStore(MuxStore)
-);
-
-Store Store(
-//NAO ESTA PRONTO, FALTA TERMINAR
-	.
-
-);
-
 Registrador HI(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(ALUOutControl),
-	.Entrada(ALUResult),
-	.Saida(ALUOutOut)
+	.Load(WriteHI),
+	.Entrada(MuxHIControlOut),
+	.Saida(HIOut)
 );
 
 Registrador LO(
 	.Clk(clock),
 	.Reset(reset),
-	.Load(ALUOutControl),
-	.Entrada(ALUResult),
-	.Saida(ALUOutOut)
+	.Load(WriteLO),
+	.Entrada(MuxLOControlOut),
+	.Saida(LOOut)
+);
+
+MuxHIControl MuxHIControl(
+	.A(MultHI), 
+	.B(DivHI), 
+	.out(MuxHIControl), 
+	.HIControl(HIControl)
+);
+
+MuxLOControl MuxLOControl(
+	.A(MultLO), 
+	.B(DivLO), 
+	.out(MuxLOControlOut), 
+	.LOControl(LOControl)
 );
 
 
