@@ -75,6 +75,14 @@ logic [31:0] MultA;
 logic [31:0] MultB;
 logic [31:0] MultHi;
 logic [31:0] MultLo;
+logic [31:0] MuxHIOut;
+logic [31:0] MuxLOOut;
+logic [31:0] HIOut;
+logic [31:0] LOOut;
+logic WriteHI;
+logic WriteLO;
+logic HIControl;
+logic LOControl;
 
 Registrador PC(
 	.Clk(clock),
@@ -126,7 +134,11 @@ ControlUnit ControlUnit(
 	.MemDataReg(MemDataRegControl),
 	.MultControl(MultControl),
 	.SControl(SControl),
-	.MuxWriteMemControl(MuxWriteMemControl)
+	.MuxWriteMemControl(MuxWriteMemControl),
+	.WriteHI(WriteHI),
+	.WriteLO(WriteLO),
+	.HIControl(HIControl),
+	.LOControl(LOControl)
 );
 
 
@@ -208,8 +220,8 @@ MuxIord MuxIord(
 
 MuxMemToReg MuxMemToReg(
 	.A(ALUOutOut),
-	.B(1'd0),
-	.C(1'd0),
+	.B(HIOut),
+	.C(LOOut),
 	.D(LoadBoxOut),
 	.E(RegDeslocResult),
 	.F(1'd0),
@@ -323,6 +335,36 @@ MuxWriteMem MuxWriteMem(
 	.B(ALUOutOut),
 	.MuxWriteMemControl(MuxWriteMemControl),
 	.out(MuxWriteMemOut)
+);
+
+Registrador HI(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteHI),
+	.Entrada(MuxHIOut),
+	.Saida(HIOut)
+);
+
+Registrador LO(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(WriteLO),
+	.Entrada(MuxLOOut),
+	.Saida(LOOut)
+);
+
+MuxHI MuxHI(
+	.A(MultHI), 
+	.B(32'd0), 
+	.out(MuxHIOut), 
+	.HIControl(HIControl)
+);
+
+ MuxLO MuxLO(
+	.A(MultLO), 
+	.B(32'd0), 
+	.out(MuxLOOut), 
+	.LOControl(LOControl)
 );
 
 assign MenorQueExtended = MenorQue;
