@@ -34,3 +34,5 @@ TIPO I
 TIPO J
 - j
 - jal
+- inc
+- dec
