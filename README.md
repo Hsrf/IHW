@@ -29,6 +29,7 @@ TIPO I
 - sw
 - sh
 - sb
+- slti
 
 TIPO J
 - j
