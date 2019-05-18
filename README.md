@@ -1,7 +1,7 @@
 # IHW
 Programming a MIPS CPU in verilog.
 
-TIPO R
+TIPO R // SEM DIV E 3 INSTRUCOES FUNCIONAM SO NA TEORIA
 - add
 - and
 - sub
@@ -18,7 +18,7 @@ TIPO R
 - mflo (teoricamente)
 - mult (nao funfa)
 
-TIPO I
+TIPO I // TUDOO IHUU
 - addi
 - addiu
 - beq
@@ -34,7 +34,7 @@ TIPO I
 - sb
 - slti
 
-TIPO J
+TIPO J // TUDOO IHUU
 - j
 - jal
 - inc
