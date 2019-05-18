@@ -54,7 +54,7 @@ logic [31:0] EPCOut;
 logic [31:0] MuxPCSourceOut;
 logic [2:0] ALUOp;
 logic PCWrite;
-logic [1:0] ALUSrcA;
+logic [2:0] ALUSrcA;
 logic [2:0] ALUSrcB;
 logic [2:0] PCSource;
 logic Negativo;
@@ -135,6 +135,7 @@ MuxALUSrcA MuxALUSrcA(
 	.B(32'd0),
 	.C(RegAOut),
 	.D(32'd1),
+	.E(MemDataRegOut),
 	.out(MuxALUSourceAOut),
 	.SrcA(ALUSrcA)
 );
@@ -146,6 +147,7 @@ MuxALUSrcB MuxALUSrcB(
 	.D(ExtendLeft2),
 	.E(1'd0),
 	.F(MemDataRegOut),
+	.G(32'd1),
 	.out(MuxALUSourceBOut),
 	.SrcB(ALUSrcB)
 );

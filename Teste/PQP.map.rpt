@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PQP
-Sat May 18 00:32:20 2019
+Sat May 18 01:00:30 2019
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -61,13 +61,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sat May 18 00:32:20 2019        ;
+; Analysis & Synthesis Status   ; Successful - Sat May 18 01:00:29 2019        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; PQP                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,838                                        ;
+;     Combinational ALUTs       ; 1,913                                        ;
 ;     Dedicated logic registers ; 1,348                                        ;
 ; Total registers               ; 1348                                         ;
 ; Total pins                    ; 337                                          ;
@@ -214,39 +214,39 @@ applicable agreement for further details.
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1838  ;
+; Estimated ALUTs Used                          ; 1913  ;
 ; Dedicated logic registers                     ; 1348  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 313   ;
+; Estimated ALUTs Unavailable                   ; 244   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1838  ;
+; Total combinational functions                 ; 1913  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 17    ;
-;     -- 6 input functions                      ; 1022  ;
-;     -- 5 input functions                      ; 241   ;
-;     -- 4 input functions                      ; 136   ;
-;     -- <=3 input functions                    ; 422   ;
+;     -- 7 input functions                      ; 9     ;
+;     -- 6 input functions                      ; 961   ;
+;     -- 5 input functions                      ; 282   ;
+;     -- 4 input functions                      ; 174   ;
+;     -- <=3 input functions                    ; 487   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1793  ;
-;     -- extended LUT mode                      ; 17    ;
+;     -- normal mode                            ; 1876  ;
+;     -- extended LUT mode                      ; 9     ;
 ;     -- arithmetic mode                        ; 28    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2998  ;
+; Estimated ALUT/register pairs used            ; 3004  ;
 ;                                               ;       ;
 ; Total registers                               ; 1348  ;
 ;     -- Dedicated logic registers              ; 1348  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,499 ;
+; Estimated ALMs:  partially or completely used ; 1,502 ;
 ;                                               ;       ;
 ; I/O pins                                      ; 337   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
 ; Maximum fan-out                               ; 1380  ;
-; Total fan-out                                 ; 15213 ;
-; Average fan-out                               ; 4.28  ;
+; Total fan-out                                 ; 15347 ;
+; Average fan-out                               ; 4.23  ;
 +-----------------------------------------------+-------+
 
 
@@ -255,9 +255,9 @@ applicable agreement for further details.
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 1838 (0)          ; 1348 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 337  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 1913 (0)          ; 1348 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 337  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:BancoRegistradores|               ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:BancoRegistradores                                                                              ;              ;
-;    |ControlUnit:ControlUnit|                    ; 239 (239)         ; 68 (68)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
+;    |ControlUnit:ControlUnit|                    ; 254 (254)         ; 68 (68)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ControlUnit:ControlUnit                                                                                   ;              ;
 ;    |Instr_Reg:InstructionRegister|              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:InstructionRegister                                                                             ;              ;
 ;    |LoadBox:LoadBox|                            ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|LoadBox:LoadBox                                                                                           ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ;              ;
@@ -277,16 +277,16 @@ applicable agreement for further details.
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ;              ;
-;    |MuxALUSrcA:MuxALUSrcA|                      ; 34 (34)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ;              ;
-;    |MuxALUSrcB:MuxALUSrcB|                      ; 47 (47)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
-;    |MuxIord:MuxIord|                            ; 45 (45)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxIord:MuxIord                                                                                           ;              ;
+;    |MuxALUSrcA:MuxALUSrcA|                      ; 67 (67)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ;              ;
+;    |MuxALUSrcB:MuxALUSrcB|                      ; 80 (80)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ;              ;
+;    |MuxIord:MuxIord|                            ; 40 (40)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxIord:MuxIord                                                                                           ;              ;
 ;    |MuxMemToReg:MuxMemToReg|                    ; 35 (35)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxMemToReg:MuxMemToReg                                                                                   ;              ;
-;    |MuxPCSource:MuxPCSource|                    ; 78 (78)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ;              ;
+;    |MuxPCSource:MuxPCSource|                    ; 77 (77)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ;              ;
 ;    |MuxRegDst:MuxRegDst|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDst:MuxRegDst                                                                                       ;              ;
 ;    |MuxShiftAmt:MuxShiftAmt|                    ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftAmt:MuxShiftAmt                                                                                   ;              ;
 ;    |MuxShiftSrc:MuxShiftSrc|                    ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftSrc:MuxShiftSrc                                                                                   ;              ;
 ;    |MuxWriteMem:MuxWriteMem|                    ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxWriteMem:MuxWriteMem                                                                                   ;              ;
-;    |RegDesloc:RegDesloc|                        ; 321 (321)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:RegDesloc                                                                                       ;              ;
+;    |RegDesloc:RegDesloc|                        ; 323 (323)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:RegDesloc                                                                                       ;              ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ;              ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ;              ;
@@ -294,7 +294,7 @@ applicable agreement for further details.
 ;    |Registrador:MemDataReg|                     ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:MemDataReg                                                                                    ;              ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ;              ;
 ;    |StoreBox:StoreBox|                          ; 24 (24)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|StoreBox:StoreBox                                                                                         ;              ;
-;    |Ula32:ULA|                                  ; 152 (152)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
+;    |Ula32:ULA|                                  ; 150 (150)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:ULA                                                                                                 ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -393,107 +393,107 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------+-------------------------------------+------------------------+
 ; Latch Name                                            ; Latch Enable Signal                 ; Free of Timing Hazards ;
 +-------------------------------------------------------+-------------------------------------+------------------------+
-; ControlUnit:ControlUnit|MuxWriteMemControl            ; ControlUnit:ControlUnit|WideOr59    ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead_5933    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Add_5855            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Wait_5775           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5697 ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.And_5619            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Break_5537          ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Rte_5457            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sll_5375            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sllv_5295           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sra_5215            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SraWriteReg_5135    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllOp_5057          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SravOp_4977         ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Srl_4899            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SrlWriteReg_4819    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.OverflowExc_4739    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Beq_4661            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Bne_4583            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Bgt_4505            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Ble_4427            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lw_4349             ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSave_4271          ; ControlUnit:ControlUnit|Selector16  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSaveb_4189         ; ControlUnit:ControlUnit|Selector16  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lui2_4109           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Jal_4031            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LGet2_3953          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Mult_3875           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreGet_3795       ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreSave_3717      ; ControlUnit:ControlUnit|Selector82  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreSaveh_3635     ; ControlUnit:ControlUnit|Selector82  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Slti_3555           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.IncWait_3477        ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.IncOp_3399          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Decode_5894         ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Addi_5736           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Sub_5578            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Jr_5416             ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllvWriteReg_5254   ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllvOp_5096         ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SravWriteReg_4938   ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Slt_4780            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.BeqCompare_4622     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.BgtCompare_4466     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LGet_4310           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Lui_4148            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteJal_3992       ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Store_3834          ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreSaveb_3676     ; ControlUnit:ControlUnit|Selector82  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Inc_3516            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.IncWrite_3360       ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInReg_5814     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WriteInPC_5496      ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SraOp_5174          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SrlOp_4858          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.BneCompare_4544     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LSaveh_4230         ; ControlUnit:ControlUnit|Selector16  ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.LGet3_3914          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreData2_3594     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.WaitMemRead2_5658   ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Srav_5018           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.BleCompare_4388     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.StoreData_3756      ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.SllWriteReg_5334    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Jump_4070           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Addiu_4700          ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.IncGetData_3438     ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|nextstate.Start_5972          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
-; ControlUnit:ControlUnit|MemDataReg                    ; ControlUnit:ControlUnit|WideOr52    ; yes                    ;
-; ControlUnit:ControlUnit|contador[5]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; ControlUnit:ControlUnit|contador[4]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; ControlUnit:ControlUnit|contador[3]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; ControlUnit:ControlUnit|contador[2]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; ControlUnit:ControlUnit|contador[1]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; ControlUnit:ControlUnit|contador[0]                   ; ControlUnit:ControlUnit|Selector76  ; yes                    ;
-; LoadBox:LoadBox|out[0]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[1]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[2]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[3]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[4]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[5]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[6]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[7]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[8]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[9]                                ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[10]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[11]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[12]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[13]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[14]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[15]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[16]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[17]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[18]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[19]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[20]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[21]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[22]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[23]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; LoadBox:LoadBox|out[24]                               ; LoadBox:LoadBox|Mux24               ; yes                    ;
-; Number of user-specified and inferred latches = 109   ;                                     ;                        ;
+; MuxALUSrcA:MuxALUSrcA|out[0]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[1]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[2]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[3]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[4]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[5]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[6]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[7]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[8]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[9]                          ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[10]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[11]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[12]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[13]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[14]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[15]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[16]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[17]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[18]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[19]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[20]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[21]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[22]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[23]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[24]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[25]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[26]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[27]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[28]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[29]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[30]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcA:MuxALUSrcA|out[31]                         ; MuxALUSrcA:MuxALUSrcA|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[0]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[1]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[2]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[3]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[4]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[5]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[6]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[7]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[8]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[9]                          ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[10]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[11]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[12]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[13]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[14]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[15]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[16]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[17]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[18]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[19]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[20]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[21]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[22]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[23]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[24]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[25]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[26]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[27]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[28]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[29]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[30]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|out[31]                         ; MuxALUSrcB:MuxALUSrcB|Mux32         ; yes                    ;
+; ControlUnit:ControlUnit|ALUOp[1]                      ; ControlUnit:ControlUnit|Selector186 ; yes                    ;
+; ControlUnit:ControlUnit|ALUOp[0]                      ; ControlUnit:ControlUnit|Selector186 ; yes                    ;
+; ControlUnit:ControlUnit|ALUOp[2]                      ; ControlUnit:ControlUnit|Selector186 ; yes                    ;
+; ControlUnit:ControlUnit|MuxWriteMemControl            ; ControlUnit:ControlUnit|WideOr66    ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WaitMemRead_5964    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Add_5886            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Wait_5806           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.WriteInRegAddi_5728 ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.And_5650            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Break_5568          ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Rte_5488            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sll_5406            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sllv_5326           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Sra_5246            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SraWriteReg_5166    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SllOp_5088          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SravOp_5008         ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Srl_4930            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.SrlWriteReg_4850    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.OverflowExc_4770    ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Beq_4692            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Bne_4614            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Bgt_4536            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Ble_4458            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lw_4380             ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSave_4302          ; ControlUnit:ControlUnit|Selector16  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LSaveb_4220         ; ControlUnit:ControlUnit|Selector16  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Lui2_4140           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Jal_4062            ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.LGet2_3984          ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Mult_3906           ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreGet_3826       ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSave_3748      ; ControlUnit:ControlUnit|Selector82  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.StoreSaveh_3666     ; ControlUnit:ControlUnit|Selector82  ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.Slti_3586           ; ControlUnit:ControlUnit|Selector165 ; yes                    ;
+; ControlUnit:ControlUnit|nextstate.IncWait_3508        ; ControlUnit:ControlUnit|Selector169 ; yes                    ;
+; Number of user-specified and inferred latches = 182   ;                                     ;                        ;
 +-------------------------------------------------------+-------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -529,35 +529,34 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:B|Saida[2]                ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:A|Saida[25]               ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[8]           ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[23]          ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |CPU|StoreBox:StoreBox|Mux3                ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|StoreBox:StoreBox|Mux8                ;
-; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux5            ;
-; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux1              ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|LoadBox:LoadBox|Mux11                 ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |CPU|LoadBox:LoadBox|Mux4                  ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:ULA|Mux47                       ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:ULA|Mux4                        ;
-; 6:1                ; 14 bits   ; 56 ALUTs      ; 42 ALUTs             ; 14 ALUTs               ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux23           ;
-; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux17           ;
-; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux1            ;
-; 6:1                ; 14 bits   ; 56 ALUTs      ; 56 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux4            ;
-; 6:1                ; 32 bits   ; 128 ALUTs     ; 128 ALUTs            ; 0 ALUTs                ; No         ; |CPU|MuxIord:MuxIord|Mux9                  ;
-; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux0          ;
-; 6:1                ; 6 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux26         ;
-; 6:1                ; 24 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux7          ;
-; 5:1                ; 31 bits   ; 93 ALUTs      ; 93 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemToReg:MuxMemToReg|Mux16         ;
-; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|Selector165   ;
-; 14:1               ; 13 bits   ; 117 ALUTs     ; 117 ALUTs            ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.Rte ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:B|Saida[22]                 ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:A|Saida[22]                 ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[3]             ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |CPU|RegDesloc:RegDesloc|temp[17]            ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |CPU|StoreBox:StoreBox|Mux6                  ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|StoreBox:StoreBox|Mux12                 ;
+; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDst:MuxRegDst|Mux0                ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |CPU|LoadBox:LoadBox|Mux8                    ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |CPU|LoadBox:LoadBox|Mux7                    ;
+; 5:1                ; 32 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux1              ;
+; 7:1                ; 14 bits   ; 56 ALUTs      ; 56 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux18             ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:ULA|Mux33                         ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:ULA|Mux28                         ;
+; 6:1                ; 32 bits   ; 128 ALUTs     ; 128 ALUTs            ; 0 ALUTs                ; No         ; |CPU|MuxIord:MuxIord|Mux18                   ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux0            ;
+; 6:1                ; 6 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux26           ;
+; 6:1                ; 24 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux17           ;
+; 5:1                ; 31 bits   ; 93 ALUTs      ; 93 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemToReg:MuxMemToReg|Mux5            ;
+; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|Selector165     ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux17             ;
+; 6:1                ; 14 bits   ; 56 ALUTs      ; 56 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux10             ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 117 ALUTs            ; 0 ALUTs                ; No         ; |CPU|ControlUnit:ControlUnit|nextstate.Break ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -751,16 +750,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"                                                                                                                                                                ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; B[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; B[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; C       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; E       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"                                                                                                                                                                 ;
++----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                             ;
++----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; B[1..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; B[2]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; C        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; E        ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; G[31..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; G[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++----------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------+
@@ -780,7 +781,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 18 00:31:54 2019
+    Info: Processing started: Sat May 18 01:00:05 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PQP -c PQP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file muxlocontrol.sv
@@ -844,6 +845,10 @@ Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(280): inco
 Warning (10230): Verilog HDL assignment warning at ControlUnit.sv(895): truncated value with size 32 to match size of target (6)
 Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1311): incomplete case statement has no default case item
 Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1546): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at ControlUnit.sv(1781): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "ALUSrcA", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "ALUSrcB", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "IsControl", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "MemDataReg", which holds its previous value in one or more paths through the always construct
 Warning (10240): Verilog HDL Always Construct warning at ControlUnit.sv(124): inferring latch(es) for variable "MultControl", which holds its previous value in one or more paths through the always construct
@@ -928,11 +933,55 @@ Info (10041): Inferred latch for "MultControl" at ControlUnit.sv(124)
 Info (10041): Inferred latch for "MemDataReg" at ControlUnit.sv(124)
 Info (10041): Inferred latch for "IsControl[0]" at ControlUnit.sv(124)
 Info (10041): Inferred latch for "IsControl[1]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUOp[0]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUOp[1]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUOp[2]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcB[0]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcB[1]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcB[2]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcA[0]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcA[1]" at ControlUnit.sv(124)
+Info (10041): Inferred latch for "ALUSrcA[2]" at ControlUnit.sv(124)
 Info: Elaborating entity "MuxALUSrcA" for hierarchy "MuxALUSrcA:MuxALUSrcA"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(11): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(12): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcA.sv(13): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at MuxALUSrcA.sv(8): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxALUSrcA.sv(7): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[1]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[2]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[3]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[4]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[5]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[6]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[7]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[8]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[9]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[10]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[11]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[12]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[13]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[14]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[15]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[16]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[17]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[18]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[19]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[20]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[21]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[22]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[23]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[24]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[25]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[26]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[27]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[28]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[29]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[30]" at MuxALUSrcA.sv(7)
+Info (10041): Inferred latch for "out[31]" at MuxALUSrcA.sv(7)
 Info: Elaborating entity "MuxALUSrcB" for hierarchy "MuxALUSrcB:MuxALUSrcB"
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(12): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(13): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -940,6 +989,7 @@ Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(14): vari
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(15): variable "D" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(16): variable "E" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(17): variable "F" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at MuxALUSrcB.sv(18): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10270): Verilog HDL Case Statement warning at MuxALUSrcB.sv(11): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at MuxALUSrcB.sv(10): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "out[0]" at MuxALUSrcB.sv(10)
@@ -1222,38 +1272,6 @@ Info (10041): Inferred latch for "out[31]" at StoreBox.sv(6)
 Info: Elaborating entity "MuxWriteMem" for hierarchy "MuxWriteMem:MuxWriteMem"
 Warning (10235): Verilog HDL Always Construct warning at MuxWriteMem.sv(9): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at MuxWriteMem.sv(10): variable "B" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[0]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[1]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[2]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[3]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[4]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[5]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[6]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[7]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[8]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[9]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[10]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[11]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[12]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[13]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[14]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[15]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[16]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[17]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[18]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[19]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[20]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[21]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[22]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[23]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[24]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[25]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[26]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[27]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[28]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[29]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[30]" is permanently enabled
-Warning: LATCH primitive "MuxALUSrcB:MuxALUSrcB|out[31]" is permanently enabled
 Warning: LATCH primitive "MuxIord:MuxIord|out[0]" is permanently enabled
 Warning: LATCH primitive "MuxIord:MuxIord|out[1]" is permanently enabled
 Warning: LATCH primitive "MuxIord:MuxIord|out[2]" is permanently enabled
@@ -1383,70 +1401,212 @@ Warning: LATCH primitive "MuxMemToReg:MuxMemToReg|out[29]" is permanently enable
 Warning: LATCH primitive "MuxMemToReg:MuxMemToReg|out[30]" is permanently enabled
 Warning: LATCH primitive "MuxMemToReg:MuxMemToReg|out[31]" is permanently enabled
 Warning: 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Latch ControlUnit:ControlUnit|nextstate.Add_5855 has unsafe behavior
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[2]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcA:MuxALUSrcA|out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcA[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch MuxALUSrcB:MuxALUSrcB|out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|ALUSrcB[0]
+Warning: Latch ControlUnit:ControlUnit|ALUOp[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
+Warning: Latch ControlUnit:ControlUnit|ALUOp[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
+Warning: Latch ControlUnit:ControlUnit|nextstate.Add_5886 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.And_5619 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.And_5650 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Break_5537 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Break_5568 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_5457 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Rte_5488 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_5375 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sll_5406 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_5295 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sllv_5326 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sra_5215 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sra_5246 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Srl_4899 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Srl_4930 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Beq_4661 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Beq_4692 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Bne_4583 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Bne_4614 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Bgt_4505 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Bgt_4536 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Ble_4427 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Ble_4458 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_4349 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lw_4380 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_4271 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSave_4302 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_4189 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveb_4220 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jal_4031 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jal_4062 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Mult_3875 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Mult_3906 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSave_3717 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSave_3748 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveh_3635 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveh_3666 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.Slti_3555 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Slti_3586 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_5736 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addi_5767 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_5578 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Sub_5609 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_5416 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jr_5447 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Slt_4780 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Slt_4811 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_4148 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Lui_4179 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Store_3834 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Store_3865 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveb_3676 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.StoreSaveb_3707 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.StoreData2
-Warning: Latch ControlUnit:ControlUnit|nextstate.Inc_3516 has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_4230 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Inc_3547 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
+Warning: Latch ControlUnit:ControlUnit|nextstate.LSaveh_4261 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.LGet3
-Warning: Latch ControlUnit:ControlUnit|nextstate.Srav_5018 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Srav_5049 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr15_0[5]
-Warning: Latch ControlUnit:ControlUnit|nextstate.Jump_4070 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Jump_4101 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
-Warning: Latch ControlUnit:ControlUnit|nextstate.Addiu_4700 has unsafe behavior
+Warning: Latch ControlUnit:ControlUnit|nextstate.Addiu_4731 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.Decode
+Warning: Latch ControlUnit:ControlUnit|ALUSrcA[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Instr_Reg:InstructionRegister|Instr31_26[5]
+Warning: Latch ControlUnit:ControlUnit|ALUSrcA[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
+Warning: Latch ControlUnit:ControlUnit|ALUSrcA[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
+Warning: Latch ControlUnit:ControlUnit|ALUSrcB[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
+Warning: Latch ControlUnit:ControlUnit|ALUSrcB[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|state.IncOp
 Warning: Latch LoadBox:LoadBox|out[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal ControlUnit:ControlUnit|IsControl[1]
 Warning: Latch LoadBox:LoadBox|out[9] has unsafe behavior
@@ -1511,16 +1671,16 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "ControlUnit:ControlUnit|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "ControlUnit:ControlUnit|state~10" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file C:/Users/gvh/Desktop/Teste/PQP.map.smsg
-Info: Implemented 3451 device resources after synthesis - the final resource count might be different
+Info: Implemented 3528 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 335 output pins
-    Info: Implemented 3082 logic cells
+    Info: Implemented 3159 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 355 warnings
-    Info: Peak virtual memory: 339 megabytes
-    Info: Processing ended: Sat May 18 00:32:20 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 473 warnings
+    Info: Peak virtual memory: 338 megabytes
+    Info: Processing ended: Sat May 18 01:00:30 2019
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:38
 
 
 +------------------------------------------+

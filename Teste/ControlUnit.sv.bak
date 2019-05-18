@@ -3,7 +3,7 @@ module ControlUnit(
 	input logic reset,
 	input logic [5:0] OpCode,
 	input logic [5:0] Funct,
-	output logic [1:0] ALUSrcA,
+	output logic [2:0] ALUSrcA,
 	output logic [2:0] ALUSrcB,
 	output logic [2:0] PCSource,
 	output logic [2:0] ALUOp,
@@ -123,7 +123,7 @@ end
 always @* begin
 	case(state)
 		Reset: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -149,7 +149,7 @@ always @* begin
 				nextstate = Start;
 		end
 		Start: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd1;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -175,7 +175,7 @@ always @* begin
 				nextstate = WaitMemRead;
 		end	
 		WaitMemRead: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -201,7 +201,7 @@ always @* begin
 				nextstate = WaitMemRead2;
 		end
 		WaitMemRead2: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -227,7 +227,7 @@ always @* begin
 				nextstate = Decode;
 		end
 		Decode: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -274,7 +274,7 @@ always @* begin
 					nextstate = Store;
 				end else if (OpCode == 6'ha) begin
 					nextstate = Slti;
-				end else if (OpCode == 6'h10) begin
+				end else if (OpCode == 6'h10 || OpCode == 6'h11) begin
 					nextstate = Inc;
 				end else if(OpCode == 0)begin
 					case(Funct)
@@ -296,7 +296,7 @@ always @* begin
 		end
 		// R INSTRUCTIONS
 		Add: begin
-				ALUSrcA = 2'd2 ;
+				ALUSrcA = 3'd2 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -322,7 +322,7 @@ always @* begin
 				nextstate = WriteInReg;
 		end
 		And: begin
-				ALUSrcA = 2'd2 ;
+				ALUSrcA = 3'd2 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd3;
@@ -348,7 +348,7 @@ always @* begin
 				nextstate = WriteInReg;
 		end
 		Sub: begin
-				ALUSrcA = 2'd2 ;
+				ALUSrcA = 3'd2 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd2;
@@ -374,7 +374,7 @@ always @* begin
 				nextstate = WriteInReg;
 		end
 		Jr: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd4;
 				ALUOp = 3'd0;
@@ -400,7 +400,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Slt: begin
-				ALUSrcA = 2'd2 ;
+				ALUSrcA = 3'd2 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd7;
@@ -426,7 +426,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Sll: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -452,7 +452,7 @@ always @* begin
 				nextstate = SllOp;
 		end
 		SllOp: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -478,7 +478,7 @@ always @* begin
 				nextstate = SllWriteReg;
 		end
 		SllWriteReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -504,7 +504,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Srl: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -530,7 +530,7 @@ always @* begin
 				nextstate = SrlOp;
 		end
 		SrlOp: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -556,7 +556,7 @@ always @* begin
 				nextstate = SrlWriteReg;
 		end
 		SrlWriteReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -582,7 +582,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Sllv: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -608,7 +608,7 @@ always @* begin
 				nextstate = SllvOp;
 		end
 		SllvOp: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -634,7 +634,7 @@ always @* begin
 				nextstate = SllvWriteReg;
 		end
 		SllvWriteReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -660,7 +660,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Sra: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -686,7 +686,7 @@ always @* begin
 				nextstate = SraOp;
 		end
 		SraOp: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -712,7 +712,7 @@ always @* begin
 				nextstate = SraWriteReg;
 		end
 		SraWriteReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -738,7 +738,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Srav: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -764,7 +764,7 @@ always @* begin
 				nextstate = SravOp;
 		end
 		SravOp: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -790,7 +790,7 @@ always @* begin
 				nextstate = SravWriteReg;
 		end
 		SravWriteReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -816,7 +816,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Rte: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd3;
 				ALUOp = 3'd0;
@@ -842,7 +842,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Break: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd1;
 				PCSource = 3'd0;
 				ALUOp = 3'd2;
@@ -864,10 +864,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = WriteInPC;
 		end
 		Mult: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -889,6 +890,7 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl = 1'd1;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				if (contador != 32) begin
 					contador = contador + 1;
 					nextstate = Mult;
@@ -898,7 +900,7 @@ always @* begin
 		end
 		// I INSTRUCTIONS
 		Addi: begin
-				ALUSrcA = 2'd2;
+				ALUSrcA = 3'd2;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -919,6 +921,7 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
+				MuxWriteMemControl = 1'd0;
 				SControl = 2'd0;
 				case(Overflow)
 					1'd0: nextstate = WriteInRegAddi;
@@ -926,7 +929,7 @@ always @* begin
 				endcase
 		end
 		Addiu: begin
-				ALUSrcA = 2'd2;
+				ALUSrcA = 3'd2;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -948,10 +951,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = WriteInRegAddi;
 		end
 		Slti: begin
-				ALUSrcA = 2'd2 ;
+				ALUSrcA = 3'd2 ;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd7;
@@ -973,11 +977,12 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		// BRANCHES
 		Beq: begin
-			ALUSrcA = 2 'd0;
+			ALUSrcA = 3'd0;
 			ALUSrcB = 3'd3;
 			PCSource = 3'd0;
 			ALUOp = 3'd1;
@@ -999,10 +1004,11 @@ always @* begin
 			MemDataReg = 1'd0;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			nextstate = BeqCompare;
 		end
 		BeqCompare: begin
-			ALUSrcA = 2 'd2;
+			ALUSrcA = 3'd2;
 			ALUSrcB = 3'd0;
 			PCSource = 3'd1;
 			ALUOp = 3'd7;
@@ -1023,6 +1029,7 @@ always @* begin
 			MemDataReg = 1'd0;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			if (Igual == 1) begin
 				PCWrite = 1'd1;
 			end else begin
@@ -1031,7 +1038,7 @@ always @* begin
 			nextstate = Wait;
 		end
 		Bne: begin
-			ALUSrcA = 2 'd0;
+			ALUSrcA = 3'd0;
 			ALUSrcB = 3'd3;
 			PCSource = 3'd0;
 			ALUOp = 3'd1;
@@ -1053,10 +1060,11 @@ always @* begin
 			MemDataReg = 1'd0;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			nextstate = BneCompare;
 		end
 		BneCompare: begin
-			ALUSrcA = 2 'd2;
+			ALUSrcA = 3'd2;
 			ALUSrcB = 3'd0;
 			PCSource = 3'd1;
 			ALUOp = 3'd7;
@@ -1078,6 +1086,7 @@ always @* begin
 			nextstate = Wait;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			if (Igual == 0) begin
 				PCWrite = 1'd1;
 			end else begin
@@ -1085,7 +1094,7 @@ always @* begin
 			end
 		end
 		Bgt: begin
-			ALUSrcA = 2 'd0;
+			ALUSrcA = 3'd0;
 			ALUSrcB = 3'd3;
 			PCSource = 3'd0;
 			ALUOp = 3'd1;
@@ -1107,10 +1116,11 @@ always @* begin
 			MemDataReg = 1'd0;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			nextstate = BgtCompare;
 		end
 		BgtCompare: begin
-			ALUSrcA = 2 'd2;
+			ALUSrcA = 3'd2;
 			ALUSrcB = 3'd0;
 			PCSource = 3'd1;
 			ALUOp = 3'd7;
@@ -1132,6 +1142,7 @@ always @* begin
 			MultControl =1'd0;
 			nextstate = Wait;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			if (MaiorQue == 1) begin
 				PCWrite = 1'd1;
 			end else begin
@@ -1139,7 +1150,7 @@ always @* begin
 			end
 		end
 		Ble: begin
-			ALUSrcA = 2 'd0;
+			ALUSrcA = 3'd0;
 			ALUSrcB = 3'd3;
 			PCSource = 3'd0;
 			ALUOp = 3'd1;
@@ -1160,11 +1171,12 @@ always @* begin
 			IsControl = 2'd0;
 			MultControl =1'd0;
 			MemDataReg = 1'd0;
+			MuxWriteMemControl = 1'd0;
 			SControl = 2'd0;
 			nextstate = BleCompare;
 		end
 		BleCompare: begin
-			ALUSrcA = 2 'd2;
+			ALUSrcA = 3'd2;
 			ALUSrcB = 3'd0;
 			PCSource = 3'd1;
 			ALUOp = 3'd7;
@@ -1185,6 +1197,7 @@ always @* begin
 			MemDataReg = 1'd0;
 			MultControl =1'd0;
 			SControl = 2'd0;
+			MuxWriteMemControl = 1'd0;
 			nextstate = Wait;
 			if (MaiorQue == 0) begin
 				PCWrite = 1'd1;
@@ -1194,7 +1207,7 @@ always @* begin
 		end
 		// LOADS
 		Lw: begin
-				ALUSrcA = 2'd2;
+				ALUSrcA = 3'd2;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -1216,10 +1229,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = LGet;
 		end
 		LGet:begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1241,10 +1255,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = LGet2;
 		end
 		LGet2: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1266,10 +1281,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = LGet3;
 		end
 		LGet3: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1291,6 +1307,7 @@ always @* begin
 				MultControl =1'd0;
 				SControl = 2'd0;
 				MemDataReg = 1'd1;
+				MuxWriteMemControl = 1'd0;
 				case(OpCode)
 					6'h20: nextstate = LSaveb;
 					6'h21: nextstate = LSaveh;
@@ -1298,7 +1315,7 @@ always @* begin
 				endcase
 		end
 		LSave: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1320,10 +1337,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		LSaveh: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1345,10 +1363,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		LSaveb: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1370,10 +1389,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		Lui: begin
-				ALUSrcA = 2'd1;
+				ALUSrcA = 3'd1;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -1395,10 +1415,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Lui2;
 		end
 		Lui2: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1420,11 +1441,12 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		// STORES
 		Store: begin
-				ALUSrcA = 2'd2;
+				ALUSrcA = 3'd2;
 				ALUSrcB = 3'd2;
 				PCSource = 3'd0;
 				ALUOp = 3'd1;
@@ -1445,10 +1467,11 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = StoreGet;
 		end
 		StoreGet: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1469,10 +1492,11 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = StoreData;
 		end
 		StoreData: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1493,10 +1517,11 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = StoreData2;
 		end
 		StoreData2: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1516,6 +1541,7 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd1;
+				MuxWriteMemControl = 1'd0;
 				SControl = 2'd0;
 				case(OpCode)
 					6'h28: nextstate = StoreSaveb;
@@ -1524,7 +1550,7 @@ always @* begin
 				endcase
 		end
 		StoreSave: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1545,10 +1571,11 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		StoreSaveh: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1569,10 +1596,11 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd1;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		StoreSaveb: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1593,11 +1621,12 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				SControl = 2'd2;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		// J INSTRUCTIONS
 		Jump: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd2;
 				ALUOp = 3'd0;
@@ -1617,10 +1646,11 @@ always @* begin
 				ShiftAmt = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Wait;
 		end
 		Jal: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1640,10 +1670,11 @@ always @* begin
 				ShiftAmt = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = WriteJal;
 		end
 		WriteJal: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1663,11 +1694,12 @@ always @* begin
 				ShiftAmt = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = Jump;
 		end
 		// INC E DEC
 		Inc: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd5;
 				ALUOp = 3'd0;
@@ -1689,10 +1721,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = IncWait;
 		end
 		IncWait: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd5;
 				ALUOp = 3'd0;
@@ -1713,11 +1746,12 @@ always @* begin
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
+				MuxWriteMemControl = 1'd0;
 				SControl = 2'd0;
 				nextstate = IncGetData;
 		end
 		IncGetData: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1739,13 +1773,23 @@ always @* begin
 				MemDataReg = 1'd1;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = IncOp;
 		end 
 		IncOp: begin
-				ALUSrcA = 2'd3 ;
-				ALUSrcB = 3'd5;
 				PCSource = 3'd0;
-				ALUOp = 3'd1;
+				case (OpCode)
+					6'h10: begin
+						ALUSrcA = 3'd3;
+						ALUSrcB = 3'd5;
+						ALUOp = 3'd1;
+					end
+					6'h11: begin
+						ALUSrcA = 3'd4
+						ALUSrcB = 3'd6;
+						ALUOp = 3'd2;
+					end
+				endcase
 				PCWrite = 1'd0;
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
@@ -1764,10 +1808,11 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
+				MuxWriteMemControl = 1'd0;
 				nextstate = IncWrite;
 		end
 		IncWrite: begin
-				ALUSrcA = 2'd0 ;
+				ALUSrcA = 3'd0 ;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd5;
 				ALUOp = 3'd2;
@@ -1789,12 +1834,12 @@ always @* begin
 				MemDataReg = 1'd0;
 				MultControl =1'd0;
 				SControl = 2'd0;
-				MuxWriteMemControl = 2'd1;
+				MuxWriteMemControl = 1'd1;
 				nextstate = Wait;
 		end
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1819,7 +1864,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		WriteInReg: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1844,7 +1889,7 @@ always @* begin
 				nextstate = Wait;
 		end 
 		WriteInPC: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd1;
 				ALUOp = 3'd0;
@@ -1869,7 +1914,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		OverflowExc: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;
@@ -1894,7 +1939,7 @@ always @* begin
 				nextstate = Wait;
 		end
 		Wait: begin
-				ALUSrcA = 2'd0;
+				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
 				ALUOp = 3'd0;

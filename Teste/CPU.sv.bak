@@ -135,6 +135,7 @@ MuxALUSrcA MuxALUSrcA(
 	.B(32'd0),
 	.C(RegAOut),
 	.D(32'd1),
+	.E(MemDataRegOut),
 	.out(MuxALUSourceAOut),
 	.SrcA(ALUSrcA)
 );
@@ -146,6 +147,7 @@ MuxALUSrcB MuxALUSrcB(
 	.D(ExtendLeft2),
 	.E(1'd0),
 	.F(MemDataRegOut),
+	.G(32'd1),
 	.out(MuxALUSourceBOut),
 	.SrcB(ALUSrcB)
 );
@@ -178,7 +180,7 @@ Memoria Memoria(
 	.Address(MuxIordOut),
 	.Clock(clock),
 	.Wr(MemWr),
-	.Datain(StoreBoxOut),
+	.Datain(MuxWriteMemOut),
 	.Dataout(MemOut)
 );
 
