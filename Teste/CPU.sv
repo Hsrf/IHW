@@ -10,14 +10,18 @@ module CPU(
 	output logic [31:0] MuxIordOut,
 	output logic [31:0] MemDataRegOut,
 	output logic [1:0] SControl,
-	output logic [31:0] StoreBoxOut,
-	output logic [31:0] RegBOut,
-	output logic [31:0] ExtendImediato2to32bit,
-	output logic [31:0] MuxWriteMemOut
+	output logic [31:0] PCOut,
+	output logic [31:0] RegAOut,
+	output logic [31:0] RegBOut
+	
 );
 
+logic MultStop;
+logic [31:0] MultA;
+logic [31:0] MultB;
+logic [31:0] MultHi;
+logic [31:0] MultLo;
 logic MuxWriteMemControl;
-logic [31:0] PCOut;
 logic [31:0] MuxMemToRegOut;
 logic [4:0] MuxRegDstOut;
 logic MemWr;
@@ -26,7 +30,6 @@ logic [1:0] IsControl;
 logic [27:0] ExtendLeftImediato2;
 logic [25:0] Imediato2;
 logic [31:0] ExtendLeftImediato2PC;
-logic [31:0] RegAOut;
 logic [4:0] rd;
 logic [31:0] ImediatoExtended;
 logic [5:0] Funct;
@@ -71,10 +74,6 @@ logic ShiftSrc;
 logic ShiftAmt;
 logic MemDataRegControl;
 logic MultControl;
-logic [31:0] MultA;
-logic [31:0] MultB;
-logic [31:0] MultHi;
-logic [31:0] MultLo;
 logic [31:0] MuxHIOut;
 logic [31:0] MuxLOOut;
 logic [31:0] HIOut;
@@ -83,6 +82,10 @@ logic WriteHI;
 logic WriteLO;
 logic HIControl;
 logic LOControl;
+logic [31:0] StoreBoxOut;
+logic [31:0] ExtendImediato2to32bit;
+logic [31:0] MuxWriteMemOut;
+logic [31:0] ExtendLui;
 
 Registrador PC(
 	.Clk(clock),
@@ -138,7 +141,8 @@ ControlUnit ControlUnit(
 	.WriteHI(WriteHI),
 	.WriteLO(WriteLO),
 	.HIControl(HIControl),
-	.LOControl(LOControl)
+	.LOControl(LOControl),
+	.MultOut(MultStop)
 );
 
 
@@ -225,7 +229,7 @@ MuxMemToReg MuxMemToReg(
 	.D(LoadBoxOut),
 	.E(RegDeslocResult),
 	.F(1'd0),
-	.G(1'd0),
+	.G(ALUOutOut),
 	.H(MenorQueExtended),
 	.out(MuxMemToRegOut),
 	.MemToReg(MemToReg)
@@ -320,7 +324,8 @@ Multi Multi(
 	.MultA(RegAOut),
 	.MultB(RegBOut),
 	.Hi(MultHi),
-	.Lo(MultLo)
+	.Lo(MultLo),
+	.out(MultStop)
 );
 
 StoreBox StoreBox(
@@ -378,5 +383,6 @@ assign Imediato2 = {Reg1, Reg2, Imediato};
 assign ExtendLeftImediato2[27:2] = Imediato2[25:0];
 assign ExtendImediato2to32bit = Imediato2;
 assign ExtendLeftImediato2PC = {PCOut[31:28], ExtendLeftImediato2};
+
 
 endmodule

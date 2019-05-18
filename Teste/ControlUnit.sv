@@ -14,6 +14,7 @@ module ControlUnit(
 	input logic Igual,
 	input logic MaiorQue,
 	input logic MenorQue,
+	input logic MultOut,
 	output logic MemWr,
 	output logic IRWrite,
 	output logic [2:0] Iord,
@@ -38,8 +39,6 @@ module ControlUnit(
 	output logic HIControl,
 	output logic LOControl
 );
-
-logic [5:0]contador;
 
 enum logic [6:0] {
 	Reset = 7'd1,
@@ -117,7 +116,9 @@ enum logic [6:0] {
 	IncOp = 7'd67,
 	IncWrite = 7'd68,
 	// MULT E DIV
-	Mult = 7'd55
+	Mult = 7'd55,
+	Mult2 = 7'd80,
+	Mult3 = 7'd81
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -1043,7 +1044,37 @@ always @* begin
 				LOControl  = 1'd0;
 				nextstate = WriteInPC;
 		end
-		Mult: begin
+		Mult: begin		
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				IsControl = 2'd0;
+				MemDataReg = 1'd0;
+				MultControl = 1'd1;
+				SControl = 2'd0;
+				WriteHI = 1'd0;
+				WriteLO = 1'd0;
+				HIControl = 1'd0;
+				LOControl  = 1'd0;
+				MuxWriteMemControl = 1'd0;
+				nextstate = Mult2;
+		end
+		Mult2: begin
 				ALUSrcA = 3'd0;
 				ALUSrcB = 3'd0;
 				PCSource = 3'd0;
@@ -1071,12 +1102,41 @@ always @* begin
 				HIControl = 1'd0;
 				LOControl  = 1'd0;
 				MuxWriteMemControl = 1'd0;
-				if (contador != 32) begin
-					contador = contador + 1;
-					nextstate = Mult;
+				if (MultOut == 0) begin
+					nextstate = Mult2;
 				end else begin
-					nextstate = Wait;
+					nextstate = Mult3;
 				end
+		end
+		Mult3: begin
+				ALUSrcA = 3'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd0;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				IsControl = 2'd0;
+				MemDataReg = 1'd0;
+				MultControl = 1'd1;
+				SControl = 2'd0;
+				WriteHI = 1'd1;
+				WriteLO = 1'd1;
+				HIControl = 1'd0;
+				LOControl  = 1'd0;
+				MuxWriteMemControl = 1'd0;
+				nextstate = Wait;
 		end
 		// I INSTRUCTIONS
 		Addi: begin
@@ -1683,7 +1743,7 @@ always @* begin
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
 				Iord = 3'd0;
-				MemToReg = 4'd0;
+				MemToReg = 4'd7;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;

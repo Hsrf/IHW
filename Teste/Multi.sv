@@ -1,8 +1,9 @@
-module Multi(MultA, MultB, Hi, Lo, MultControl, Clk, Reset);
+module Multi(MultA, MultB, Hi, Lo, MultControl, Clk, Reset, out);
 	input logic Clk, Reset;
 	input logic [31:0] MultA, MultB;
 	input logic MultControl;
 	output logic [31:0] Hi, Lo;
+	output logic out;
 	
 	logic [31:0] C;
 	logic [64:0] A, S, P;
@@ -23,6 +24,7 @@ module Multi(MultA, MultB, Hi, Lo, MultControl, Clk, Reset);
 			finalP <= 2'b0;
 			resultHiLo <= 0;
 			start <= 0;
+			out <= 0;
 		end else if (MultControl) begin
 			if(start == 0) begin
 				A = {MultA[31:0], 33'b0};
@@ -40,14 +42,13 @@ module Multi(MultA, MultB, Hi, Lo, MultControl, Clk, Reset);
 				endcase
 				P = P >> 1;
 				contador = contador + 1;
-				start = 0;
 			end
-			result = P[64:1];
-			resultHiLo <= 1;
-		end else if (resultHiLo == 1) begin
+		end else if (contador == 32) begin
+				result = P[64:1];
 				Hi <= result[63:32];
 				Lo <= result[31:0];
 				resultHiLo <= 0;
+				out <= 1;
 		end
     end
 endmodule

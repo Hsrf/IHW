@@ -2143,6 +2143,7 @@ set_global_assignment -name MISC_FILE "C:/Users/gvh/Desktop/Teste/PQP.dpf"
 set_global_assignment -name SIMULATOR_GENERATE_POWERPLAY_VCD_FILE ON
 set_global_assignment -name SIMULATOR_POWERPLAY_VCD_FILE_OUTPUT_DESTINATION PQP.vcd
 set_global_assignment -name MIF_FILE instrucoes.mif
+set_global_assignment -name SYSTEMVERILOG_FILE MuxHIControl.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxLOControl.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxMem.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MuxShiftAmt.sv
