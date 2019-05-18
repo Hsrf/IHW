@@ -71,6 +71,7 @@ enum logic [6:0] {
 	Slt = 7'd32,
 	OverflowExc = 7'd33,
 	Addiu = 7'd34,
+	Slti = 7'd63,
 	// DESVIOS
 	Beq = 7'd35,
 	BeqCompare = 7'd36,
@@ -259,6 +260,8 @@ always @* begin
 					nextstate = Jal;
 				end else if (OpCode == 6'h2b || OpCode == 6'h28 || OpCode == 6'h29) begin
 					nextstate = Store;
+				end else if (OpCode == 6'ha) begin
+					nextstate = Slti;
 				end else if(OpCode == 0)begin
 					case(Funct)
 						6'h20: nextstate = Add;
@@ -911,6 +914,31 @@ always @* begin
 				MultControl =1'd0;
 				SControl = 2'd0;
 				nextstate = WriteInRegAddi;
+		end
+		Slti: begin
+				ALUSrcA = 2'd2 ;
+				ALUSrcB = 3'd2;
+				PCSource = 3'd0;
+				ALUOp = 3'd7;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd8;
+				WriteRegA = 1'd1;
+				WriteRegB = 1'd1;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd1;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				IsControl = 2'd0;
+				MemDataReg = 1'd0;
+				MultControl =1'd0;
+				SControl = 2'd0;
+				nextstate = Wait;
 		end
 		// BRANCHES
 		Beq: begin
