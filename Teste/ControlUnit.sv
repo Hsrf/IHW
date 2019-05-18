@@ -1505,7 +1505,7 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
-				SControl = 2'd0;
+				SControl = 2'd1;
 				nextstate = Wait;
 		end
 		StoreSaveb: begin
@@ -1529,7 +1529,7 @@ always @* begin
 				ShiftAmt = 1'd0;
 				IsControl = 2'd0;
 				MemDataReg = 1'd0;
-				SControl = 2'd0;
+				SControl = 2'd2;
 				nextstate = Wait;
 		end
 		// J INSTRUCTIONS

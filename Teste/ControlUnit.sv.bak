@@ -94,6 +94,7 @@ enum logic [6:0] {
 	Store = 7'd56,
 	StoreGet = 7'd57,
 	StoreData = 7'd58,
+	StoreData2 = 7'd62,
 	StoreSave = 7'd59,
 	StoreSaveb = 7'd60,
 	StoreSaveh = 7'd61,
