@@ -14,6 +14,9 @@ TIPO R
 - srav
 - srl
 - slt
+- mfhi (teoricamente)
+- mflo (teoricamente)
+- mult (nao funfa)
 
 TIPO I
 - addi
