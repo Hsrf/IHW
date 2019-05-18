@@ -7,19 +7,22 @@ module CPU(
 	output logic [5:0] OpCode,
 	output logic [31:0] MuxALUSourceAOut,
 	output logic [31:0] MuxALUSourceBOut,
-	output logic [31:0] ExtendLeft2,
 	output logic [31:0] PCOut,
 	output logic [31:0] ALUOutOut,
 	output logic [31:0] MemOut,
 	output logic [31:0] MuxIordOut,
 	output logic [31:0]MemDataRegOut,
-	output logic [1:0] IsControl
+	output logic [1:0] SControl,
+	output logic [31:0] StoreBoxOut,
+	output logic [31:0] RegBOut,
+	output logic MemWr
 );
 
+logic [31:0] ExtendLeft2;
+logic [1:0] IsControl;
 logic [27:0] ExtendLeftImediato2;
 logic [25:0] Imediato2;
 logic [31:0] ExtendLeftImediato2PC;
-logic [31:0] RegBOut;
 logic [31:0] RegAOut;
 logic [4:0] rd;
 logic [31:0] ImediatoExtended;
@@ -54,7 +57,6 @@ logic [2:0] PCSource;
 logic Negativo;
 logic Zero;
 logic Load;
-logic MemWr;
 logic IRWrite;
 logic [2:0] Iord;
 logic [3:0] MemToReg;
@@ -119,7 +121,8 @@ ControlUnit ControlUnit(
 	.ShiftAmt(ShiftAmt),
 	.IsControl(IsControl),
 	.MemDataReg(MemDataRegControl),
-	.MultControl(MultControl)
+	.MultControl(MultControl),
+	.SControl(SControl)
 );
 
 
@@ -138,7 +141,7 @@ MuxALUSrcB MuxALUSrcB(
 	.C(ImediatoExtended),
 	.D(ExtendLeft2),
 	.E(1'd0),
-	.F(1'd0),
+	.F(MemDataRegOut),
 	.out(MuxALUSourceBOut),
 	.SrcB(ALUSrcB)
 );
@@ -171,7 +174,7 @@ Memoria Memoria(
 	.Address(MuxIordOut),
 	.Clock(clock),
 	.Wr(MemWr),
-	.Datain(1'd0),
+	.Datain(StoreBoxOut),
 	.Dataout(MemOut)
 );
 
@@ -300,6 +303,13 @@ Multi Multi(
 	.MultB(RegBOut),
 	.Hi(MultHi),
 	.Lo(MultLo)
+);
+
+StoreBox StoreBox(
+	.A(MemDataRegOut),
+	.B(RegBOut),
+	.SControl(SControl),
+	.out(StoreBoxOut)
 );
 
 assign MenorQueExtended = MenorQue;
