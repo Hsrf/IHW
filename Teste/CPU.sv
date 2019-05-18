@@ -56,6 +56,9 @@ logic [1:0] RegDst;
 logic EPCWrite;
 logic ShiftSrc;
 logic ShiftAmt;
+logic MemDataRegControl;
+logic MuxStore;
+logic [2:0] SControl;
 
 Registrador PC(
 	.Clk(clock),
@@ -260,6 +263,37 @@ MuxShiftAmt MuxShiftAmt(
 	.out(MuxShiftAmtOut), 
 	.ShiftAmt(ShiftAmt)
 );
+
+MuxMem MuxMem(
+//NAO TA PRONTO, FALTA TERMINAR
+	.A(),
+	.B(),
+	.out(),
+	.MuxStore(MuxStore)
+);
+
+Store Store(
+//NAO ESTA PRONTO, FALTA TERMINAR
+	.
+
+);
+
+Registrador HI(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(HIControl),
+	.Entrada(ALUResult),
+	.Saida(ALUOutOut)
+);
+
+Registrador LO(
+	.Clk(clock),
+	.Reset(reset),
+	.Load(LOControl),
+	.Entrada(ALUResult),
+	.Saida(ALUOutOut)
+);
+
 
 assign Shamt = Imediato[10:6];
 assign RegBOut5Bit = RegBOut[4:0];

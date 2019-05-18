@@ -56,12 +56,12 @@ enum logic [6:0] {
 	SraWriteReg = 7'd23,
 	SllvOp = 7'd24,
 	SllOp = 7'd25,
-	Srav = 7'd26,
-	SravOp = 7'd27,
-	SravWriteReg = 7'd28,
-	Srl = 7'd29,
-	SrlOp = 7'd30,
-	SrlWriteReg = 7'd31
+	Increment = 7'd26,
+	IncrementOp = 7'd27,
+	IncrementRegWrite = 7'd28,
+	Decrement = 7'd29,
+	DecrementOp = 7'd30,
+	DecrementRegWrite = 7'd31
 } state, nextstate;
 	
 always_ff@(posedge clock, posedge reset) begin
@@ -81,7 +81,7 @@ always @* begin
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
 				Iord = 3'd0;
-				MemToReg = 4'd0;
+				MemToReg = 4'd5;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;
@@ -91,6 +91,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Start;
 		end
 		Start: begin
@@ -112,6 +115,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WaitMemRead;
 		end	
 		WaitMemRead: begin
@@ -133,6 +139,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WaitMemRead2;
 		end
 		WaitMemRead2: begin
@@ -154,6 +163,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Decode;
 		end
 		Decode: begin
@@ -175,6 +187,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				if(OpCode == 8)begin
 					nextstate = Addi;
 				end else if(OpCode == 0)begin
@@ -188,8 +203,6 @@ always @* begin
 						6'h0: nextstate = Sll;
 						6'h4: nextstate = Sllv;
 						6'h3: nextstate = Sra;
-						6'h7: nextstate = Srav;
-						6'h2: nextstate = Srl
 					endcase
 				end
 				
@@ -215,6 +228,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WriteInReg;
 		end
 		And: begin
@@ -236,7 +252,11 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WriteInReg;
+				
 		end
 		Sub: begin
 				ALUSrcA = 2'd2 ;
@@ -257,7 +277,11 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WriteInReg;
+
 		end
 		Jr: begin
 				ALUSrcA = 2'd0 ;
@@ -278,6 +302,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Sll: begin
@@ -299,6 +326,9 @@ always @* begin
 				ShiftControl = 3'd1;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SllOp;
 		end
 		SllOp: begin
@@ -320,6 +350,9 @@ always @* begin
 				ShiftControl = 3'd2;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SllWriteReg;
 		end
 		SllWriteReg: begin
@@ -341,69 +374,9 @@ always @* begin
 				ShiftControl = 3'd2;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
-				nextstate = Wait;
-		end
-		Srl: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
-				WriteRegA = 1'd0;
-				WriteRegB = 1'd1;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd1;
-				ShiftSrc = 1'd1;
-				ShiftAmt = 1'd1;
-				nextstate = SrlOp;
-		end
-		SrlOp: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
-				WriteRegA = 1'd0;
-				WriteRegB = 1'd0;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd3;
-				ShiftSrc = 1'd1;
-				ShiftAmt = 1'd1;
-				nextstate = SrlWriteReg;
-		end
-		SrlWriteReg: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd4;
-				WriteRegA = 1'd0;
-				WriteRegB = 1'd0;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd3;
-				RegWrite = 1'd1;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd2;
-				ShiftSrc = 1'd1;
-				ShiftAmt = 1'd1;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Sllv: begin
@@ -425,6 +398,9 @@ always @* begin
 				ShiftControl = 3'd1;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SllvOp;
 		end
 		SllvOp: begin
@@ -446,6 +422,9 @@ always @* begin
 				ShiftControl = 3'd2;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SllvWriteReg;
 		end
 		SllvWriteReg: begin
@@ -467,6 +446,9 @@ always @* begin
 				ShiftControl = 3'd2;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Sra: begin
@@ -488,6 +470,9 @@ always @* begin
 				ShiftControl = 3'd1;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SraOp;
 		end
 		SraOp: begin
@@ -509,6 +494,9 @@ always @* begin
 				ShiftControl = 3'd4;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = SraWriteReg;
 		end
 		SraWriteReg: begin
@@ -530,69 +518,9 @@ always @* begin
 				ShiftControl = 3'd4;
 				ShiftSrc = 1'd1;
 				ShiftAmt = 1'd1;
-				nextstate = Wait;
-		end
-		Srav: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
-				WriteRegA = 1'd1;
-				WriteRegB = 1'd1;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd1;
-				ShiftSrc = 1'd0;
-				ShiftAmt = 1'd0;
-				nextstate = SravOp;
-		end
-		SravOp: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd0;
-				WriteRegA = 1'd1;
-				WriteRegB = 1'd1;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd0;
-				RegWrite = 1'd0;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd4;
-				ShiftSrc = 1'd0;
-				ShiftAmt = 1'd0;
-				nextstate = SravWriteReg;
-		end
-		SravWriteReg: begin
-				ALUSrcA = 2'd0;
-				ALUSrcB = 3'd0;
-				PCSource = 3'd0;
-				ALUOp = 3'd0;
-				PCWrite = 1'd0;
-				MemWr = 1'd0;
-				IRWrite = 1'd0;
-				Iord = 3'd0;
-				MemToReg = 4'd4;
-				WriteRegA = 1'd1;
-				WriteRegB = 1'd1;
-				ALUOutControl = 1'd0;
-				RegDst = 2'd3;
-				RegWrite = 1'd1;
-				EPCWrite = 1'd0;
-				ShiftControl = 3'd4;
-				ShiftSrc = 1'd0;
-				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Rte: begin
@@ -614,6 +542,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Break: begin
@@ -635,8 +566,15 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WriteInPC;
 		end
+		Mult: begin
+				
+		end
+		
 		// I INSTRUCTIONS
 		Addi: begin
 				ALUSrcA = 2'd2;
@@ -657,8 +595,162 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = WriteInRegAddi;
 		end
+		//J INSTRUCTIONS
+		Increment:begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd5;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd1;
+				IRWrite = 1'd0;
+				Iord = 3'd5;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
+				nextstate = IncrementOp;
+		end
+		
+		IncrementOp:begin
+				ALUSrcA = 2'd3;
+				ALUSrcB = 3'd5;
+				PCSource = 3'd0;
+				ALUOp = 3'd1;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
+				nextstate = IncrementRegWrite;
+		end
+		
+		IncrementRegWrite:begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd5;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd1;
+				IRWrite = 1'd0;
+				Iord = 3'd5;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd1;
+				SControl 2'd3;
+				nextstate = wait;
+		end
+		
+		Decrement:begin
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd5;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd1;
+				IRWrite = 1'd0;
+				Iord = 3'd5;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
+				nextstate = IncrementOp;
+		end
+		
+		DecrementOp:begin
+				ALUSrcA = 2'd3;
+				ALUSrcB = 3'd5;
+				PCSource = 3'd0;
+				ALUOp = 3'd2;
+				PCWrite = 1'd0;
+				MemWr = 1'd0;
+				IRWrite = 1'd0;
+				Iord = 3'd0;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd1;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
+				nextstate = IncrementRegWrite;
+		end
+		
+		DecrementRegWrite:begin;
+				ALUSrcA = 2'd0;
+				ALUSrcB = 3'd0;
+				PCSource = 3'd5;
+				ALUOp = 3'd0;
+				PCWrite = 1'd0;
+				MemWr = 1'd1;
+				IRWrite = 1'd0;
+				Iord = 3'd5;
+				MemToReg = 4'd0;
+				WriteRegA = 1'd0;
+				WriteRegB = 1'd0;
+				ALUOutControl = 1'd0;
+				RegDst = 2'd0;
+				RegWrite = 1'd0;
+				EPCWrite = 1'd0;
+				ShiftControl = 3'd0;
+				ShiftSrc = 1'd0;
+				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd1;
+				SControl 2'd3;
+				nextstate = wait;
+		end
+		
 		// WRITE AND WAITS
 		WriteInRegAddi: begin
 				ALUSrcA = 2'd0;
@@ -679,6 +771,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		WriteInReg: begin
@@ -700,6 +795,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				Mem = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		WriteInPC: begin
@@ -721,6 +819,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Wait;
 		end
 		Wait: begin
@@ -742,6 +843,9 @@ always @* begin
 				ShiftControl = 3'd0;
 				ShiftSrc = 1'd0;
 				ShiftAmt = 1'd0;
+				MemDataRegControl = 1'd0;
+				MuxStore = 1'd0;
+				SControl 2'd0;
 				nextstate = Start;
 		end
 	endcase
