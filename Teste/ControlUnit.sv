@@ -137,7 +137,7 @@ always @* begin
 				MemWr = 1'd0;
 				IRWrite = 1'd0;
 				Iord = 3'd0;
-				MemToReg = 4'd0;
+				MemToReg = 4'd5;
 				WriteRegA = 1'd0;
 				WriteRegB = 1'd0;
 				ALUOutControl = 1'd0;
